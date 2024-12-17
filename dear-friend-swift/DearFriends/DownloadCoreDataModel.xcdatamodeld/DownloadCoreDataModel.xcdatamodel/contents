@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23507" systemVersion="24B91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BackgroundDownloads" representedClassName="BackgroundDownloads" syncable="YES" codeGenerationType="class">
+        <attribute name="bg_id" optional="YES" attributeType="String"/>
+        <attribute name="file" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="LocalDownloads" representedClassName="LocalDownloads" syncable="YES" codeGenerationType="class">
+        <attribute name="backgrounds" optional="YES" attributeType="Transformable"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="category_id" optional="YES" attributeType="String"/>
+        <attribute name="female_file" optional="YES" attributeType="Binary"/>
+        <attribute name="female_music_duration_secods" optional="YES" attributeType="String"/>
+        <attribute name="female_music_local_url" optional="YES" attributeType="String"/>
+        <attribute name="forStr" optional="YES" attributeType="String"/>
+        <attribute name="is_background_audio" optional="YES" attributeType="String"/>
+        <attribute name="isForCustom" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="music_duration" optional="YES" attributeType="String"/>
+        <attribute name="music_duration_secods" optional="YES" attributeType="String"/>
+        <attribute name="music_file" optional="YES" attributeType="Binary"/>
+        <attribute name="music_id" optional="YES" attributeType="String"/>
+        <attribute name="music_image" optional="YES" attributeType="Binary"/>
+        <attribute name="music_image_local_url" optional="YES" attributeType="String"/>
+        <attribute name="music_local_url" optional="YES" attributeType="String"/>
+        <attribute name="music_title" optional="YES" attributeType="String"/>
+        <attribute name="narrated_by" optional="YES" attributeType="String"/>
+        <attribute name="userid" optional="YES" attributeType="String"/>
+    </entity>
+</model>

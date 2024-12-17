@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Outfit-Regular.ttf">
+            <string>Outfit-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ListSelectionCVC" customModule="DearFriends" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="238" height="65"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="238" height="65"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAY-h1-6kF">
+                        <rect key="frame" x="8" y="8" width="222" height="49"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You decide, Im Not Sure" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvu-ip-Kwh">
+                                <rect key="frame" x="16" y="16" width="190" height="17"/>
+                                <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
+                                <color key="textColor" name="#E4E1F8"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21176470588235294" green="0.23529411764705882" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Mvu-ip-Kwh" secondAttribute="trailing" constant="16" id="2FB-8H-tP9"/>
+                            <constraint firstItem="Mvu-ip-Kwh" firstAttribute="leading" secondItem="TAY-h1-6kF" secondAttribute="leading" constant="16" id="Haa-3h-62d"/>
+                            <constraint firstAttribute="bottom" secondItem="Mvu-ip-Kwh" secondAttribute="bottom" constant="16" id="YRk-PQ-Gh3"/>
+                            <constraint firstItem="Mvu-ip-Kwh" firstAttribute="top" secondItem="TAY-h1-6kF" secondAttribute="top" constant="16" id="jls-Rd-vmh"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.46666666666666667" green="0.41568627450980389" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="TAY-h1-6kF" secondAttribute="bottom" constant="8" id="ZR6-2f-w4Z"/>
+                <constraint firstAttribute="trailing" secondItem="TAY-h1-6kF" secondAttribute="trailing" constant="8" id="cFM-7Y-Y6K"/>
+                <constraint firstItem="TAY-h1-6kF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="cpd-P2-IV6"/>
+                <constraint firstItem="TAY-h1-6kF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="jbX-z1-7Xp"/>
+            </constraints>
+            <size key="customSize" width="238" height="65"/>
+            <connections>
+                <outlet property="lbl" destination="Mvu-ip-Kwh" id="l1m-BJ-fVd"/>
+                <outlet property="vwMain" destination="TAY-h1-6kF" id="bdZ-IA-eE4"/>
+            </connections>
+            <point key="canvasLocation" x="68.702290076335871" y="0.35211267605633806"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="#E4E1F8">
+            <color red="0.89411764705882357" green="0.88235294117647056" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

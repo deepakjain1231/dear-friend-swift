@@ -1,0 +1,6 @@
+framework module Pods_Dear_Friends {
+  umbrella header "Pods-Dear Friends-umbrella.h"
+
+  export *
+  module * { export * }
+}

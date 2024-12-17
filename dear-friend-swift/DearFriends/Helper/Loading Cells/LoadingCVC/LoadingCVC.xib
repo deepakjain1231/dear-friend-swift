@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LoadingCVC" customModule="DearFriends" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="401" height="132"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="401" height="132"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hze-xK-A1P">
+                        <rect key="frame" x="0.0" y="0.0" width="401" height="70"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xCc-zh-sVV">
+                                <rect key="frame" x="185.66666666666666" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Noe-vT-sWs"/>
+                                    <constraint firstAttribute="width" constant="30" id="TBI-Ya-Icl"/>
+                                </constraints>
+                                <color key="color" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="2nh-Nr-kx5"/>
+                            <constraint firstItem="xCc-zh-sVV" firstAttribute="centerY" secondItem="hze-xK-A1P" secondAttribute="centerY" id="7RT-xE-LR0"/>
+                            <constraint firstItem="xCc-zh-sVV" firstAttribute="centerX" secondItem="hze-xK-A1P" secondAttribute="centerX" id="NOC-v8-pOG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hze-xK-A1P" secondAttribute="bottom" id="1ME-X6-4BC"/>
+                <constraint firstItem="hze-xK-A1P" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Jdy-gn-ehj"/>
+                <constraint firstItem="hze-xK-A1P" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JwJ-g0-joT"/>
+                <constraint firstAttribute="trailing" secondItem="hze-xK-A1P" secondAttribute="trailing" id="ZfD-3K-wAG"/>
+            </constraints>
+            <size key="customSize" width="401" height="132"/>
+            <connections>
+                <outlet property="loader" destination="xCc-zh-sVV" id="FYs-Qd-1SC"/>
+            </connections>
+            <point key="canvasLocation" x="247" y="12"/>
+        </collectionViewCell>
+    </objects>
+</document>

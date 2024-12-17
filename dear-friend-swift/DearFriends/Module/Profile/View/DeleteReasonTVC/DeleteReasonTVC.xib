@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Outfit-Regular.ttf">
+            <string>Outfit-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="57" id="KGk-i7-Jjw" customClass="DeleteReasonTVC" customModule="Dear_Friends" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="336" height="57"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="336" height="57"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="BjK-Ar-Uqi">
+                        <rect key="frame" x="0.0" y="0.0" width="336" height="22"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2z-GU-W0N">
+                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="0vW-EZ-900"/>
+                                    <constraint firstAttribute="width" secondItem="F2z-GU-W0N" secondAttribute="height" multiplier="1:1" id="cXd-Dj-d64"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic_redio">
+                                    <color key="titleColor" red="0.25490196079999999" green="0.19215686269999999" blue="0.64705882349999999" alpha="0.0" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected" image="ic_redio_selected"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDo-ta-Mk8">
+                                <rect key="frame" x="34" y="0.0" width="302" height="22"/>
+                                <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
+                                <color key="textColor" name="#D1D0D5"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="BjK-Ar-Uqi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ad2-jW-Kpp"/>
+                    <constraint firstItem="BjK-Ar-Uqi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="h1l-mJ-MQu"/>
+                    <constraint firstAttribute="bottom" secondItem="BjK-Ar-Uqi" secondAttribute="bottom" constant="16" id="udV-on-EAP"/>
+                    <constraint firstAttribute="trailing" secondItem="BjK-Ar-Uqi" secondAttribute="trailing" id="vi0-0X-kO3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="btnSelect" destination="F2z-GU-W0N" id="Oz6-CC-NUa"/>
+                <outlet property="lblTitle" destination="dDo-ta-Mk8" id="B8m-de-YHb"/>
+            </connections>
+            <point key="canvasLocation" x="156" y="-41"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_redio" width="20" height="20"/>
+        <image name="ic_redio_selected" width="20" height="20"/>
+        <namedColor name="#D1D0D5">
+            <color red="0.81960784313725488" green="0.81568627450980391" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

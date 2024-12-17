@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F52-0b-4EH">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TabbarVC-->
+        <scene sceneID="LWt-2B-0fh">
+            <objects>
+                <tabBarController storyboardIdentifier="TabbarVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nUY-W4-K1h" customClass="TabbarVC" customModule="Dear_Friends" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xb5-Kh-qWt" customClass="CustomTabBar" customModule="Dear_Friends" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="krb-XU-Ldm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+        <!--Root Stack Tab View Controller-->
+        <scene sceneID="lMi-xZ-sdY">
+            <objects>
+                <viewController storyboardIdentifier="RootStackTabViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F52-0b-4EH" customClass="RootStackTabViewController" customModule="Dear_Friends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iIQ-aO-vyt">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3YZ-rF-yqX">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQI-AR-9b4">
+                                <rect key="frame" x="20" y="731" width="353" height="75"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="POt-9c-vPT">
+                                        <rect key="frame" x="15" y="0.0" width="323" height="75"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.46666666666666667" green="0.41568627450980389" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="POt-9c-vPT" firstAttribute="bottom" secondItem="DQI-AR-9b4" secondAttribute="bottom" id="Exb-R3-6O6"/>
+                                    <constraint firstItem="POt-9c-vPT" firstAttribute="top" secondItem="DQI-AR-9b4" secondAttribute="top" id="bEI-7I-3LH"/>
+                                    <constraint firstItem="POt-9c-vPT" firstAttribute="leading" secondItem="DQI-AR-9b4" secondAttribute="leading" constant="15" id="e0R-Or-5B4"/>
+                                    <constraint firstAttribute="height" constant="75" id="fKl-Ve-qiq"/>
+                                    <constraint firstAttribute="trailing" secondItem="POt-9c-vPT" secondAttribute="trailing" constant="15" id="jrn-sc-e6f"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="SuperBlack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Euo-tK-m2B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DQI-AR-9b4" firstAttribute="leading" secondItem="iIQ-aO-vyt" secondAttribute="leading" constant="20" id="2bY-al-aId"/>
+                            <constraint firstItem="3YZ-rF-yqX" firstAttribute="top" secondItem="iIQ-aO-vyt" secondAttribute="top" id="Dvw-oP-LRR"/>
+                            <constraint firstItem="Euo-tK-m2B" firstAttribute="bottom" secondItem="DQI-AR-9b4" secondAttribute="bottom" constant="12" id="SLX-0J-1Jr"/>
+                            <constraint firstAttribute="bottom" secondItem="3YZ-rF-yqX" secondAttribute="bottom" id="XPU-YY-RRl"/>
+                            <constraint firstItem="Euo-tK-m2B" firstAttribute="trailing" secondItem="3YZ-rF-yqX" secondAttribute="trailing" id="ZH4-Lo-BGX"/>
+                            <constraint firstItem="Euo-tK-m2B" firstAttribute="trailing" secondItem="DQI-AR-9b4" secondAttribute="trailing" constant="20" id="oCT-km-Eii"/>
+                            <constraint firstItem="3YZ-rF-yqX" firstAttribute="leading" secondItem="Euo-tK-m2B" secondAttribute="leading" id="wAD-ap-ANa"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="updatesStatusBarAppearanceAutomatically" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="bottomStack" destination="POt-9c-vPT" id="PrO-XM-a0r"/>
+                        <outlet property="containerView" destination="3YZ-rF-yqX" id="Ejg-o2-GcY"/>
+                        <outlet property="vwBottom" destination="DQI-AR-9b4" id="62D-5D-1o9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wE9-fx-ehd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

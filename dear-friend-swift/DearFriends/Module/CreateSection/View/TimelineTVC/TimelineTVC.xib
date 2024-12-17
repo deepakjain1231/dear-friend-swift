@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Outfit-Regular.ttf">
+            <string>Outfit-Regular</string>
+        </array>
+        <array key="Outfit-SemiBold.ttf">
+            <string>Outfit-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="TimelineTVC" customModule="DearFriends" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="365" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="365" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sca-pv-Y6K" customClass="VerticalDottedLineView" customModule="DearFriends" customModuleProvider="target">
+                        <rect key="frame" x="5.666666666666667" y="15" width="1" height="67"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="y78-Ta-QGk"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69Q-os-HZe">
+                        <rect key="frame" x="0.0" y="3" width="12" height="12"/>
+                        <color key="backgroundColor" red="0.73333333333333328" green="0.70980392156862748" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="12" id="rzd-qT-ra2"/>
+                            <constraint firstAttribute="height" constant="12" id="vyJ-wZ-xIV"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step-2:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkZ-rQ-wLg">
+                        <rect key="frame" x="24" y="0.0" width="50" height="17.666666666666668"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="Cwk-0U-5st"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="14"/>
+                        <color key="textColor" name="#E4E1F8"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg0-n6-fh5">
+                        <rect key="frame" x="86" y="0.0" width="279" height="70.666666666666671"/>
+                        <string key="text">Review the initial draft. If needed, suggest edits and coordinate directly with your script writing assistant to further personalize your script.</string>
+                        <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
+                        <color key="textColor" name="#E4E1F8"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Cg0-n6-fh5" firstAttribute="leading" secondItem="dkZ-rQ-wLg" secondAttribute="trailing" constant="12" id="2W7-sD-aNY"/>
+                    <constraint firstAttribute="trailing" secondItem="Cg0-n6-fh5" secondAttribute="trailing" id="37G-aB-VE1"/>
+                    <constraint firstItem="sca-pv-Y6K" firstAttribute="centerX" secondItem="69Q-os-HZe" secondAttribute="centerX" id="6HD-ea-bP3"/>
+                    <constraint firstItem="Cg0-n6-fh5" firstAttribute="top" secondItem="dkZ-rQ-wLg" secondAttribute="top" id="DhI-fi-Iuo"/>
+                    <constraint firstItem="dkZ-rQ-wLg" firstAttribute="centerY" secondItem="69Q-os-HZe" secondAttribute="centerY" id="Fi6-qs-Sjs"/>
+                    <constraint firstItem="sca-pv-Y6K" firstAttribute="top" secondItem="69Q-os-HZe" secondAttribute="bottom" id="LYQ-3b-fj6"/>
+                    <constraint firstItem="dkZ-rQ-wLg" firstAttribute="leading" secondItem="69Q-os-HZe" secondAttribute="trailing" constant="12" id="QuD-sH-j7W"/>
+                    <constraint firstItem="dkZ-rQ-wLg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SJm-si-cp3"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Cg0-n6-fh5" secondAttribute="bottom" constant="8" id="ckP-hr-HQY"/>
+                    <constraint firstItem="69Q-os-HZe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pT6-PH-vv1"/>
+                    <constraint firstAttribute="bottom" secondItem="sca-pv-Y6K" secondAttribute="bottom" id="wEZ-0C-zo3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="lblDec" destination="Cg0-n6-fh5" id="XGO-wl-dSd"/>
+                <outlet property="lblStep" destination="dkZ-rQ-wLg" id="lgG-TS-mlM"/>
+                <outlet property="vwLine" destination="sca-pv-Y6K" id="2mP-3R-SCx"/>
+            </connections>
+            <point key="canvasLocation" x="151.90839694656489" y="2.1126760563380285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="#E4E1F8">
+            <color red="0.89411764705882357" green="0.88235294117647056" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
