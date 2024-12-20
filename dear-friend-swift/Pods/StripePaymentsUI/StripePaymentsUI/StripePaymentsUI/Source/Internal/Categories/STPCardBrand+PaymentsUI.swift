@@ -9,8 +9,12 @@ import Foundation
 @_spi(STP) import StripeUICore
 import UIKit
 
-extension STPCardBrand {
-    func brandIconAttributedString(theme: ElementsAppearance = .default, maxWidth: CGFloat? = nil) -> NSAttributedString {
+extension STPCardBrand: Comparable {
+    public static func < (lhs: StripePayments.STPCardBrand, rhs: StripePayments.STPCardBrand) -> Bool {
+        return (STPCardBrandUtilities.stringFrom(lhs) ?? "") < (STPCardBrandUtilities.stringFrom(rhs) ?? "")
+    }
+
+    func brandIconAttributedString(theme: ElementsUITheme = .default, maxWidth: CGFloat? = nil) -> NSAttributedString {
         let brandImageAttachment = NSTextAttachment()
         let image: UIImage = self == .unknown ? STPImageLibrary.cardBrandChoiceImage() : STPImageLibrary.cardBrandImage(for: self)
         brandImageAttachment.image = image
@@ -26,7 +30,7 @@ extension STPCardBrand {
         return NSAttributedString(attachment: brandImageAttachment)
     }
 
-    func cardBrandItem(theme: ElementsAppearance = .default, maxWidth: CGFloat? = nil) -> DropdownFieldElement.DropdownItem {
+    func cardBrandItem(theme: ElementsUITheme = .default, maxWidth: CGFloat? = nil) -> DropdownFieldElement.DropdownItem {
         let brandName = STPCardBrandUtilities.stringFrom(self) ?? ""
 
         let displayText = NSMutableAttributedString(attributedString: brandIconAttributedString(theme: theme))

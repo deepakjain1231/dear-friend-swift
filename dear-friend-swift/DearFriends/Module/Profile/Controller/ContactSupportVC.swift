@@ -60,7 +60,7 @@ class ContactSupportVC: UIViewController {
     
     //SET THE VIEW
     func setTheView() {
-        self.txtMessage.iq_addDone(target: self, action: #selector(self.btn_done_action), title: "Type message...")
+//        self.txtMessage.iq_addDone(target: self, action: #selector(self.btn_done_action), title: "Type message...")
         
         //SET FONT
         self.lblNavTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "Contact Support")
@@ -72,7 +72,7 @@ class ContactSupportVC: UIViewController {
         self.lblUploadPhotoSubTitle.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: "Please upload a photo or a video to show us what's going on, we really appreciate you taking the time to bring this to our attention")
         
         self.btnSubmit.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20.0, text: "Submit")
-        self.btnSubmit.backgroundColor = UIColor.init(named: "Button_BG_Color")
+        self.btnSubmit.backgroundColor = .buttonBGColor
     }
     
     @objc func btn_done_action() {

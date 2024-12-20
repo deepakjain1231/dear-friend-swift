@@ -113,7 +113,7 @@ class LoginVC: BaseVC {
         self.btnSignUp1.configureLable(bgColour: .clear, textColor: .background, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 16.0, text: "Don’t have an account?")
         self.btnSignUp2.configureLable(bgColour: .clear, textColor: .background, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24.0, text: "Sign up")
 
-        self.btnLogin.configureLable(bgColour: .secondary, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 24.0, text: "Log In")
+        self.btnLogin.configureLable(bgColour: .buttonBGColor, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 24.0, text: "Log In")
         self.lblBiometrics.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 18.0, text: "Use Biometrics")
 
         self.lblSocialTitle.configureLable(textAlignment: .center, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16.0, text: "Or use social media account for log in")

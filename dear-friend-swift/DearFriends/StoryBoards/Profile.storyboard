@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cYd-59-Gyt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cYd-59-Gyt">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -1425,50 +1425,20 @@
                                 <rect key="frame" x="0.0" y="127" width="393" height="597"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXK-l3-PJh">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="549"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IVz-CK-r1j">
-                                                <rect key="frame" x="20" y="12" width="353" height="517"/>
+                                                <rect key="frame" x="20" y="12" width="353" height="438"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNo-vd-Q5o">
-                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="172"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="183"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-WO-TR9">
-                                                                <rect key="frame" x="104.66666666666669" y="8" width="144" height="144"/>
+                                                                <rect key="frame" x="99" y="8" width="155" height="155"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zak-23-H9X">
-                                                                        <rect key="frame" x="13.999999999999986" y="14" width="116.00000000000001" height="116"/>
-                                                                        <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_user_3" translatesAutoresizingMaskIntoConstraints="NO" id="wWA-Kg-4os">
-                                                                                <rect key="frame" x="15" y="15" width="86" height="86"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="86" id="8Sa-Sx-78Q"/>
-                                                                                    <constraint firstAttribute="width" constant="86" id="uAs-ZZ-tz7"/>
-                                                                                </constraints>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
-                                                                                </userDefinedRuntimeAttributes>
-                                                                            </imageView>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJL-Ri-QMp">
-                                                                                <rect key="frame" x="82" y="82" width="32" height="32"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="32" id="FNr-4z-9dd"/>
-                                                                                    <constraint firstAttribute="width" constant="32" id="NWl-2P-BEf"/>
-                                                                                </constraints>
-                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                <state key="normal" image="ic_changepic"/>
-                                                                                <connections>
-                                                                                    <action selector="btnChangeProfile:" destination="ecy-53-LRj" eventType="touchUpInside" id="ygD-0c-uVy"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                        </subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ShN-7n-MT0">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <constraints>
-                                                                            <constraint firstItem="wWA-Kg-4os" firstAttribute="centerX" secondItem="zak-23-H9X" secondAttribute="centerX" id="FLI-zd-jnU"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="PJL-Ri-QMp" secondAttribute="trailing" constant="2" id="Fer-a4-Jck"/>
-                                                                            <constraint firstItem="wWA-Kg-4os" firstAttribute="centerY" secondItem="zak-23-H9X" secondAttribute="centerY" id="IQj-zv-qeQ"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="PJL-Ri-QMp" secondAttribute="bottom" constant="2" id="z7m-xp-Ab2"/>
-                                                                        </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="0.69999999999999996"/>
@@ -1479,25 +1449,65 @@
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5g-2L-juG">
+                                                                        <rect key="frame" x="15" y="15" width="125" height="125"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="0.69999999999999996"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.47843137250000001" green="0.50980392159999999" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="wWA-Kg-4os">
+                                                                        <rect key="frame" x="30" y="30" width="95" height="95"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </imageView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJL-Ri-QMp">
+                                                                        <rect key="frame" x="108" y="108" width="32" height="32"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="32" id="FNr-4z-9dd"/>
+                                                                            <constraint firstAttribute="width" constant="32" id="NWl-2P-BEf"/>
+                                                                        </constraints>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" image="ic_changepic"/>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQd-Jk-XNS">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <connections>
+                                                                            <action selector="btnChangeProfile:" destination="ecy-53-LRj" eventType="touchUpInside" id="hpc-5X-Q3a"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="zak-23-H9X" firstAttribute="top" secondItem="QkE-WO-TR9" secondAttribute="top" constant="14" id="1fm-7Z-PIK"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="zak-23-H9X" secondAttribute="bottom" constant="14" id="8z1-DB-qqX"/>
-                                                                    <constraint firstAttribute="height" constant="144" id="MmJ-BF-RMN"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="zak-23-H9X" secondAttribute="trailing" constant="14" id="X3C-pC-rwT"/>
-                                                                    <constraint firstItem="zak-23-H9X" firstAttribute="leading" secondItem="QkE-WO-TR9" secondAttribute="leading" constant="14" id="biG-e1-PXF"/>
-                                                                    <constraint firstAttribute="width" constant="144" id="yPz-X2-0zB"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="ShN-7n-MT0" secondAttribute="trailing" id="13G-S4-iqE"/>
+                                                                    <constraint firstItem="wWA-Kg-4os" firstAttribute="top" secondItem="o5g-2L-juG" secondAttribute="top" constant="15" id="75h-Xc-b1Y"/>
+                                                                    <constraint firstItem="o5g-2L-juG" firstAttribute="top" secondItem="QkE-WO-TR9" secondAttribute="top" constant="15" id="EKt-HF-Uef"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="o5g-2L-juG" secondAttribute="trailing" constant="15" id="HYV-AR-npN"/>
+                                                                    <constraint firstItem="wWA-Kg-4os" firstAttribute="leading" secondItem="o5g-2L-juG" secondAttribute="leading" constant="15" id="JzI-zu-4IF"/>
+                                                                    <constraint firstItem="wWA-Kg-4os" firstAttribute="bottom" secondItem="o5g-2L-juG" secondAttribute="bottom" constant="-15" id="K4X-6c-OCj"/>
+                                                                    <constraint firstAttribute="height" constant="155" id="MmJ-BF-RMN"/>
+                                                                    <constraint firstItem="o5g-2L-juG" firstAttribute="leading" secondItem="QkE-WO-TR9" secondAttribute="leading" constant="15" id="Usr-jI-bL5"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="GQd-Jk-XNS" secondAttribute="bottom" id="Vsm-4u-5UH"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="ShN-7n-MT0" secondAttribute="bottom" id="bQp-Yi-bed"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="PJL-Ri-QMp" secondAttribute="bottom" constant="15" id="c1b-dF-MCI"/>
+                                                                    <constraint firstItem="wWA-Kg-4os" firstAttribute="trailing" secondItem="o5g-2L-juG" secondAttribute="trailing" constant="-15" id="eVd-S5-w0c"/>
+                                                                    <constraint firstItem="ShN-7n-MT0" firstAttribute="leading" secondItem="QkE-WO-TR9" secondAttribute="leading" id="fJy-5E-Z7t"/>
+                                                                    <constraint firstItem="ShN-7n-MT0" firstAttribute="top" secondItem="QkE-WO-TR9" secondAttribute="top" id="fOo-8Y-LbS"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="GQd-Jk-XNS" secondAttribute="trailing" id="i0a-v7-SPl"/>
+                                                                    <constraint firstItem="GQd-Jk-XNS" firstAttribute="leading" secondItem="QkE-WO-TR9" secondAttribute="leading" id="j1Q-Fg-5C1"/>
+                                                                    <constraint firstItem="GQd-Jk-XNS" firstAttribute="top" secondItem="QkE-WO-TR9" secondAttribute="top" id="m6t-t3-42s"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="PJL-Ri-QMp" secondAttribute="trailing" constant="15" id="m9w-LF-Sei"/>
+                                                                    <constraint firstAttribute="width" constant="155" id="yPz-X2-0zB"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="o5g-2L-juG" secondAttribute="bottom" constant="15" id="yaY-6S-VmS"/>
                                                                 </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                        <real key="value" value="0.69999999999999996"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                        <color key="value" red="0.47843137254901957" green="0.50980392156862742" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
-                                                                </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1508,7 +1518,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JGf-Bh-DQT">
-                                                        <rect key="frame" x="0.0" y="188" width="353" height="69"/>
+                                                        <rect key="frame" x="0.0" y="199" width="353" height="69"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jz7-3j-Whn">
                                                                 <rect key="frame" x="16" y="10" width="321" height="49"/>
@@ -1541,7 +1551,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7j-AH-EXc">
-                                                        <rect key="frame" x="0.0" y="273" width="353" height="69"/>
+                                                        <rect key="frame" x="0.0" y="284" width="353" height="69"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fUz-Ng-mKM">
                                                                 <rect key="frame" x="16" y="10" width="321" height="49"/>
@@ -1573,7 +1583,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Skg-vf-az9">
-                                                        <rect key="frame" x="0.0" y="358" width="353" height="69"/>
+                                                        <rect key="frame" x="0.0" y="369" width="353" height="69"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Wp-TM-ILp">
                                                                 <rect key="frame" x="16" y="10" width="321" height="49"/>
@@ -1584,14 +1594,32 @@
                                                                         <color key="textColor" red="0.81960784310000001" green="0.81568627449999997" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XO4-cu-uzd" customClass="AppCommonTextField" customModule="Dear_Friends" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTB-6R-sYQ">
                                                                         <rect key="frame" x="0.0" y="19" width="321" height="30"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XO4-cu-uzd" customClass="AppCommonTextField" customModule="Dear_Friends" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="321" height="30"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <textInputTraits key="textInputTraits"/>
+                                                                            </textField>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mz9-5Y-bDr">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="321" height="30"/>
+                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="30" id="lvu-zx-U9m"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="XO4-cu-uzd" secondAttribute="trailing" id="8TR-xo-BYh"/>
+                                                                            <constraint firstItem="XO4-cu-uzd" firstAttribute="leading" secondItem="gTB-6R-sYQ" secondAttribute="leading" id="Gnz-kx-BaX"/>
+                                                                            <constraint firstItem="XO4-cu-uzd" firstAttribute="top" secondItem="gTB-6R-sYQ" secondAttribute="top" id="P5U-HT-SUy"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="XO4-cu-uzd" secondAttribute="bottom" id="QY0-NZ-VRZ"/>
+                                                                            <constraint firstItem="Mz9-5Y-bDr" firstAttribute="leading" secondItem="gTB-6R-sYQ" secondAttribute="leading" id="RNu-XM-wOW"/>
+                                                                            <constraint firstItem="Mz9-5Y-bDr" firstAttribute="top" secondItem="gTB-6R-sYQ" secondAttribute="top" id="VR7-lE-hvg"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Mz9-5Y-bDr" secondAttribute="trailing" id="sgt-0h-jcl"/>
+                                                                            <constraint firstAttribute="height" constant="30" id="t65-Gw-oEo"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="Mz9-5Y-bDr" secondAttribute="bottom" id="wes-JD-bUM"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
-                                                                    </textField>
+                                                                    </view>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
@@ -1604,8 +1632,8 @@
                                                             <constraint firstItem="5Wp-TM-ILp" firstAttribute="top" secondItem="Skg-vf-az9" secondAttribute="top" constant="10" id="nBg-1X-Fdi"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svB-8F-tiV">
-                                                        <rect key="frame" x="0.0" y="443" width="353" height="74"/>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svB-8F-tiV">
+                                                        <rect key="frame" x="0.0" y="438" width="353" height="74"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nfg-Py-DOT">
                                                                 <rect key="frame" x="16" y="10" width="321" height="54"/>
@@ -1781,7 +1809,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1N-kx-bPo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1059" y="656"/>
+            <point key="canvasLocation" x="1055.7251908396945" y="655.63380281690149"/>
         </scene>
         <!--Common Bottom PopupVC-->
         <scene sceneID="PbO-Pj-mfR">
@@ -2521,10 +2549,10 @@ to logout from this account?</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZN5-W6-cOr">
-                                                <rect key="frame" x="345" y="15" width="30" height="30"/>
+                                                <rect key="frame" x="338" y="5" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Ov6-KS-Ibf"/>
-                                                    <constraint firstAttribute="width" secondItem="ZN5-W6-cOr" secondAttribute="height" multiplier="1:1" id="RFc-3z-WKV"/>
+                                                    <constraint firstAttribute="width" constant="50" id="JOf-GH-2gt"/>
+                                                    <constraint firstAttribute="height" constant="50" id="kcp-CK-k52"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="ic_close2"/>
@@ -2533,16 +2561,16 @@ to logout from this account?</string>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vuB-gU-0SK">
-                                                <rect key="frame" x="23.333333333333343" y="40.999999999999993" width="331.66666666666663" height="90.333333333333314"/>
+                                                <rect key="frame" x="61.333333333333329" y="40.999999999999993" width="255.66666666666669" height="90.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0H-KF-Cv6">
-                                                        <rect key="frame" x="84.666666666666671" y="0.0" width="162.66666666666663" height="29.666666666666668"/>
+                                                        <rect key="frame" x="46.666666666666671" y="0.0" width="162.66666666666663" height="29.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="21"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Kindly choose the reason for deleting your account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bd9-lN-JoX">
-                                                        <rect key="frame" x="0.0" y="39.666666666666657" width="331.66666666666669" height="50.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="39.666666666666657" width="255.66666666666666" height="50.666666666666657"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2554,7 +2582,7 @@ to logout from this account?</string>
                                                 </constraints>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line_middle" translatesAutoresizingMaskIntoConstraints="NO" id="8vW-AD-rf0">
-                                                <rect key="frame" x="23.333333333333343" y="151.33333333333334" width="331.66666666666663" height="1"/>
+                                                <rect key="frame" x="61.333333333333329" y="151.33333333333334" width="255.66666666666669" height="1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="eB9-kS-fTf"/>
                                                 </constraints>
@@ -2632,7 +2660,7 @@ to logout from this account?</string>
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="ZN5-W6-cOr" secondAttribute="trailing" constant="18" id="2LE-Jk-exV"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZN5-W6-cOr" secondAttribute="trailing" constant="5" id="2LE-Jk-exV"/>
                                             <constraint firstItem="vuB-gU-0SK" firstAttribute="top" secondItem="iO1-XF-xQW" secondAttribute="bottom" constant="20" id="2rb-gT-bh3"/>
                                             <constraint firstItem="dQi-YK-PUX" firstAttribute="top" secondItem="8vW-AD-rf0" secondAttribute="bottom" constant="20" id="6Cz-mz-p0V"/>
                                             <constraint firstItem="gnf-dJ-43V" firstAttribute="leading" secondItem="v3O-Ew-nSf" secondAttribute="leading" constant="20" id="7t7-b6-1Ev"/>
@@ -2641,15 +2669,15 @@ to logout from this account?</string>
                                             <constraint firstAttribute="bottom" secondItem="gnf-dJ-43V" secondAttribute="bottom" constant="20" id="HW7-bz-Z7p"/>
                                             <constraint firstItem="iO1-XF-xQW" firstAttribute="centerX" secondItem="v3O-Ew-nSf" secondAttribute="centerX" constant="-7.3333333333333428" id="HcD-gx-LQ0"/>
                                             <constraint firstItem="8vW-AD-rf0" firstAttribute="leading" secondItem="vuB-gU-0SK" secondAttribute="leading" id="NIq-m2-jbC"/>
-                                            <constraint firstItem="ZN5-W6-cOr" firstAttribute="top" secondItem="v3O-Ew-nSf" secondAttribute="top" constant="15" id="XlL-Os-3e3"/>
+                                            <constraint firstItem="ZN5-W6-cOr" firstAttribute="top" secondItem="v3O-Ew-nSf" secondAttribute="top" constant="5" id="XlL-Os-3e3"/>
                                             <constraint firstAttribute="trailing" secondItem="gnf-dJ-43V" secondAttribute="trailing" constant="20" id="a6C-4B-QAq"/>
                                             <constraint firstItem="iO1-XF-xQW" firstAttribute="top" secondItem="v3O-Ew-nSf" secondAttribute="top" constant="16" id="aIq-hJ-XhD"/>
-                                            <constraint firstItem="vuB-gU-0SK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v3O-Ew-nSf" secondAttribute="leading" constant="20" id="b8Q-wY-hrg"/>
+                                            <constraint firstItem="vuB-gU-0SK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v3O-Ew-nSf" secondAttribute="leading" constant="30" id="b8Q-wY-hrg"/>
                                             <constraint firstItem="8vW-AD-rf0" firstAttribute="trailing" secondItem="vuB-gU-0SK" secondAttribute="trailing" id="cKb-Ob-idg"/>
                                             <constraint firstItem="gnf-dJ-43V" firstAttribute="top" secondItem="dQi-YK-PUX" secondAttribute="bottom" constant="20" id="fbT-Ye-LFK"/>
                                             <constraint firstItem="8vW-AD-rf0" firstAttribute="top" secondItem="vuB-gU-0SK" secondAttribute="bottom" constant="20" id="iHf-br-Nd7"/>
                                             <constraint firstItem="vuB-gU-0SK" firstAttribute="centerX" secondItem="v3O-Ew-nSf" secondAttribute="centerX" constant="-7.3333333333333144" id="oBn-LH-MbU"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vuB-gU-0SK" secondAttribute="trailing" constant="20" id="rIj-zf-Hel"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vuB-gU-0SK" secondAttribute="trailing" constant="30" id="rIj-zf-Hel"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2675,6 +2703,7 @@ to logout from this account?</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnClose" destination="ZN5-W6-cOr" id="7WZ-PM-H3N"/>
                         <outlet property="btn_delete" destination="gnf-dJ-43V" id="bEj-cz-GbA"/>
                         <outlet property="consHeight" destination="ueU-rQ-cXf" id="8OR-Pv-gXB"/>
                         <outlet property="lbl_deleteAccountTitle" destination="F0H-KF-Cv6" id="W5C-Ma-V1c"/>
@@ -2713,7 +2742,7 @@ to logout from this account?</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adA-YH-Pdc">
-                                <rect key="frame" x="126.33333333333333" y="74.333333333333329" width="140.33333333333343" height="25.333333333333329"/>
+                                <rect key="frame" x="126.33333333333333" y="74.333333333333329" width="140.33333333333337" height="25.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -2739,7 +2768,7 @@ to logout from this account?</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’ll use these preferences to recommend content to you that aligns with  your goals and interests" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbw-h4-u1G">
-                                <rect key="frame" x="12" y="111.66666666666667" width="369" height="43.333333333333329"/>
+                                <rect key="frame" x="20" y="111.66666666666667" width="353" height="43.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -2753,13 +2782,13 @@ to logout from this account?</string>
                             <constraint firstItem="ecA-wr-FkU" firstAttribute="trailing" secondItem="xiJ-b1-m9H" secondAttribute="trailing" constant="20" id="7oz-og-eCu"/>
                             <constraint firstItem="ChR-87-d5r" firstAttribute="top" secondItem="Bbw-h4-u1G" secondAttribute="bottom" constant="12" id="Au7-w8-Hde"/>
                             <constraint firstItem="ecA-wr-FkU" firstAttribute="trailing" secondItem="5kt-gb-Ci3" secondAttribute="trailing" id="M1D-2a-gaa"/>
-                            <constraint firstItem="ecA-wr-FkU" firstAttribute="trailing" secondItem="Bbw-h4-u1G" secondAttribute="trailing" constant="12" id="MZg-hI-QbB"/>
+                            <constraint firstItem="ecA-wr-FkU" firstAttribute="trailing" secondItem="Bbw-h4-u1G" secondAttribute="trailing" constant="20" id="MZg-hI-QbB"/>
                             <constraint firstItem="ChR-87-d5r" firstAttribute="leading" secondItem="ecA-wr-FkU" secondAttribute="leading" id="O3k-Nl-dIr"/>
                             <constraint firstItem="xiJ-b1-m9H" firstAttribute="top" secondItem="ChR-87-d5r" secondAttribute="bottom" constant="20" id="SsX-GT-icU"/>
                             <constraint firstItem="xiJ-b1-m9H" firstAttribute="leading" secondItem="ecA-wr-FkU" secondAttribute="leading" constant="20" id="TFO-gU-6qd"/>
                             <constraint firstItem="Bbw-h4-u1G" firstAttribute="top" secondItem="adA-YH-Pdc" secondAttribute="bottom" constant="12" id="aB4-hb-8NB"/>
                             <constraint firstAttribute="bottom" secondItem="5kt-gb-Ci3" secondAttribute="bottom" id="bol-Xp-xkd"/>
-                            <constraint firstItem="Bbw-h4-u1G" firstAttribute="leading" secondItem="ecA-wr-FkU" secondAttribute="leading" constant="12" id="dTc-Pt-kCG"/>
+                            <constraint firstItem="Bbw-h4-u1G" firstAttribute="leading" secondItem="ecA-wr-FkU" secondAttribute="leading" constant="20" id="dTc-Pt-kCG"/>
                             <constraint firstItem="ecA-wr-FkU" firstAttribute="trailing" secondItem="ChR-87-d5r" secondAttribute="trailing" id="dbH-9G-0Ns"/>
                             <constraint firstItem="5kt-gb-Ci3" firstAttribute="top" secondItem="WOC-Ce-O8U" secondAttribute="top" id="dqW-IU-hQ1"/>
                             <constraint firstItem="ey0-gT-DPe" firstAttribute="top" secondItem="ecA-wr-FkU" secondAttribute="top" constant="8" id="fzs-7w-JUH"/>
@@ -3771,7 +3800,7 @@ to logout from this account?</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3y-oU-jKw">
-                                        <rect key="frame" x="129.33333333333331" y="9.6666666666666714" width="134.33333333333331" height="21"/>
+                                        <rect key="frame" x="129" y="8.6666666666666714" width="135" height="23"/>
                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -3787,22 +3816,22 @@ to logout from this account?</string>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="vGf-X5-sZa">
-                                <rect key="frame" x="20" y="127.00000000000003" width="353" height="424.66666666666674"/>
+                                <rect key="frame" x="20" y="126.99999999999997" width="353" height="427.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Syn-2l-17W">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="72.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="73.666666666666671"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyU-7Y-vHF">
-                                                <rect key="frame" x="0.0" y="0.0" width="353" height="16.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
                                                 <color key="textColor" name="#D1D0D5"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ple-tW-Q9O">
-                                                <rect key="frame" x="0.0" y="24.333333333333343" width="353" height="48"/>
+                                                <rect key="frame" x="0.0" y="25.666666666666657" width="353" height="48"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---Select---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gQ-7Y-RcI">
-                                                        <rect key="frame" x="16" y="15.999999999999996" width="72" height="16.333333333333332"/>
+                                                        <rect key="frame" x="16" y="15.333333333333345" width="76.333333333333329" height="17.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="14"/>
                                                         <color key="textColor" name="#BBB5ED"/>
                                                         <nil key="highlightedColor"/>
@@ -3847,7 +3876,7 @@ to logout from this account?</string>
                                         </subviews>
                                     </stackView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqA-RL-L4M">
-                                        <rect key="frame" x="0.0" y="87.333333333333343" width="353" height="88"/>
+                                        <rect key="frame" x="0.0" y="88.666666666666657" width="353" height="88"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_upload_scrip" translatesAutoresizingMaskIntoConstraints="NO" id="Whv-08-qm4">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="88"/>
@@ -3865,13 +3894,13 @@ to logout from this account?</string>
                                                         <state key="normal" image="ic_upload_media"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload your file here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSh-zX-ssC">
-                                                        <rect key="frame" x="91.666666666666671" y="39.999999999999972" width="129.66666666666663" height="0.0"/>
+                                                        <rect key="frame" x="92.333333333333357" y="40.000000000000028" width="128.66666666666663" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
                                                         <color key="textColor" name="#E4E1F8"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9E-Rh-v9b">
-                                                        <rect key="frame" x="4" y="47.999999999999972" width="305" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="48.000000000000028" width="313" height="0.0"/>
                                                         <string key="text">Please upload a photo or a video to show us what's going on, we really appreciate you taking the time to bring this to our attention</string>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
                                                         <color key="textColor" red="0.81960784310000001" green="0.81568627449999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3904,7 +3933,7 @@ to logout from this account?</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIo-7t-jcf">
-                                        <rect key="frame" x="0.0" y="102.33333333333334" width="353" height="140"/>
+                                        <rect key="frame" x="0.0" y="103.66666666666666" width="353" height="140"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_upload_scrip" translatesAutoresizingMaskIntoConstraints="NO" id="1GM-g7-V9J">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="140"/>
@@ -4043,16 +4072,16 @@ to logout from this account?</string>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZtV-fI-Q42">
-                                        <rect key="frame" x="0.0" y="272.33333333333331" width="353" height="152.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="273.66666666666669" width="353" height="153.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFG-8M-eta">
-                                                <rect key="frame" x="0.0" y="0.0" width="353" height="16.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
                                                 <color key="textColor" name="#D1D0D5"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivr-Sn-W0t">
-                                                <rect key="frame" x="0.0" y="24.333333333333371" width="353" height="128"/>
+                                                <rect key="frame" x="0.0" y="25.666666666666629" width="353" height="128"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rDv-Pl-w6W" customClass="AppCommonTextView" customModule="Dear_Friends" customModuleProvider="target">
                                                         <rect key="frame" x="12" y="8" width="329" height="112"/>
@@ -4182,7 +4211,6 @@ to logout from this account?</string>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="ic_close2"/>
                                         <connections>
-                                            <action selector="btnCloseTapped:" destination="Zp6-LR-uCy" eventType="touchUpInside" id="Iq5-b5-SSf"/>
                                             <action selector="btnCloseTapped:" destination="RxN-ON-e1u" eventType="touchUpInside" id="WqF-35-aAq"/>
                                         </connections>
                                     </button>
@@ -4297,7 +4325,6 @@ to logout from this account?</string>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="btnConfirmTappped:" destination="RxN-ON-e1u" eventType="touchUpInside" id="YLO-9w-O5G"/>
-                                            <action selector="btnDeleteACTapped:" destination="Zp6-LR-uCy" eventType="touchUpInside" id="IRg-6I-x4a"/>
                                             <action selector="btnSubmitTapped:" destination="G6j-8a-vx0" eventType="touchUpInside" id="zcj-Nr-VUN"/>
                                         </connections>
                                     </button>
@@ -4877,6 +4904,7 @@ to logout from this account?</string>
         <image name="ic_my_booking" width="24" height="24"/>
         <image name="ic_next2" width="20" height="20"/>
         <image name="ic_on_logo" width="70" height="70"/>
+        <image name="ic_placeholder" width="800" height="800"/>
         <image name="ic_play_video" width="24" height="24"/>
         <image name="ic_preferences" width="24" height="24"/>
         <image name="ic_previous2" width="20" height="20"/>
@@ -4893,7 +4921,6 @@ to logout from this account?</string>
         <image name="ic_upload_media" width="32" height="32"/>
         <image name="ic_upload_scrip" width="336.33334350585938" height="130.33332824707031"/>
         <image name="ic_user" width="60" height="60"/>
-        <image name="ic_user_3" width="85" height="85"/>
         <image name="icon_appleLink" width="24" height="24"/>
         <image name="icon_back_dark" width="40" height="40"/>
         <image name="icon_down_bg" width="20" height="20"/>

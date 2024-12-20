@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SkeletonView
 
 class MyPreferencesTVC: UITableViewCell {
 
+    @IBOutlet weak var viewImgBG: UIView!
     @IBOutlet weak var imDown: UIImageView!
     @IBOutlet weak var lblSelected: UILabel!
     @IBOutlet weak var vwMain: UIView!
@@ -38,6 +40,8 @@ class MyPreferencesTVC: UITableViewCell {
     }
     
     func setupUI() {
+        self.viewImgBG.viewCorneRadius(radius: 10)
+        
         self.colleView.delegate = self
         self.colleView.dataSource = self
         self.colleView.registerCell(type: MyPreferencesCVC.self)
@@ -80,25 +84,37 @@ extension MyPreferencesTVC: UICollectionViewDelegate, UICollectionViewDataSource
         let current = self.arrOfSubCategory[indexPath.row]
         
         let str_currentTile = current.title ?? ""
-        cell.lblTitle.configureLable(textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 13, text: str_currentTile)
+        cell.lblTitle.configureLable(textAlignment: .center, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 13, text: str_currentTile)
         
         GeneralUtility().setImage(imgView: cell.img, imgPath: current.icon ?? "")
         
         cell.vwMain.borderWidth = 1
         cell.vwMain.borderColor = UIColor.white.withAlphaComponent(0.12)
+        cell.imgBG.isHidden = false
+        cell.vwMain.backgroundColor = .clear
         
         if current.isSelect {
+            cell.imgBG.isHidden = true
             cell.vwMain.backgroundColor = hexStringToUIColor(hex: "#363C8A")
-        } else {
-            cell.vwMain.backgroundColor = hexStringToUIColor(hex: "#212159")
         }
-        
+//        else {
+//            let gradient = SkeletonGradient(baseColor: hexStringToUIColor(hex: "#212159"))
+////            cell.vwMain.isSkeletonable = true
+//            cell.vwMain.showAnimatedGradientSkeleton(usingGradient: gradient)
+//
+////            cell.vwMain.backgroundColor = hexStringToUIColor(hex: "#212159")
+//        }
+//        
         cell.layoutIfNeeded()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (self.colleView.frame.size.width - 24) / 3, height: 112)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

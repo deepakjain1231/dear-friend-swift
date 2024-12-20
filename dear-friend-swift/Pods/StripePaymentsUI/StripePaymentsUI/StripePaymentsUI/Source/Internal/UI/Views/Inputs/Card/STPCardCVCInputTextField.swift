@@ -73,7 +73,11 @@ import UIKit
     func updateCVCImageAndPlaceholder() {
         cvcHintView.setCardBrand(.brand(cardBrand), animated: true)
 
-        placeholder = String.Localized.cvc
+        if cardBrand == .amex {
+            placeholder = String.Localized.cvv
+        } else {
+            placeholder = String.Localized.cvc
+        }
     }
 
     func truncateTextIfNeeded() {

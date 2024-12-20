@@ -90,7 +90,7 @@ class MyHistoryVC: BaseVC {
         }
         
         if self.isFromNoNet {
-            self.btnBack.isHidden = true
+//            self.btnBack.isHidden = true
             
             NotificationCenter.default.addObserver(self, selector: #selector(self.networkStatusChanged(_:)), name: Notification.Name(rawValue: ReachabilityStatusChangedNotification), object: nil)
             

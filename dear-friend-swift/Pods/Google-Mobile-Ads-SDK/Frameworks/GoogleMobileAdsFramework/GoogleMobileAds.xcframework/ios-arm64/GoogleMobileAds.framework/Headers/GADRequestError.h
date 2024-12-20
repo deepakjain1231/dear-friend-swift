@@ -53,8 +53,7 @@ typedef NS_ENUM(NSInteger, GADErrorCode) {
 
   /// A mediation ad network adapter received an ad request, but did not fill. The adapter's error
   /// is included as an underlyingError.
-  GADErrorMediationNoFill DEPRECATED_MSG_ATTRIBUTE(
-      "This error will be replaced with GADErrorNoFill in a future version") = 9,
+  GADErrorMediationNoFill = 9,
 
   /// Will not send request because the ad object has already been used.
   GADErrorAdAlreadyUsed = 19,

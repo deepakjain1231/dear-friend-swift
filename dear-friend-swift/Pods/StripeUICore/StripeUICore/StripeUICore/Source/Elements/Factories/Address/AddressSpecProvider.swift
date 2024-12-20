@@ -22,7 +22,9 @@ let addressDataFilename = "localized_address_data"
     public var countries: [String] {
         return addressSpecs.map { $0.key }
     }
-    private let addressSpecsUpdateQueue: DispatchQueue = DispatchQueue(label: addressDataFilename, qos: .userInitiated)
+    private lazy var addressSpecsUpdateQueue: DispatchQueue = {
+        DispatchQueue(label: addressDataFilename, qos: .userInitiated)
+    }()
 
     /// Loads address specs with a completion block
     public func loadAddressSpecs(completion: (() -> Void)? = nil) {

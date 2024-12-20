@@ -24,8 +24,7 @@ public extension STPAPIClient {
         paymentMethodType: STPPaymentMethodType,
         customerName: String?,
         customerEmailAddress: String?,
-        linkMode: LinkMode?,
-        additionalParameters: [String: Any] = [:],
+        additionalParameteres: [String: Any] = [:],
         completion: @escaping STPLinkAccountSessionBlock
     ) {
         let endpoint: String = "setup_intents/\(setupIntentID)/link_account_sessions"
@@ -35,8 +34,7 @@ public extension STPAPIClient {
             paymentMethodType: paymentMethodType,
             customerName: customerName,
             customerEmailAddress: customerEmailAddress,
-            linkMode: linkMode,
-            additionalParameters: additionalParameters,
+            additionalParameteres: additionalParameteres,
             completion: completion
         )
     }
@@ -47,8 +45,7 @@ public extension STPAPIClient {
         paymentMethodType: STPPaymentMethodType,
         customerName: String?,
         customerEmailAddress: String?,
-        linkMode: LinkMode?,
-        additionalParameters: [String: Any] = [:],
+        additionalParameteres: [String: Any] = [:],
         completion: @escaping STPLinkAccountSessionBlock
     ) {
         let endpoint: String = "payment_intents/\(paymentIntentID)/link_account_sessions"
@@ -58,8 +55,7 @@ public extension STPAPIClient {
             paymentMethodType: paymentMethodType,
             customerName: customerName,
             customerEmailAddress: customerEmailAddress,
-            linkMode: linkMode,
-            additionalParameters: additionalParameters,
+            additionalParameteres: additionalParameteres,
             completion: completion
         )
     }
@@ -69,7 +65,6 @@ public extension STPAPIClient {
         amount: Int?,
         currency: String?,
         onBehalfOf: String?,
-        linkMode: LinkMode?,
         additionalParameters: [String: Any] = [:],
         completion: @escaping STPLinkAccountSessionBlock
     ) {
@@ -80,12 +75,6 @@ public extension STPAPIClient {
         parameters["amount"] = amount
         parameters["currency"] = currency
         parameters["on_behalf_of"] = onBehalfOf
-        
-        let hostedSurface = parameters["hosted_surface"]
-        if hostedSurface != nil {
-            parameters["link_mode"] = linkMode?.rawValue ?? "LINK_DISABLED"
-        }
-        
         APIRequest<LinkAccountSession>.post(
             with: self,
             endpoint: endpoint,
@@ -102,11 +91,10 @@ public extension STPAPIClient {
         paymentMethodType: STPPaymentMethodType,
         customerName: String?,
         customerEmailAddress: String?,
-        linkMode: LinkMode?,
-        additionalParameters: [String: Any],
+        additionalParameteres: [String: Any],
         completion: @escaping STPLinkAccountSessionBlock
     ) {
-        var parameters = additionalParameters
+        var parameters = additionalParameteres
         parameters["client_secret"] = clientSecret
 
         if let paymentMethodType = STPPaymentMethod.string(from: paymentMethodType) {
@@ -117,11 +105,6 @@ public extension STPAPIClient {
         }
         if let customerEmailAddress = customerEmailAddress {
             parameters["payment_method_data[billing_details][email]"] = customerEmailAddress
-        }
-        
-        let hostedSurface = parameters["hosted_surface"]
-        if hostedSurface != nil {
-            parameters["link_mode"] = linkMode?.rawValue ?? "LINK_DISABLED"
         }
 
         APIRequest<LinkAccountSession>.post(

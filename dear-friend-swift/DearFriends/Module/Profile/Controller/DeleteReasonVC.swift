@@ -14,6 +14,7 @@ struct Reason {
 
 class DeleteReasonVC: UIViewController {
     
+    @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var lbl_msgTitle: UILabel!
     @IBOutlet weak var lbl_deleteAccountTitle: UILabel!
     @IBOutlet weak var lbl_deleteAccountsubTitle: UILabel!
@@ -49,7 +50,7 @@ class DeleteReasonVC: UIViewController {
     
     //SET THE VIEW
     func setTheView() {
-        self.txtMessage.iq_addDone(target: self, action: #selector(self.btn_done_action), title: "Type message...")
+        buttonImageColor(btnImage: self.btnClose, imageName: "ic_close2", colorHex: .background)
         
         //SET FONT
         self.lbl_deleteAccountTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 20, text: "Delete Account")
@@ -57,7 +58,7 @@ class DeleteReasonVC: UIViewController {
         self.lbl_msgTitle.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 16, text: "Message")
         
         self.btn_delete.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20.0, text: "Delete Account")
-        self.btn_delete.backgroundColor = UIColor.init(named: "Button_BG_Color")
+        self.btn_delete.backgroundColor = .buttonBGColor
     }
     
     @objc func btn_done_action() {
@@ -131,7 +132,7 @@ extension DeleteReasonVC: UITableViewDataSource, UITableViewDelegate {
         let reason = reasons[indexPath.row]
         cell.btnSelect.isUserInteractionEnabled = false
         cell.btnSelect.isSelected = selectedReasonIndex == indexPath.row
-        cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 16, text: reason.title)
+        cell.lblTitle.configureLable(textColor: .background?.withAlphaComponent(0.7), fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 16, text: reason.title)
         cell.selectionStyle = .none
         cell.layoutIfNeeded()
         return cell

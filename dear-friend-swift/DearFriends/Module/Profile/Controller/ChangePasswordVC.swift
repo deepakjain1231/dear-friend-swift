@@ -70,7 +70,7 @@ class ChangePasswordVC: UIViewController {
         self.viewConfirmPassword.viewBorderCorneRadius(borderColour: .secondary)
         
         self.btnSubmit.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20.0, text: "Continue")
-        self.btnSubmit.backgroundColor = UIColor.init(named: "Button_BG_Color")
+        self.btnSubmit.backgroundColor = .buttonBGColor
     }
     
     // MARK: - Other Functions

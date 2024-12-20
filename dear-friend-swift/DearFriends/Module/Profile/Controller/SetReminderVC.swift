@@ -77,7 +77,7 @@ class SetReminderVC: UIViewController {
         self.txtTime.viewBorderCorneRadius(borderColour: .secondary)
         
         self.btn_Submit.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20.0, text: "Apply")
-        self.btn_Submit.backgroundColor = UIColor.init(named: "Button_BG_Color")
+        self.btn_Submit.backgroundColor = .buttonBGColor
     }
     
     // MARK: - Other Functions

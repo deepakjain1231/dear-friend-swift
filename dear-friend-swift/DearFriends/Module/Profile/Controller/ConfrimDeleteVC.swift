@@ -40,7 +40,7 @@ class ConfrimDeleteVC: BottomPopupViewController {
     
     //SET THE VIEW
     func setTheView() {
-        self.txtExplenation.iq_addDone(target: self, action: #selector(self.btn_done_action), title: "Brief explanation...")
+//        self.txtExplenation.iq_addDone(target: self, action: #selector(self.btn_done_action), title: "Brief explanation...")
         
         //SET FONT
         self.lbl_ConfirmDeleteTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 20, text: "Confirm Delete")
@@ -51,7 +51,7 @@ class ConfrimDeleteVC: BottomPopupViewController {
         
         
         self.btn_delete.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20.0, text: "Confirm Delete")
-        self.btn_delete.backgroundColor = UIColor.init(named: "Button_BG_Color")
+        self.btn_delete.backgroundColor = .buttonBGColor
     }
     
     

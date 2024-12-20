@@ -735,7 +735,6 @@ public class STPPaymentHandler: NSObject {
             .sunbit,
             .billie,
             .satispay,
-            .crypto,
             .konbini,
             .promptPay,
             .swish,
@@ -1099,7 +1098,7 @@ public class STPPaymentHandler: NSObject {
                                 serverKeyID: useStripeSDK.directoryServerKeyID,
                                 certificateString: useStripeSDK.directoryServerCertificate ?? "",
                                 rootCertificateStrings: useStripeSDK.rootCertificateStrings ?? [],
-                                withProtocolVersion: "2.2.0"
+                                withProtocolVersion: "2.1.0"
                             )
                             authRequestParams = transaction?.createAuthenticationRequestParameters()
                         },

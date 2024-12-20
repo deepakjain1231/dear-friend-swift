@@ -9,6 +9,7 @@ import UIKit
 
 class MyPreferencesCVC: UICollectionViewCell {
 
+    @IBOutlet weak var imgBG: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var vwMain: UIView!

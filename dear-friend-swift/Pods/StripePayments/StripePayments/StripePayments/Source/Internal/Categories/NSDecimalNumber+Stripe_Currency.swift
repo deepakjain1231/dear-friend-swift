@@ -18,7 +18,6 @@ extension NSDecimalNumber {
         "LAK": 2,
         "RSD": 2,
         "IDR": 2,
-        "ISK": 2,
     ]
 
     @objc @_spi(STP) public class func stp_decimalNumber(

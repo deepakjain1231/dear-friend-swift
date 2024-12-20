@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KZr-E6-Dwh" customClass="MyHistoryCVC" customModule="DearFriends" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KZr-E6-Dwh" customClass="MyHistoryCVC" customModule="Dear_Friends" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="322" height="287"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -26,6 +25,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lL6-qM-qJc">
                         <rect key="frame" x="20" y="8" width="282" height="80"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Cn7-FF-2zs">
+                                <rect key="frame" x="0.0" y="0.0" width="282" height="80"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_temp3" translatesAutoresizingMaskIntoConstraints="NO" id="Rp3-Np-RQJ">
                                 <rect key="frame" x="8" y="8" width="64" height="64"/>
                                 <constraints>
@@ -71,7 +73,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="#212159"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="iuJ-s5-aZy" secondAttribute="trailing" constant="12" id="6Kd-Hy-DFI"/>
                             <constraint firstItem="iuJ-s5-aZy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jHE-Cj-Ur4" secondAttribute="trailing" constant="12" id="9mL-2l-9Jr"/>
@@ -79,8 +81,12 @@
                             <constraint firstItem="jHE-Cj-Ur4" firstAttribute="leading" secondItem="Rp3-Np-RQJ" secondAttribute="trailing" constant="16" id="Oxg-zq-wTc"/>
                             <constraint firstItem="jHE-Cj-Ur4" firstAttribute="centerY" secondItem="lL6-qM-qJc" secondAttribute="centerY" id="PgN-49-J47"/>
                             <constraint firstItem="Rp3-Np-RQJ" firstAttribute="leading" secondItem="lL6-qM-qJc" secondAttribute="leading" constant="8" id="RCd-7G-l5G"/>
+                            <constraint firstItem="Cn7-FF-2zs" firstAttribute="leading" secondItem="lL6-qM-qJc" secondAttribute="leading" id="chl-0R-v0v"/>
                             <constraint firstAttribute="height" constant="80" id="eZt-Bh-nTM"/>
                             <constraint firstItem="Rp3-Np-RQJ" firstAttribute="centerY" secondItem="lL6-qM-qJc" secondAttribute="centerY" id="jiF-9q-0qC"/>
+                            <constraint firstItem="Cn7-FF-2zs" firstAttribute="top" secondItem="lL6-qM-qJc" secondAttribute="top" id="mab-Sy-v5W"/>
+                            <constraint firstAttribute="bottom" secondItem="Cn7-FF-2zs" secondAttribute="bottom" id="nHI-sG-dXt"/>
+                            <constraint firstAttribute="trailing" secondItem="Cn7-FF-2zs" secondAttribute="trailing" id="xjU-nT-pGr"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -141,11 +147,9 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="ic_list_bg" width="335" height="80"/>
         <image name="ic_more" width="30" height="30"/>
         <image name="ic_new_premium" width="335" height="80"/>
         <image name="ic_temp3" width="68.666664123535156" height="68.666664123535156"/>
-        <namedColor name="#212159">
-            <color red="0.12941176470588237" green="0.12941176470588237" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

@@ -22,17 +22,15 @@ import Foundation
 
     let type: IDNumberType?
     public let label: String
-    public let defaultValue: String?
 
     /**
      - Parameters:
        - type: The type of ID number that should be validated in this input field. If the ID type is unknown, passing `nil` will produce a configuration with no restrictions on the input.
        - label: The label of the field
      */
-    public init(type: IDNumberType?, label: String, defaultValue: String?) {
+    public init(type: IDNumberType?, label: String) {
         self.type = type
         self.label = label
-        self.defaultValue = defaultValue
     }
 
     public var disallowedCharacters: CharacterSet {

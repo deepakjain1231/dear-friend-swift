@@ -9,12 +9,13 @@ import Foundation
 import WebKit
 
 extension HCaptchaWebViewManager: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
+                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if navigationAction.targetFrame == nil, let url = navigationAction.request.url, urlOpener.canOpenURL(url) {
             urlOpener.openURL(url)
-            return .cancel
         }
-        return .allow
+        decisionHandler(WKNavigationActionPolicy.allow)
     }
 
     /// Tells the delegate that an error occurred during navigation.

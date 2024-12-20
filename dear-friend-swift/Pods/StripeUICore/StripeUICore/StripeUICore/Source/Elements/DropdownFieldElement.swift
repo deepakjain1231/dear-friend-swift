@@ -72,7 +72,7 @@ import UIKit
     public var didPresent: DidPresent?
     public var didUpdate: DidUpdateSelectedIndex?
     public var didTapClose: DidTapClose?
-    public let theme: ElementsAppearance
+    public let theme: ElementsUITheme
     public let hasPadding: Bool
 
     /// A label displayed in the dropdown field UI e.g. "Country or region" for a country dropdown
@@ -145,7 +145,7 @@ import UIKit
         items: [DropdownItem],
         defaultIndex: Int = 0,
         label: String?,
-        theme: ElementsAppearance = .default,
+        theme: ElementsUITheme = .default,
         hasPadding: Bool = true,
         disableDropdownWithSingleElement: Bool = false,
         isOptional: Bool = false,

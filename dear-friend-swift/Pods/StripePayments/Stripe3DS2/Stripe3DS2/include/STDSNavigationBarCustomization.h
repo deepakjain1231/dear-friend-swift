@@ -25,13 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)defaultSettings;
 
 /**
- The scroll edge appearance to set on the navigation bar.
- 
- Defaults to `nil`
- */
-@property (nonatomic, nullable) UINavigationBarAppearance *scrollEdgeAppearance;
-
-/**
  The tint color of the navigation bar background.
  Defaults to nil.
  */

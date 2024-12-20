@@ -37,7 +37,7 @@ import Foundation
         return false
     }
 
-    static let UnknownString = "STPSTRINGNOTFOUND"
+    static let UnknownString = "STPStringNotFound"
 
     public class func localizedStripeString(
         forKey key: String,

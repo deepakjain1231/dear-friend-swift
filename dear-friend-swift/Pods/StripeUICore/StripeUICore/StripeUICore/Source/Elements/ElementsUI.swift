@@ -35,7 +35,7 @@ import UIKit
         )
     }()
 
-    public static func makeErrorLabel(theme: ElementsAppearance) -> UILabel {
+    public static func makeErrorLabel(theme: ElementsUITheme) -> UILabel {
         let label = UILabel()
         label.font = theme.fonts.footnote
         label.textColor = theme.colors.danger
@@ -44,19 +44,7 @@ import UIKit
         return label
     }
 
-    public static func makeSmallFootnote(theme: ElementsAppearance) -> UITextView {
-        let textView = UITextView()
-        textView.isScrollEnabled = false
-        textView.isEditable = false
-        textView.font = theme.fonts.smallFootnote
-        textView.backgroundColor = .clear
-        textView.textColor = theme.colors.secondaryText
-        textView.linkTextAttributes = [.foregroundColor: theme.colors.primary]
-        textView.isUserInteractionEnabled = false
-        return textView
-    }
-
-    public static func makeNoticeTextField(theme: ElementsAppearance) -> UITextView {
+    public static func makeNoticeTextField(theme: ElementsUITheme) -> UITextView {
         let textView = UITextView()
         textView.isScrollEnabled = false
         textView.isEditable = false
@@ -67,7 +55,7 @@ import UIKit
         return textView
     }
 
-    public static func makeSectionTitleLabel(theme: ElementsAppearance) -> UILabel {
+    public static func makeSectionTitleLabel(theme: ElementsUITheme) -> UILabel {
         let label = UILabel()
         label.font = theme.fonts.sectionHeader
         label.textColor = theme.colors.secondaryText
@@ -77,11 +65,10 @@ import UIKit
 }
 
 /// Describes the appearance of an Element
-/// A superset of `StripePaymentSheet.PaymentSheetAppearance`. This exists b/c we can't see that type from `StripeUICore`, and we don't want to the public StripePaymentSheet API to be a typealias of this.
-@_spi(STP) public struct ElementsAppearance {
+@_spi(STP) public struct ElementsUITheme {
 
     /// The default appearance used for Elements
-    public static let `default` = ElementsAppearance()
+    public static let `default` = ElementsUITheme()
 
     public var fonts = Font()
     public var colors = Color()
@@ -89,6 +76,12 @@ import UIKit
     public var borderWidth = ElementsUI.fieldBorderWidth
     public var cornerRadius = ElementsUI.defaultCornerRadius
     public var shadow: Shadow? = Shadow()
+
+    /// Checks if the theme is bright.
+    public var isBright: Bool { colors.background.isBright }
+
+    /// Checks if the theme is dark.
+    public var isDark: Bool { !isBright }
 
     public struct Font {
         public init() {}
@@ -100,7 +93,6 @@ import UIKit
                                             withTextStyle: .caption1,
                                             maximumPointSize: 20)
         public var footnote = UIFont.preferredFont(forTextStyle: .footnote, weight: .regular, maximumPointSize: 20)
-        public var smallFootnote = UIFont.preferredFont(forTextStyle: .footnote, weight: .medium, maximumPointSize: 10)
         public var footnoteEmphasis = UIFont.preferredFont(forTextStyle: .footnote, weight: .medium, maximumPointSize: 20)
     }
 
@@ -109,7 +101,7 @@ import UIKit
 
         public var primary = UIColor.systemBlue
         public var parentBackground = UIColor.systemBackground
-        public var componentBackground = ElementsUI.backgroundColor
+        public var background = ElementsUI.backgroundColor
         public var disabledBackground = ElementsUI.disabledBackgroundColor
         public var border = ElementsUI.fieldBorderColor
         public var divider = ElementsUI.fieldBorderColor

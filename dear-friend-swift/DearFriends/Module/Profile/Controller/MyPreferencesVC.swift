@@ -40,7 +40,7 @@ class MyPreferencesVC: BaseVC {
         self.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "My Preferences")
         
         self.btn_Save.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20.0, text: "Update")
-        self.btn_Save.backgroundColor = UIColor.init(named: "Button_BG_Color")
+        self.btn_Save.backgroundColor = .buttonBGColor
     }
     
     // MARK: - Other Functions

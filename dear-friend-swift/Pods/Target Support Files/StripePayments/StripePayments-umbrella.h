@@ -11,7 +11,6 @@
 #endif
 
 #import "STDSAlreadyInitializedException.h"
-#import "STDSAnalyticsDelegate.h"
 #import "STDSAuthenticationRequestParameters.h"
 #import "STDSAuthenticationResponse.h"
 #import "STDSButtonCustomization.h"

@@ -285,7 +285,7 @@
 		43EAD8542A1238B100B58953 /* SubscriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAD8532A1238B100B58953 /* SubscriptionVC.swift */; };
 		43EAD8562A12415000B58953 /* MyPreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAD8552A12415000B58953 /* MyPreferencesVC.swift */; };
 		43F176852A0FAF8F00BD8426 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F176842A0FAF8F00BD8426 /* EditProfileVC.swift */; };
-		61533049751D7E930283ECB7 /* Pods_Dear_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A447E4F1234647BDFBC2B322 /* Pods_Dear_Friends.framework */; };
+		76F12D3B505BCD6CADDF6717 /* Pods_Dear_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9A1D836F5BB6719356B24F /* Pods_Dear_Friends.framework */; };
 		BD3162EA2CCFA6B00058D019 /* CustomLaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D4A9222A4C52F400C61FF0 /* CustomLaunchVC.swift */; };
 		BD38DE362CC61B3E00CD41A4 /* HomeContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38DE352CC61B3E00CD41A4 /* HomeContentData.swift */; };
 		BD38DE392CC61B7200CD41A4 /* AuthContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD38DE372CC61B7200CD41A4 /* AuthContent.swift */; };
@@ -352,6 +352,10 @@
 		C50832472CF9FD9C0027C450 /* ExploreThemeCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50832462CF9FD9C0027C450 /* ExploreThemeCategoryVC.swift */; };
 		C515573B2CF88577009045CA /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C515573A2CF88577009045CA /* PopupViewController.swift */; };
 		C515581F2CF88A7C009045CA /* Colour.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C515581E2CF88A7C009045CA /* Colour.xcassets */; };
+		C53A2B472D1537F200DB828D /* AppRatePopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = C53A2B412D1537F200DB828D /* AppRatePopup.xib */; };
+		C53A2B482D1537F200DB828D /* PreferencePopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = C53A2B442D1537F200DB828D /* PreferencePopup.xib */; };
+		C53A2B492D1537F200DB828D /* AppRatePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A2B402D1537F200DB828D /* AppRatePopup.swift */; };
+		C53A2B4A2D1537F200DB828D /* PreferencePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A2B432D1537F200DB828D /* PreferencePopup.swift */; };
 		C564CF492D007D8A00ECBDCE /* LinkUnlinkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564CF472D007D8A00ECBDCE /* LinkUnlinkVC.swift */; };
 		C564CF4B2D007DA900ECBDCE /* NewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564CF4A2D007DA900ECBDCE /* NewPasswordVC.swift */; };
 		C58B067F2D06B98200382EC4 /* OTPTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B067E2D06B98200382EC4 /* OTPTextFieldDelegate.swift */; };
@@ -368,6 +372,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11CD7D134A180267A2A4AEDA /* Pods-Dear Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear Friends.debug.xcconfig"; path = "Target Support Files/Pods-Dear Friends/Pods-Dear Friends.debug.xcconfig"; sourceTree = "<group>"; };
 		29028C7D2A02776000D0A747 /* HomeCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCVC.swift; sourceTree = "<group>"; };
 		29028C7E2A02776000D0A747 /* HomeCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryCVC.xib; sourceTree = "<group>"; };
 		290326352B27143B00E5D289 /* BGAudioListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGAudioListModel.swift; sourceTree = "<group>"; };
@@ -527,7 +532,6 @@
 		29F5C3A22B2C2177007929C4 /* TimelineTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineTVC.xib; sourceTree = "<group>"; };
 		29FE8FDC2AE66B39009CD54D /* PaymentSuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessVC.swift; sourceTree = "<group>"; };
 		29FE8FDE2AE6721B009CD54D /* ChatMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageVC.swift; sourceTree = "<group>"; };
-		3F7D8666C98318936CC6045F /* Pods-Dear Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear Friends.debug.xcconfig"; path = "Target Support Files/Pods-Dear Friends/Pods-Dear Friends.debug.xcconfig"; sourceTree = "<group>"; };
 		43098B7C2A1731C0003D6307 /* DearFriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DearFriends.entitlements; sourceTree = "<group>"; };
 		432CABD42A24B7AF0039B55C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		432CABD72A24BA250039B55C /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
@@ -617,9 +621,8 @@
 		43EAD8532A1238B100B58953 /* SubscriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionVC.swift; sourceTree = "<group>"; };
 		43EAD8552A12415000B58953 /* MyPreferencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPreferencesVC.swift; sourceTree = "<group>"; };
 		43F176842A0FAF8F00BD8426 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
-		4B4E8FBC5D671E99CB84D9A4 /* Pods-DearFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DearFriends.release.xcconfig"; path = "Target Support Files/Pods-DearFriends/Pods-DearFriends.release.xcconfig"; sourceTree = "<group>"; };
-		55DD02916EC1B85363CCD0AC /* Pods-Dear Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear Friends.release.xcconfig"; path = "Target Support Files/Pods-Dear Friends/Pods-Dear Friends.release.xcconfig"; sourceTree = "<group>"; };
-		A447E4F1234647BDFBC2B322 /* Pods_Dear_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dear_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EDD64AAD7BC9FDBF6D3DC70 /* Pods-Dear Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear Friends.release.xcconfig"; path = "Target Support Files/Pods-Dear Friends/Pods-Dear Friends.release.xcconfig"; sourceTree = "<group>"; };
+		7E9A1D836F5BB6719356B24F /* Pods_Dear_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dear_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD38DE352CC61B3E00CD41A4 /* HomeContentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContentData.swift; sourceTree = "<group>"; };
 		BD38DE372CC61B7200CD41A4 /* AuthContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthContent.swift; sourceTree = "<group>"; };
 		BD38DE3A2CC61BD200CD41A4 /* DeleteReasonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteReasonVC.swift; sourceTree = "<group>"; };
@@ -685,6 +688,10 @@
 		C50832462CF9FD9C0027C450 /* ExploreThemeCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreThemeCategoryVC.swift; sourceTree = "<group>"; };
 		C515573A2CF88577009045CA /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		C515581E2CF88A7C009045CA /* Colour.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colour.xcassets; sourceTree = "<group>"; };
+		C53A2B402D1537F200DB828D /* AppRatePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRatePopup.swift; sourceTree = "<group>"; };
+		C53A2B412D1537F200DB828D /* AppRatePopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppRatePopup.xib; sourceTree = "<group>"; };
+		C53A2B432D1537F200DB828D /* PreferencePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencePopup.swift; sourceTree = "<group>"; };
+		C53A2B442D1537F200DB828D /* PreferencePopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencePopup.xib; sourceTree = "<group>"; };
 		C564CF472D007D8A00ECBDCE /* LinkUnlinkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkUnlinkVC.swift; sourceTree = "<group>"; };
 		C564CF4A2D007DA900ECBDCE /* NewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordVC.swift; sourceTree = "<group>"; };
 		C58B067E2D06B98200382EC4 /* OTPTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextFieldDelegate.swift; sourceTree = "<group>"; };
@@ -698,7 +705,6 @@
 		C5DD7B902CFDD7CE004872D0 /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
 		C5E0326D2D06D30C0010AC5D /* Play-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Play-Regular.ttf"; sourceTree = "<group>"; };
 		C5E0326F2D06D3950010AC5D /* Rambla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rambla-Bold.ttf"; sourceTree = "<group>"; };
-		CCCAE63BF69C0581E975907A /* Pods-DearFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DearFriends.debug.xcconfig"; path = "Target Support Files/Pods-DearFriends/Pods-DearFriends.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -749,7 +755,7 @@
 				296DC5E42C48E76000A70083 /* FacebookGamingServices in Frameworks */,
 				29D3C7022C4A7CD0008862D5 /* FirebaseDynamicLinks in Frameworks */,
 				29D3C7102C4A7CD0008862D5 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
-				61533049751D7E930283ECB7 /* Pods_Dear_Friends.framework in Frameworks */,
+				76F12D3B505BCD6CADDF6717 /* Pods_Dear_Friends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1924,10 +1930,8 @@
 		7B5FAF44246CBA4E7A07A646 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CCCAE63BF69C0581E975907A /* Pods-DearFriends.debug.xcconfig */,
-				4B4E8FBC5D671E99CB84D9A4 /* Pods-DearFriends.release.xcconfig */,
-				3F7D8666C98318936CC6045F /* Pods-Dear Friends.debug.xcconfig */,
-				55DD02916EC1B85363CCD0AC /* Pods-Dear Friends.release.xcconfig */,
+				11CD7D134A180267A2A4AEDA /* Pods-Dear Friends.debug.xcconfig */,
+				4EDD64AAD7BC9FDBF6D3DC70 /* Pods-Dear Friends.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1943,7 +1947,7 @@
 				291E26ED2C4A7052006114E9 /* EventKit.framework */,
 				291E26EE2C4A7052006114E9 /* EventKitUI.framework */,
 				29AD52812A2F05E500512272 /* StoreKit.framework */,
-				A447E4F1234647BDFBC2B322 /* Pods_Dear_Friends.framework */,
+				7E9A1D836F5BB6719356B24F /* Pods_Dear_Friends.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2149,6 +2153,33 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		C53A2B422D1537F200DB828D /* AppRatePopup */ = {
+			isa = PBXGroup;
+			children = (
+				C53A2B402D1537F200DB828D /* AppRatePopup.swift */,
+				C53A2B412D1537F200DB828D /* AppRatePopup.xib */,
+			);
+			path = AppRatePopup;
+			sourceTree = "<group>";
+		};
+		C53A2B452D1537F200DB828D /* PreferencePopup */ = {
+			isa = PBXGroup;
+			children = (
+				C53A2B432D1537F200DB828D /* PreferencePopup.swift */,
+				C53A2B442D1537F200DB828D /* PreferencePopup.xib */,
+			);
+			path = PreferencePopup;
+			sourceTree = "<group>";
+		};
+		C53A2B462D1537F200DB828D /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				C53A2B422D1537F200DB828D /* AppRatePopup */,
+				C53A2B452D1537F200DB828D /* PreferencePopup */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
 		C564CF482D007D8A00ECBDCE /* Link Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -2183,6 +2214,7 @@
 			isa = PBXGroup;
 			children = (
 				C58B06922D06C30500382EC4 /* Global.swift */,
+				C53A2B462D1537F200DB828D /* PopUp */,
 				C58B06882D06C2C100382EC4 /* Font */,
 				C58B068C2D06C2C100382EC4 /* UIKit Extension */,
 			);
@@ -2196,12 +2228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4337BA17294D80B40090E0A5 /* Build configuration list for PBXNativeTarget "Dear Friends" */;
 			buildPhases = (
-				1A5B782B3A3E849517C07517 /* [CP] Check Pods Manifest.lock */,
+				640652904939D2F07A695868 /* [CP] Check Pods Manifest.lock */,
 				4337B9FF294D80B30090E0A5 /* Sources */,
 				4337BA00294D80B30090E0A5 /* Frameworks */,
 				4337BA01294D80B30090E0A5 /* Resources */,
-				0978DE6175E9E25B8B12A056 /* [CP] Embed Pods Frameworks */,
-				F244AF6C80B15D1C1794358D /* [CP] Copy Pods Resources */,
+				CC150B8FC816606DCDF2D106 /* [CP] Embed Pods Frameworks */,
+				48B84A85F6133EB6D9B5F5C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2307,6 +2339,8 @@
 				29CC6E2D29FFB90D00638A05 /* Poppins-BoldItalic.otf in Resources */,
 				29CC6E2729FFB90D00638A05 /* Poppins-SemiBoldItalic.otf in Resources */,
 				C5E0326E2D06D30C0010AC5D /* Play-Regular.ttf in Resources */,
+				C53A2B472D1537F200DB828D /* AppRatePopup.xib in Resources */,
+				C53A2B482D1537F200DB828D /* PreferencePopup.xib in Resources */,
 				29CC6E3629FFB90D00638A05 /* Poppins-BlackItalic.otf in Resources */,
 				2989A21F2B9EEA15007FE124 /* TimeHeaderTVC.xib in Resources */,
 				29CC6E3829FFB90D00638A05 /* Poppins-ExtraBold.otf in Resources */,
@@ -2375,24 +2409,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0978DE6175E9E25B8B12A056 /* [CP] Embed Pods Frameworks */ = {
+		48B84A85F6133EB6D9B5F5C3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1A5B782B3A3E849517C07517 /* [CP] Check Pods Manifest.lock */ = {
+		640652904939D2F07A695868 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2414,21 +2448,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F244AF6C80B15D1C1794358D /* [CP] Copy Pods Resources */ = {
+		CC150B8FC816606DCDF2D106 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dear Friends/Pods-Dear Friends-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2559,6 +2593,8 @@
 				4337BA80294D812D0090E0A5 /* AppCommonTextField.swift in Sources */,
 				43908ADF2A25D2DC004F65CA /* HomeDataModel.swift in Sources */,
 				29AD52892A2F46D300512272 /* DownloadCoreDataModel.xcdatamodeld in Sources */,
+				C53A2B492D1537F200DB828D /* AppRatePopup.swift in Sources */,
+				C53A2B4A2D1537F200DB828D /* PreferencePopup.swift in Sources */,
 				43D80B7B2A14E3F800229B87 /* FavouriteCVC.swift in Sources */,
 				299099CD2A2E1A80008CBED7 /* ReminderListingModel.swift in Sources */,
 				43EAD8562A12415000B58953 /* MyPreferencesVC.swift in Sources */,
@@ -2816,14 +2852,14 @@
 		};
 		4337BA18294D80B40090E0A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F7D8666C98318936CC6045F /* Pods-Dear Friends.debug.xcconfig */;
+			baseConfigurationReference = 11CD7D134A180267A2A4AEDA /* Pods-Dear Friends.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DearFriends/DearFriends.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.8;
+				CURRENT_PROJECT_VERSION = 0.9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = BG93X8FNNQ;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -3027,14 +3063,14 @@
 		};
 		4337BA19294D80B40090E0A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55DD02916EC1B85363CCD0AC /* Pods-Dear Friends.release.xcconfig */;
+			baseConfigurationReference = 4EDD64AAD7BC9FDBF6D3DC70 /* Pods-Dear Friends.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DearFriends/DearFriends.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.8;
+				CURRENT_PROJECT_VERSION = 0.9;
 				DEVELOPMENT_TEAM = BG93X8FNNQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DearFriends/AppSetting/Info.plist;

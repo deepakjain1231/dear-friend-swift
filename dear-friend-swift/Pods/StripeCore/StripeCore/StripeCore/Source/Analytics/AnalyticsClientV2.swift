@@ -90,14 +90,7 @@ import UIKit
         let payload = payload(withEventName: eventName, parameters: parameters)
 
         #if DEBUG
-        let jsonString = String(
-            data: try! JSONSerialization.data(
-                withJSONObject: payload,
-                options: [.sortedKeys, .prettyPrinted]
-            ),
-            encoding: .utf8
-        )!
-        NSLog("LOG ANALYTICS: \(jsonString)")
+            NSLog("LOG ANALYTICS: \(payload)")
         #endif
 
         guard AnalyticsClientV2.shouldCollectAnalytics else {
@@ -141,9 +134,6 @@ extension AnalyticsClientV2Protocol {
             "install": InstallMethod.current.rawValue,
             "app_bundle_id": Bundle.stp_applicationBundleId() ?? "",
         ]
-        if let deviceId = UIDevice.current.identifierForVendor?.uuidString {
-            payload["device_id"] = deviceId
-        }
 
         return payload
     }

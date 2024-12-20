@@ -55,15 +55,10 @@ typedef void (^GADAppOpenAdLoadCompletionHandler)(GADAppOpenAd *_Nullable appOpe
 /// Called when the ad is estimated to have earned money. Available for allowlisted accounts only.
 @property(nonatomic, nullable, copy) GADPaidEventHandler paidEventHandler;
 
-/// Indicates whether the app open ad can be presented from the provided root view controller. Must
-/// be called on the main thread.
-///
-/// - Parameters:
-///   - rootViewController: The root view controller to present the ad from. If `rootViewController`
-/// is `nil`, uses the top view controller of the application's main window.
-///   - error: Sets the error out parameter if the ad can't be presented.
-/// - Returns: `YES` if the app open ad can be presented from the provided root view controller,
-/// `NO` otherwise.
+/// Returns whether the app open ad can be presented from the provided root view controller. Sets
+/// the error out parameter if the app open ad can't be presented. Must be called on the main
+/// thread. If rootViewController is nil, uses the top view controller of the application's main
+/// window.
 - (BOOL)canPresentFromRootViewController:(nullable UIViewController *)rootViewController
                                    error:(NSError *_Nullable __autoreleasing *_Nullable)error;
 

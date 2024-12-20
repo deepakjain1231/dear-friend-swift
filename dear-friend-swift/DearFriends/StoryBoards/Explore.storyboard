@@ -987,14 +987,14 @@
                                             <action selector="sliderChanged:" destination="9Kn-kz-SR3" eventType="valueChanged" id="hyR-ad-98h"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjP-gY-EyT">
-                                        <rect key="frame" x="0.0" y="34" width="31.5" height="15.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjP-gY-EyT">
+                                        <rect key="frame" x="0.0" y="34" width="35" height="15.5"/>
                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                         <color key="textColor" name="#E4E1F8"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFR-kz-y7Y">
-                                        <rect key="frame" x="344" y="34" width="30" height="15.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFR-kz-y7Y">
+                                        <rect key="frame" x="339" y="34" width="35" height="15.5"/>
                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                         <color key="textColor" name="#E4E1F8"/>
                                         <nil key="highlightedColor"/>
@@ -1186,7 +1186,6 @@
                         <outlet property="lblName" destination="Xuk-q1-9GD" id="mGf-6m-KRe"/>
                         <outlet property="lblNarrated" destination="LOW-Zm-iwb" id="C8u-xo-3kw"/>
                         <outlet property="lblTitle" destination="MzD-i3-76H" id="5qR-FP-mR8"/>
-                        <outlet property="progress" destination="q1M-xP-dlr" id="gXT-GM-CgW"/>
                         <outlet property="stackControls" destination="AHs-25-ejt" id="kVm-CT-rf3"/>
                         <outlet property="stackMore" destination="YQI-oc-0JZ" id="Tac-qu-aI5"/>
                         <outlet property="vwBanner" destination="Lqy-QE-Xi0" id="q7Y-0s-qCY"/>
@@ -2136,7 +2135,7 @@
             <color red="0.89411764705882357" green="0.88235294117647056" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="secondary">
-            <color red="0.4779999852180481" green="0.4779999852180481" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.47450980392156861" green="0.47450980392156861" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

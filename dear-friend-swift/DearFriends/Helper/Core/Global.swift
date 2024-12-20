@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import IQKeyboardManagerSwift
 
 let GradientBGColors = [UIColor.init(hex: "0F143A"), UIColor.init(hex: "251B62")]
 
@@ -135,6 +136,14 @@ func main_thread(closure:@escaping ()->()) {
 //
 //    }
 //}
+
+//MARK: - SET KEYBOARD
+@MainActor func setupKeyboard(_ enable: Bool) {
+    IQKeyboardManager.shared.enable = enable
+    IQKeyboardManager.shared.enableAutoToolbar = enable
+    IQKeyboardManager.shared.toolbarConfiguration.placeholderConfiguration.showPlaceholder = !enable
+    IQKeyboardManager.shared.toolbarConfiguration.previousNextDisplayMode = .alwaysShow
+}
 
 //............................... SET COLOR ...............................................//
 

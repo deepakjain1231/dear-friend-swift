@@ -38,12 +38,12 @@ class ChatMessageVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        IQKeyboardManager.shared.isEnabled = false
+        IQKeyboardManager.shared.enable = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        IQKeyboardManager.shared.isEnabled = true
+        IQKeyboardManager.shared.enable = true
     }
     
     // MARK: - Other Functions

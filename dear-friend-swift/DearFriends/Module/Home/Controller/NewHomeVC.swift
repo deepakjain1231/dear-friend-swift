@@ -116,91 +116,7 @@ class NewHomeVC: UIViewController {
             self.present(vc, animated: true, completion: nil)
         }
     }
-    
-    private func shouldShowRatingPrompt() -> Bool {
-        // Check if the user has already rated the app (replace with your rating logic)
-        if UserDefaults.standard.bool(forKey: userRatedApp) {
-            return false
-        }
 
-        // Get the last prompt date and prompt count
-        if let lastPromptDate = UserDefaults.standard.object(forKey: lastPromptKey) as? Date {
-            let promptCount = UserDefaults.standard.integer(forKey: maxPromptCountKey)
-            
-            // Calculate the time elapsed since the last prompt
-            let timeElapsed = Date().timeIntervalSince(lastPromptDate)
-            
-            // Check if 7 days have passed and the prompt count is less than the maximum
-            return timeElapsed >= 7 * 24 * 60 * 60 && promptCount < maxPromptCount
-        } else {
-            UserDefaults.standard.set(Date(), forKey: lastPromptKey)
-            return false
-        }
-    }
-
-    private func showRatingPromptIfNeeded() {
-        if shouldShowRatingPrompt() {
-            // Show your rating popup here
-            showRatingPopup()
-            let promptCount = UserDefaults.standard.integer(forKey: maxPromptCountKey)
-            // Update the last prompt date and increment the prompt count
-            UserDefaults.standard.set(Date(), forKey: lastPromptKey)
-            UserDefaults.standard.set(promptCount + 1, forKey: maxPromptCountKey)
-        }
-        else{
-            self.showPreferencePromptIfNeeded()
-        }
-    }
-    
-    
-    func showRatingPopup() {
-        let popupVC: AppRatePopupVC = AppRatePopupVC.instantiate(appStoryboard: .Explore)
-        DispatchQueue.main.async {
-            if let topVc = UIApplication.topViewController2() {
-                topVc.present(popupVC, animated: true, completion: nil)
-            }
-        }
-    }
-    
-    
-    
-    private func shouldShowPreferencePrompt() -> Bool {
-        // Check if the user has already rated the app (replace with your rating logic)
-        if UserDefaults.standard.bool(forKey: updatePreferences) {
-            return false
-        }
-
-        // Get the last prompt date and prompt count
-        if let lastPromptDate = UserDefaults.standard.object(forKey: lastPreferenceDate) as? Date {
-            
-            // Calculate the time elapsed since the last prompt
-            let timeElapsed = Date().timeIntervalSince(lastPromptDate)
-            
-            // Check if 7 days have passed and the prompt count is less than the maximum
-            return timeElapsed >= 1 * 24 * 60 * 60
-        } else {
-            UserDefaults.standard.set(Date(), forKey: lastPreferenceDate)
-            return false
-        }
-    }
-    
-    private func showPreferencePromptIfNeeded() {
-        if shouldShowPreferencePrompt() {
-            // Show your rating popup here
-            showPreferencePopup()
-            // Update the last prompt date and increment the prompt count
-            UserDefaults.standard.set(Date(), forKey: lastPreferenceDate)
-        }
-    }
-    
-    func showPreferencePopup() {
-//        let popupVC: PreferencePopupVC = PreferencePopupVC.instantiate(appStoryboard: .Explore)
-//        DispatchQueue.main.async {
-//            if let topVc = UIApplication.topViewController2() {
-//                topVc.present(popupVC, animated: true, completion: nil)
-//            }
-//        }
-    }
     
     @objc func handleRefreshControl() {
         
@@ -675,4 +591,104 @@ extension NewHomeVC: UITableViewDelegate, UITableViewDataSource {
         vc.homeVM = self.homeVM
         self.navigationController?.pushViewController(vc, animated: true)
     }
+}
+
+
+//MARK: - OPNE POPUP
+
+extension NewHomeVC : PreferenceProtocol{
+    
+    private func shouldShowRatingPrompt() -> Bool {
+        // Check if the user has already rated the app (replace with your rating logic)
+        if UserDefaults.standard.bool(forKey: userRatedApp) {
+            return false
+        }
+
+        // Get the last prompt date and prompt count
+        if let lastPromptDate = UserDefaults.standard.object(forKey: lastPromptKey) as? Date {
+            let promptCount = UserDefaults.standard.integer(forKey: maxPromptCountKey)
+            
+            // Calculate the time elapsed since the last prompt
+            let timeElapsed = Date().timeIntervalSince(lastPromptDate)
+            
+            // Check if 7 days have passed and the prompt count is less than the maximum
+            return timeElapsed >= 7 * 24 * 60 * 60 && promptCount < maxPromptCount
+        } else {
+            UserDefaults.standard.set(Date(), forKey: lastPromptKey)
+            return false
+        }
+    }
+
+    private func showRatingPromptIfNeeded() {
+        if shouldShowRatingPrompt() {
+            // Show your rating popup here
+            showRatingPopup()
+            let promptCount = UserDefaults.standard.integer(forKey: maxPromptCountKey)
+            // Update the last prompt date and increment the prompt count
+            UserDefaults.standard.set(Date(), forKey: lastPromptKey)
+            UserDefaults.standard.set(promptCount + 1, forKey: maxPromptCountKey)
+        }
+        else{
+            self.showPreferencePromptIfNeeded()
+        }
+    }
+    
+    
+    func showRatingPopup() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            
+            //POPUP
+            let window = UIApplication.shared.keyWindow!
+            window.endEditing(true)
+            let popupView = AppRatePopup(frame: CGRect(x: 0, y: 0 ,width : window.frame.width, height: window.frame.height))
+            popupView.loadPopUpView()
+            window.addSubview(popupView)
+        }
+    }
+    
+    
+    
+    private func shouldShowPreferencePrompt() -> Bool {
+      
+        // Get the last prompt date and prompt count
+        if let lastPromptDate = UserDefaults.standard.object(forKey: lastPreferenceDate) as? Date {
+            
+            // Calculate the time elapsed since the last prompt
+            let timeElapsed = Date().timeIntervalSince(lastPromptDate)
+            
+            // Check if 14 days have passed and the prompt count is less than the maximum
+            return timeElapsed >= 14 * 24 * 60 * 60
+        } else {
+            UserDefaults.standard.set(Date(), forKey: lastPreferenceDate)
+            return false
+        }
+    }
+    
+    private func showPreferencePromptIfNeeded() {
+        if shouldShowPreferencePrompt() {
+            // Show your rating popup here
+            showPreferencePopup()
+            // Update the last prompt date and increment the prompt count
+            UserDefaults.standard.set(Date(), forKey: lastPreferenceDate)
+        }
+    }
+    
+    func showPreferencePopup() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            
+            //POPUP
+            let window = UIApplication.shared.keyWindow!
+            window.endEditing(true)
+            let popupView = PreferencePopup(frame: CGRect(x: 0, y: 0 ,width : window.frame.width, height: window.frame.height))
+            popupView.delegate = self
+            popupView.loadPopUpView()
+            window.addSubview(popupView)
+        }
+    }
+    
+    func btnUpdatePreferenceClicked() {
+        let vc: MyPreferencesVC = MyPreferencesVC.instantiate(appStoryboard: .Profile)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

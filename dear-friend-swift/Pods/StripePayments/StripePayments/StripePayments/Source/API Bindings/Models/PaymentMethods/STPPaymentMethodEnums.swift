@@ -82,8 +82,6 @@ import Foundation
     case billie
     /// A Satispay payment method
     case satispay
-    /// A Crypto payment method
-    case crypto
     /// A MobilePay payment method
     case mobilePay
     /// A Konbini payment method
@@ -176,8 +174,6 @@ import Foundation
             return "Billie"
         case .satispay:
             return "Satispay"
-        case .crypto:
-            return "Crypto"
         case .mobilePay:
             return "MobilePay"
         case .konbini:
@@ -273,8 +269,6 @@ import Foundation
             return "billie"
         case .satispay:
             return "satispay"
-        case .crypto:
-            return "crypto"
         case .mobilePay:
             return "mobilepay"
         case .konbini:
@@ -303,7 +297,7 @@ extension STPPaymentMethodType {
     var pollingRequirement: PollingRequirement? {
         switch self {
         // Note: Card only requires polling for 3DS2 web-based transactions
-        case .card, .amazonPay, .revolutPay:
+        case .card, .amazonPay:
             return PollingRequirement(timeBetweenPollingAttempts: 3)
         case .swish, .twint:
             // We are intentionally polling for Swish and Twint even though they use the redirect trampoline.

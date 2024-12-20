@@ -11,7 +11,7 @@ import UIKit
 
 @_spi(STP) public extension CALayer {
 
-    func applyShadow(shadow: ElementsAppearance.Shadow?) {
+    func applyShadow(shadow: ElementsUITheme.Shadow?) {
         guard let shadow = shadow else {
             shadowOpacity = 0
             return

@@ -65,7 +65,7 @@ import UIKit
     public var didUpdate: DidUpdateSelectedDate?
 
     private let label: String?
-    private let theme: ElementsAppearance
+    private let theme: ElementsUITheme
 
     /**
      - Parameters:
@@ -89,7 +89,7 @@ import UIKit
         maximumDate: Date? = nil,
         locale: Locale = .current,
         timeZone: TimeZone = .current,
-        theme: ElementsAppearance = .default,
+        theme: ElementsUITheme = .default,
         customDateFormatter: DateFormatter? = nil,
         didUpdate: DidUpdateSelectedDate? = nil
     ) {

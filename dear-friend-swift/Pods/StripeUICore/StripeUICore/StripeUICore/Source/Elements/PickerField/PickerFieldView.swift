@@ -78,7 +78,7 @@ final class PickerFieldView: UIView {
     private let label: String?
     private let shouldShowChevron: Bool
     private weak var delegate: PickerFieldViewDelegate?
-    private let theme: ElementsAppearance
+    private let theme: ElementsUITheme
     // When a PickerFieldView is optional it's chevron is smaller and takes the color of placeholder text
     private let isOptional: Bool
     private var _canBecomeFirstResponder = true
@@ -126,7 +126,7 @@ final class PickerFieldView: UIView {
         shouldShowChevron: Bool,
         pickerView: UIView,
         delegate: PickerFieldViewDelegate,
-        theme: ElementsAppearance,
+        theme: ElementsUITheme,
         hasPadding: Bool = true,
         isOptional: Bool = false
     ) {

@@ -19,7 +19,7 @@ import Foundation
         public static func makeCountry(
             label: String,
             countryCodes: [String],
-            theme: ElementsAppearance = .default,
+            theme: ElementsUITheme = .default,
             defaultCountry: String? = nil,
             locale: Locale = Locale.current,
             disableDropdownWithSingleCountry: Bool = false

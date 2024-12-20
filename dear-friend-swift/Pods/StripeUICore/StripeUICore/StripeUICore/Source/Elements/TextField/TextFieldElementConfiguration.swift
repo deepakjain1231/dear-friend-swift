@@ -75,12 +75,12 @@ import UIKit
      This could be the logo of a network, a bank, etc.
      - Returns: a view.
      */
-    func accessoryView(for text: String, theme: ElementsAppearance) -> UIView?
+    func accessoryView(for text: String, theme: ElementsUITheme) -> UIView?
 
     /**
      Convenience method that creates a TextFieldElement using this Configuration
     */
-    func makeElement(theme: ElementsAppearance) -> TextFieldElement
+    func makeElement(theme: ElementsUITheme) -> TextFieldElement
 }
 
 // MARK: - Default implementation
@@ -134,11 +134,11 @@ public extension TextFieldElementConfiguration {
         return .max
     }
 
-    func accessoryView(for text: String, theme: ElementsAppearance) -> UIView? {
+    func accessoryView(for text: String, theme: ElementsUITheme) -> UIView? {
         return nil
     }
 
-    func makeElement(theme: ElementsAppearance) -> TextFieldElement {
+    func makeElement(theme: ElementsUITheme) -> TextFieldElement {
         return TextFieldElement(configuration: self, theme: theme)
     }
 }

@@ -104,7 +104,7 @@ import UIKit
         }
     }
 
-    public var theme: ElementsAppearance {
+    public var theme: ElementsUITheme {
         didSet {
             checkbox.theme = theme
             updateLabels()
@@ -113,7 +113,7 @@ import UIKit
 
     // MARK: - Initializers
 
-    public init(description: String? = nil, theme: ElementsAppearance = .default) {
+    public init(description: String? = nil, theme: ElementsUITheme = .default) {
         self.theme = theme
         super.init(frame: .zero)
 
@@ -130,12 +130,12 @@ import UIKit
         addGestureRecognizer(didTapGestureRecognizer)
     }
 
-    public convenience init(text: String, description: String? = nil, theme: ElementsAppearance = .default) {
+    public convenience init(text: String, description: String? = nil, theme: ElementsUITheme = .default) {
         self.init(description: description, theme: theme)
         setText(text)
     }
 
-    public convenience init(attributedText: NSAttributedString, description: String? = nil, theme: ElementsAppearance = .default) {
+    public convenience init(attributedText: NSAttributedString, description: String? = nil, theme: ElementsUITheme = .default) {
         self.init(description: description, theme: theme)
         setAttributedText(attributedText)
     }
@@ -265,10 +265,10 @@ class CheckBox: UIView {
             return theme.colors.primary
         }
 
-        return theme.colors.parentBackground
+        return theme.colors.background
     }
 
-    var theme: ElementsAppearance {
+    var theme: ElementsUITheme {
         didSet {
             layer.applyShadow(shadow: theme.shadow)
             setNeedsDisplay()
@@ -279,7 +279,7 @@ class CheckBox: UIView {
         return CGSize(width: 20, height: 20)
     }
 
-    init(theme: ElementsAppearance = .default) {
+    init(theme: ElementsUITheme = .default) {
         self.theme = theme
         super.init(frame: .zero)
 
@@ -313,12 +313,7 @@ class CheckBox: UIView {
             fillColor.setFill()
         }
         borderPath.fill()
-        if theme.colors.border.rgba.alpha != 0 {
-            theme.colors.border.setStroke()
-        } else {
-            // If the border is clear, fall back to secondaryText
-            theme.colors.secondaryText.setStroke()
-        }
+        theme.colors.border.setStroke()
         borderPath.stroke()
 
         if isSelected {

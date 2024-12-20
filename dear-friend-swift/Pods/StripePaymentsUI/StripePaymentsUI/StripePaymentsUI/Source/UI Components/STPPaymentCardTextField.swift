@@ -2300,7 +2300,11 @@ open class STPPaymentCardTextField: UIControl, UIKeyInput, STPFormTextFieldDeleg
     }
 
     func defaultCVCPlaceholder() -> String? {
-        return String.Localized.cvc
+        if viewModel.brand == .amex {
+            return String.Localized.cvv
+        } else {
+            return String.Localized.cvc
+        }
     }
 
     func updateCVCPlaceholder() {

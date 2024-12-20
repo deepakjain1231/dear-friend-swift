@@ -77,7 +77,7 @@ import UIKit
         isOptional: Bool = false,
         infoView: UIView? = nil,
         locale: Locale = .current,
-        theme: ElementsAppearance = .default
+        theme: ElementsUITheme = .default
     ) {
         self.infoView = infoView
         let defaults = Self.deriveDefaults(countryCode: defaultCountryCode, phoneNumber: defaultPhoneNumber)
@@ -164,7 +164,7 @@ extension DropdownFieldElement {
         countryCodes: [String],
         defaultCountry: String? = nil,
         locale: Locale,
-        theme: ElementsAppearance
+        theme: ElementsUITheme
     ) -> DropdownFieldElement {
         let countryCodes = locale.sortedByTheirLocalizedNames(countryCodes)
         let countryDisplayStrings: [DropdownFieldElement.DropdownItem] = countryCodes.map {

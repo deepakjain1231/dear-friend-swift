@@ -20,7 +20,7 @@ class NewMusicVC: UIViewController {
     
     @IBOutlet weak var consThumbHeight: NSLayoutConstraint!
     @IBOutlet weak var vwSpace: UIView!
-    @IBOutlet weak var progress: UIProgressView!
+//    @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnRepeat2: UIButton!
     @IBOutlet weak var vwRepeat2: UIView!
@@ -147,10 +147,12 @@ class NewMusicVC: UIViewController {
             let songURL = self.songs[self.currentSongIndex]
             self.managePlayerBeforePlay(destinationUrl: songURL)
             var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) {
+            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
                 currentTime = 0
             }
+            
             self.lblCurrentTime.text = formatTime(currentTime)
+            self.vwSlider.setValue(Float(currentTime), animated: false)
             self.vwSlider.value = Float(currentTime)
             self.newplayer.seek(to: currentTime)
             MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = NSNumber(value: currentTime)
@@ -435,15 +437,7 @@ class NewMusicVC: UIViewController {
                     self.updateCurrentTimeLabel()
                 })
             }
-            var currentTime =  Double(current.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(current.audioDuration ?? "0") ?? 0) {
-                currentTime = 0
-            }
-            self.vwSlider.setValue(Float(currentTime), animated: false)
-            self.vwSlider.value = Float(currentTime)
-            self.newplayer.seek(to: currentTime)
-            self.lblCurrentTime.text = formatTime(currentTime)
-            
+ 
             self.btnBG.isHidden = current.is_background_audio == strNo || (isFromDownload ? self.arrDownloadedBGAudio.count == 0 : current.backgrounds?.count == 0 || self.currentSong?.backgrounds?.count == nil)
           
 
@@ -716,7 +710,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
     func managePlayerBeforePlay(destinationUrl: URL) {
         self.newplayer.pause()
         var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) {
+        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased{
             currentTime = 0
         }
         self.vwSlider.setValue(Float(currentTime), animated: false)
@@ -733,6 +727,10 @@ extension NewMusicVC: AVAudioPlayerDelegate {
             }
             
             self.newplayer.play(url: finalURL, seekingTIme: currentTime)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                self.newplayer.seek(to: currentTime)
+            }
+            
             self.timer.invalidate()
             self.updateCurrentTimeLabel()
             self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
@@ -774,11 +772,15 @@ extension NewMusicVC: AVAudioPlayerDelegate {
             self.btnMore.isUserInteractionEnabled = false
 
             var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) {
+            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
                 currentTime = 0
             }
-            //self.newplayer.seek(to: currentTime)
             self.newplayer.play(url: destinationUrl, seekingTIme: currentTime)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                self.newplayer.seek(to: currentTime)
+            }
+            
+
             self.lblCurrentTime.text = formatTime(currentTime)
             self.stackControls.alpha = 1
             self.stackControls.isUserInteractionEnabled = true
@@ -869,7 +871,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
         } else {
             self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
             var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) {
+            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
                 currentTime = 0
             }
             self.newplayer.seek(to: currentTime)
@@ -914,7 +916,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
         self.timer.invalidate()
         self.newplayer.pause()
         var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) {
+        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
             currentTime = 0
         }
         self.newplayer.seek(to: currentTime)
@@ -940,7 +942,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
             self.perfomeNext()
             let songURL = self.songs[self.currentSongIndex]
             var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) {
+            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
                 currentTime = 0
             }
             self.newplayer.seek(to: currentTime)
@@ -953,7 +955,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
         self.controller?.dismiss(animated: true)
         if self.currentRepeatMode == .SingleRepeat {
             var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) {
+            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
                 currentTime = 0
             }
             self.newplayer.seek(to: currentTime)
@@ -993,7 +995,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
         self.currentSongIndex -= 1
         self.initPlayer()
         var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) {
+        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
             currentTime = 0
         }
         self.newplayer.seek(to: currentTime)
@@ -1027,7 +1029,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
             self.clearLockScreenInfo()
             self.timer.invalidate()
             var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) {
+            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
                 currentTime = 0
             }
             self.lblCurrentTime.text = formatTime(currentTime)
@@ -1039,7 +1041,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
             self.clearLockScreenInfo()
             self.timer.invalidate()
             var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) {
+            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
                 currentTime = 0
             }
             self.lblCurrentTime.text = formatTime(currentTime)

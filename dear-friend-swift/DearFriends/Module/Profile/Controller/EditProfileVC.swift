@@ -87,7 +87,7 @@ class EditProfileVC: BaseVC {
         self.viewMobile.backgroundColor = .primary?.withAlphaComponent(0.8)
         self.viewMobile.viewBorderCorneRadius(borderColour: .secondary)
         
-        self.btn_Save.backgroundColor = UIColor.init(named: "Button_BG_Color")
+        self.btn_Save.backgroundColor = .buttonBGColor
     }
     
     // MARK: - Other Functions

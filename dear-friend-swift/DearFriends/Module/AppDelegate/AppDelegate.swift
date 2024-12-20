@@ -73,10 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Temp Comment//IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UIStackView.self)
         //Temp Comment//IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UIView.self)
         //Temp Comment//IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UITextField.self)
-        IQKeyboardManager.shared.disabledToolbarClasses = [OTPVerificationVC.self, ChatMessageVC.self]
-        IQKeyboardManager.shared.toolbarConfiguration.previousNextDisplayMode = .alwaysShow
-        IQKeyboardManager.shared.resignOnTouchOutside = true
         
+        setupKeyboard(true)
         UITextField.appearance().keyboardAppearance = .dark
         
         self.window = UIWindow(frame: UIScreen.main.bounds)

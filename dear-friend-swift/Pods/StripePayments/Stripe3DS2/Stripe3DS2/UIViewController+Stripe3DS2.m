@@ -44,10 +44,6 @@
     // Color
     self.navigationController.navigationBar.barTintColor = navigationBarCustomization.barTintColor;
     self.navigationController.navigationBar.translucent = navigationBarCustomization.translucent;
-    
-    if (navigationBarCustomization.scrollEdgeAppearance) {
-        self.navigationController.navigationBar.scrollEdgeAppearance = navigationBarCustomization.scrollEdgeAppearance;
-    }
 }
 
 @end

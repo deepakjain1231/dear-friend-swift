@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (5.10.2)
-  - AppAuth (1.7.6):
-    - AppAuth/Core (= 1.7.6)
-    - AppAuth/ExternalUserAgent (= 1.7.6)
-  - AppAuth/Core (1.7.6)
-  - AppAuth/ExternalUserAgent (1.7.6):
+  - Alamofire (5.9.1)
+  - AppAuth (1.7.5):
+    - AppAuth/Core (= 1.7.5)
+    - AppAuth/ExternalUserAgent (= 1.7.5)
+  - AppAuth/Core (1.7.5)
+  - AppAuth/ExternalUserAgent (1.7.5):
     - AppAuth/Core
   - AppCheckCore (11.2.0):
     - GoogleUtilities/Environment (~> 8.0)
@@ -18,7 +18,7 @@ PODS:
   - ExpandableLabel (0.5.2)
   - FLUtilities (0.1.0)
   - FSCalendar (2.8.4)
-  - Google-Mobile-Ads-SDK (11.12.0):
+  - Google-Mobile-Ads-SDK (11.8.0):
     - GoogleUserMessagingPlatform (>= 1.1)
   - GoogleAds-IMA-iOS-SDK (3.23.0)
   - GoogleSignIn (8.0.0):
@@ -26,7 +26,7 @@ PODS:
     - AppCheckCore (~> 11.0)
     - GTMAppAuth (< 5.0, >= 4.1.1)
     - GTMSessionFetcher/Core (~> 3.3)
-  - GoogleUserMessagingPlatform (2.7.0)
+  - GoogleUserMessagingPlatform (2.5.0)
   - GoogleUtilities/Environment (8.0.2):
     - GoogleUtilities/Privacy
   - GoogleUtilities/Logger (8.0.2):
@@ -42,46 +42,7 @@ PODS:
   - GTMSessionFetcher/Core (3.5.0)
   - Haptico (1.1.1)
   - Hero (1.6.3)
-  - IQKeyboardCore (1.0.5)
-  - IQKeyboardManagerSwift (8.0.0):
-    - IQKeyboardManagerSwift/Appearance (= 8.0.0)
-    - IQKeyboardManagerSwift/Core (= 8.0.0)
-    - IQKeyboardManagerSwift/IQKeyboardReturnManager (= 8.0.0)
-    - IQKeyboardManagerSwift/IQKeyboardToolbarManager (= 8.0.0)
-    - IQKeyboardManagerSwift/IQTextView (= 8.0.0)
-    - IQKeyboardManagerSwift/Resign (= 8.0.0)
-  - IQKeyboardManagerSwift/Appearance (8.0.0):
-    - IQKeyboardManagerSwift/Core
-  - IQKeyboardManagerSwift/Core (8.0.0):
-    - IQKeyboardNotification
-    - IQTextInputViewNotification
-  - IQKeyboardManagerSwift/IQKeyboardReturnManager (8.0.0):
-    - IQKeyboardReturnManager
-  - IQKeyboardManagerSwift/IQKeyboardToolbarManager (8.0.0):
-    - IQKeyboardManagerSwift/Core
-    - IQKeyboardToolbarManager
-  - IQKeyboardManagerSwift/IQTextView (8.0.0):
-    - IQTextView
-  - IQKeyboardManagerSwift/Resign (8.0.0):
-    - IQKeyboardManagerSwift/Core
-  - IQKeyboardNotification (1.0.3)
-  - IQKeyboardReturnManager (1.0.4):
-    - IQKeyboardCore (= 1.0.5)
-  - IQKeyboardToolbar (1.1.1):
-    - IQKeyboardCore
-    - IQKeyboardToolbar/Core (= 1.1.1)
-  - IQKeyboardToolbar/Core (1.1.1):
-    - IQKeyboardCore
-    - IQKeyboardToolbar/Placeholderable
-  - IQKeyboardToolbar/Placeholderable (1.1.1):
-    - IQKeyboardCore
-  - IQKeyboardToolbarManager (1.1.2):
-    - IQKeyboardToolbar
-    - IQTextInputViewNotification
-  - IQTextInputViewNotification (1.0.8):
-    - IQKeyboardCore
-  - IQTextView (1.0.5):
-    - IQKeyboardToolbar/Placeholderable
+  - IQKeyboardManagerSwift (7.1.1)
   - JWTDecode (3.2.0)
   - JXPageControl (0.1.5):
     - JXPageControl/Common (= 0.1.5)
@@ -101,32 +62,32 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
   - PromisesObjC (2.4.0)
-  - SDWebImage (5.20.0):
-    - SDWebImage/Core (= 5.20.0)
-  - SDWebImage/Core (5.20.0)
+  - SDWebImage (5.19.7):
+    - SDWebImage/Core (= 5.19.7)
+  - SDWebImage/Core (5.19.7)
   - SKCountryPicker (4.0.0)
   - SkeletonView (1.30.4)
   - StepperView (1.6.7)
-  - Stripe (24.1.2):
-    - StripeApplePay (= 24.1.2)
-    - StripeCore (= 24.1.2)
-    - StripePayments (= 24.1.2)
-    - StripePaymentsUI (= 24.1.2)
-    - StripeUICore (= 24.1.2)
-  - StripeApplePay (24.1.2):
-    - StripeCore (= 24.1.2)
-  - StripeCore (24.1.2)
-  - StripePayments (24.1.2):
-    - StripeCore (= 24.1.2)
-    - StripePayments/Stripe3DS2 (= 24.1.2)
-  - StripePayments/Stripe3DS2 (24.1.2):
-    - StripeCore (= 24.1.2)
-  - StripePaymentsUI (24.1.2):
-    - StripeCore (= 24.1.2)
-    - StripePayments (= 24.1.2)
-    - StripeUICore (= 24.1.2)
-  - StripeUICore (24.1.2):
-    - StripeCore (= 24.1.2)
+  - Stripe (23.29.2):
+    - StripeApplePay (= 23.29.2)
+    - StripeCore (= 23.29.2)
+    - StripePayments (= 23.29.2)
+    - StripePaymentsUI (= 23.29.2)
+    - StripeUICore (= 23.29.2)
+  - StripeApplePay (23.29.2):
+    - StripeCore (= 23.29.2)
+  - StripeCore (23.29.2)
+  - StripePayments (23.29.2):
+    - StripeCore (= 23.29.2)
+    - StripePayments/Stripe3DS2 (= 23.29.2)
+  - StripePayments/Stripe3DS2 (23.29.2):
+    - StripeCore (= 23.29.2)
+  - StripePaymentsUI (23.29.2):
+    - StripeCore (= 23.29.2)
+    - StripePayments (= 23.29.2)
+    - StripeUICore (= 23.29.2)
+  - StripeUICore (23.29.2):
+    - StripeCore (= 23.29.2)
   - SwiftAudioPlayer (7.6.0)
   - SwiftyJSON (5.0.2)
   - SwiftyStoreKit (0.16.1)
@@ -191,14 +152,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Haptico
     - Hero
-    - IQKeyboardCore
     - IQKeyboardManagerSwift
-    - IQKeyboardNotification
-    - IQKeyboardReturnManager
-    - IQKeyboardToolbar
-    - IQKeyboardToolbarManager
-    - IQTextInputViewNotification
-    - IQTextView
     - JWTDecode
     - JXPageControl
     - lottie-ios
@@ -241,8 +195,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/Kuama-IT/SwiftAudioPlayer.git
 
 SPEC CHECKSUMS:
-  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
-  AppAuth: d4f13a8fe0baf391b2108511793e4b479691fb73
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  AppAuth: 501c04eda8a8d11f179dbe8637b7a91bb7e5d2fa
   AppCheckCore: cc8fd0a3a230ddd401f326489c99990b013f0c4f
   BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
   BottomPopup: fe3e284628532f99093ae68c592c6b9d392c972d
@@ -252,23 +206,16 @@ SPEC CHECKSUMS:
   ExpandableLabel: c2fab6d27860c572d67134b30522a5917746171d
   FLUtilities: b61fc8f05e8b952f803b77b26ca11936502c923d
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
-  Google-Mobile-Ads-SDK: 3a76704456669fbed2057efc8bdb99050ad0e3fb
+  Google-Mobile-Ads-SDK: c1c53687b572122c5b0bdaf354335bbf40fd81ef
   GoogleAds-IMA-iOS-SDK: ee2a68ed7a1a17c7bb81bdb1b81590b35a3fc8f3
   GoogleSignIn: ce8c89bb9b37fb624b92e7514cc67335d1e277e4
-  GoogleUserMessagingPlatform: a8b56893477f67212fbc8411c139e61d463349f5
+  GoogleUserMessagingPlatform: 6b4f48a370e77ce121d034c908cc6ee4fdafaf13
   GoogleUtilities: 26a3abef001b6533cf678d3eb38fd3f614b7872d
   GTMAppAuth: f69bd07d68cd3b766125f7e072c45d7340dea0de
   GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
   Haptico: 3ab938425737e2b90939d41e1b23538cdbe1cf44
   Hero: 419d43384355b3168512bd8ac6a33aadd3dc575b
-  IQKeyboardCore: 28c8bf3bcd8ba5aa1570b318cbc4da94b861711e
-  IQKeyboardManagerSwift: 0c6fbbaa2e60739e48d7cf59f25661471a7a3a65
-  IQKeyboardNotification: d7382c4466c5a5adef92c7452ebf861b36050088
-  IQKeyboardReturnManager: 972be48528ce9e7508ab3ab15ac7efac803f17f5
-  IQKeyboardToolbar: d4bdccfb78324aec2f3920659c77bb89acd33312
-  IQKeyboardToolbarManager: 6f4072ac620c2572d4af8c09f42a801f3e4909f7
-  IQTextInputViewNotification: f5e954d8881fd9808b744e49e024cc0d4bcfe572
-  IQTextView: ae13b4922f22e6f027f62c557d9f4f236b19d5c7
+  IQKeyboardManagerSwift: d7f3d3a562c237a0e7335e657cd598c452f57f1b
   JWTDecode: 7dae24cb9bf9b608eae61e5081029ec169bb5527
   JXPageControl: e9487b39e2e58fc17790833214f3b8e935bef98b
   lottie-ios: a881093fab623c467d3bce374367755c272bdd59
@@ -278,16 +225,16 @@ SPEC CHECKSUMS:
   NewPopMenu: c6129e08e8192f6257ceb5f9a4357e1b59c6e2e7
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
-  SDWebImage: 73c6079366fea25fa4bb9640d5fb58f0893facd8
+  SDWebImage: 8a6b7b160b4d710e2a22b6900e25301075c34cb3
   SKCountryPicker: 22b45e7fa797ef1ed6f453e66c78ce5a2ee96c55
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   StepperView: 9b88922ef65712410c0e95c460cd115d33cfd933
-  Stripe: c5b4cc9414cc9e068a2b87bb4ee102522c0f81d2
-  StripeApplePay: 71878c8debc9952280310c29020c796fc0bd0d39
-  StripeCore: feb24d226c4fe881f9c8593696957e704e8d2c1a
-  StripePayments: 9843b2f9ab09145025af5e7de8233187bf526623
-  StripePaymentsUI: b56e08bec006cd71da2e4afc029ff02a5655ef85
-  StripeUICore: 78b8130760675160fe4440350983aaccda2840ec
+  Stripe: 3b130927eaa796c09e1fe33c68525a14606dc81a
+  StripeApplePay: dff104aeee493627a649576a0014d76eadabceee
+  StripeCore: 9edec1b15faa6bb7f46def319cc689dc37a8d233
+  StripePayments: f1465ee56d5589630ffaf4ad873d400d8752f8f8
+  StripePaymentsUI: 6b182240135130d5d61cd8a9c48717264ac203ec
+  StripeUICore: 5f21b736a399dff66d6c8ca7e2ce3e4fd02c40fd
   SwiftAudioPlayer: a546709faf47f3ab0cb59e41ba4432e6bb61db0a
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
@@ -297,4 +244,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 175e6e3118a938afe3a06e028023c9cc7f86166c
 
-COCOAPODS: 1.16.1
+COCOAPODS: 1.14.3

@@ -17,9 +17,9 @@ public extension SectionElement {
             return SectionContainerView.MultiElementRowView(views: elements.map { $0.view }, theme: theme)
         }()
         public let elements: [Element]
-        public let theme: ElementsAppearance
+        public let theme: ElementsUITheme
 
-        public init(_ elements: [Element], theme: ElementsAppearance = .default) {
+        public init(_ elements: [Element], theme: ElementsUITheme = .default) {
             self.elements = elements
             self.theme = theme
             elements.forEach {

@@ -817,32 +817,54 @@ check your internet settings</string>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nXy-LL-117">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nXy-LL-117">
                                 <rect key="frame" x="71.666666666666686" y="670" width="250" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6a5-fh-B19">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZA-wp-R8P">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="54"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sM8-As-eVn">
+                                                <rect key="frame" x="104.33333333333333" y="17" width="41.333333333333329" height="20.333333333333329"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEk-nJ-JOb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6a5-fh-B19">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="54"/>
+                                                <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.46666666666666667" green="0.41568627450980389" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="btnTryAgainTapped:" destination="Fk0-ao-IAD" eventType="touchUpInside" id="nHQ-bH-aWE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="54" id="mEE-6D-Ttu"/>
+                                            <constraint firstAttribute="bottom" secondItem="6a5-fh-B19" secondAttribute="bottom" id="05j-Xx-Tsd"/>
+                                            <constraint firstAttribute="trailing" secondItem="6a5-fh-B19" secondAttribute="trailing" id="B86-jI-0H7"/>
+                                            <constraint firstItem="sM8-As-eVn" firstAttribute="centerY" secondItem="GZA-wp-R8P" secondAttribute="centerY" id="H4z-Mh-xNU"/>
+                                            <constraint firstItem="sM8-As-eVn" firstAttribute="centerX" secondItem="GZA-wp-R8P" secondAttribute="centerX" id="RMh-RZ-K5k"/>
+                                            <constraint firstItem="6a5-fh-B19" firstAttribute="leading" secondItem="GZA-wp-R8P" secondAttribute="leading" id="Sxk-tG-t2p"/>
+                                            <constraint firstItem="6a5-fh-B19" firstAttribute="top" secondItem="GZA-wp-R8P" secondAttribute="top" id="cWE-UT-bas"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="14"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Try Again">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.46666666666666667" green="0.41568627450980389" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="btnTryAgainTapped:" destination="Fk0-ao-IAD" eventType="touchUpInside" id="nHQ-bH-aWE"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaI-wF-oIY">
                                         <rect key="frame" x="0.0" y="74" width="250" height="54"/>
                                         <color key="backgroundColor" name="AccentColor"/>
@@ -886,6 +908,13 @@ check your internet settings</string>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="updatesStatusBarAppearanceAutomatically" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="btnDownload" destination="gaI-wF-oIY" id="BTQ-FG-woi"/>
+                        <outlet property="lblDescription" destination="rfZ-JA-fih" id="WZa-6Q-VDP"/>
+                        <outlet property="lblTitle" destination="NBa-Ru-jO8" id="0Pn-ed-M4W"/>
+                        <outlet property="lblTryAgin" destination="DEk-nJ-JOb" id="hip-su-dKt"/>
+                        <outlet property="viewTryAgin" destination="GZA-wp-R8P" id="xD1-Js-Bdc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIy-Os-cv6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

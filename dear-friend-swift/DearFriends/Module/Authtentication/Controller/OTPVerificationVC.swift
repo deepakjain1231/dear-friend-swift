@@ -34,6 +34,7 @@ class OTPVerificationVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupKeyboard(true)
         
         // Do any additional setup after loading the view.
         self.setTheView()
@@ -323,17 +324,19 @@ extension OTPVerificationVC: UITextFieldDelegate, OTPTextFieldDelegate{
     }
     
     func isCodeNumeric(_ code : String) -> Bool {
-        let characterSet = "0123456789"
-        if characterSet.range(of: code) != nil {
+        if code.isNumber {
             if code.count != 1{
                 if code.count == 6{
                     return true
                 }
-                else{ return false}
+                else{
+                    return false
+                }
             }
             return true
         }
         return false
     }
-    
 }
+
+

@@ -218,14 +218,19 @@ extension ExploreDetailsVC: UITableViewDataSource, UITableViewDelegate {
         } else {
             cell.vwPremius.isHidden = true
         }
-        cell.progress.isHidden = !(current.audioProgress ?? "" != "")
-        if let currentTime = current.audioProgress, let duration = current.audioDuration {
-            let progress = (Float(currentTime) ?? 0.0) / (Float(duration) ?? 0.0)
-            cell.progress.tintColor = progress <= 1 ? hexStringToUIColor(hex: "#7884E0") : hexStringToUIColor(hex: "#838383")
-            cell.imgPlayed.isHidden = progress <= 1
-            cell.progress.setProgress(Float(progress), animated: true)
-        }
         
+        cell.progress.isHidden = true
+        cell.imgPlayed.isHidden = true
+        if appDelegate.isPlanPurchased{
+            cell.progress.isHidden = !(current.audioProgress ?? "" != "")
+            if let currentTime = current.audioProgress, let duration = current.audioDuration {
+                let progress = (Float(currentTime) ?? 0.0) / (Float(duration) ?? 0.0)
+                cell.progress.tintColor = progress <= 1 ? hexStringToUIColor(hex: "#7884E0") : hexStringToUIColor(hex: "#838383")
+                cell.imgPlayed.isHidden = progress <= 1
+                cell.progress.setProgress(Float(progress), animated: true)
+            }
+        }
+       
         cell.isPined = ((current.pin_date ?? "") != "")
         
         cell.indexTapped = { ind in
