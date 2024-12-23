@@ -25,15 +25,23 @@ class ExploreSubCategoryVC: BaseVC {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        self.setTheView()
         self.setupUI()
     }
+    
+    //SET THE VIEW
+    func setTheView() {
+        
+        //SET FONT
+        self.lblTitle.configureLable(textColor: .background, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "")
+    }
+
     
     // MARK: - Other Functions
     
     func setupUI() {
         self.colleView.setDefaultProperties(vc: self)
-        self.colleView.registerCell(type: TopCategoryCVC.self)
+        self.colleView.registerCell(type: MusicCategoryCVC.self)
         self.colleView.reloadData()
         self.lblTitle.text = self.strTitle
         
@@ -61,11 +69,19 @@ extension ExploreSubCategoryVC: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCategoryCVC", for: indexPath) as? TopCategoryCVC else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MusicCategoryCVC", for: indexPath) as? MusicCategoryCVC else { return UICollectionViewCell() }
        
         let current = self.homeVM.currentCategory?.subCategory?[indexPath.row]
         GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current?.icon ?? "")
-        cell.lblTitle.text = current?.title ?? ""
+        
+        //SET VIEW
+        cell.vwMain.viewCorneRadius(radius: 25)
+        cell.vwMain.backgroundColor = .primary?.withAlphaComponent(0.7)
+        cell.vwMain.viewBorderCorneRadius(borderColour: .secondary)
+        
+        cell.lblTitle.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 18, text: current?.title ?? "")
+        
+        
 //        cell.consWidth.isActive = false
 //        cell.consHeight.isActive = false
         
@@ -77,16 +93,30 @@ extension ExploreSubCategoryVC: UICollectionViewDelegate, UICollectionViewDataSo
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: (self.view.frame.size.width - 20) / 3, height: 150)
+        return CGSize(width: (self.view.frame.size.width - 20) / 2, height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc: ExploreDetailsVC = ExploreDetailsVC.instantiate(appStoryboard: .Explore)
-        vc.hidesBottomBarWhenPushed = true
-        self.homeVM.currentFilterType = .none
-        self.homeVM.currentAudioType = .normal
-        self.homeVM.currentSubCategory = self.homeVM.currentCategory?.subCategory?[indexPath.row]
-        vc.homeVM = self.homeVM
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let currentCell = collectionView.cellForItem(at: indexPath) as? MusicCategoryCVC {
+            currentCell.vwMain.backgroundColor = hexStringToUIColor(hex: "#A8A8DF").withAlphaComponent(0.7)
+            
+            Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timerrrs in
+                timerrrs.invalidate()
+                
+                let vc: ExploreDetailsVC = ExploreDetailsVC.instantiate(appStoryboard: .Explore)
+                vc.hidesBottomBarWhenPushed = true
+                self.homeVM.currentFilterType = .none
+                self.homeVM.currentAudioType = .normal
+                self.homeVM.currentSubCategory = self.homeVM.currentCategory?.subCategory?[indexPath.row]
+                vc.homeVM = self.homeVM
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+                Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timerrrs in
+                    timerrrs.invalidate()
+                    collectionView.reloadData()
+                }
+            }
+        }
+        
     }
 }

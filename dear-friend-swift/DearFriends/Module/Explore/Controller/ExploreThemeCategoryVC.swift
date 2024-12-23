@@ -22,10 +22,16 @@ class ExploreThemeCategoryVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
-        
+        self.setTheView()
         self.setupUI()
+    }
+    
+    //SET THE VIEW
+    func setTheView() {
+        
+        //SET FONT
+        self.lblTitle.configureLable(textColor: .background, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "")
     }
 
     // MARK: - Other Functions
@@ -63,9 +69,16 @@ extension ExploreThemeCategoryVC: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCategoryCVC", for: indexPath) as? TopCategoryCVC else { return UICollectionViewCell() }
        
+        //SET VIEW
+        cell.vwMain.viewCorneRadius(radius: 40)
+        cell.vwMain.backgroundColor = .primary?.withAlphaComponent(0.7)
+        cell.vwMain.viewBorderCorneRadius(borderColour: .secondary)
+        
         let current = self.homeVM.currentCategory?.themeCategory?[indexPath.row]
         GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current?.icon ?? "")
         cell.lblTitle.text = current?.title ?? ""
+        
+        cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 20, text: current?.title ?? "")
 //        cell.consWidth.isActive = false
 //        cell.consHeight.isActive = false
         
@@ -77,7 +90,7 @@ extension ExploreThemeCategoryVC: UICollectionViewDelegate, UICollectionViewData
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: (self.view.frame.size.width - 20) / 3, height: 150)
+        return CGSize(width: (self.view.frame.size.width - 20), height: 95)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -13,8 +13,12 @@ class HomeContentTVC: UITableViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnSeeAll: UIButton!
+    @IBOutlet weak var img_Bg: UIImageView!
     @IBOutlet weak var colletView: UICollectionView!
+    @IBOutlet weak var pagecontrol: UIPageControl!
     
+    var timer: Timer?
+    var indxPosition: Int = 0
     var arrAudio = [CommonAudioList]()
     var interstitial: GADInterstitialAd?
     var onButtonTapped: ((Int) -> Void)?
@@ -26,6 +30,9 @@ class HomeContentTVC: UITableViewCell {
         let gradient = SkeletonGradient(baseColor: hexStringToUIColor(hex: "#212159"))
         self.colletView.isSkeletonable = true
         self.colletView.showAnimatedGradientSkeleton(usingGradient: gradient)
+        
+        self.lblTitle.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 18, text: "")
+        self.btnSeeAll.configureLable(bgColour: .clear, textColor: .background, fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 12.0, text: "See all")
     }
 
     func setupCollection() {
@@ -34,6 +41,13 @@ class HomeContentTVC: UITableViewCell {
         self.colletView.registerCell(type: HomeListCVC.self)
         self.colletView.reloadData()
         self.colletView.hideSkeleton()
+        self.pagecontrol.numberOfPages = self.arrAudio.count
+        startTimer()
+    }
+    
+    func startTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(scrollAutomatically), userInfo: nil, repeats: true)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -44,7 +58,35 @@ class HomeContentTVC: UITableViewCell {
     
 }
 
-extension HomeContentTVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+extension HomeContentTVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
+    @objc func scrollAutomatically(_ timer1: Timer) {
+        DispatchQueue.main.async {
+            if self.arrAudio.count == 1 {
+                return
+            }
+            if self.indxPosition < (self.arrAudio.count - 1) {
+                self.indxPosition = self.indxPosition + 1
+
+                let desiredOffset = CGPoint(x: self.indxPosition * (Int(screenWidth) - 40), y: 0)
+                self.colletView.setContentOffset(desiredOffset, animated: true)
+            }
+            else {
+                self.indxPosition = 0
+                let desiredOffset = CGPoint(x: 0, y: 0)
+                self.colletView.setContentOffset(desiredOffset, animated: false)
+            }
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let visibleRect = CGRect(origin: self.colletView.contentOffset, size: self.colletView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        if let visibleIndexPath = self.colletView.indexPathForItem(at: visiblePoint) {
+            self.pagecontrol.currentPage = visibleIndexPath.row
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrAudio.count
     }
@@ -70,10 +112,12 @@ extension HomeContentTVC: UICollectionViewDelegate, SkeletonCollectionViewDataSo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeListCVC", for: indexPath) as? HomeListCVC else { return UICollectionViewCell() }
         
         let current = self.arrAudio[indexPath.row]
-        cell.lblTitle.text = current.title ?? ""
-        GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current.image ?? "")
         let ddd = current.audioDuration?.doubleValue ?? 0
-        cell.lblTime.text = TimeInterval(ddd).formatDuration()
+        
+        cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 14, text: current.title ?? "")
+        cell.lblTime.configureLable(textColor: .background, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: TimeInterval(ddd).formatDuration())
+        
+        //GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current.image ?? "")
         
         if current.forSTr == "premium" && !appDelegate.isPlanPurchased {
             cell.vwPremium.isHidden = false
@@ -86,9 +130,9 @@ extension HomeContentTVC: UICollectionViewDelegate, SkeletonCollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.frame.size.width - 40, height: manageWidth(size: 180))
+        return CGSize(width: collectionView.frame.size.width, height: manageWidth(size: 180))
 
-        return CGSize(width: 226, height: 236)
+//        return CGSize(width: 226, height: 236)
         
     }
     

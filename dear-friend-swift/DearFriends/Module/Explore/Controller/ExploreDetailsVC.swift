@@ -43,7 +43,17 @@ class ExploreDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setTheView()
+    }
+    
+    //SET THE VIEW
+    func setTheView() {
         
+        //SET FONT
+        self.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 20, text: "")
+        self.lblTitle2.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "")
+        self.lblSubTitle.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "")
+        self.lblDecs.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 13, text: "")
     }
     
     // MARK: - Other Functions
@@ -200,14 +210,15 @@ extension ExploreDetailsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tblMain.dequeueReusableCell(withIdentifier: "NewMusicListTVC") as? NewMusicListTVC else { return UITableViewCell() }
+        cell.selectionStyle = .none
         
         let current = self.homeVM.arrOfAudioList[indexPath.row]
         
-        cell.lblTitle.text = current.title ?? ""
+        cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 16, text: current.title ?? "")
         cell.isCount1 = self.homeVM.arrOfAudioList.count == 1
         
         let ddd = current.audioDuration?.doubleValue ?? 0
-        cell.lblSub.text = TimeInterval(ddd).formatDuration()
+        cell.lblSub.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 10, text: TimeInterval(ddd).formatDuration())
         
         GeneralUtility().setImage(imgView: cell.img, imgPath: current.image ?? "")
         

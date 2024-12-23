@@ -170,6 +170,9 @@ var hasSmallDevice: Bool {
 public var screenHeight: CGFloat {
     return UIScreen.main.bounds.height
 }
+public var screenWidth: CGFloat {
+    return UIScreen.main.bounds.width
+}
 extension UITextField {
     
     func setRightView(image: UIImage) {

@@ -18,6 +18,7 @@ class NewMusicListTVC: UITableViewCell {
     @IBOutlet weak var lblSub: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnmore: UIButton!
+    @IBOutlet weak var view_BG: UIView!
     
     var arrOFTitle = [PopMenuArray]()
     var isForCustom = false
@@ -29,6 +30,7 @@ class NewMusicListTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.view_BG.backgroundColor = .primary?.withAlphaComponent(0.7)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

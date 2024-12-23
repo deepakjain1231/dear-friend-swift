@@ -11,7 +11,7 @@ import SkeletonView
 class ExploreVC: BaseVC {
     
     // MARK: - OUTLETS
-    
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var colleView: UICollectionView!
     
     // MARK: - VARIABLES
@@ -30,8 +30,15 @@ class ExploreVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        self.setTheView()
+    }
+    
+    //SET THE VIEW
+    func setTheView() {
+        
+        //SET FONT
+        self.lblTitle.configureLable(textColor: .background, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "Explore")
     }
     
     // MARK: - Other Functions
@@ -123,6 +130,11 @@ extension ExploreVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploreCVC", for: indexPath) as? ExploreCVC else { return UICollectionViewCell() }
         
+        cell.vwMain2.layer.cornerRadius = 20
+        cell.vwMain2.layer.borderWidth = 1
+        cell.vwMain2.layer.borderColor = hexStringToUIColor(hex: "#776ADA").cgColor
+        cell.vwMain2.backgroundColor = .primary?.withAlphaComponent(0.7)
+        
 //        if self.indexx == indexPath {
 //            cell.vwMain2.backgroundColor = hexStringToUIColor(hex: "#776ADA")
 //        } else {
@@ -130,7 +142,7 @@ extension ExploreVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
 //        }
                         
         let current = self.homeVM.homedataModel?.category?[indexPath.row]
-        cell.lblTitle.text = current?.title ?? ""
+        cell.lblTitle.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 30, text: current?.title ?? "")
         GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current?.image ?? "")
         
         cell.layoutIfNeeded()
@@ -138,8 +150,7 @@ extension ExploreVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: (self.view.frame.size.width - 56) / 2, height: 300)
+        return CGSize(width: (self.view.frame.size.width - 40), height: 129)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

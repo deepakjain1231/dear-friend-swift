@@ -14,8 +14,10 @@ class NewHomeVC: UIViewController {
     // MARK: - OUTLETS
     
     @IBOutlet weak var tblHeight: NSLayoutConstraint!
-    @IBOutlet weak var btnNoti: UIButton!
+    @IBOutlet weak var btnNoti: UIControl!
+    @IBOutlet weak var viewNotiIndicator: UIView!
     @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblSubTitle: UILabel!
     @IBOutlet weak var stackPicks: UIStackView!
     @IBOutlet weak var stackRecm: UIStackView!
     @IBOutlet weak var stackBeginner: UIStackView!
@@ -44,6 +46,7 @@ class NewHomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         GADMobileAds.sharedInstance().start()
+        self.setTheView()
         self.setupUI()
         self.showRatingPromptIfNeeded()
     }
@@ -51,10 +54,6 @@ class NewHomeVC: UIViewController {
     // MARK: - Other Functions
     
     func setupUI() {
-        
-        self.btnNoti.setImage(UIImage(named: "ic_noti_bg2"), for: .normal)
-        self.btnNoti.setImage(UIImage(named: "ic_noti_bg"), for: .selected)
-        
         self.lblName.text = "Hello \(CurrentUser.shared.user?.firstName ?? "") 👋"
         
         self.tblView.setDefaultProperties(vc: self)
@@ -88,6 +87,14 @@ class NewHomeVC: UIViewController {
             self.openNotiPopup()
         }
         tableHeightManage()
+    }
+    
+    //SET THE VIEW
+    func setTheView() {
+        
+        //SET FONT
+        self.lblName.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20, text: "")
+        self.lblSubTitle.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Welcome Back")
     }
     
     func tableHeightManage() {
@@ -136,7 +143,7 @@ class NewHomeVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.btnNoti.isSelected = appDelegate.unread_count > 0
+        self.viewNotiIndicator.isHidden = appDelegate.unread_count == 0 ? true : false
         self.colleRec.reloadData()
         self.colleView.reloadData()
         self.colleBeginner.reloadData()
@@ -146,7 +153,7 @@ class NewHomeVC: UIViewController {
     
     // MARK: - Button Actions
     
-    @IBAction func btnNotificationTapped(_ sender: UIButton) {
+    @IBAction func btnNotificationTapped(_ sender: UIControl) {
         let vc: NotificationsVC = NotificationsVC.instantiate(appStoryboard: .Home)
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
@@ -212,8 +219,7 @@ class NewHomeVC: UIViewController {
         _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { timer in
             self.homeVM.getHomeData { model in
                 
-                self.btnNoti.isSelected = appDelegate.unread_count > 0
-                
+                self.viewNotiIndicator.isHidden = appDelegate.unread_count == 0 ? true : false
                 self.colleView.hideSkeleton()
                 self.colleBeginner.hideSkeleton()
                 self.colleRec.hideSkeleton()
@@ -344,6 +350,8 @@ extension NewHomeVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
             let current = self.homeVM.homedataModel?.category?[indexPath.row]
             cell.lblTitle.text = current?.title ?? ""
             GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current?.image ?? "")
+            cell.viewImgBG.backgroundColor = UIColor.init(hexString: "0E064A").withAlphaComponent(0.7)
+            
             
             cell.layoutIfNeeded()
             return cell
@@ -423,52 +431,15 @@ extension NewHomeVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
         self.homeVM.currentContentId = 0
         if self.colleView == collectionView {
             
-            let current = self.homeVM.homedataModel?.category?[indexPath.row]
-            if current?.access_type == "video" {
-                let yogaVM = VideoViewModel()
-                yogaVM.catID = "\(current?.internalIdentifier ?? 0)"
-                yogaVM.getVideoList { _ in
-                    
-                    if yogaVM.arrOfVideosList.count == 1 {
-                        
-                        let vc: YogaInstructorVC = YogaInstructorVC.instantiate(appStoryboard: .Yoga)
-                        vc.titleStr = current?.title ?? ""
-                        yogaVM.instructor_id = "\(yogaVM.arrOfVideosList[0].internalIdentifier ?? 0)"
-                        vc.yogaVM = yogaVM
-                        vc.hidesBottomBarWhenPushed = true
-                        self.navigationController?.pushViewController(vc, animated: true)
-                        
-                    } else {
-                        let vc: YogaVC = YogaVC.instantiate(appStoryboard: .Yoga)
-                        vc.hidesBottomBarWhenPushed = true
-                        vc.yogaVM = yogaVM
-                        vc.titleStr = current?.title ?? ""
-                        vc.catID = "\(current?.internalIdentifier ?? 0)"
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
-                    
-                } failure: { errorResponse in
-                    
-                }
-            } else {
+            if let currentCell = self.colleView.cellForItem(at: indexPath) as? HomeCategoryCVC {
+                currentCell.viewImgBG.backgroundColor = UIColor.init(hexString: "A8A8DF").withAlphaComponent(0.7)
                 
-                if self.homeVM.homedataModel?.category?[indexPath.row].themeCategory?.count != 0 && self.homeVM.homedataModel?.category?[indexPath.row].themeCategory != nil{
-                    let vc: ExploreThemeCategoryVC = ExploreThemeCategoryVC.instantiate(appStoryboard: .Explore)
-                    vc.hidesBottomBarWhenPushed = true
-                    self.homeVM.currentCategory = self.homeVM.homedataModel?.category?[indexPath.row]
-                    vc.homeVM = self.homeVM
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-                else{
-                    let vc: ExploreSubCategoryVC = ExploreSubCategoryVC.instantiate(appStoryboard: .Explore)
-                    vc.hidesBottomBarWhenPushed = true
-                    vc.strTitle = self.homeVM.homedataModel?.category?[indexPath.row].title ?? ""
-                    self.homeVM.currentCategory = self.homeVM.homedataModel?.category?[indexPath.row]
-                    vc.homeVM = self.homeVM
-                    self.navigationController?.pushViewController(vc, animated: true)
+                Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { tiemrss in
+                    tiemrss.invalidate()
+                    self.goTo_category_screen(indx: indexPath.row)
                 }
             }
-            
+
         } else {
             if collectionView == self.colleBeginner {
                 if (self.homeVM.homedataModel?.beginnerPath?[indexPath.row].forSTr ?? "") == "premium" && !appDelegate.isPlanPurchased {
@@ -538,6 +509,53 @@ extension NewHomeVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
             }
         }
     }
+    
+    func goTo_category_screen(indx: Int) {
+        let current = self.homeVM.homedataModel?.category?[indx]
+        if current?.access_type == "video" {
+            let yogaVM = VideoViewModel()
+            yogaVM.catID = "\(current?.internalIdentifier ?? 0)"
+            yogaVM.getVideoList { _ in
+                
+                if yogaVM.arrOfVideosList.count == 1 {
+                    
+                    let vc: YogaInstructorVC = YogaInstructorVC.instantiate(appStoryboard: .Yoga)
+                    vc.titleStr = current?.title ?? ""
+                    yogaVM.instructor_id = "\(yogaVM.arrOfVideosList[0].internalIdentifier ?? 0)"
+                    vc.yogaVM = yogaVM
+                    vc.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                } else {
+                    let vc: YogaVC = YogaVC.instantiate(appStoryboard: .Yoga)
+                    vc.hidesBottomBarWhenPushed = true
+                    vc.yogaVM = yogaVM
+                    vc.titleStr = current?.title ?? ""
+                    vc.catID = "\(current?.internalIdentifier ?? 0)"
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                
+            } failure: { errorResponse in
+                
+            }
+        } else {
+            if self.homeVM.homedataModel?.category?[indx].themeCategory?.count != 0 && self.homeVM.homedataModel?.category?[indx].themeCategory != nil {
+                let vc: ExploreThemeCategoryVC = ExploreThemeCategoryVC.instantiate(appStoryboard: .Explore)
+                vc.hidesBottomBarWhenPushed = true
+                self.homeVM.currentCategory = self.homeVM.homedataModel?.category?[indx]
+                vc.homeVM = self.homeVM
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else {
+                let vc: ExploreSubCategoryVC = ExploreSubCategoryVC.instantiate(appStoryboard: .Explore)
+                vc.hidesBottomBarWhenPushed = true
+                vc.strTitle = self.homeVM.homedataModel?.category?[indx].title ?? ""
+                self.homeVM.currentCategory = self.homeVM.homedataModel?.category?[indx]
+                vc.homeVM = self.homeVM
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
 }
 
 extension NewHomeVC: UITableViewDelegate, UITableViewDataSource {
@@ -549,6 +567,9 @@ extension NewHomeVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = self.tblView.dequeueReusableCell(withIdentifier: "HomeContentTVC") as? HomeContentTVC else { return UITableViewCell() }
         let audioList = self.homeVM.arrOfHomeDynamic[indexPath.row].data ?? []
         cell.lblTitle.text = self.homeVM.arrOfHomeDynamic[indexPath.row].name
+        let str_img = self.homeVM.arrOfHomeDynamic[indexPath.row].image ?? ""
+        GeneralUtility().setImage(imgView: cell.img_Bg, imgPath: str_img)
+        
         cell.strHomeImage = self.homeVM.arrOfHomeDynamic[indexPath.row].image ?? ""
         cell.arrAudio = audioList
         cell.setupCollection()

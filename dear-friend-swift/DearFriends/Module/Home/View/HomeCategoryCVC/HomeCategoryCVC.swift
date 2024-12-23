@@ -14,12 +14,15 @@ class HomeCategoryCVC: UICollectionViewCell {
     @IBOutlet weak var consWidth: NSLayoutConstraint!
     @IBOutlet weak var consHeight: NSLayoutConstraint!
     @IBOutlet weak var imgMain: UIImageView!
-        
+    @IBOutlet weak var viewImgBG: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
 //        self.addBorder()
+        
+        self.lblTitle.configureLable(textAlignment: .center, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 15, text: "")
     }
 
     func addBorder(radius: CGFloat = 25) {

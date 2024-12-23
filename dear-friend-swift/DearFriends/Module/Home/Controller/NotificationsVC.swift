@@ -14,6 +14,7 @@ class NotificationsVC: UIViewController {
     
     @IBOutlet weak var btnDelete: UIButton!
     @IBOutlet weak var tblMain: UITableView!
+    @IBOutlet weak var lblTitle: UILabel!
     
     // MARK: - VARIABLES
     
@@ -24,8 +25,15 @@ class NotificationsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setTheView()
         self.setupUI()
+    }
+    
+    //SET THE VIEW
+    func setTheView() {
+        
+        //SET FONT
+        self.lblTitle.configureLable(textColor: .background, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 20, text: "Notifications")
     }
     
     // MARK: - Other Functions
@@ -152,9 +160,9 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
             }
             
             if current.read == 0 {
-                cell.vwMain.backgroundColor = hexStringToUIColor(hex: "#776ADA")
+                cell.vwMain.backgroundColor = .secondary
             } else {
-                cell.vwMain.backgroundColor = hexStringToUIColor(hex: "#212159")
+                cell.vwMain.backgroundColor = .primary
             }
             
             cell.selectionStyle = .none

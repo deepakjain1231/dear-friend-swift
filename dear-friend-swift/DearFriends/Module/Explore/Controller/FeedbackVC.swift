@@ -15,6 +15,9 @@ class FeedbackVC: UIViewController {
     @IBOutlet weak var view3: UIView!
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var view1: UIView!
+    @IBOutlet weak var lbl_Title: UILabel!
+    @IBOutlet weak var lbl_Title2: UILabel!
+    @IBOutlet weak var lbl_Title3: UILabel!
     
     @IBOutlet weak var star1: UIImageView!
     @IBOutlet weak var star2: UIImageView!
@@ -35,6 +38,7 @@ class FeedbackVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setTheView()
         self.txtEmail.text = CurrentUser.shared.user?.email ?? ""
         self.txtEmail.isUserInteractionEnabled = false
         self.txtEmail.textColor = .TitleButtonColor
@@ -44,6 +48,20 @@ class FeedbackVC: UIViewController {
     }
     
 
+    //SET THE VIEW
+    func setTheView() {
+        
+        //SET FONT
+        self.lbl_Title.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 20, text: "Feedback")
+        self.lbl_Title2.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "How would you rate this meditation?")
+        self.lbl_Title3.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "Please tell us about your experience.")
+        
+        self.txtEmail.configureText(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 14, text: "", placeholder: "Type your experience...")
+        self.btnSubmit.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20.0, text: "Submit")
+        self.btnSubmit.backgroundColor = .buttonBGColor
+    }
+    
+    
     @IBAction func btnBackTapped(_ sender: Any) {
         self.goBack(isGoingTab: false)
     }

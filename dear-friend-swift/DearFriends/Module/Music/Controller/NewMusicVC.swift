@@ -99,9 +99,19 @@ class NewMusicVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setTheView()
         definesPresentationContext = true
         self.setupUI()
+    }
+    
+    //SET THE VIEW
+    func setTheView() {
+        
+        //SET FONT
+        self.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 20, text: "")
+        self.lblName.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20, text: "")
+        self.btnCat.configureLable(bgColour: .clear, textColor: UIColor.init(hex: "#D1D0D5"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 15, text: "")
+        self.lblNarrated.configureLable(textColor: UIColor.init(hex: "#B2B1B9"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "")
     }
     
     
