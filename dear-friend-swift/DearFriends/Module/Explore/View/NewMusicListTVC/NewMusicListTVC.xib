@@ -68,6 +68,13 @@
                                                     <constraint firstAttribute="height" constant="48" id="a0e-K6-E2n"/>
                                                 </constraints>
                                             </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_top_pin" translatesAutoresizingMaskIntoConstraints="NO" id="OPw-60-6R3">
+                                                <rect key="frame" x="423" y="67.333333333333329" width="12" height="12"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="OPw-60-6R3" secondAttribute="height" multiplier="1:1" id="djj-TL-9hX"/>
+                                                    <constraint firstAttribute="height" constant="12" id="kFQ-Dc-0io"/>
+                                                </constraints>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-Ed-9W5">
                                                 <rect key="frame" x="398" y="25.333333333333329" width="30" height="30"/>
                                                 <constraints>
@@ -98,6 +105,7 @@
                                             <constraint firstItem="wrM-Wl-3AL" firstAttribute="leading" secondItem="vnm-HM-gfR" secondAttribute="trailing" constant="16" id="6TO-tj-bj2"/>
                                             <constraint firstAttribute="height" constant="88" id="Jsb-tM-gxV"/>
                                             <constraint firstItem="Ncf-Ed-9W5" firstAttribute="centerY" secondItem="yM0-i2-hsQ" secondAttribute="centerY" constant="-4" id="KTh-Bg-mwS"/>
+                                            <constraint firstAttribute="trailing" secondItem="OPw-60-6R3" secondAttribute="trailing" constant="5" id="QSw-pN-b2k"/>
                                             <constraint firstItem="wrM-Wl-3AL" firstAttribute="top" secondItem="yM0-i2-hsQ" secondAttribute="top" constant="21.666666666666671" id="Qto-pJ-Q39"/>
                                             <constraint firstAttribute="trailing" secondItem="n0L-aY-5Wq" secondAttribute="trailing" id="XYD-ot-Tdn"/>
                                             <constraint firstItem="7yy-82-rNs" firstAttribute="top" secondItem="yM0-i2-hsQ" secondAttribute="top" id="chS-53-hrG"/>
@@ -109,6 +117,7 @@
                                             <constraint firstItem="vnm-HM-gfR" firstAttribute="leading" secondItem="yM0-i2-hsQ" secondAttribute="leading" constant="8" id="tme-xM-ssR"/>
                                             <constraint firstItem="wrM-Wl-3AL" firstAttribute="centerY" secondItem="yM0-i2-hsQ" secondAttribute="centerY" constant="-4" id="v8p-Nv-TTQ"/>
                                             <constraint firstItem="n0L-aY-5Wq" firstAttribute="leading" secondItem="yM0-i2-hsQ" secondAttribute="leading" id="vwc-Nz-MXz"/>
+                                            <constraint firstItem="n0L-aY-5Wq" firstAttribute="top" secondItem="OPw-60-6R3" secondAttribute="bottom" constant="5" id="zbI-0v-e0z"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -176,6 +185,7 @@
             <connections>
                 <outlet property="btnmore" destination="Ncf-Ed-9W5" id="2qU-41-p0N"/>
                 <outlet property="img" destination="vnm-HM-gfR" id="NOX-CZ-8P6"/>
+                <outlet property="imgPin" destination="OPw-60-6R3" id="tNK-Wo-u8j"/>
                 <outlet property="imgPlayed" destination="7yy-82-rNs" id="SOY-6k-z08"/>
                 <outlet property="lblSub" destination="2H8-zj-kqb" id="BQs-II-Y0m"/>
                 <outlet property="lblTitle" destination="An7-ax-kg9" id="AbW-D0-Gze"/>
@@ -190,6 +200,7 @@
         <image name="ic_more" width="30" height="30"/>
         <image name="ic_new_premium" width="335" height="80"/>
         <image name="ic_played_music" width="46" height="48"/>
+        <image name="ic_top_pin" width="12.666666984558105" height="12.666666984558105"/>
         <image name="imageView:vnm-HM-gfR:image" width="226" height="236">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T

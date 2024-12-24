@@ -516,7 +516,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Kwd-BJ-GDk">
-                                                <rect key="frame" x="109.66666666666669" y="959.66666666666663" width="174" height="50"/>
+                                                <rect key="frame" x="140.66666666666666" y="959.66666666666663" width="112" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djw-DA-yPz">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -530,7 +530,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3B-fZ-I7a">
-                                                        <rect key="frame" x="61.999999999999986" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="62" y="0.0" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="f3B-fZ-I7a" secondAttribute="height" multiplier="1:1" id="Ce9-am-GD2"/>
                                                         </constraints>
@@ -540,8 +540,8 @@
                                                             <action selector="btnSocialTapped:" destination="Kc3-LT-EPg" eventType="touchUpInside" id="i3q-IZ-lPP"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc7-O4-eeh">
-                                                        <rect key="frame" x="124" y="0.0" width="50" height="50"/>
+                                                    <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc7-O4-eeh">
+                                                        <rect key="frame" x="112" y="0.0" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="vc7-O4-eeh" secondAttribute="height" multiplier="1:1" id="Ell-T9-rZN"/>
                                                         </constraints>
@@ -1416,7 +1416,7 @@ check your internet settings</string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="z8w-gk-CY2">
-                                                                <rect key="frame" x="89.666666666666686" y="41.666666666666742" width="174" height="50"/>
+                                                                <rect key="frame" x="120.66666666666666" y="41.666666666666742" width="112" height="50"/>
                                                                 <subviews>
                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwu-nn-f8D">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -1430,7 +1430,7 @@ check your internet settings</string>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hH-ew-dvQ">
-                                                                        <rect key="frame" x="61.999999999999986" y="0.0" width="50" height="50"/>
+                                                                        <rect key="frame" x="62" y="0.0" width="50" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="8hH-ew-dvQ" secondAttribute="height" multiplier="1:1" id="zgq-cv-wKQ"/>
                                                                         </constraints>
@@ -1440,8 +1440,8 @@ check your internet settings</string>
                                                                             <action selector="btnSocialTapped:" destination="V40-I8-8LK" eventType="touchUpInside" id="8bg-ap-HbH"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okt-sV-exR">
-                                                                        <rect key="frame" x="124" y="0.0" width="50" height="50"/>
+                                                                    <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okt-sV-exR">
+                                                                        <rect key="frame" x="112" y="0.0" width="50" height="50"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="Okt-sV-exR" secondAttribute="height" multiplier="1:1" id="qVW-Mu-Yfv"/>
                                                                         </constraints>

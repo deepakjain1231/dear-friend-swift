@@ -1093,14 +1093,14 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_custom_place" translatesAutoresizingMaskIntoConstraints="NO" id="65m-Xb-gmp">
-                                <rect key="frame" x="32" y="154" width="350" height="350"/>
+                                <rect key="frame" x="32" y="144" width="350" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="Ihu-rM-hTC"/>
                                     <constraint firstAttribute="width" secondItem="65m-Xb-gmp" secondAttribute="height" multiplier="1:1" id="y8B-y3-Ame"/>
                                 </constraints>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-ub-AjU">
-                                <rect key="frame" x="358" y="619.5" width="36" height="36"/>
+                                <rect key="frame" x="358" y="567.5" width="36" height="36"/>
                                 <subviews>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PI-Cw-aJA">
                                         <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
@@ -1138,10 +1138,10 @@
                             <constraint firstItem="lPn-zE-bam" firstAttribute="centerX" secondItem="HX2-yt-EXk" secondAttribute="centerX" id="ANd-9M-RRt"/>
                             <constraint firstItem="4Ue-GO-W5j" firstAttribute="top" secondItem="PIf-CE-JWr" secondAttribute="bottom" constant="16" id="AvS-ZZ-cGw"/>
                             <constraint firstItem="ywQ-KX-T5x" firstAttribute="top" secondItem="HX2-yt-EXk" secondAttribute="top" constant="4" id="B6l-Iz-POm"/>
-                            <constraint firstItem="Ke5-ub-AjU" firstAttribute="top" secondItem="YQI-oc-0JZ" secondAttribute="bottom" constant="16" id="Cbt-e9-kd6"/>
+                            <constraint firstItem="Ke5-ub-AjU" firstAttribute="centerY" secondItem="YQI-oc-0JZ" secondAttribute="centerY" id="Lpu-u0-36b"/>
                             <constraint firstItem="PIf-CE-JWr" firstAttribute="top" secondItem="gz8-aT-ih6" secondAttribute="bottom" constant="24" id="Nb1-AJ-3TG"/>
                             <constraint firstItem="HX2-yt-EXk" firstAttribute="trailing" secondItem="YQI-oc-0JZ" secondAttribute="trailing" constant="20" id="O3A-Z9-kTQ"/>
-                            <constraint firstItem="65m-Xb-gmp" firstAttribute="centerY" secondItem="bGG-IJ-yfb" secondAttribute="centerY" id="QFQ-CN-das"/>
+                            <constraint firstItem="65m-Xb-gmp" firstAttribute="centerY" secondItem="bGG-IJ-yfb" secondAttribute="centerY" constant="-10" id="QFQ-CN-das"/>
                             <constraint firstItem="65m-Xb-gmp" firstAttribute="centerX" secondItem="bGG-IJ-yfb" secondAttribute="centerX" id="Qtr-WI-z6g"/>
                             <constraint firstItem="4Ue-GO-W5j" firstAttribute="leading" secondItem="HX2-yt-EXk" secondAttribute="leading" id="RNW-eQ-pXM"/>
                             <constraint firstItem="rHY-AQ-Yyl" firstAttribute="top" secondItem="FFg-MU-irc" secondAttribute="top" id="UJN-UM-QGE"/>

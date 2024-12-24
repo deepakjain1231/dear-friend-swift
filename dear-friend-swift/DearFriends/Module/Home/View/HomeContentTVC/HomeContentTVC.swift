@@ -16,7 +16,8 @@ class HomeContentTVC: UITableViewCell {
     @IBOutlet weak var img_Bg: UIImageView!
     @IBOutlet weak var colletView: UICollectionView!
     @IBOutlet weak var pagecontrol: UIPageControl!
-    
+    @IBOutlet weak var con_CollectionView: NSLayoutConstraint!
+
     var timer: Timer?
     var indxPosition: Int = 0
     var arrAudio = [CommonAudioList]()
@@ -26,6 +27,8 @@ class HomeContentTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.con_CollectionView.constant = manageWidth(size: 180)
+
         // Initialization code
         let gradient = SkeletonGradient(baseColor: hexStringToUIColor(hex: "#212159"))
         self.colletView.isSkeletonable = true
@@ -36,6 +39,7 @@ class HomeContentTVC: UITableViewCell {
     }
 
     func setupCollection() {
+
         self.colletView.delegate = self
         self.colletView.dataSource = self
         self.colletView.registerCell(type: HomeListCVC.self)
@@ -47,7 +51,7 @@ class HomeContentTVC: UITableViewCell {
     
     func startTimer() {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(scrollAutomatically), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(scrollAutomatically), userInfo: nil, repeats: true)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -130,7 +134,7 @@ extension HomeContentTVC: UICollectionViewDelegate, SkeletonCollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: manageWidth(size: 180))
+        return CGSize(width: collectionView.frame.size.width, height: manageWidth(size: 210))
 
 //        return CGSize(width: 226, height: 236)
         

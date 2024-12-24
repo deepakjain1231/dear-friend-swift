@@ -16,113 +16,119 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="479" id="KGk-i7-Jjw" customClass="HomeContentTVC" customModule="Dear_Friends" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="378" height="479"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="265" id="KGk-i7-Jjw" customClass="HomeContentTVC" customModule="Dear_Friends" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="378" height="265"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="378" height="479"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="378" height="265"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Z7Q-Wv-TfX">
-                        <rect key="frame" x="20" y="0.0" width="338" height="217"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZE3-9g-RPV">
+                        <rect key="frame" x="12" y="5" width="354" height="25"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZE3-9g-RPV">
-                                <rect key="frame" x="0.0" y="0.0" width="338" height="25"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beginners Path" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMg-hf-LAu">
-                                        <rect key="frame" x="0.0" y="2.3333333333333339" width="109.66666666666667" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMO-UQ-kDe">
-                                        <rect key="frame" x="302" y="-1.6666666666666661" width="36" height="28.333333333333329"/>
-                                        <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="12"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="See all">
-                                            <color key="titleColor" name="#E4E1F8"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="cny-6g-OqM"/>
-                                    <constraint firstItem="AMg-hf-LAu" firstAttribute="centerY" secondItem="ZE3-9g-RPV" secondAttribute="centerY" id="d73-aT-AV0"/>
-                                    <constraint firstAttribute="trailing" secondItem="oMO-UQ-kDe" secondAttribute="trailing" id="djt-xs-DxU"/>
-                                    <constraint firstItem="AMg-hf-LAu" firstAttribute="leading" secondItem="ZE3-9g-RPV" secondAttribute="leading" id="ekd-4h-0Pc"/>
-                                    <constraint firstItem="oMO-UQ-kDe" firstAttribute="centerY" secondItem="ZE3-9g-RPV" secondAttribute="centerY" id="uaa-eU-Eye"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NZ-5g-9Pp">
-                                <rect key="frame" x="0.0" y="37" width="338" height="180"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tVE-fQ-FdQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="338" height="180"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lwa-3a-E86">
-                                        <rect key="frame" x="0.0" y="0.0" width="338" height="180"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="180" id="qhp-mQ-PY6"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="X19-fK-Gp8">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
-                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="una-zx-1Wg">
-                                        <rect key="frame" x="132.66666666666666" y="154.33333333333334" width="73" height="25.666666666666657"/>
-                                    </pageControl>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="una-zx-1Wg" firstAttribute="centerX" secondItem="9NZ-5g-9Pp" secondAttribute="centerX" id="41c-bW-shY"/>
-                                    <constraint firstItem="tVE-fQ-FdQ" firstAttribute="top" secondItem="9NZ-5g-9Pp" secondAttribute="top" id="Cml-0C-VuZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="tVE-fQ-FdQ" secondAttribute="bottom" id="Gsk-FF-8Wq"/>
-                                    <constraint firstAttribute="trailing" secondItem="tVE-fQ-FdQ" secondAttribute="trailing" id="Vvv-L6-oz9"/>
-                                    <constraint firstItem="lwa-3a-E86" firstAttribute="top" secondItem="9NZ-5g-9Pp" secondAttribute="top" id="Wog-bi-SI4"/>
-                                    <constraint firstAttribute="bottom" secondItem="una-zx-1Wg" secondAttribute="bottom" id="hHM-tE-Fyv"/>
-                                    <constraint firstAttribute="bottom" secondItem="lwa-3a-E86" secondAttribute="bottom" id="kK2-47-XCM"/>
-                                    <constraint firstAttribute="trailing" secondItem="lwa-3a-E86" secondAttribute="trailing" id="kV8-RU-htA"/>
-                                    <constraint firstItem="lwa-3a-E86" firstAttribute="leading" secondItem="9NZ-5g-9Pp" secondAttribute="leading" id="m4f-jB-zMh"/>
-                                    <constraint firstItem="tVE-fQ-FdQ" firstAttribute="leading" secondItem="9NZ-5g-9Pp" secondAttribute="leading" id="pR7-kh-XCY"/>
-                                    <constraint firstAttribute="height" constant="180" id="tb0-Fw-KJr"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beginners Path" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMg-hf-LAu">
+                                <rect key="frame" x="0.0" y="2.3333333333333339" width="109.66666666666667" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMO-UQ-kDe">
+                                <rect key="frame" x="318" y="-1.3333333333333339" width="36" height="28"/>
+                                <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="See all">
+                                    <color key="titleColor" name="#E4E1F8"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AMg-hf-LAu" firstAttribute="centerY" secondItem="ZE3-9g-RPV" secondAttribute="centerY" id="2ow-gU-wEM"/>
+                            <constraint firstItem="AMg-hf-LAu" firstAttribute="leading" secondItem="ZE3-9g-RPV" secondAttribute="leading" id="4WI-ar-b03"/>
+                            <constraint firstItem="oMO-UQ-kDe" firstAttribute="centerY" secondItem="ZE3-9g-RPV" secondAttribute="centerY" id="51Z-ZO-dYV"/>
+                            <constraint firstAttribute="height" constant="25" id="nhe-Ot-Znf"/>
+                            <constraint firstAttribute="trailing" secondItem="oMO-UQ-kDe" secondAttribute="trailing" id="otV-Dj-67O"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NZ-5g-9Pp">
+                        <rect key="frame" x="12" y="46" width="354" height="180"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tVE-fQ-FdQ">
+                                <rect key="frame" x="0.0" y="0.0" width="354" height="180"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </view>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lwa-3a-E86">
+                                <rect key="frame" x="0.0" y="0.0" width="354" height="180"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="X19-fK-Gp8">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="una-zx-1Wg">
+                                <rect key="frame" x="140.66666666666666" y="149.33333333333334" width="73" height="25.666666666666657"/>
+                            </pageControl>
                         </subviews>
-                    </stackView>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lwa-3a-E86" secondAttribute="trailing" id="4o8-UW-JhX"/>
+                            <constraint firstAttribute="bottom" secondItem="tVE-fQ-FdQ" secondAttribute="bottom" id="AA9-ch-Avv"/>
+                            <constraint firstAttribute="trailing" secondItem="tVE-fQ-FdQ" secondAttribute="trailing" id="CTn-Ip-qLn"/>
+                            <constraint firstAttribute="bottom" secondItem="una-zx-1Wg" secondAttribute="bottom" constant="5" id="Nhb-MO-SlN"/>
+                            <constraint firstItem="tVE-fQ-FdQ" firstAttribute="leading" secondItem="9NZ-5g-9Pp" secondAttribute="leading" id="OHL-Q4-GvH"/>
+                            <constraint firstItem="lwa-3a-E86" firstAttribute="top" secondItem="9NZ-5g-9Pp" secondAttribute="top" id="Pzv-FJ-OeE"/>
+                            <constraint firstItem="lwa-3a-E86" firstAttribute="leading" secondItem="9NZ-5g-9Pp" secondAttribute="leading" id="V3M-QN-PJK"/>
+                            <constraint firstItem="una-zx-1Wg" firstAttribute="centerX" secondItem="9NZ-5g-9Pp" secondAttribute="centerX" id="dS5-x7-OZl"/>
+                            <constraint firstItem="tVE-fQ-FdQ" firstAttribute="top" secondItem="9NZ-5g-9Pp" secondAttribute="top" id="eBI-eg-Cdy"/>
+                            <constraint firstAttribute="bottom" secondItem="lwa-3a-E86" secondAttribute="bottom" id="pDe-21-9Lz"/>
+                            <constraint firstAttribute="height" constant="180" id="tb0-Fw-KJr"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="Z7Q-Wv-TfX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="5a9-uO-l3w"/>
-                    <constraint firstAttribute="bottom" secondItem="Z7Q-Wv-TfX" secondAttribute="bottom" constant="22" id="iaO-YF-Mbd"/>
-                    <constraint firstAttribute="trailing" secondItem="Z7Q-Wv-TfX" secondAttribute="trailing" constant="20" id="pvp-lB-j9n"/>
-                    <constraint firstItem="Z7Q-Wv-TfX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="stt-0C-HwE"/>
+                    <constraint firstAttribute="trailing" secondItem="ZE3-9g-RPV" secondAttribute="trailing" constant="12" id="2JR-ZK-QC1"/>
+                    <constraint firstAttribute="trailing" secondItem="9NZ-5g-9Pp" secondAttribute="trailing" constant="12" id="3qG-0m-2tP"/>
+                    <constraint firstItem="ZE3-9g-RPV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="4zl-Ix-1Yw"/>
+                    <constraint firstItem="ZE3-9g-RPV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="AVC-MV-vIv"/>
+                    <constraint firstAttribute="bottom" secondItem="9NZ-5g-9Pp" secondAttribute="bottom" constant="12" id="F2K-Ud-FCx"/>
+                    <constraint firstItem="9NZ-5g-9Pp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="RTf-EN-zXJ"/>
+                    <constraint firstItem="9NZ-5g-9Pp" firstAttribute="top" secondItem="ZE3-9g-RPV" secondAttribute="bottom" constant="16" id="qtf-P2-pdk"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="btnSeeAll" destination="oMO-UQ-kDe" id="PyQ-ih-tkG"/>
                 <outlet property="colletView" destination="lwa-3a-E86" id="t6m-NN-BBk"/>
+                <outlet property="con_CollectionView" destination="tb0-Fw-KJr" id="lUm-aO-vic"/>
                 <outlet property="img_Bg" destination="tVE-fQ-FdQ" id="ACv-Pq-EO0"/>
                 <outlet property="lblTitle" destination="AMg-hf-LAu" id="goO-tc-suX"/>
                 <outlet property="pagecontrol" destination="una-zx-1Wg" id="bzr-YP-cW8"/>
             </connections>
-            <point key="canvasLocation" x="102.29007633587786" y="-15.140845070422536"/>
+            <point key="canvasLocation" x="102.29007633587786" y="-90.492957746478879"/>
         </tableViewCell>
     </objects>
     <resources>

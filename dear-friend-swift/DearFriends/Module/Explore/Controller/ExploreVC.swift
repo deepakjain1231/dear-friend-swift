@@ -115,6 +115,11 @@ extension ExploreVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
         return 6
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+    }
+    
+    
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return "ExploreCVC"
     }
@@ -130,35 +135,75 @@ extension ExploreVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploreCVC", for: indexPath) as? ExploreCVC else { return UICollectionViewCell() }
         
-        cell.vwMain2.layer.cornerRadius = 20
-        cell.vwMain2.layer.borderWidth = 1
-        cell.vwMain2.layer.borderColor = hexStringToUIColor(hex: "#776ADA").cgColor
-        cell.vwMain2.backgroundColor = .primary?.withAlphaComponent(0.7)
-        
-//        if self.indexx == indexPath {
-//            cell.vwMain2.backgroundColor = hexStringToUIColor(hex: "#776ADA")
-//        } else {
-//            cell.vwMain2.backgroundColor = hexStringToUIColor(hex: "#212159")
-//        }
-                        
         let current = self.homeVM.homedataModel?.category?[indexPath.row]
         cell.lblTitle.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 30, text: current?.title ?? "")
         GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current?.image ?? "")
         
+        //SET VIEW
+        cell.vwMain.viewCorneRadius(radius: 30)
+        cell.vwMain.backgroundColor = .primary?.withAlphaComponent(0.5)
+        cell.vwMain.viewBorderCorneRadius(borderColour: .secondary)
+        addDropShadow(to: cell.vwMain, color: .primary ?? .black, opacity: 1, x: 0, y: 4, blur: 4)
+        addInnerShadow(to: cell.vwMain, color: .primary ?? .black, opacity: 1, x: 0, y: 4, blur: 15)
+        
+//        cell.vwMain2.layer.cornerRadius = 20
+//        cell.vwMain2.layer.borderWidth = 1
+//        cell.vwMain2.layer.borderColor = hexStringToUIColor(hex: "#776ADA").cgColor
+//        cell.vwMain2.backgroundColor = .primary?.withAlphaComponent(0.7)
+//        
+////        if self.indexx == indexPath {
+////            cell.vwMain2.backgroundColor = hexStringToUIColor(hex: "#776ADA")
+////        } else {
+////            cell.vwMain2.backgroundColor = hexStringToUIColor(hex: "#212159")
+////        }
+//                        
+        
+//        
         cell.layoutIfNeeded()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.view.frame.size.width - 40), height: 129)
+        return CGSize(width: self.view.frame.size.width, height: manageWidth(size: 135))
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if let currentCell = collectionView.cellForItem(at: indexPath) as? ExploreCVC {
+            //SET VIEW
+            currentCell.vwMain.viewCorneRadius(radius: 30)
+            currentCell.vwMain.backgroundColor = UIColor.init(hexString: "A8A8DF").withAlphaComponent(0.7)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        if let currentCell = collectionView.cellForItem(at: indexPath) as? ExploreCVC {
+            //SET VIEW
+            currentCell.vwMain.viewCorneRadius(radius: 30)
+            currentCell.vwMain.backgroundColor = .clear
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.indexx = indexPath
+        if let currentCell = collectionView.cellForItem(at: indexPath) as? ExploreCVC {
+            //SET VIEW
+            currentCell.vwMain.viewCorneRadius(radius: 30)
+            currentCell.vwMain.backgroundColor = UIColor.init(hexString: "A8A8DF").withAlphaComponent(0.7)
+            
+            Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { tiemrss in
+                tiemrss.invalidate()
+                self.indexx = indexPath
+                self.goTo_category_screen(index: indexPath.row)
+            }
+        }
+    }
+    
+    func goTo_category_screen(index : Int) {
         self.colleView.reloadData()
-        let current = self.homeVM.homedataModel?.category?[indexPath.row]
+        let current = self.homeVM.homedataModel?.category?[index]
         if current?.access_type == "video" {
-            var yogaVM = VideoViewModel()
+            let yogaVM = VideoViewModel()
             yogaVM.catID = "\(current?.internalIdentifier ?? 0)"
             yogaVM.getVideoList { _ in
                 
@@ -185,18 +230,18 @@ extension ExploreVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
             }
         } else {
 
-            if self.homeVM.homedataModel?.category?[indexPath.row].themeCategory?.count != 0 && self.homeVM.homedataModel?.category?[indexPath.row].themeCategory != nil{
+            if self.homeVM.homedataModel?.category?[index].themeCategory?.count != 0 && self.homeVM.homedataModel?.category?[index].themeCategory != nil{
                 let vc: ExploreThemeCategoryVC = ExploreThemeCategoryVC.instantiate(appStoryboard: .Explore)
                 vc.hidesBottomBarWhenPushed = true
-                self.homeVM.currentCategory = self.homeVM.homedataModel?.category?[indexPath.row]
+                self.homeVM.currentCategory = self.homeVM.homedataModel?.category?[index]
                 vc.homeVM = self.homeVM
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             else{
                 let vc: ExploreSubCategoryVC = ExploreSubCategoryVC.instantiate(appStoryboard: .Explore)
                 vc.hidesBottomBarWhenPushed = true
-                vc.strTitle = self.homeVM.homedataModel?.category?[indexPath.row].title ?? ""
-                self.homeVM.currentCategory = self.homeVM.homedataModel?.category?[indexPath.row]
+                vc.strTitle = self.homeVM.homedataModel?.category?[index].title ?? ""
+                self.homeVM.currentCategory = self.homeVM.homedataModel?.category?[index]
                 vc.homeVM = self.homeVM
                 self.navigationController?.pushViewController(vc, animated: true)
             }
@@ -204,3 +249,44 @@ extension ExploreVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
     }
 }
 
+
+
+
+extension ExploreVC{
+    func addDropShadow(to view: UIView, color: UIColor = .black, opacity: Float = 0.5, x: CGFloat = 0, y: CGFloat = 0, blur: CGFloat = 5.0) {
+        view.layer.shadowColor = color.cgColor       // Shadow color
+        view.layer.shadowOpacity = opacity          // Shadow opacity
+        view.layer.shadowOffset = CGSize(width: x, height: y) // Shadow offset (x, y)
+        view.layer.shadowRadius = blur              // Shadow blur radius
+        view.layer.masksToBounds = false            // Prevent clipping of the shadow
+    }
+    
+    
+    func addInnerShadow(to view: UIView, color: UIColor = .black, opacity: Float = 0.5, x: CGFloat = 0, y: CGFloat = 0, blur: CGFloat = 5.0) {
+        // Remove existing inner shadow layers (optional, for repeated calls)
+        view.layer.sublayers?.removeAll(where: { $0.name == "InnerShadowLayer" })
+
+        let innerShadowLayer = CAShapeLayer()
+        innerShadowLayer.name = "InnerShadowLayer" // For identification if needed
+        innerShadowLayer.frame = view.bounds
+
+        // Create the shadow path
+        let shadowPath = UIBezierPath(rect: view.bounds)
+        let insetPath = UIBezierPath(rect: view.bounds.insetBy(dx: -blur, dy: -blur))
+        shadowPath.append(insetPath)
+        shadowPath.usesEvenOddFillRule = true
+
+        innerShadowLayer.path = shadowPath.cgPath
+        innerShadowLayer.fillRule = .evenOdd
+
+        // Configure shadow properties
+        innerShadowLayer.shadowColor = color.cgColor
+        innerShadowLayer.shadowOpacity = opacity
+        innerShadowLayer.shadowOffset = CGSize(width: x, height: y)
+        innerShadowLayer.shadowRadius = blur
+        innerShadowLayer.fillColor = UIColor.clear.cgColor
+
+        // Add the inner shadow layer
+        view.layer.addSublayer(innerShadowLayer)
+    }
+}

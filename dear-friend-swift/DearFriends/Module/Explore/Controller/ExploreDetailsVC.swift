@@ -242,10 +242,22 @@ extension ExploreDetailsVC: UITableViewDataSource, UITableViewDelegate {
             }
         }
        
+        //SET PIN
         cell.isPined = ((current.pin_date ?? "") != "")
+        cell.imgPin.isHidden = !cell.isPined
         
         cell.indexTapped = { ind in
             if ind == 2 {
+                if current.pin_date ?? "" == "" {
+                    let pinCount = self.homeVM.arrOfAudioList.filter { $0.pin_date != "" }.count
+                    if pinCount >= 3{
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                            GeneralUtility.sharedInstance.showErrorMessage(message: "Pin Limit Reached - You can only pin up to 3 items. To pin another, unpin one of your current selections")
+                        })
+                        return
+                    }
+                }
+                
                 self.homeVM.pinAudio(audio_id: "\(current.internalIdentifier ?? 0)") { _ in
                     self.homeVM.limit = 10
                     self.homeVM.offset = 0

@@ -171,6 +171,7 @@ class NewMusicVC: UIViewController {
         CurrentUser.shared.arrOfDownloadedBGAudios = CurrentUser.shared.arrOfDownloadedBGAudios.uniqued()
         
         if self.isFromDownload {
+            self.btnBG.isHidden = true
             self.btnLike.isHidden = true
             self.vwRepeat.isHidden = true
             self.vwRepeat2.isHidden = false
@@ -419,6 +420,10 @@ class NewMusicVC: UIViewController {
                 self.btnCat.isHidden = true
             }
             
+            if self.isFromDownload {
+                self.btnCat.isHidden = true
+            }
+            
             if (current.narratedBy ?? "") != "" {
                 self.lblNarrated.text = "\(strGuidedBy)\(current.narratedBy ?? "")"
             }
@@ -642,7 +647,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
         self.managePlayer()
         self.backGroundPlayer?.pause()
         
-        self.btnBG.isHidden = self.currentSong?.is_background_audio == strNo || (isFromDownload ? self.arrDownloadedBGAudio.count == 0 : self.currentSong?.backgrounds?.count == 0 || self.currentSong?.backgrounds?.count == nil)
+        self.btnBG.isHidden = self.currentSong?.is_background_audio == strNo || (isFromDownload ? self.arrDownloadedBGAudio.count == 0 : self.currentSong?.backgrounds?.count == 0 || self.currentSong?.backgrounds?.count == nil) || isFromDownload
       
         self.btnMore.isHidden = (self.currentSong?.file == "" || self.currentSong?.femaleAudioStr == "")
         self.lblNarrated.isHidden = self.currentSong?.narratedBy == ""
@@ -869,6 +874,10 @@ extension NewMusicVC: AVAudioPlayerDelegate {
             self.lblTitle.text = self.currentDownload?.category
             if self.isHomePage && self.strHomeTitle != ""{
                 self.lblTitle.text = self.strHomeTitle
+                self.btnCat.isHidden = true
+            }
+            
+            if self.isFromDownload {
                 self.btnCat.isHidden = true
             }
             
@@ -1558,13 +1567,16 @@ extension NewMusicVC {
         
         self.removeObserver()
         self.backGroundPlayer = nil
-        let playerItem2 = AVPlayerItem(url: finalURL)
-        self.backGroundPlayer = AVPlayer(playerItem: playerItem2)
-        self.backGroundPlayer?.volume = 0.8
-        self.backGroundPlayer?.playImmediately(atRate: 1.0)
-        self.loopVideo(videoPlayer: (self.backGroundPlayer)!)
-        self.newplayer.resume()
+        if self.isFromDownload == false{
+            let playerItem2 = AVPlayerItem(url: finalURL)
+            self.backGroundPlayer = AVPlayer(playerItem: playerItem2)
+            self.backGroundPlayer?.volume = 0.8
+            self.backGroundPlayer?.playImmediately(atRate: 1.0)
+            self.loopVideo(videoPlayer: (self.backGroundPlayer)!)
+            self.newplayer.resume()
 
+        }
+        
     }
     
     

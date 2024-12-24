@@ -10,11 +10,11 @@ import CollectionViewPagingLayout
 
 class TopCategoryCVC: UICollectionViewCell {
     
-    @IBOutlet weak var vw2: UIView!
-    @IBOutlet weak var consWidth: NSLayoutConstraint!
+//    @IBOutlet weak var vw2: UIView!
+//    @IBOutlet weak var consWidth: NSLayoutConstraint!
     @IBOutlet weak var vwMain: UIView!
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var consHeight: NSLayoutConstraint!
+//    @IBOutlet weak var consHeight: NSLayoutConstraint!
     @IBOutlet weak var imgMain: UIImageView!
     
 //    var scaleOptions: ScaleTransformViewOptions = .layout(.linear)

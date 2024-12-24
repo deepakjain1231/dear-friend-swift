@@ -685,6 +685,7 @@
                         <outlet property="colleRec" destination="YPX-LW-OhA" id="Kwq-DV-z8Z"/>
                         <outlet property="colleTopPicks" destination="9e0-9q-d5F" id="j2G-lE-BjT"/>
                         <outlet property="colleView" destination="dK0-9v-UFi" id="TeR-xn-tNI"/>
+                        <outlet property="con_headerCollectionView" destination="fMb-JW-kSH" id="757-Fp-1co"/>
                         <outlet property="lblName" destination="qwP-0z-vlz" id="csN-Af-3ub"/>
                         <outlet property="lblSubTitle" destination="g2r-Nm-tuv" id="Qf0-5d-lRR"/>
                         <outlet property="stackBeginner" destination="WTJ-nX-Mn7" id="nDi-p9-qgE"/>
@@ -823,7 +824,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beginners Path" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7d-eU-xEj">
-                                <rect key="frame" x="127.33333333333333" y="82.333333333333329" width="138.33333333333343" height="25.333333333333329"/>
+                                <rect key="frame" x="127.33333333333333" y="82.333333333333329" width="138.33333333333337" height="25.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

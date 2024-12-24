@@ -15,6 +15,7 @@ class NewMusicListTVC: UITableViewCell {
     @IBOutlet weak var vwPremius: UIView!
     @IBOutlet weak var btnPremium: UIButton!
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var imgPin: UIImageView!
     @IBOutlet weak var lblSub: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnmore: UIButton!

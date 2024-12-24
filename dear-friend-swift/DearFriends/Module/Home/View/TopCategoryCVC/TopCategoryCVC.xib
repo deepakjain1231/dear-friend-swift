@@ -7,112 +7,70 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Outfit-Regular.ttf">
-            <string>Outfit-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iKl-RM-Yz0" customClass="TopCategoryCVC" customModule="Dear_Friends" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="398" height="195"/>
+            <rect key="frame" x="0.0" y="0.0" width="380" height="195"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="398" height="195"/>
+                <rect key="frame" x="0.0" y="0.0" width="380" height="195"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dat-gh-Apg">
-                        <rect key="frame" x="0.0" y="0.0" width="398" height="106"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikC-Kw-ZpU">
-                                <rect key="frame" x="0.0" y="6" width="398" height="100"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cat_bg" translatesAutoresizingMaskIntoConstraints="NO" id="O0s-rP-mir">
-                                        <rect key="frame" x="18" y="10" width="70" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="O0s-rP-mir" secondAttribute="height" multiplier="1:1" id="BB6-I3-JZB"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yoga" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="1K2-zw-zin">
-                                        <rect key="frame" x="108" y="36.333333333333336" width="278" height="17.666666666666664"/>
-                                        <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
-                                        <color key="textColor" red="0.89411764709999997" green="0.88235294119999996" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <lineBreakStrategy key="lineBreakStrategy"/>
-                                        <size key="shadowOffset" width="1" height="1"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="1K2-zw-zin" secondAttribute="trailing" constant="12" id="5bC-IE-AEp"/>
-                                    <constraint firstItem="O0s-rP-mir" firstAttribute="height" secondItem="ikC-Kw-ZpU" secondAttribute="height" multiplier="0.7" id="9Su-8P-mo3"/>
-                                    <constraint firstAttribute="height" constant="100" id="FzV-Up-PXs"/>
-                                    <constraint firstItem="1K2-zw-zin" firstAttribute="leading" secondItem="O0s-rP-mir" secondAttribute="trailing" constant="20" id="maS-LU-0Q1"/>
-                                    <constraint firstItem="O0s-rP-mir" firstAttribute="centerY" secondItem="ikC-Kw-ZpU" secondAttribute="centerY" constant="-5" id="oLn-gx-uSI"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="tfJ-2p-xax"/>
-                                    <constraint firstItem="1K2-zw-zin" firstAttribute="centerY" secondItem="ikC-Kw-ZpU" secondAttribute="centerY" constant="-5" id="wJr-Y6-c9k"/>
-                                    <constraint firstItem="O0s-rP-mir" firstAttribute="leading" secondItem="ikC-Kw-ZpU" secondAttribute="leading" constant="18" id="wMi-XW-hPM"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_them_bg" translatesAutoresizingMaskIntoConstraints="NO" id="zbC-Fo-BSI">
+                        <rect key="frame" x="6" y="3" width="368" height="103"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ikC-Kw-ZpU" secondAttribute="trailing" id="ChM-ck-YQF"/>
-                            <constraint firstAttribute="bottom" secondItem="ikC-Kw-ZpU" secondAttribute="bottom" id="JkQ-tm-w0N"/>
-                            <constraint firstItem="ikC-Kw-ZpU" firstAttribute="top" secondItem="dat-gh-Apg" secondAttribute="top" constant="6" id="ubO-m9-0rm"/>
-                            <constraint firstItem="ikC-Kw-ZpU" firstAttribute="leading" secondItem="dat-gh-Apg" secondAttribute="leading" id="vXg-qI-F8N"/>
+                            <constraint firstAttribute="width" secondItem="zbC-Fo-BSI" secondAttribute="height" multiplier="368:103" id="ZjE-TE-47U"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRi-Pc-vWD">
+                        <rect key="frame" x="11" y="3" width="358" height="95"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y8L-YL-oFp">
+                        <rect key="frame" x="31" y="7" width="85" height="85"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="y8L-YL-oFp" secondAttribute="height" multiplier="1:1" id="LhA-1n-ybr"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8u-hA-vkQ">
+                        <rect key="frame" x="132" y="39" width="222" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="Yix-Ua-2Js"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="dat-gh-Apg" firstAttribute="top" secondItem="iKl-RM-Yz0" secondAttribute="top" id="LOa-Bh-A6n"/>
-                <constraint firstItem="dat-gh-Apg" firstAttribute="leading" secondItem="iKl-RM-Yz0" secondAttribute="leading" id="aek-qt-tGs"/>
-                <constraint firstItem="dat-gh-Apg" firstAttribute="centerX" secondItem="Yix-Ua-2Js" secondAttribute="centerX" id="b40-qh-SHO"/>
-                <constraint firstAttribute="trailing" secondItem="dat-gh-Apg" secondAttribute="trailing" id="eeP-K4-P0T"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dat-gh-Apg" secondAttribute="bottom" constant="12" id="ziy-On-Y2W"/>
+                <constraint firstItem="zbC-Fo-BSI" firstAttribute="centerX" secondItem="Yix-Ua-2Js" secondAttribute="centerX" id="BYp-Rh-wQm"/>
+                <constraint firstItem="y8L-YL-oFp" firstAttribute="centerY" secondItem="zbC-Fo-BSI" secondAttribute="centerY" constant="-5" id="DIi-gV-EcM"/>
+                <constraint firstItem="zbC-Fo-BSI" firstAttribute="top" secondItem="iKl-RM-Yz0" secondAttribute="top" constant="3" id="FlG-m6-80y"/>
+                <constraint firstItem="i8u-hA-vkQ" firstAttribute="centerY" secondItem="y8L-YL-oFp" secondAttribute="centerY" id="HzV-Ag-AtM"/>
+                <constraint firstItem="hRi-Pc-vWD" firstAttribute="trailing" secondItem="zbC-Fo-BSI" secondAttribute="trailing" constant="-5" id="KCK-V5-BVv"/>
+                <constraint firstItem="y8L-YL-oFp" firstAttribute="leading" secondItem="zbC-Fo-BSI" secondAttribute="leading" constant="25" id="LIF-r9-G4d"/>
+                <constraint firstItem="zbC-Fo-BSI" firstAttribute="width" secondItem="iKl-RM-Yz0" secondAttribute="width" multiplier="0.968421" id="Odh-Ss-zRW"/>
+                <constraint firstItem="hRi-Pc-vWD" firstAttribute="top" secondItem="zbC-Fo-BSI" secondAttribute="top" id="R1a-vi-SDe"/>
+                <constraint firstItem="i8u-hA-vkQ" firstAttribute="leading" secondItem="y8L-YL-oFp" secondAttribute="trailing" constant="16" id="T2Q-TT-hia"/>
+                <constraint firstItem="y8L-YL-oFp" firstAttribute="height" secondItem="zbC-Fo-BSI" secondAttribute="height" multiplier="0.825243" id="Ubt-cd-N9X"/>
+                <constraint firstItem="hRi-Pc-vWD" firstAttribute="leading" secondItem="zbC-Fo-BSI" secondAttribute="leading" constant="5" id="dSl-8B-ifo"/>
+                <constraint firstItem="hRi-Pc-vWD" firstAttribute="bottom" secondItem="zbC-Fo-BSI" secondAttribute="bottom" constant="-8" id="fuq-rq-A14"/>
+                <constraint firstItem="i8u-hA-vkQ" firstAttribute="trailing" secondItem="zbC-Fo-BSI" secondAttribute="trailing" constant="-20" id="s1D-kd-gtk"/>
             </constraints>
             <size key="customSize" width="408" height="315"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="imgMain" destination="O0s-rP-mir" id="Gk4-K4-HMk"/>
-                <outlet property="lblTitle" destination="1K2-zw-zin" id="1iy-sF-KvD"/>
-                <outlet property="vwMain" destination="dat-gh-Apg" id="M1f-6d-crc"/>
+                <outlet property="imgMain" destination="y8L-YL-oFp" id="7f6-kN-iwd"/>
+                <outlet property="lblTitle" destination="i8u-hA-vkQ" id="1hN-qi-Bwc"/>
+                <outlet property="vwMain" destination="hRi-Pc-vWD" id="h8n-2q-iZT"/>
             </connections>
             <point key="canvasLocation" x="235.11450381679387" y="17.253521126760564"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ic_cat_bg" width="54" height="54"/>
+        <image name="icon_them_bg" width="368" height="103"/>
     </resources>
 </document>

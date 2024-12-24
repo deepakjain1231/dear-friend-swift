@@ -28,7 +28,8 @@ class NewHomeVC: UIViewController {
     @IBOutlet weak var vwScroll: UIScrollView!
     
     @IBOutlet weak var tblView: UITableView!
-    
+    @IBOutlet weak var con_headerCollectionView: NSLayoutConstraint!
+
     // MARK: - VARIABLES
     
     var homeVM = HomeViewModel()
@@ -54,6 +55,8 @@ class NewHomeVC: UIViewController {
     // MARK: - Other Functions
     
     func setupUI() {
+        self.con_headerCollectionView.constant = manageWidth(size: 160)
+        
         self.lblName.text = "Hello \(CurrentUser.shared.user?.firstName ?? "") 👋"
         
         self.tblView.setDefaultProperties(vc: self)
@@ -347,10 +350,11 @@ extension NewHomeVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
         if collectionView == self.colleView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCategoryCVC", for: indexPath) as? HomeCategoryCVC else { return UICollectionViewCell() }
             
+            cell.backgroundColor = .clear
             let current = self.homeVM.homedataModel?.category?[indexPath.row]
             cell.lblTitle.text = current?.title ?? ""
             GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current?.image ?? "")
-            cell.viewImgBG.backgroundColor = UIColor.init(hexString: "0E064A").withAlphaComponent(0.7)
+            cell.viewImgBG.backgroundColor = .clear
             
             
             cell.layoutIfNeeded()
@@ -360,7 +364,8 @@ extension NewHomeVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeListCVC", for: indexPath) as? HomeListCVC else { return UICollectionViewCell() }
             
             let current = self.homeVM.homedataModel?.beginnerPath?[indexPath.row]
-            cell.lblTitle.text = current?.title ?? ""
+            cell.lblTitle.configureLable(textAlignment: .center, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 18, text: current?.title ?? "")
+
             GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current?.image ?? "")
             let ddd = current?.audioDuration?.doubleValue ?? 0
             cell.lblTime.text = TimeInterval(ddd).formatDuration()
@@ -417,13 +422,30 @@ extension NewHomeVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if collectionView == self.colleView {
-            return CGSize(width: 100, height: 120)
+            return CGSize(width: manageWidth(size: 130), height: manageWidth(size: 160))
             
         } else if collectionView == self.colleBeginner || collectionView == self.colleTopPicks || collectionView == self.colleRec {
-            return CGSize(width: 226, height: 236)
+            return CGSize(width: 226, height: 500)
             
         } else {
             return CGSize.zero
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if let currentCell = collectionView.cellForItem(at: indexPath) as? HomeCategoryCVC {
+            //SET VIEW
+            currentCell.viewImgBG.viewCorneRadius(radius: 10)
+            currentCell.viewImgBG.backgroundColor = UIColor.init(hexString: "A8A8DF").withAlphaComponent(0.7)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        if let currentCell = collectionView.cellForItem(at: indexPath) as? HomeCategoryCVC {
+            //SET VIEW
+            currentCell.viewImgBG.viewCorneRadius(radius: 10)
+            currentCell.viewImgBG.backgroundColor = .clear
         }
     }
     
@@ -432,6 +454,7 @@ extension NewHomeVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
         if self.colleView == collectionView {
             
             if let currentCell = self.colleView.cellForItem(at: indexPath) as? HomeCategoryCVC {
+                currentCell.viewImgBG.viewCorneRadius(radius: 10)
                 currentCell.viewImgBG.backgroundColor = UIColor.init(hexString: "A8A8DF").withAlphaComponent(0.7)
                 
                 Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { tiemrss in
@@ -678,7 +701,7 @@ extension NewHomeVC : PreferenceProtocol{
             let timeElapsed = Date().timeIntervalSince(lastPromptDate)
             
             // Check if 14 days have passed and the prompt count is less than the maximum
-            return timeElapsed >= 14 * 24 * 60 * 60
+            return timeElapsed >= 1 * 24 * 60 * 60
         } else {
             UserDefaults.standard.set(Date(), forKey: lastPreferenceDate)
             return false

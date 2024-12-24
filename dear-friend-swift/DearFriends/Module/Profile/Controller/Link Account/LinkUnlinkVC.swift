@@ -70,6 +70,13 @@ class LinkUnlinkVC: BaseVC {
         self.viewFacebook.viewCorneRadius(radius: 10)
         self.viewFacebook.backgroundColor = .primary
         self.viewFacebook.viewBorderCorneRadius(borderColour: .secondary)
+        self.viewFacebook.isHidden = true
+        
+        let isApplePrivateEmailAddress = CurrentUser.shared.user?.email?.hasSuffix("@privaterelay.appleid.com")
+        if isApplePrivateEmailAddress == true{
+            self.viewApple.isHidden = true
+        }
+
     }
     
     
@@ -92,7 +99,7 @@ class LinkUnlinkVC: BaseVC {
         
         if sender.tag == 1{
             if self.isGoogle{
-                self.userUnlink(sender: sender)
+                self.userUnlink(sender: sender, type: "Google")
             }
             else{
                 self.googleSignIn(isFirstTime: true)
@@ -100,7 +107,7 @@ class LinkUnlinkVC: BaseVC {
         }
         else if sender.tag == 2{
             if self.isApple{
-                self.userUnlink(sender: sender)
+                self.userUnlink(sender: sender, type: "Apple")
             }
             else{
                 self.appleSignIN(isFirstTime: true)
@@ -108,7 +115,7 @@ class LinkUnlinkVC: BaseVC {
         }
         else if sender.tag == 3{
             if self.isFB{
-                self.userUnlink(sender: sender)
+                self.userUnlink(sender: sender, type: "Facebook")
             }
             else{
                 self.faceBookLogin(isFirstTime: true)
@@ -118,7 +125,7 @@ class LinkUnlinkVC: BaseVC {
     }
     
     
-    func userUnlink(sender: UIButton){
+    func userUnlink(sender: UIButton, type : String){
         
         let popupVC: CommonBottomPopupVC = CommonBottomPopupVC.instantiate(appStoryboard: .Profile)
         popupVC.height = 260
@@ -126,7 +133,7 @@ class LinkUnlinkVC: BaseVC {
         popupVC.dismissDuration = 0.5
         popupVC.leftStr = "Cancel"
         popupVC.rightStr = "Unlink"
-        popupVC.titleStr = "Are you sure you want to unlink Gmail account? Next, we’ll create a password for your account."
+        popupVC.titleStr = "Are you sure you want to unlink \(type) account? Next, we’ll create a password for your account."
         popupVC.noTapped = {
 //            self.goBack(isGoingTab: true)
         }

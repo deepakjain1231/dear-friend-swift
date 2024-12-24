@@ -358,6 +358,7 @@
 		C53A2B482D1537F200DB828D /* PreferencePopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = C53A2B442D1537F200DB828D /* PreferencePopup.xib */; };
 		C53A2B492D1537F200DB828D /* AppRatePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A2B402D1537F200DB828D /* AppRatePopup.swift */; };
 		C53A2B4A2D1537F200DB828D /* PreferencePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53A2B432D1537F200DB828D /* PreferencePopup.swift */; };
+		C56162C12D1A94B40019E230 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56162C02D1A94B40019E230 /* WaterfallLayout.swift */; };
 		C564CF492D007D8A00ECBDCE /* LinkUnlinkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564CF472D007D8A00ECBDCE /* LinkUnlinkVC.swift */; };
 		C564CF4B2D007DA900ECBDCE /* NewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564CF4A2D007DA900ECBDCE /* NewPasswordVC.swift */; };
 		C58B067F2D06B98200382EC4 /* OTPTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B067E2D06B98200382EC4 /* OTPTextFieldDelegate.swift */; };
@@ -696,6 +697,7 @@
 		C53A2B412D1537F200DB828D /* AppRatePopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppRatePopup.xib; sourceTree = "<group>"; };
 		C53A2B432D1537F200DB828D /* PreferencePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencePopup.swift; sourceTree = "<group>"; };
 		C53A2B442D1537F200DB828D /* PreferencePopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencePopup.xib; sourceTree = "<group>"; };
+		C56162C02D1A94B40019E230 /* WaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		C564CF472D007D8A00ECBDCE /* LinkUnlinkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkUnlinkVC.swift; sourceTree = "<group>"; };
 		C564CF4A2D007DA900ECBDCE /* NewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordVC.swift; sourceTree = "<group>"; };
 		C58B067E2D06B98200382EC4 /* OTPTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextFieldDelegate.swift; sourceTree = "<group>"; };
@@ -828,6 +830,7 @@
 				BD38DE482CC620FF00CD41A4 /* FeedbackVC.swift */,
 				C5DD7B902CFDD7CE004872D0 /* ExploreVC.swift */,
 				C50832462CF9FD9C0027C450 /* ExploreThemeCategoryVC.swift */,
+				C56162C02D1A94B40019E230 /* WaterfallLayout.swift */,
 				438B1EFA2A13B2EC00DF9A3E /* ExploreSubCategoryVC.swift */,
 				43D80B6F2A14D88400229B87 /* ExploreSoundListVC.swift */,
 				2997F7232ADFD00300B10457 /* ExploreDetailsVC.swift */,
@@ -2489,6 +2492,7 @@
 				BD91BBDE2CCA8ACE006B00E6 /* AudioEntry.swift in Sources */,
 				BD38DE422CC61EF300CD41A4 /* DeleteReasonTVC.swift in Sources */,
 				29D710312AA6F24E00FEE3FF /* BottomStackItem.swift in Sources */,
+				C56162C12D1A94B40019E230 /* WaterfallLayout.swift in Sources */,
 				434EFAAD2A1CDFBA009023FC /* CustomerUser.swift in Sources */,
 				292FEAF82A00D7FB00FA7042 /* OTPVerificationVC.swift in Sources */,
 				BD91BC092CCA8ACE006B00E6 /* Queue.swift in Sources */,
@@ -2867,7 +2871,7 @@
 				CODE_SIGN_ENTITLEMENTS = DearFriends/DearFriends.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.9;
+				CURRENT_PROJECT_VERSION = 0.10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = BG93X8FNNQ;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -3078,7 +3082,7 @@
 				CODE_SIGN_ENTITLEMENTS = DearFriends/DearFriends.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.9;
+				CURRENT_PROJECT_VERSION = 0.10;
 				DEVELOPMENT_TEAM = BG93X8FNNQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DearFriends/AppSetting/Info.plist;
