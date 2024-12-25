@@ -361,6 +361,7 @@
 		C56162C12D1A94B40019E230 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56162C02D1A94B40019E230 /* WaterfallLayout.swift */; };
 		C564CF492D007D8A00ECBDCE /* LinkUnlinkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564CF472D007D8A00ECBDCE /* LinkUnlinkVC.swift */; };
 		C564CF4B2D007DA900ECBDCE /* NewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564CF4A2D007DA900ECBDCE /* NewPasswordVC.swift */; };
+		C56D08EC2D1C09CB00494BE3 /* SubsciptionDeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56D08EB2D1C09CB00494BE3 /* SubsciptionDeleteVC.swift */; };
 		C58B067F2D06B98200382EC4 /* OTPTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B067E2D06B98200382EC4 /* OTPTextFieldDelegate.swift */; };
 		C58B068E2D06C2C100382EC4 /* Play-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C58B06872D06C2C100382EC4 /* Play-Bold.ttf */; };
 		C58B06902D06C2C100382EC4 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B068A2D06C2C100382EC4 /* UILabel+Extension.swift */; };
@@ -700,6 +701,7 @@
 		C56162C02D1A94B40019E230 /* WaterfallLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		C564CF472D007D8A00ECBDCE /* LinkUnlinkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkUnlinkVC.swift; sourceTree = "<group>"; };
 		C564CF4A2D007DA900ECBDCE /* NewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordVC.swift; sourceTree = "<group>"; };
+		C56D08EB2D1C09CB00494BE3 /* SubsciptionDeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubsciptionDeleteVC.swift; sourceTree = "<group>"; };
 		C58B067E2D06B98200382EC4 /* OTPTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextFieldDelegate.swift; sourceTree = "<group>"; };
 		C58B06872D06C2C100382EC4 /* Play-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Play-Bold.ttf"; sourceTree = "<group>"; };
 		C58B068A2D06C2C100382EC4 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -862,6 +864,7 @@
 				296A59DF2ABAFFC100B4A4BA /* ActiveSubscriptionVC.swift */,
 				43915FB52A1231AF00457ABE /* CommonBottomPopupVC.swift */,
 				BD38DE442CC61F1B00CD41A4 /* ConfrimDeleteVC.swift */,
+				C56D08EB2D1C09CB00494BE3 /* SubsciptionDeleteVC.swift */,
 				29DF02812AE68EE400FAF987 /* SetReminderVC.swift */,
 				43EAD8552A12415000B58953 /* MyPreferencesVC.swift */,
 				438B1EF32A13A75E00DF9A3E /* MyHistoryVC.swift */,
@@ -2595,6 +2598,7 @@
 				299D13662B297008009EC273 /* MyBookingUser.swift in Sources */,
 				4337BAA1294D812D0090E0A5 /* ImagePickerManager.swift in Sources */,
 				296D4CBC2AE799C700166604 /* LeftSideScriptTVC.swift in Sources */,
+				C56D08EC2D1C09CB00494BE3 /* SubsciptionDeleteVC.swift in Sources */,
 				BD91BBFA2CCA8ACE006B00E6 /* AVAudioFormat+Convenience.swift in Sources */,
 				29529CA72AA8885F0077A237 /* CreateMusicVC.swift in Sources */,
 				4337BA7A294D812D0090E0A5 /* BaseVC.swift in Sources */,

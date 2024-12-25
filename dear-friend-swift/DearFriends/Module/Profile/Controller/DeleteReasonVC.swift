@@ -93,7 +93,7 @@ class DeleteReasonVC: UIViewController {
     
     @IBAction func btnDeleteACTapped(_ sender: Any) {
         let vc: ConfrimDeleteVC = ConfrimDeleteVC.instantiate(appStoryboard: .Profile)
-        vc.height = 549
+//        vc.height = 549
         vc.presentDuration = 0.3
         vc.dismissDuration = 0.3
         if reasons[selectedReasonIndex].title != "Other" {

@@ -27,7 +27,7 @@ public struct ToastConfiguration {
     public init(
         autoHide: Bool = true,
         enablePanToClose: Bool = true,
-        displayTime: TimeInterval = 2,
+        displayTime: TimeInterval = 5,
         animationTime: TimeInterval = 0.2,
         attachTo view: UIView? = nil
     ) {

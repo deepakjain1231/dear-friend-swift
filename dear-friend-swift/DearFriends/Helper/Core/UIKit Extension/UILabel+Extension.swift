@@ -151,30 +151,28 @@ extension UITextField{
     
 
 }
-//
-//
-//extension UITextView{
-//    func configureText(bgColour : UIColor, textColor:UIColor, fontName:String, fontSize : Double, text:String) {
-//        self.backgroundColor = UIColor.clear
-//        self.backgroundColor = bgColour
-//        self.textAlignment = UserDefaults.standard.language == "ar" ? .right : .left
-//
-//        self.textColor = textColor
-//        self.font = SetTheFont(fontName: fontName, size: fontSize)
-//        self.text = text
-//    }
-//    
-//    
-//    func setAttributedHtmlText(_ html: String) {
-//        #if targetEnvironment(simulator)
-//        self.text = html
-//        #else
-//        if let attributedText = html.attributedHtmlString {
-//            self.attributedText = attributedText
-//        }
-//        #endif
-//    }
-//}
+
+
+extension UITextView{
+    func configureText(textAlignment : NSTextAlignment = .left, bgColour : UIColor, textColor:UIColor, fontName:String, fontSize : Double, text:String) {
+        self.backgroundColor = bgColour
+        self.textAlignment = textAlignment
+        self.textColor = textColor
+        self.font = SetTheFont(fontName: fontName, size: fontSize)
+        self.text = text
+    }
+    
+    
+    func setAttributedHtmlText(_ html: String) {
+        #if targetEnvironment(simulator)
+        self.text = html
+        #else
+        if let attributedText = html.attributedHtmlString {
+            self.attributedText = attributedText
+        }
+        #endif
+    }
+}
 //
 //
 //

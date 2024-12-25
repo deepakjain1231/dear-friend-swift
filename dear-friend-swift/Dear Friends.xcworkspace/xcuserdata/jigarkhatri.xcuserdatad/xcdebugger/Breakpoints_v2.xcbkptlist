@@ -66,36 +66,6 @@
             endingLineNumber = "270"
             landmarkName = "loginAPI(isShowLoader:success:failure:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8AD005D9-E23C-4B42-8250-5F150A814AAE - d6c264d5d6617fdd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Dear_Friends.AuthViewModel.loginAPI(isShowLoader: Swift.Bool, success: (SwiftyJSON.JSON) -&gt; (), failure: (SwiftyJSON.JSON) -&gt; ()) -&gt; ()"
-                  moduleName = "Dear Friends.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/Development/UpWork/Adam%20Hanafi/SourceCode/Deepak%20Jain/dear-friend-swift/dear-friend-swift/DearFriends/Module/Authtentication/ViewModel/AuthViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "270"
-                  endingLineNumber = "270">
-               </Location>
-               <Location
-                  uuid = "8AD005D9-E23C-4B42-8250-5F150A814AAE - fd23ce86ad89e592"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON, Swift.Bool, Swift.String, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in Dear_Friends.AuthViewModel.loginAPI(isShowLoader: Swift.Bool, success: (SwiftyJSON.JSON) -&gt; (), failure: (SwiftyJSON.JSON) -&gt; ()) -&gt; ()"
-                  moduleName = "Dear Friends.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/Development/UpWork/Adam%20Hanafi/SourceCode/Deepak%20Jain/dear-friend-swift/dear-friend-swift/DearFriends/Module/Authtentication/ViewModel/AuthViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "272"
-                  endingLineNumber = "272">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -176,36 +146,6 @@
             endingLineNumber = "261"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DABA4199-AA41-482C-975A-53E70EC873BA - 15bca9a808bb400"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; () in Dear_Friends.ExploreDetailsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Dear Friends.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/Development/UpWork/Adam%20Hanafi/SourceCode/Deepak%20Jain/dear-friend-swift/dear-friend-swift/DearFriends/Module/Explore/Controller/ExploreDetailsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "261"
-                  endingLineNumber = "261">
-               </Location>
-               <Location
-                  uuid = "DABA4199-AA41-482C-975A-53E70EC873BA - e3260857652c201b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (SwiftyJSON.JSON) -&gt; () in closure #1 (Swift.Int) -&gt; () in Dear_Friends.ExploreDetailsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "Dear Friends.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/Development/UpWork/Adam%20Hanafi/SourceCode/Deepak%20Jain/dear-friend-swift/dear-friend-swift/DearFriends/Module/Explore/Controller/ExploreDetailsVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "262"
-                  endingLineNumber = "262">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -222,36 +162,6 @@
             endingLineNumber = "294"
             landmarkName = "pinAudio(audio_id:isShowLoader:success:failure:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4132442F-5EC3-4D1D-ABA4-6F95AC70FDEB - c27ab966d2c781d8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Dear_Friends.HomeViewModel.pinAudio(audio_id: Swift.String, isShowLoader: Swift.Bool, success: (SwiftyJSON.JSON) -&gt; (), failure: (SwiftyJSON.JSON) -&gt; ()) -&gt; ()"
-                  moduleName = "Dear Friends.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/Development/UpWork/Adam%20Hanafi/SourceCode/Deepak%20Jain/dear-friend-swift/dear-friend-swift/DearFriends/Module/Home/ViewModel/HomeViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "294"
-                  endingLineNumber = "294">
-               </Location>
-               <Location
-                  uuid = "4132442F-5EC3-4D1D-ABA4-6F95AC70FDEB - 1a1915a3ff4c00d6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftyJSON.JSON, Swift.Bool, Swift.String, Swift.Optional&lt;Swift.Int&gt;) -&gt; () in Dear_Friends.HomeViewModel.pinAudio(audio_id: Swift.String, isShowLoader: Swift.Bool, success: (SwiftyJSON.JSON) -&gt; (), failure: (SwiftyJSON.JSON) -&gt; ()) -&gt; ()"
-                  moduleName = "Dear Friends.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/Development/UpWork/Adam%20Hanafi/SourceCode/Deepak%20Jain/dear-friend-swift/dear-friend-swift/DearFriends/Module/Home/ViewModel/HomeViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "296"
-                  endingLineNumber = "296">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -401,22 +311,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8CEB50D4-C2FD-4B7D-A40C-7A7AF17B3CAF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DearFriends/Module/Home/Controller/NewHomeVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "573"
-            endingLineNumber = "573"
-            landmarkName = "goTo_category_screen(indx:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "790BC511-E9F7-4190-91F7-C88AEB28B8C9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -475,6 +369,22 @@
             startingLineNumber = "376"
             endingLineNumber = "376"
             landmarkName = "manageCustomAudioView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4F10854-15F2-4E9F-8E3F-C33D980DE554"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DearFriends/Module/Profile/Controller/ConfrimDeleteVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "textView(_:shouldChangeTextIn:replacementText:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

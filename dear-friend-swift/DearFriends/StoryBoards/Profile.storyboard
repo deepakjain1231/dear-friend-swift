@@ -2535,10 +2535,10 @@ to logout from this account?</string>
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3O-Ew-nSf">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="845"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="851"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iO1-XF-xQW">
-                                                <rect key="frame" x="161.66666666666666" y="16" width="55" height="5"/>
+                                                <rect key="frame" x="161.66666666666666" y="22" width="55" height="5"/>
                                                 <color key="backgroundColor" red="0.38823529410000002" green="0.34509803919999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="5" id="8n5-O9-Vwq"/>
@@ -2549,7 +2549,7 @@ to logout from this account?</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZN5-W6-cOr">
-                                                <rect key="frame" x="338" y="5" width="50" height="50"/>
+                                                <rect key="frame" x="338" y="-0.3333333333333357" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="JOf-GH-2gt"/>
                                                     <constraint firstAttribute="height" constant="50" id="kcp-CK-k52"/>
@@ -2561,7 +2561,7 @@ to logout from this account?</string>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vuB-gU-0SK">
-                                                <rect key="frame" x="61.333333333333329" y="40.999999999999993" width="255.66666666666669" height="90.333333333333314"/>
+                                                <rect key="frame" x="61.333333333333329" y="46.999999999999993" width="255.66666666666669" height="90.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0H-KF-Cv6">
                                                         <rect key="frame" x="46.666666666666671" y="0.0" width="162.66666666666663" height="29.666666666666668"/>
@@ -2582,13 +2582,13 @@ to logout from this account?</string>
                                                 </constraints>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line_middle" translatesAutoresizingMaskIntoConstraints="NO" id="8vW-AD-rf0">
-                                                <rect key="frame" x="61.333333333333329" y="151.33333333333334" width="255.66666666666669" height="1"/>
+                                                <rect key="frame" x="61.333333333333329" y="157.33333333333334" width="255.66666666666669" height="1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="eB9-kS-fTf"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dQi-YK-PUX">
-                                                <rect key="frame" x="16" y="172.33333333333331" width="361" height="576.66666666666674"/>
+                                                <rect key="frame" x="16" y="178.33333333333331" width="361" height="576.66666666666674"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4hP-6u-Avb">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="400"/>
@@ -2643,7 +2643,7 @@ to logout from this account?</string>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnf-dJ-43V" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="769" width="353" height="56"/>
+                                                <rect key="frame" x="20" y="775" width="353" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="5XD-Sp-OJ5"/>
                                                 </constraints>
@@ -2669,9 +2669,9 @@ to logout from this account?</string>
                                             <constraint firstAttribute="bottom" secondItem="gnf-dJ-43V" secondAttribute="bottom" constant="20" id="HW7-bz-Z7p"/>
                                             <constraint firstItem="iO1-XF-xQW" firstAttribute="centerX" secondItem="v3O-Ew-nSf" secondAttribute="centerX" constant="-7.3333333333333428" id="HcD-gx-LQ0"/>
                                             <constraint firstItem="8vW-AD-rf0" firstAttribute="leading" secondItem="vuB-gU-0SK" secondAttribute="leading" id="NIq-m2-jbC"/>
-                                            <constraint firstItem="ZN5-W6-cOr" firstAttribute="top" secondItem="v3O-Ew-nSf" secondAttribute="top" constant="5" id="XlL-Os-3e3"/>
+                                            <constraint firstItem="ZN5-W6-cOr" firstAttribute="centerY" secondItem="iO1-XF-xQW" secondAttribute="centerY" id="Wig-TA-qEq"/>
                                             <constraint firstAttribute="trailing" secondItem="gnf-dJ-43V" secondAttribute="trailing" constant="20" id="a6C-4B-QAq"/>
-                                            <constraint firstItem="iO1-XF-xQW" firstAttribute="top" secondItem="v3O-Ew-nSf" secondAttribute="top" constant="16" id="aIq-hJ-XhD"/>
+                                            <constraint firstItem="iO1-XF-xQW" firstAttribute="top" secondItem="v3O-Ew-nSf" secondAttribute="top" constant="22" id="aIq-hJ-XhD"/>
                                             <constraint firstItem="vuB-gU-0SK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v3O-Ew-nSf" secondAttribute="leading" constant="30" id="b8Q-wY-hrg"/>
                                             <constraint firstItem="8vW-AD-rf0" firstAttribute="trailing" secondItem="vuB-gU-0SK" secondAttribute="trailing" id="cKb-Ob-idg"/>
                                             <constraint firstItem="gnf-dJ-43V" firstAttribute="top" secondItem="dQi-YK-PUX" secondAttribute="bottom" constant="20" id="fbT-Ye-LFK"/>
@@ -4189,10 +4189,10 @@ to logout from this account?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UwS-Qq-ghQ">
-                                <rect key="frame" x="0.0" y="59" width="393" height="603"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="609"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFJ-1m-dU3">
-                                        <rect key="frame" x="161.66666666666666" y="16" width="55" height="5"/>
+                                        <rect key="frame" x="161.66666666666666" y="22" width="55" height="5"/>
                                         <color key="backgroundColor" red="0.38823529410000002" green="0.34509803919999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="Eed-lF-QG0"/>
@@ -4203,10 +4203,10 @@ to logout from this account?</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OS9-Su-Iq6">
-                                        <rect key="frame" x="343" y="3.6666666666666643" width="30" height="30"/>
+                                        <rect key="frame" x="338" y="-0.3333333333333357" width="50" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="30M-8w-7zd"/>
-                                            <constraint firstAttribute="width" secondItem="OS9-Su-Iq6" secondAttribute="height" multiplier="1:1" id="RmV-kU-TEh"/>
+                                            <constraint firstAttribute="height" constant="50" id="1Ad-CS-Yaq"/>
+                                            <constraint firstAttribute="width" constant="50" id="nfe-h0-px9"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="ic_close2"/>
@@ -4215,7 +4215,7 @@ to logout from this account?</string>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-eF-xMY">
-                                        <rect key="frame" x="50" y="40.999999999999993" width="278.66666666666669" height="90.333333333333314"/>
+                                        <rect key="frame" x="50" y="46.999999999999993" width="278.66666666666669" height="90.333333333333314"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Delete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpp-bu-H2L">
                                                 <rect key="frame" x="59.333333333333314" y="0.0" width="160" height="29.666666666666668"/>
@@ -4236,13 +4236,13 @@ to logout from this account?</string>
                                         </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line_middle" translatesAutoresizingMaskIntoConstraints="NO" id="vlx-Cm-IKn">
-                                        <rect key="frame" x="50" y="151.33333333333334" width="278.66666666666669" height="1"/>
+                                        <rect key="frame" x="50" y="157.33333333333334" width="278.66666666666669" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Xzm-YE-yIT"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="6X4-1j-xOl">
-                                        <rect key="frame" x="16" y="177.33333333333334" width="361" height="285.66666666666663"/>
+                                        <rect key="frame" x="16" y="183.33333333333334" width="361" height="285.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kM4-hB-S9A">
                                                 <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
@@ -4280,6 +4280,18 @@ to logout from this account?</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74G-Ti-SFy">
                                                         <rect key="frame" x="0.0" y="80.666666666666686" width="361" height="160"/>
                                                         <subviews>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Zir-oA-dQp" customClass="AppCommonTextView" customModule="Dear_Friends" customModuleProvider="target">
+                                                                <rect key="frame" x="12" y="8" width="337" height="144"/>
+                                                                <color key="backgroundColor" name="#212159"/>
+                                                                <color key="textColor" name="#E4E1F8"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                                        <color key="value" name="#E4E1F8"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textView>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="itc-CR-u80" customClass="AppCommonTextView" customModule="Dear_Friends" customModuleProvider="target">
                                                                 <rect key="frame" x="12" y="8" width="337" height="144"/>
                                                                 <color key="backgroundColor" name="#212159"/>
@@ -4287,7 +4299,6 @@ to logout from this account?</string>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Brief explanation..."/>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                                         <color key="value" name="#E4E1F8"/>
                                                                     </userDefinedRuntimeAttribute>
@@ -4298,8 +4309,12 @@ to logout from this account?</string>
                                                         <constraints>
                                                             <constraint firstItem="itc-CR-u80" firstAttribute="top" secondItem="74G-Ti-SFy" secondAttribute="top" constant="8" id="4Ng-rk-N1J"/>
                                                             <constraint firstAttribute="trailing" secondItem="itc-CR-u80" secondAttribute="trailing" constant="12" id="5B2-sL-NhQ"/>
+                                                            <constraint firstItem="Zir-oA-dQp" firstAttribute="top" secondItem="itc-CR-u80" secondAttribute="top" id="HNR-Io-QMi"/>
+                                                            <constraint firstItem="Zir-oA-dQp" firstAttribute="leading" secondItem="itc-CR-u80" secondAttribute="leading" id="Rup-JT-g6U"/>
                                                             <constraint firstAttribute="bottom" secondItem="itc-CR-u80" secondAttribute="bottom" constant="8" id="SnP-vs-8Jt"/>
                                                             <constraint firstAttribute="height" constant="160" id="bbr-Z4-Q7o"/>
+                                                            <constraint firstItem="Zir-oA-dQp" firstAttribute="bottom" secondItem="itc-CR-u80" secondAttribute="bottom" id="h98-p5-C6G"/>
+                                                            <constraint firstItem="Zir-oA-dQp" firstAttribute="trailing" secondItem="itc-CR-u80" secondAttribute="trailing" id="m1u-cZ-pge"/>
                                                             <constraint firstItem="itc-CR-u80" firstAttribute="leading" secondItem="74G-Ti-SFy" secondAttribute="leading" constant="12" id="qZa-0e-Bl2"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -4313,7 +4328,7 @@ to logout from this account?</string>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gM-54-Kes" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="493" width="353" height="56"/>
+                                        <rect key="frame" x="20" y="499" width="353" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="P4D-bC-5Jz"/>
                                         </constraints>
@@ -4325,7 +4340,6 @@ to logout from this account?</string>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="btnConfirmTappped:" destination="RxN-ON-e1u" eventType="touchUpInside" id="YLO-9w-O5G"/>
-                                            <action selector="btnSubmitTapped:" destination="G6j-8a-vx0" eventType="touchUpInside" id="zcj-Nr-VUN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -4339,13 +4353,13 @@ to logout from this account?</string>
                                     <constraint firstAttribute="trailing" secondItem="6X4-1j-xOl" secondAttribute="trailing" constant="16" id="JfD-oo-pp5"/>
                                     <constraint firstItem="RjK-eF-xMY" firstAttribute="centerX" secondItem="UwS-Qq-ghQ" secondAttribute="centerX" constant="-7.3333333333333144" id="KHN-Wo-4UI"/>
                                     <constraint firstItem="vlx-Cm-IKn" firstAttribute="top" secondItem="RjK-eF-xMY" secondAttribute="bottom" constant="20" id="L2r-q9-AIY"/>
-                                    <constraint firstAttribute="trailing" secondItem="OS9-Su-Iq6" secondAttribute="trailing" constant="20" id="ToK-WX-LiD"/>
+                                    <constraint firstAttribute="trailing" secondItem="OS9-Su-Iq6" secondAttribute="trailing" constant="5" id="ToK-WX-LiD"/>
                                     <constraint firstItem="RjK-eF-xMY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UwS-Qq-ghQ" secondAttribute="leading" constant="20" id="hlu-Qs-Kwr"/>
                                     <constraint firstItem="7gM-54-Kes" firstAttribute="top" secondItem="6X4-1j-xOl" secondAttribute="bottom" constant="30" id="jXj-X8-FXj"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RjK-eF-xMY" secondAttribute="trailing" constant="20" id="kGr-ql-KP7"/>
                                     <constraint firstItem="OS9-Su-Iq6" firstAttribute="centerY" secondItem="AFJ-1m-dU3" secondAttribute="centerY" id="m0l-mv-5G5"/>
                                     <constraint firstAttribute="trailing" secondItem="7gM-54-Kes" secondAttribute="trailing" constant="20" id="nKj-cl-vq4"/>
-                                    <constraint firstItem="AFJ-1m-dU3" firstAttribute="top" secondItem="UwS-Qq-ghQ" secondAttribute="top" constant="16" id="qsL-Bg-kRh"/>
+                                    <constraint firstItem="AFJ-1m-dU3" firstAttribute="top" secondItem="UwS-Qq-ghQ" secondAttribute="top" constant="22" id="qsL-Bg-kRh"/>
                                     <constraint firstItem="vlx-Cm-IKn" firstAttribute="leading" secondItem="RjK-eF-xMY" secondAttribute="leading" id="uLA-D3-dhn"/>
                                     <constraint firstItem="vlx-Cm-IKn" firstAttribute="trailing" secondItem="RjK-eF-xMY" secondAttribute="trailing" id="yKn-he-1C2"/>
                                     <constraint firstItem="AFJ-1m-dU3" firstAttribute="centerX" secondItem="UwS-Qq-ghQ" secondAttribute="centerX" constant="-7.3333333333333428" id="z8v-LZ-c0x"/>
@@ -4367,12 +4381,15 @@ to logout from this account?</string>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="updatesStatusBarAppearanceAutomatically" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="btnClose" destination="OS9-Su-Iq6" id="x5j-DQ-JQP"/>
                         <outlet property="btn_delete" destination="7gM-54-Kes" id="2Gk-rO-RaV"/>
                         <outlet property="lblReason" destination="HfA-sr-mny" id="e3U-BC-HPM"/>
                         <outlet property="lblReason_subTitle" destination="81b-pI-WAB" id="zwp-Vw-ZqE"/>
                         <outlet property="lbl_ConfirmDeleteTitle" destination="cpp-bu-H2L" id="xC9-cC-1so"/>
                         <outlet property="lbl_ConfirmDeletesubTitle" destination="amS-WS-IK4" id="pyh-xe-FSS"/>
                         <outlet property="txtExplenation" destination="itc-CR-u80" id="Ql9-Wt-fXX"/>
+                        <outlet property="txtPlaceholderExplenation" destination="Zir-oA-dQp" id="rBl-6j-Hee"/>
+                        <outlet property="viewMain" destination="UwS-Qq-ghQ" id="W09-tG-Wtw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMs-4O-g4L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4874,6 +4891,153 @@ to logout from this account?</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQ8-Qu-6v2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3343" y="656"/>
+        </scene>
+        <!--Subsciption DeleteVC-->
+        <scene sceneID="iAl-dt-qU7">
+            <objects>
+                <viewController storyboardIdentifier="SubsciptionDeleteVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bms-wd-6Ss" customClass="SubsciptionDeleteVC" customModule="Dear_Friends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Nz-D1-DZP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAm-oD-7Wc">
+                                <rect key="frame" x="0.0" y="59" width="393" height="505"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuz-7s-NL6">
+                                        <rect key="frame" x="161.66666666666666" y="22" width="55" height="5"/>
+                                        <color key="backgroundColor" red="0.38823529410000002" green="0.34509803919999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="Rqo-6O-AT0"/>
+                                            <constraint firstAttribute="height" constant="5" id="b3p-mN-Xr3"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTc-JI-E2b">
+                                        <rect key="frame" x="338" y="-0.3333333333333357" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="jeC-Wm-esr"/>
+                                            <constraint firstAttribute="height" constant="50" id="rxw-BI-Db6"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="ic_close2"/>
+                                        <connections>
+                                            <action selector="btnCloseTapped:" destination="bms-wd-6Ss" eventType="touchUpInside" id="Lib-ep-0yG"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Kj-6S-4Ap">
+                                        <rect key="frame" x="50" y="46.999999999999993" width="278.66666666666669" height="90.333333333333314"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Delete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmC-mU-C2f">
+                                                <rect key="frame" x="59.333333333333314" y="0.0" width="160" height="29.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="21"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Confirm to Permanently Delete Your Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="On8-S3-AIr">
+                                                <rect key="frame" x="0.0" y="39.666666666666657" width="278.66666666666669" height="50.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90.329999999999998" id="RA7-VK-t9a"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line_middle" translatesAutoresizingMaskIntoConstraints="NO" id="9SU-Cn-nZg">
+                                        <rect key="frame" x="50" y="157.33333333333334" width="278.66666666666669" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="OXj-q2-2KJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="BHp-9U-4Zo">
+                                        <rect key="frame" x="16" y="183.33333333333337" width="361" height="181.66666666666663"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V5v-7O-9ne">
+                                                <rect key="frame" x="0.0" y="0.0" width="361" height="181.66666666666666"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcj-b8-1g4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="361" height="181.66666666666666"/>
+                                                        <string key="text">Please note that deleting your account does not automatically cancel your subscription. To avoid future charges, you must cancel your subscription through the App Store or Google Play Store directly. You will continue to be charged until the subscription is canceled. 
+
+Please follow the steps on your device to manage your subscription.</string>
+                                                        <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="16"/>
+                                                        <color key="textColor" name="#D1D0D5"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vg3-07-QTs" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="395" width="353" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="tRx-GB-5xo"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Confirm Delete"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="SuperBlack" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnConfirmTappped:" destination="bms-wd-6Ss" eventType="touchUpInside" id="cdC-Zr-kl4"/>
+                                            <action selector="btnSubmitTapped:" destination="G6j-8a-vx0" eventType="touchUpInside" id="o2F-Si-zC0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="primary"/>
+                                <constraints>
+                                    <constraint firstItem="9SU-Cn-nZg" firstAttribute="trailing" secondItem="3Kj-6S-4Ap" secondAttribute="trailing" id="3Uj-69-FXY"/>
+                                    <constraint firstAttribute="trailing" secondItem="BHp-9U-4Zo" secondAttribute="trailing" constant="16" id="5cR-Qs-hTV"/>
+                                    <constraint firstItem="BHp-9U-4Zo" firstAttribute="leading" secondItem="vAm-oD-7Wc" secondAttribute="leading" constant="16" id="5zO-Cn-pUP"/>
+                                    <constraint firstItem="MTc-JI-E2b" firstAttribute="centerY" secondItem="fuz-7s-NL6" secondAttribute="centerY" id="7Pg-wi-HrU"/>
+                                    <constraint firstItem="Vg3-07-QTs" firstAttribute="leading" secondItem="vAm-oD-7Wc" secondAttribute="leading" constant="20" id="8be-SN-juw"/>
+                                    <constraint firstItem="3Kj-6S-4Ap" firstAttribute="top" secondItem="fuz-7s-NL6" secondAttribute="bottom" constant="20" id="KxM-cu-IqO"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vg3-07-QTs" secondAttribute="bottom" constant="54" id="MmP-YX-ejU"/>
+                                    <constraint firstItem="9SU-Cn-nZg" firstAttribute="top" secondItem="3Kj-6S-4Ap" secondAttribute="bottom" constant="20" id="RMr-bN-7gE"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Kj-6S-4Ap" secondAttribute="trailing" constant="20" id="VAy-5X-mKW"/>
+                                    <constraint firstItem="9SU-Cn-nZg" firstAttribute="leading" secondItem="3Kj-6S-4Ap" secondAttribute="leading" id="VDD-qQ-j0n"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vg3-07-QTs" secondAttribute="trailing" constant="20" id="VTV-jI-MTL"/>
+                                    <constraint firstItem="fuz-7s-NL6" firstAttribute="top" secondItem="vAm-oD-7Wc" secondAttribute="top" constant="22" id="Vhh-xX-ggN"/>
+                                    <constraint firstItem="Vg3-07-QTs" firstAttribute="top" secondItem="BHp-9U-4Zo" secondAttribute="bottom" constant="30" id="cDQ-sb-PY8"/>
+                                    <constraint firstItem="fuz-7s-NL6" firstAttribute="centerX" secondItem="vAm-oD-7Wc" secondAttribute="centerX" constant="-7.3333333333333428" id="chU-6U-pxt"/>
+                                    <constraint firstItem="BHp-9U-4Zo" firstAttribute="top" secondItem="9SU-Cn-nZg" secondAttribute="bottom" constant="25" id="ekn-70-mY5"/>
+                                    <constraint firstItem="3Kj-6S-4Ap" firstAttribute="centerX" secondItem="vAm-oD-7Wc" secondAttribute="centerX" constant="-7.3333333333333144" id="hDf-FZ-pOb"/>
+                                    <constraint firstItem="3Kj-6S-4Ap" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vAm-oD-7Wc" secondAttribute="leading" constant="20" id="tKB-S0-q1a"/>
+                                    <constraint firstAttribute="trailing" secondItem="MTc-JI-E2b" secondAttribute="trailing" constant="5" id="v6w-cG-kce"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="TopCorner" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eD5-vX-Kr3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vAm-oD-7Wc" firstAttribute="top" secondItem="5Nz-D1-DZP" secondAttribute="topMargin" id="M5X-Qz-Ywo"/>
+                            <constraint firstItem="vAm-oD-7Wc" firstAttribute="leading" secondItem="eD5-vX-Kr3" secondAttribute="leading" id="RRI-Y0-YqZ"/>
+                            <constraint firstAttribute="trailing" secondItem="vAm-oD-7Wc" secondAttribute="trailing" id="ojD-0W-4TD"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="updatesStatusBarAppearanceAutomatically" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="btnClose" destination="MTc-JI-E2b" id="45Q-FQ-BaJ"/>
+                        <outlet property="btn_delete" destination="Vg3-07-QTs" id="bGF-zv-mOK"/>
+                        <outlet property="lblReason_subTitle" destination="pcj-b8-1g4" id="Fyv-yS-dPS"/>
+                        <outlet property="lbl_ConfirmDeleteTitle" destination="xmC-mU-C2f" id="UAI-V1-qQB"/>
+                        <outlet property="lbl_ConfirmDeletesubTitle" destination="On8-S3-AIr" id="eAi-ip-lLv"/>
+                        <outlet property="viewMain" destination="vAm-oD-7Wc" id="Jg5-6Q-bUH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0mX-9o-Aik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4804" y="1354"/>
         </scene>
     </scenes>
     <resources>
