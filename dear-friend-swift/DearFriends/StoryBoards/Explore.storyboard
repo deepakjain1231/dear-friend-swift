@@ -1172,7 +1172,6 @@
                         <outlet property="acti2" destination="p4A-aC-Zfl" id="ibf-H7-gpx"/>
                         <outlet property="btnBG" destination="XwY-db-NAi" id="t8l-Zg-Yc8"/>
                         <outlet property="btnCat" destination="HAl-iQ-RBX" id="vvE-tA-3cT"/>
-                        <outlet property="btnFeedBack" destination="khY-YU-Ujc" id="KBk-nY-CFh"/>
                         <outlet property="btnLike" destination="ssn-zS-Y6T" id="UrJ-tD-6bx"/>
                         <outlet property="btnMore" destination="q8Q-q7-wKS" id="1fu-zD-8N9"/>
                         <outlet property="btnNext" destination="A3P-pL-1mf" id="6cz-0X-Ght"/>
@@ -1180,6 +1179,7 @@
                         <outlet property="btnPrevious" destination="VqO-M0-T8g" id="rhX-m1-MOO"/>
                         <outlet property="btnRepeat" destination="y50-8t-LjT" id="xBa-N4-wQj"/>
                         <outlet property="btnRepeat2" destination="5PI-Cw-aJA" id="mNi-Ok-BUS"/>
+                        <outlet property="btn_option_top" destination="khY-YU-Ujc" id="fWo-dF-0em"/>
                         <outlet property="consThumbHeight" destination="Ihu-rM-hTC" id="txc-oz-CYE"/>
                         <outlet property="imgThumb" destination="65m-Xb-gmp" id="nrt-zy-8P7"/>
                         <outlet property="lblCurrentTime" destination="XjP-gY-EyT" id="aCQ-pZ-PiC"/>
@@ -1189,6 +1189,7 @@
                         <outlet property="lblTitle" destination="MzD-i3-76H" id="5qR-FP-mR8"/>
                         <outlet property="stackControls" destination="AHs-25-ejt" id="kVm-CT-rf3"/>
                         <outlet property="stackMore" destination="YQI-oc-0JZ" id="Tac-qu-aI5"/>
+                        <outlet property="stack_button" destination="YQI-oc-0JZ" id="BiR-af-O9R"/>
                         <outlet property="vwBanner" destination="Lqy-QE-Xi0" id="q7Y-0s-qCY"/>
                         <outlet property="vwRepeat" destination="wBa-mh-ClX" id="tP4-UA-ZL3"/>
                         <outlet property="vwRepeat2" destination="Ke5-ub-AjU" id="RRi-8u-vOx"/>
@@ -1239,7 +1240,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Muz-a7-A4C">
-                                <rect key="frame" x="20" y="116" width="374" height="278"/>
+                                <rect key="frame" x="20" y="116" width="374" height="388"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fG4-s2-7Dx">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="62"/>
@@ -1501,7 +1502,7 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Type your experience..."/>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                                <color key="value" name="#E4E1F8"/>
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="8"/>
@@ -1525,29 +1526,44 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="81n-Ae-v5I">
-                                        <rect key="frame" x="0.0" y="278" width="374" height="58"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="81n-Ae-v5I">
+                                        <rect key="frame" x="0.0" y="308" width="374" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMV-c8-GwA">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
                                                 <color key="textColor" red="0.81960784310000001" green="0.81568627449999997" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rgm-9n-mz5" customClass="AppCommonTextField" customModule="Dear_Friends" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="8" width="374" height="50"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBD-ku-1Mt">
+                                                <rect key="frame" x="0.0" y="30" width="374" height="50"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rgm-9n-mz5" customClass="AppCommonTextField" customModule="Dear_Friends" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="4" width="374" height="42"/>
+                                                        <color key="textColor" name="#E4E1F8"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                <color key="value" name="#E4E1F8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" name="#212159"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="hcC-ZH-J2I"/>
+                                                    <constraint firstItem="rgm-9n-mz5" firstAttribute="top" secondItem="VBD-ku-1Mt" secondAttribute="top" constant="4" id="13z-gG-JbO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rgm-9n-mz5" secondAttribute="trailing" id="Miy-Jw-rKF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rgm-9n-mz5" secondAttribute="bottom" constant="4" id="mWT-pG-tSC"/>
+                                                    <constraint firstItem="rgm-9n-mz5" firstAttribute="leading" secondItem="VBD-ku-1Mt" secondAttribute="leading" id="rLo-cm-aIq"/>
+                                                    <constraint firstAttribute="height" constant="50" id="tpL-gf-7ua"/>
                                                 </constraints>
-                                                <color key="textColor" name="#E4E1F8"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                        <color key="value" name="#E4E1F8"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                            </textField>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -1596,6 +1612,7 @@
                         <outlet property="lbl_Title" destination="OMF-Jh-1j1" id="iSt-R8-emd"/>
                         <outlet property="lbl_Title2" destination="9SV-ef-qJo" id="gR7-sg-PcR"/>
                         <outlet property="lbl_Title3" destination="qfy-I1-oKT" id="eCV-cm-8i9"/>
+                        <outlet property="lbl_emailTitle" destination="wMV-c8-GwA" id="PdM-ho-ohj"/>
                         <outlet property="star1" destination="KcT-zH-Jm0" id="VQG-Jc-Fgv"/>
                         <outlet property="star2" destination="Sgg-nO-E9U" id="iHu-ar-hww"/>
                         <outlet property="star3" destination="89Q-ED-ObN" id="ahO-1T-ZKh"/>
@@ -1608,6 +1625,8 @@
                         <outlet property="view3" destination="baZ-2p-sf5" id="3lg-He-Tri"/>
                         <outlet property="view4" destination="3b0-Nj-whO" id="k6N-PW-6jG"/>
                         <outlet property="view5" destination="Nu1-SU-4V3" id="SDA-X6-YC6"/>
+                        <outlet property="view_AboutBG" destination="xzF-al-ZOn" id="39A-zC-s8T"/>
+                        <outlet property="view_EmailBG" destination="VBD-ku-1Mt" id="lOU-av-jrf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ziD-s2-B8H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

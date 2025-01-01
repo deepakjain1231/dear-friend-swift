@@ -41,6 +41,7 @@ enum ApiURL {
     case purchasePlan
     case updatePref
     case onboarding_content
+    case onboarding_about_creator
     case getSampleAudio
     case customize_audio_request
     case customize_audio_request_list
@@ -132,6 +133,8 @@ enum ApiURL {
             str = "user/update_preference"
         case .onboarding_content:
             str = "onboarding_content"
+        case .onboarding_about_creator:
+            str = "about-the-creator"
         case .getSampleAudio:
             str = "get-sample-audio"
         case .customize_audio_request:

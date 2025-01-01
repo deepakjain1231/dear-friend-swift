@@ -53,6 +53,14 @@ let lastProgressKey = "lastProgress"
 let biometricsEnable = "biometricsEnable"
 let lastPlanPurchsed = "LastPlanPurchsed"
 
+let intro_showcase_1 = "intro_showcase_1"
+let intro_showcase_lastKey = "intro_showcase_lastKey"
+let intro_showcase_maxPromptKey = "intro_showcase_maxPromptKey"
+let intro_showcase_maxPromptCount = 7
+
+let lastShowcaseDate = "lastShowcaseDate"
+let updateShowcase = "updateShowcase"
+
 // Success Messages
 struct SuccessMessage {
     static let successContactSupport = "Thanks for reaching out, If your message requires a response, we'll get back to you ASAP"

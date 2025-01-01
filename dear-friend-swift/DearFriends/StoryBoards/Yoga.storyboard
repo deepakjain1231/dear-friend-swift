@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zxV-bi-NGD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zxV-bi-NGD">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -61,7 +61,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGp-OC-fww">
                                         <rect key="frame" x="20" y="0.0" width="40" height="40"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="ic_back2"/>
+                                        <state key="normal" image="icon_back_dark"/>
                                         <connections>
                                             <action selector="btnBackTapped:" destination="CVt-2a-Cly" eventType="touchUpInside" id="MVf-3f-E4D"/>
                                         </connections>
@@ -133,10 +133,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="673"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-OP-1UY">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="538.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="535.33333333333337"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kxG-6g-mtb">
-                                                <rect key="frame" x="20" y="12" width="353" height="394.33333333333331"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="kxG-6g-mtb">
+                                                <rect key="frame" x="20" y="12" width="353" height="399.33333333333331"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjs-kh-Me1">
                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="351.33333333333331"/>
@@ -151,9 +151,9 @@
                                                                 <rect key="frame" x="0.0" y="12" width="353" height="40"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4U-9P-kCO">
-                                                                        <rect key="frame" x="12" y="8" width="24" height="24"/>
+                                                                        <rect key="frame" x="12" y="0.0" width="40" height="40"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" image="ic_back3"/>
+                                                                        <state key="normal" image="icon_back_dark"/>
                                                                         <connections>
                                                                             <action selector="btnBackTapped:" destination="CVt-2a-Cly" eventType="touchUpInside" id="2bC-sO-zym"/>
                                                                             <action selector="btnBackTapped:" destination="Isd-0w-U7m" eventType="touchUpInside" id="gHb-HX-3az"/>
@@ -259,7 +259,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yoga Videos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5a-ZH-Ykd">
-                                                        <rect key="frame" x="0.0" y="371.33333333333331" width="353" height="23"/>
+                                                        <rect key="frame" x="0.0" y="376.33333333333331" width="353" height="23"/>
                                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                                         <color key="textColor" red="0.89411764705882346" green="0.88235294117647056" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -267,7 +267,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G69-GW-rmo">
-                                                <rect key="frame" x="0.0" y="426.33333333333331" width="393" height="99.999999999999943"/>
+                                                <rect key="frame" x="0.0" y="423.33333333333331" width="393" height="99.999999999999943"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="45R-0O-ffh"/>
@@ -279,7 +279,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                             <constraint firstItem="kxG-6g-mtb" firstAttribute="leading" secondItem="5YD-OP-1UY" secondAttribute="leading" constant="20" id="3Bh-oY-Rbw"/>
                                             <constraint firstItem="kxG-6g-mtb" firstAttribute="top" secondItem="5YD-OP-1UY" secondAttribute="top" constant="12" id="Dg8-Li-P8d"/>
                                             <constraint firstAttribute="trailing" secondItem="kxG-6g-mtb" secondAttribute="trailing" constant="20" id="F3I-yk-fGR"/>
-                                            <constraint firstItem="G69-GW-rmo" firstAttribute="top" secondItem="kxG-6g-mtb" secondAttribute="bottom" constant="20" id="SiJ-Zp-xBt"/>
+                                            <constraint firstItem="G69-GW-rmo" firstAttribute="top" secondItem="kxG-6g-mtb" secondAttribute="bottom" constant="12" id="SiJ-Zp-xBt"/>
                                             <constraint firstAttribute="trailing" secondItem="G69-GW-rmo" secondAttribute="trailing" id="eL8-mq-Xew"/>
                                             <constraint firstAttribute="bottom" secondItem="G69-GW-rmo" secondAttribute="bottom" constant="12" id="jjN-xD-99a"/>
                                             <constraint firstItem="G69-GW-rmo" firstAttribute="leading" secondItem="5YD-OP-1UY" secondAttribute="leading" id="oYZ-xh-DaP"/>
@@ -336,8 +336,10 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                         <outlet property="consBtnHeight" destination="Emq-Jv-yE1" id="dEM-dA-4pJ"/>
                         <outlet property="consHeight" destination="45R-0O-ffh" id="XrL-Bd-dj8"/>
                         <outlet property="imgUser" destination="CmT-bn-VoT" id="vaJ-wQ-LpI"/>
+                        <outlet property="img_top" destination="ftu-10-0cz" id="a2N-0W-TaK"/>
                         <outlet property="lblDesc" destination="xzd-SB-kRv" id="cEI-6e-hYg"/>
                         <outlet property="lblName" destination="Ukm-cr-jfg" id="htL-0f-B7x"/>
+                        <outlet property="lblNavTitle" destination="lP1-hS-87O" id="lUq-g6-pwm"/>
                         <outlet property="lblSub" destination="dAi-iA-Zjg" id="3gJ-ja-fMS"/>
                         <outlet property="lblType" destination="c5a-ZH-Ykd" id="ls6-Tv-fGA"/>
                         <outlet property="tblMain" destination="G69-GW-rmo" id="TbK-Ti-4qS"/>
@@ -971,24 +973,16 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
             <point key="canvasLocation" x="909" y="805"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="pmB-rt-F2M">
-            <size key="intrinsicContentSize" width="143" height="34"/>
-        </designable>
-        <designable name="unT-xD-xrt">
-            <size key="intrinsicContentSize" width="70" height="34"/>
-        </designable>
-    </designables>
     <resources>
         <image name="ic_back2" width="40" height="40"/>
-        <image name="ic_back3" width="24" height="24"/>
         <image name="ic_close2" width="24" height="24"/>
         <image name="ic_dotted2" width="335" height="0.66666668653488159"/>
         <image name="ic_home_bg" width="375" height="812"/>
         <image name="ic_imp" width="80" height="80"/>
         <image name="ic_top_details2" width="335" height="175.66667175292969"/>
-        <image name="ic_uncheck" width="22" height="22"/>
+        <image name="ic_uncheck" width="20" height="20.333333969116211"/>
         <image name="ic_user_3" width="85" height="85"/>
+        <image name="icon_back_dark" width="40" height="40"/>
         <namedColor name="#212159">
             <color red="0.12941176470588237" green="0.12941176470588237" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

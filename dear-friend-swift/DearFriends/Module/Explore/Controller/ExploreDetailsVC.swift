@@ -11,7 +11,6 @@ import ExpandableLabel
 class ExploreDetailsVC: UIViewController {
     
     // MARK: - OUTLETS
-    
     @IBOutlet weak var consTop: NSLayoutConstraint!
     @IBOutlet weak var vwProgress: UIProgressView!
     @IBOutlet weak var imgSong: UIImageView!
@@ -28,6 +27,7 @@ class ExploreDetailsVC: UIViewController {
     @IBOutlet weak var consHeight: NSLayoutConstraint!
     @IBOutlet weak var tblMain: UITableView!
     @IBOutlet weak var vwScroll: UIScrollView!
+    @IBOutlet weak var view_Blur: UIView!
     
     // MARK: - VARIABLES
     
@@ -44,6 +44,46 @@ class ExploreDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTheView()
+
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.3) {
+            self.setupBlurView()
+        }
+    }
+    
+    func setupBlurView() {
+        /*
+        let blurEffect = UIBlurEffect(style: .light)
+
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        view.addSubview(blurEffectView)
+
+        let label = UIButton()
+        label.setTitle("Blurred Overlay Example", for: .normal)
+        label.setTitleColor(.black, for: .normal)
+              label.translatesAutoresizingMaskIntoConstraints = false
+              blurEffectView.contentView.addSubview(label)
+
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: blurEffectView.contentView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: blurEffectView.contentView.centerYAnchor)
+        ])*/
+          
+        //if let parent = appDelegate.window?.rootViewController {
+            let objDialouge = ShowCaseDialouge1(nibName:"ShowCaseDialouge1", bundle:nil)
+        if self.homeVM.arrOfAudioList.count != 0 {
+            objDialouge.arr_AudioList = [self.homeVM.arrOfAudioList[0]]
+        }
+        objDialouge.currentSubCategory = self.homeVM.currentSubCategory
+        objDialouge.tblFrame = CGRectMake(self.tblMain.frame.origin.x, self.tblMain.frame.origin.y, self.tblMain.frame.size.width, self.tblMain.frame.size.height)
+            //objDialouge.delegate = self
+            self.addChild(objDialouge)
+            objDialouge.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight)
+            self.view.addSubview((objDialouge.view)!)
+            objDialouge.didMove(toParent: self)
+        //}
     }
     
     //SET THE VIEW
@@ -609,3 +649,6 @@ extension ExploreDetailsVC: ExpandableLabelDelegate {
         self.view.layoutIfNeeded()
     }
 }
+
+
+

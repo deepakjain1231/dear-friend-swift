@@ -24,6 +24,12 @@ class MyReminderVC: BaseVC {
     @IBOutlet weak var lblMonth: UILabel!
     @IBOutlet weak var viewCalendar: FSCalendar!
     
+    fileprivate let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter
+    }()
+    
     // MARK: - VARIABLES
     
     var profileVM = ProfileViewModel()
@@ -64,13 +70,15 @@ class MyReminderVC: BaseVC {
         self.viewCalendar.headerHeight = 0
         self.viewCalendar.rowHeight = 40
         self.viewCalendar.weekdayHeight = 20
-        self.viewCalendar.setScope(.week, animated: false)
+        self.viewCalendar.scrollDirection = .vertical
+        self.viewCalendar.setScope(.week, animated: true)
+        //self.viewCalendar.setScope(.week, animated: false)
         let now = Date().convertTo(region: .local).date
         self.viewCalendar.setCurrentPage(now, animated: false)
         self.viewCalendar.firstWeekday = 2
         self.viewCalendar.allowsMultipleSelection = false
         self.viewCalendar.backgroundColor = .clear
-        self.viewCalendar.scrollEnabled = false
+        //self.viewCalendar.scrollEnabled = false
         self.viewCalendar.appearance.weekdayTextColor = hexStringToUIColor(hex: "#FAFAFA")
         self.viewCalendar.appearance.titleFont = Font(.installed(.SemiBold), size: .standard(.S18)).instance
         self.viewCalendar.appearance.weekdayFont = Font(.installed(.Regular), size: .standard(.S14)).instance
@@ -207,6 +215,13 @@ extension MyReminderVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDele
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         self.consCalendarHeight.constant = bounds.height
         self.view.layoutIfNeeded()
+    }
+    
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM yyyy"
+        let nameOfMonth = dateFormatter.string(from: calendar.currentPage)
+        self.lblMonth.text = nameOfMonth
     }
 }
 

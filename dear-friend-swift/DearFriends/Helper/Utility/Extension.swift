@@ -1911,3 +1911,27 @@ extension CAGradientLayer {
     }
     
 }
+
+
+extension UIView.KeyframeAnimationOptions {
+  
+  static var curveEaseIn: UIView.KeyframeAnimationOptions {
+    UIView.KeyframeAnimationOptions(animationOptions: .curveEaseIn)
+  }
+  
+  static var curveEaseOut: UIView.KeyframeAnimationOptions {
+    UIView.KeyframeAnimationOptions(animationOptions: .curveEaseOut)
+  }
+  
+  static var curveEaseInOut: UIView.KeyframeAnimationOptions {
+    UIView.KeyframeAnimationOptions(animationOptions: .curveEaseInOut)
+  }
+  
+  static var curveLinear: UIView.KeyframeAnimationOptions {
+    UIView.KeyframeAnimationOptions(animationOptions: .curveLinear)
+  }
+  
+  init(animationOptions: UIView.AnimationOptions) {
+    self.init(rawValue: animationOptions.rawValue)
+  }
+}

@@ -13,11 +13,31 @@ class ActiveSubscriptionVC: UIViewController {
     // MARK: - OUTLETS
     
     @IBOutlet weak var lblStatus: UILabel!
+    @IBOutlet weak var lblStatusTitle: UILabel!
     @IBOutlet weak var lblExpiry: UILabel!
+    @IBOutlet weak var lblExpiryTitle: UILabel!
     @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblNamesubTitle: UILabel!
     @IBOutlet weak var lblDuration: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblNavTitle: UILabel!
+    @IBOutlet weak var lblIncludeTitle: UILabel!
+    
+    @IBOutlet weak var lbl_plan1_title: UILabel!
+    @IBOutlet weak var lbl_plan2_title: UILabel!
+    @IBOutlet weak var lbl_plan3_title: UILabel!
+    @IBOutlet weak var lbl_plan4_title: UILabel!
+    @IBOutlet weak var lbl_plan5_title: UILabel!
+    @IBOutlet weak var lbl_plan6_title: UILabel!
+    
+    @IBOutlet weak var lbl_plan1_subtitle: UILabel!
+    @IBOutlet weak var lbl_plan2_subtitle: UILabel!
+    @IBOutlet weak var lbl_plan3_subtitle: UILabel!
+    @IBOutlet weak var lbl_plan4_subtitle: UILabel!
+    @IBOutlet weak var lbl_plan5_subtitle: UILabel!
+    @IBOutlet weak var lbl_plan6_subtitle: UILabel!
+    
+    @IBOutlet weak var btnChangePlan: UIButton!
     
     // MARK: - VARIABLES
     
@@ -32,7 +52,39 @@ class ActiveSubscriptionVC: UIViewController {
         
         //SET FONT
         self.lblNavTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "My Subscription")
+        
+        self.lblName.configureLable(textColor: hexStringToUIColor(hex: "#E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 16, text: "")
+        self.lblNamesubTitle.configureLable(textColor: hexStringToUIColor(hex: "#E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: "You are now a Member")
+        
+        self.lblPrice.configureLable(textColor: hexStringToUIColor(hex: "#E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Bold, fontSize: 18, text: "")
+        self.lblDuration.configureLable(textColor: hexStringToUIColor(hex: "#E0E0E3"), fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: "")
+        
+        self.lblStatusTitle.configureLable(textColor: hexStringToUIColor(hex: "#B2B1B9"), fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: "Status")
+        self.lblStatus.configureLable(textColor: hexStringToUIColor(hex: "#E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_SemiBold, fontSize: 14, text: "")
+        
+        self.lblExpiryTitle.configureLable(textColor: hexStringToUIColor(hex: "#B2B1B9"), fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: "Valid Till")
+        self.lblExpiry.configureLable(textColor: hexStringToUIColor(hex: "#B2B1B9"), fontName: GlobalConstants.OUTFIT_FONT_SemiBold, fontSize: 14, text: "")
+                
+        self.lblIncludeTitle.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20, text: "Includes:")
+
+        self.lbl_plan1_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Ad-Free Experience")
+        self.lbl_plan2_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Offline Accessibility")
+        self.lbl_plan3_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Extensive Meditation Library")
+        self.lbl_plan4_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Comprehensive Music Selection")
+        self.lbl_plan5_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Nature Sounds Collection")
+        self.lbl_plan6_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Background Audio Options")
+        
+        //SubTitles
+        self.lbl_plan1_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Enjoy uninterrupted access to your favorite meditations, music, and nature sounds.")
+        self.lbl_plan2_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Download and enjoy your favorite meditations and tracks anytime, anywhere.")
+        self.lbl_plan3_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Explore a growing collection of over 300 guided meditations across 30 unique categories, with new content added regularly.")
+        self.lbl_plan4_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Discover over 250 musical tracks, thoughtfully organized by instrument and style.")
+        self.lbl_plan5_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Immerse yourself in over 300 high-quality nature recordings from around the world.")
+        self.lbl_plan6_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Enhance your experience with a full suite of background audio options designed to support relaxation and focus.")
+
+        self.btnChangePlan.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 18.0, text: "Change Plan")
     }
+    
     
     // MARK: - Other Functions
     

@@ -19,16 +19,20 @@ class FeedbackVC: UIViewController {
     @IBOutlet weak var lbl_Title2: UILabel!
     @IBOutlet weak var lbl_Title3: UILabel!
     
+    
     @IBOutlet weak var star1: UIImageView!
     @IBOutlet weak var star2: UIImageView!
     
     @IBOutlet weak var star4: UIImageView!
     @IBOutlet weak var star3: UIImageView!
     @IBOutlet weak var star5: UIImageView!
+    @IBOutlet weak var lbl_emailTitle: UILabel!
     @IBOutlet weak var txtEmail: AppCommonTextField!
     @IBOutlet weak var btnSubmit: AppButton!
     @IBOutlet weak var txtAboutExp: AppCommonTextView!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var view_EmailBG: UIView!
+    @IBOutlet weak var view_AboutBG: UIView!
     
     var selectedRate = -1
     var audioVM = AudioViewModel()
@@ -41,7 +45,7 @@ class FeedbackVC: UIViewController {
         self.setTheView()
         self.txtEmail.text = CurrentUser.shared.user?.email ?? ""
         self.txtEmail.isUserInteractionEnabled = false
-        self.txtEmail.textColor = .TitleButtonColor
+        //self.txtEmail.textColor = .TitleButtonColor
         self.setBgColors(views: [view1,view2,view3,view4,view5])
         self.setStar(imageViews: [star1,star2,star3,star4,star5])
         // Do any additional setup after loading the view.
@@ -53,12 +57,27 @@ class FeedbackVC: UIViewController {
         
         //SET FONT
         self.lbl_Title.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 20, text: "Feedback")
-        self.lbl_Title2.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "How would you rate this meditation?")
-        self.lbl_Title3.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "Please tell us about your experience.")
+        self.lbl_Title2.configureLable(textColor: hexStringToUIColor(hex: "F0EEF5"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "How would you rate this meditation?")
+        self.lbl_Title3.configureLable(textColor: hexStringToUIColor(hex: "D1D0D5"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "Please tell us about your experience.")
+        self.lbl_emailTitle.configureLable(textColor: hexStringToUIColor(hex: "D1D0D5"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "Your email address")
         
-        self.txtEmail.configureText(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 14, text: "", placeholder: "Type your experience...")
+        
+        self.txtAboutExp.configureText(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 14, text: "")
+        self.txtAboutExp.placeholderLabel.font = UIFont.init(name: GlobalConstants.RAMBLA_FONT_Regular, size: 14)
+        
+        self.txtEmail.configureText(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 14, text: "", placeholder: "email address")
+        
         self.btnSubmit.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20.0, text: "Submit")
         self.btnSubmit.backgroundColor = .buttonBGColor
+        
+        //SET VIEW
+        self.view_EmailBG.viewCorneRadius(radius: 10)
+        self.view_EmailBG.backgroundColor = .primary
+        self.view_EmailBG.viewBorderCorneRadius(borderColour: .secondary)
+        
+        self.view_AboutBG.viewCorneRadius(radius: 10)
+        self.view_AboutBG.backgroundColor = .primary
+        self.view_AboutBG.viewBorderCorneRadius(borderColour: .secondary)
     }
     
     

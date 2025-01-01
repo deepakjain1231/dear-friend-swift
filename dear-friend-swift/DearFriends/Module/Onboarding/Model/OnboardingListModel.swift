@@ -70,3 +70,70 @@ public class OnboardingListModel {
   }
 
 }
+
+
+
+
+//MARK: - About Creator Model
+public class OnboardingAboutCreatorModel {
+
+    // MARK: Declaration for string constants to be used to decode and also serialize.
+    private let kOnboardingAboutCreatorModelAboutKey: String = "about"
+    private let kOnboardingAboutCreatorModelAudioDurationKey: String = "audio_duration"
+    private let kOnboardingAboutCreatorModelCreatedAtKey: String = "created_at"
+    private let kOnboardingAboutCreatorModelInternalIdentifierKey: String = "id"
+    private let kOnboardingAboutCreatorModelFileKey: String = "file"
+    private let kOnboardingAboutCreatorModelUpdatedAtKey: String = "updated_at"
+    private let kOnboardingAboutCreatorModelTitleKey: String = "title"
+
+  // MARK: Properties
+    public var about: String?
+    public var audio_duration: Int?
+    public var createdAt: String?
+    public var internalIdentifier: Int?
+    public var file: String?
+    public var updated_at: String?
+    public var title: String?
+
+  // MARK: SwiftyJSON Initalizers
+  /**
+   Initates the instance based on the object
+   - parameter object: The object of either Dictionary or Array kind that was passed.
+   - returns: An initalized instance of the class.
+  */
+  convenience public init(object: Any?) {
+      self.init(json: JSON(object ?? nil))
+  }
+
+  /**
+   Initates the instance based on the JSON that was passed.
+   - parameter json: JSON object from SwiftyJSON.
+   - returns: An initalized instance of the class.
+  */
+  public init(json: JSON?) {
+      about = json?[kOnboardingAboutCreatorModelAboutKey].string
+      updated_at = json?[kOnboardingAboutCreatorModelUpdatedAtKey].string
+      internalIdentifier = json?[kOnboardingAboutCreatorModelInternalIdentifierKey].int
+      file = json?[kOnboardingAboutCreatorModelFileKey].string
+      createdAt = json?[kOnboardingAboutCreatorModelCreatedAtKey].string
+      audio_duration = json?[kOnboardingAboutCreatorModelAudioDurationKey].int
+      title = json?[kOnboardingAboutCreatorModelTitleKey].string
+  }
+
+  /**
+   Generates description of the object in the form of a NSDictionary.
+   - returns: A Key value pair containing all valid values in the object.
+  */
+  public func dictionaryRepresentation() -> [String: Any] {
+    var dictionary: [String: Any] = [:]
+      if let value = about { dictionary[kOnboardingAboutCreatorModelAboutKey] = value }
+      if let value = updated_at { dictionary[kOnboardingAboutCreatorModelUpdatedAtKey] = value }
+      if let value = internalIdentifier { dictionary[kOnboardingAboutCreatorModelInternalIdentifierKey] = value }
+      if let value = file { dictionary[kOnboardingAboutCreatorModelFileKey] = value }
+      if let value = createdAt { dictionary[kOnboardingAboutCreatorModelCreatedAtKey] = value }
+      if let value = audio_duration { dictionary[kOnboardingAboutCreatorModelAudioDurationKey] = value }
+      if let value = title { dictionary[kOnboardingAboutCreatorModelTitleKey] = value }
+    return dictionary
+  }
+
+}

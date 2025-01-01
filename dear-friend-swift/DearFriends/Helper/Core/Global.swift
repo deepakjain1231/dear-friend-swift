@@ -11,6 +11,30 @@ import UIKit
 import IQKeyboardManagerSwift
 
 let GradientBGColors = [UIColor.init(hex: "0F143A"), UIColor.init(hex: "251B62")]
+let About_GradientBGColors = [UIColor.init(hex: "0E064A").withAlphaComponent(0), UIColor.init(hex: "0E064A").withAlphaComponent(1)]
+var dic_aboutCreator = OnboardingAboutCreatorModel(object: nil)
+
+let ANI_RIPPLE_ALPHA: CGFloat = 0.5
+let ANI_RIPPLE_SCALE: CGFloat = 1.6
+public var aniRippleColor: UIColor!
+public var aniRippleScale: CGFloat = 0.0
+public var aniGoOutDuration: TimeInterval = 0.0
+
+let showcase_1_indx_0_Title = "Content Progress Bar"
+let showcase_1_indx_0_subTitle = "See your progress at a glance with the Content Progress Bar. A purple line shows how far you’ve listened, while a white check mark and subtle gray line appear when the content is complete. This gentle guide helps you easily continue where you left off, and also encourages you to revisit your favorites anytime you want."
+
+let showcase_1_indx_1_Title = "Download, Favorite, or Pin"
+let showcase_1_indx_1_subTitle = "Download, favorite, or pin meditations to easily access them anytime."
+
+let showcase_2_indx_0_Title = "Feedback & Share"
+let showcase_2_indx_0_subTitle = "Share your thoughts or recommend this meditation to a friend."
+
+let showcase_2_indx_1_Title = "Background Audio Selection"
+let showcase_2_indx_1_subTitle = "Choose the perfect background sound to enhance your experience."
+
+//MARK: - Vimeo Access
+var BaseURL_Vimeo = "https://api.vimeo.com/videos/"
+var Kvimeo_access_Token = "Bearer 211e2d48814c3754f5c54417a75bdcce"
 
 struct GlobalConstants
 {
@@ -40,6 +64,7 @@ struct GlobalConstants
     static let OUTFIT_FONT_Regular = "Outfit-Regular"
     static let OUTFIT_FONT_Medium = "Outfit-Medium"
     static let OUTFIT_FONT_SemiBold = "Outfit-SemiBold"
+    static let OUTFIT_FONT_Bold = "Outfit-Bold"
 
     static let appStoreId = "6477375969"
 

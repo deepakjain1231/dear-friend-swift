@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0012B2AE2D184A06000B7AB9 /* MusicCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0012B2AD2D184A06000B7AB9 /* MusicCategoryCVC.swift */; };
 		0012B2B02D184A4E000B7AB9 /* MusicCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0012B2AF2D184A4E000B7AB9 /* MusicCategoryCVC.xib */; };
+		002F773C2D2126AF004431BD /* ShowCaseDialouge1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002F773B2D2126AF004431BD /* ShowCaseDialouge1.xib */; };
+		002F773D2D2126AF004431BD /* ShowCaseDialouge1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002F773A2D2126AF004431BD /* ShowCaseDialouge1.swift */; };
+		002F77422D2127B9004431BD /* ShowCaseCollectionCell_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002F77412D2127B9004431BD /* ShowCaseCollectionCell_1.xib */; };
+		002F77432D2127B9004431BD /* ShowCaseCollectionCell_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002F77402D2127B9004431BD /* ShowCaseCollectionCell_1.swift */; };
+		00ABC9BD2D1E50E20031B3D9 /* AboutCreatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABC9BC2D1E50E20031B3D9 /* AboutCreatorVC.swift */; };
 		29028C7F2A02776000D0A747 /* HomeCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29028C7D2A02776000D0A747 /* HomeCategoryCVC.swift */; };
 		29028C802A02776000D0A747 /* HomeCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29028C7E2A02776000D0A747 /* HomeCategoryCVC.xib */; };
 		290326362B27143B00E5D289 /* BGAudioListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290326352B27143B00E5D289 /* BGAudioListModel.swift */; };
@@ -378,6 +383,11 @@
 /* Begin PBXFileReference section */
 		0012B2AD2D184A06000B7AB9 /* MusicCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCategoryCVC.swift; sourceTree = "<group>"; };
 		0012B2AF2D184A4E000B7AB9 /* MusicCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCategoryCVC.xib; sourceTree = "<group>"; };
+		002F773A2D2126AF004431BD /* ShowCaseDialouge1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseDialouge1.swift; sourceTree = "<group>"; };
+		002F773B2D2126AF004431BD /* ShowCaseDialouge1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowCaseDialouge1.xib; sourceTree = "<group>"; };
+		002F77402D2127B9004431BD /* ShowCaseCollectionCell_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseCollectionCell_1.swift; sourceTree = "<group>"; };
+		002F77412D2127B9004431BD /* ShowCaseCollectionCell_1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowCaseCollectionCell_1.xib; sourceTree = "<group>"; };
+		00ABC9BC2D1E50E20031B3D9 /* AboutCreatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCreatorVC.swift; sourceTree = "<group>"; };
 		11CD7D134A180267A2A4AEDA /* Pods-Dear Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear Friends.debug.xcconfig"; path = "Target Support Files/Pods-Dear Friends/Pods-Dear Friends.debug.xcconfig"; sourceTree = "<group>"; };
 		29028C7D2A02776000D0A747 /* HomeCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCVC.swift; sourceTree = "<group>"; };
 		29028C7E2A02776000D0A747 /* HomeCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryCVC.xib; sourceTree = "<group>"; };
@@ -770,6 +780,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		002F77392D21266A004431BD /* Showcase Dialouge */ = {
+			isa = PBXGroup;
+			children = (
+				002F773A2D2126AF004431BD /* ShowCaseDialouge1.swift */,
+				002F773B2D2126AF004431BD /* ShowCaseDialouge1.xib */,
+			);
+			path = "Showcase Dialouge";
+			sourceTree = "<group>";
+		};
+		002F773E2D21272E004431BD /* Showcase View */ = {
+			isa = PBXGroup;
+			children = (
+				002F773F2D21274C004431BD /* Collection Cell */,
+				002F77392D21266A004431BD /* Showcase Dialouge */,
+			);
+			path = "Showcase View";
+			sourceTree = "<group>";
+		};
+		002F773F2D21274C004431BD /* Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				002F77402D2127B9004431BD /* ShowCaseCollectionCell_1.swift */,
+				002F77412D2127B9004431BD /* ShowCaseCollectionCell_1.xib */,
+			);
+			path = "Collection Cell";
+			sourceTree = "<group>";
+		};
 		29028C7B2A02773B00D0A747 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1313,6 +1350,7 @@
 			isa = PBXGroup;
 			children = (
 				29CC6E3B29FFBAF500638A05 /* OnbordingVC.swift */,
+				00ABC9BC2D1E50E20031B3D9 /* AboutCreatorVC.swift */,
 				29D4A9222A4C52F400C61FF0 /* CustomLaunchVC.swift */,
 			);
 			path = Controller;
@@ -1495,6 +1533,7 @@
 				43098B7C2A1731C0003D6307 /* DearFriends.entitlements */,
 				29AD52872A2F46D300512272 /* DownloadCoreDataModel.xcdatamodeld */,
 				438E53F62A1CC22E00E4CB85 /* GoogleService-Info.plist */,
+				002F773E2D21272E004431BD /* Showcase View */,
 				29D86E742A00E4B800751453 /* StoryBoards */,
 				4337BACF294D82630090E0A5 /* Module */,
 				4337BACE294D82590090E0A5 /* AppSetting */,
@@ -2400,6 +2439,7 @@
 				2974CB8F2AA5BC2A00229693 /* Outfit-ExtraLight.ttf in Resources */,
 				29A5DAB62AB4187F00D2A329 /* ScheduleTimeCVC.xib in Resources */,
 				29CC6E3529FFB90D00638A05 /* Poppins-Black.otf in Resources */,
+				002F77422D2127B9004431BD /* ShowCaseCollectionCell_1.xib in Resources */,
 				290EA6D02ABAC9A100B0D297 /* YogaVideosTVC.xib in Resources */,
 				4337BA8C294D812D0090E0A5 /* LoadingTVC.xib in Resources */,
 				29CC6E3129FFB90D00638A05 /* Poppins-Thin.otf in Resources */,
@@ -2410,6 +2450,7 @@
 				2997F7292ADFD5D200B10457 /* NewMusicListTVC.xib in Resources */,
 				C515581F2CF88A7C009045CA /* Colour.xcassets in Resources */,
 				29C539EC2A036FDB00296D42 /* HomeListCVC.xib in Resources */,
+				002F773C2D2126AF004431BD /* ShowCaseDialouge1.xib in Resources */,
 				29D86E802A00E56900751453 /* Profile.storyboard in Resources */,
 				2974CB8C2AA5BC2A00229693 /* Outfit-ExtraBold.ttf in Resources */,
 				2974CB8B2AA5BC2A00229693 /* Outfit-Medium.ttf in Resources */,
@@ -2565,6 +2606,7 @@
 				2997F7242ADFD00300B10457 /* ExploreDetailsVC.swift in Sources */,
 				4337BA8A294D812D0090E0A5 /* LoaderClass.swift in Sources */,
 				294B8B0E2AE14E5900EA8AAB /* CreateStep3VC.swift in Sources */,
+				002F77432D2127B9004431BD /* ShowCaseCollectionCell_1.swift in Sources */,
 				C50832452CF9F8A10027C450 /* ThemeCategory.swift in Sources */,
 				43D80B702A14D88400229B87 /* ExploreSoundListVC.swift in Sources */,
 				4337BA6E294D812D0090E0A5 /* ToastView.swift in Sources */,
@@ -2615,9 +2657,11 @@
 				43EAD8562A12415000B58953 /* MyPreferencesVC.swift in Sources */,
 				29DF02822AE68EE400FAF987 /* SetReminderVC.swift in Sources */,
 				BD91BBE92CCA8ACE006B00E6 /* MetadataStreamProcessor.swift in Sources */,
+				002F773D2D2126AF004431BD /* ShowCaseDialouge1.swift in Sources */,
 				299A491E2AE1383D00CFDE33 /* CreateSection2VC.swift in Sources */,
 				BD91BC082CCA8ACE006B00E6 /* BiMap.swift in Sources */,
 				438E53FD2A1CC69600E4CB85 /* MyHistoryCVC.swift in Sources */,
+				00ABC9BD2D1E50E20031B3D9 /* AboutCreatorVC.swift in Sources */,
 				29D710282AA6F1B200FEE3FF /* RootStackTabViewController.swift in Sources */,
 				4337BA70294D812D0090E0A5 /* TextAppleToastView.swift in Sources */,
 				437CDBCB2A1E0C110052B826 /* AppUpdatePopupVC.swift in Sources */,

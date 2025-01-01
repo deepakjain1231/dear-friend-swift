@@ -21,6 +21,7 @@ import Stripe
 import FacebookCore
 import GoogleSignIn
 import AVKit
+import Alamofire
 
 enum InAppPlanID: String, CaseIterable {
     case monthly = "com.dearfriends.monthly"
@@ -69,10 +70,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         sleep(1)
         
-        //Temp Comment//IQKeyboardManager.shared.enable = true
-        //Temp Comment//IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UIStackView.self)
-        //Temp Comment//IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UIView.self)
-        //Temp Comment//IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UITextField.self)
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UIStackView.self)
+        IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UIView.self)
+        IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UITextField.self)
         
         setupKeyboard(true)
         UITextField.appearance().keyboardAppearance = .dark
@@ -802,6 +803,50 @@ extension AppDelegate {
             }
         } Failure: { response, isSuccess, error, statusCode in
             print("Failure Response:", response)
+        }
+    }
+}
+
+
+//MARK: - VIMEO EXTRACTOR
+extension AppDelegate {
+
+    func callAPIforVimeoExtracter(vimeo_id: String, current_view: UIViewController, completion: @escaping (Bool, String)->Void ) {
+        //API Call
+        if ServiceManager.checkInterNet() {
+            SHOW_CUSTOM_LOADER()
+            let urlString = BaseURL_Vimeo + vimeo_id
+            
+            AF.request(urlString, method: .get, parameters: nil, encoding:URLEncoding.default, headers: ["Authorization": Kvimeo_access_Token]).validate().responseJSON(queue: DispatchQueue.main, options: JSONSerialization.ReadingOptions.allowFragments)  { response in
+                switch response.result {
+                case .success(let value):
+                    print("API URL: - \(urlString)\n\n\nResponse: - \(response)")
+                    guard let dicResponse = (value as? [String: Any]) else {
+                        completion(false, "")
+                        return
+                    }
+
+                    var str_video_url = ""
+                    
+                    if let player_url = dicResponse["player_embed_url"] as? String {
+                        str_video_url = player_url
+                    }
+                    
+                    if str_video_url != "" {
+                        completion(true, str_video_url)
+                    }
+                    else {
+                        completion(false, "")
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                    completion(false, "")
+                }
+            }
+        }
+        else {
+            completion(false, "")
         }
     }
 }

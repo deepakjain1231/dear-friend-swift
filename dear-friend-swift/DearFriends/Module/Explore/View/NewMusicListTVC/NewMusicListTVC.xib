@@ -23,6 +23,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="440" height="109"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UC-iF-jPc">
+                        <rect key="frame" x="4" y="4" width="432" height="84.333333333333329"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUw-vs-itt">
                         <rect key="frame" x="0.0" y="0.0" width="440" height="88.333333333333329"/>
                         <subviews>
@@ -75,6 +79,10 @@
                                                     <constraint firstAttribute="height" constant="12" id="kFQ-Dc-0io"/>
                                                 </constraints>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufy-aA-4Jt">
+                                                <rect key="frame" x="390" y="17.333333333333329" width="46" height="46"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-Ed-9W5">
                                                 <rect key="frame" x="398" y="25.333333333333329" width="30" height="30"/>
                                                 <constraints>
@@ -108,14 +116,18 @@
                                             <constraint firstAttribute="trailing" secondItem="OPw-60-6R3" secondAttribute="trailing" constant="5" id="QSw-pN-b2k"/>
                                             <constraint firstItem="wrM-Wl-3AL" firstAttribute="top" secondItem="yM0-i2-hsQ" secondAttribute="top" constant="21.666666666666671" id="Qto-pJ-Q39"/>
                                             <constraint firstAttribute="trailing" secondItem="n0L-aY-5Wq" secondAttribute="trailing" id="XYD-ot-Tdn"/>
+                                            <constraint firstItem="ufy-aA-4Jt" firstAttribute="bottom" secondItem="Ncf-Ed-9W5" secondAttribute="bottom" constant="8" id="aN5-Tc-LlQ"/>
+                                            <constraint firstItem="ufy-aA-4Jt" firstAttribute="top" secondItem="Ncf-Ed-9W5" secondAttribute="top" constant="-8" id="cF1-f5-a5g"/>
                                             <constraint firstItem="7yy-82-rNs" firstAttribute="top" secondItem="yM0-i2-hsQ" secondAttribute="top" id="chS-53-hrG"/>
                                             <constraint firstItem="vnm-HM-gfR" firstAttribute="centerY" secondItem="yM0-i2-hsQ" secondAttribute="centerY" constant="-4" id="gnO-oA-HPv"/>
                                             <constraint firstAttribute="bottom" secondItem="n0L-aY-5Wq" secondAttribute="bottom" id="jhe-Zq-3q4"/>
                                             <constraint firstAttribute="trailing" secondItem="Ncf-Ed-9W5" secondAttribute="trailing" constant="12" id="lU2-0T-Utb"/>
                                             <constraint firstItem="Ncf-Ed-9W5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wrM-Wl-3AL" secondAttribute="trailing" constant="12" id="n2f-Ri-bNV"/>
+                                            <constraint firstItem="ufy-aA-4Jt" firstAttribute="trailing" secondItem="Ncf-Ed-9W5" secondAttribute="trailing" constant="8" id="n8t-bt-6Ae"/>
                                             <constraint firstAttribute="trailing" secondItem="7yy-82-rNs" secondAttribute="trailing" id="sIg-Dh-jSc"/>
                                             <constraint firstItem="vnm-HM-gfR" firstAttribute="leading" secondItem="yM0-i2-hsQ" secondAttribute="leading" constant="8" id="tme-xM-ssR"/>
                                             <constraint firstItem="wrM-Wl-3AL" firstAttribute="centerY" secondItem="yM0-i2-hsQ" secondAttribute="centerY" constant="-4" id="v8p-Nv-TTQ"/>
+                                            <constraint firstItem="ufy-aA-4Jt" firstAttribute="leading" secondItem="Ncf-Ed-9W5" secondAttribute="leading" constant="-8" id="vfv-lJ-sy7"/>
                                             <constraint firstItem="n0L-aY-5Wq" firstAttribute="leading" secondItem="yM0-i2-hsQ" secondAttribute="leading" id="vwc-Nz-MXz"/>
                                             <constraint firstItem="n0L-aY-5Wq" firstAttribute="top" secondItem="OPw-60-6R3" secondAttribute="bottom" constant="5" id="zbI-0v-e0z"/>
                                         </constraints>
@@ -174,9 +186,13 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="hUw-vs-itt" secondAttribute="trailing" id="47Q-Jl-hIu"/>
+                    <constraint firstItem="4UC-iF-jPc" firstAttribute="trailing" secondItem="hUw-vs-itt" secondAttribute="trailing" constant="-4" id="9BW-Ul-BHN"/>
+                    <constraint firstItem="4UC-iF-jPc" firstAttribute="bottom" secondItem="hUw-vs-itt" secondAttribute="bottom" id="ErD-Vh-nZn"/>
                     <constraint firstItem="hUw-vs-itt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ffu-KS-WbD"/>
+                    <constraint firstItem="4UC-iF-jPc" firstAttribute="top" secondItem="hUw-vs-itt" secondAttribute="top" constant="4" id="Gn1-eX-anQ"/>
                     <constraint firstAttribute="bottom" secondItem="hUw-vs-itt" secondAttribute="bottom" constant="12" id="Gn6-dr-rEm"/>
                     <constraint firstItem="hUw-vs-itt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oli-qS-y7m"/>
+                    <constraint firstItem="4UC-iF-jPc" firstAttribute="leading" secondItem="hUw-vs-itt" secondAttribute="leading" constant="4" id="rga-Gc-Pyq"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -184,6 +200,9 @@
             <color key="tintColor" red="0.25490196079999999" green="0.19215686269999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="btnmore" destination="Ncf-Ed-9W5" id="2qU-41-p0N"/>
+                <outlet property="constraint_view_main_BG_leading" destination="oli-qS-y7m" id="g68-VL-kKm"/>
+                <outlet property="constraint_view_main_BG_top" destination="Ffu-KS-WbD" id="5AQ-Te-VtO"/>
+                <outlet property="constraint_view_main_BG_trelling" destination="47Q-Jl-hIu" id="Wjw-Wj-4B1"/>
                 <outlet property="img" destination="vnm-HM-gfR" id="NOX-CZ-8P6"/>
                 <outlet property="imgPin" destination="OPw-60-6R3" id="tNK-Wo-u8j"/>
                 <outlet property="imgPlayed" destination="7yy-82-rNs" id="SOY-6k-z08"/>
@@ -191,6 +210,9 @@
                 <outlet property="lblTitle" destination="An7-ax-kg9" id="AbW-D0-Gze"/>
                 <outlet property="progress" destination="n0L-aY-5Wq" id="Q9p-UK-6WN"/>
                 <outlet property="view_BG" destination="yM0-i2-hsQ" id="Bkr-Xh-5Bw"/>
+                <outlet property="view_animateBG" destination="4UC-iF-jPc" id="Rek-9n-zRo"/>
+                <outlet property="view_animateButtonBG" destination="ufy-aA-4Jt" id="Jo6-ev-kt3"/>
+                <outlet property="view_main_BG" destination="hUw-vs-itt" id="R7q-Kb-Ipb"/>
                 <outlet property="vwPremius" destination="KFx-d2-GnP" id="mAl-Yt-32k"/>
             </connections>
             <point key="canvasLocation" x="222.90076335877862" y="11.619718309859156"/>

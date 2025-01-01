@@ -22,7 +22,7 @@ class YogaVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setTheView()
         self.setupUI()
     }
     
@@ -39,6 +39,13 @@ class YogaVC: UIViewController {
         if self.yogaVM.arrOfVideosList.count == 0 {
             self.getVideoListing()
         }
+    }
+    
+    //SET THE VIEW
+    func setTheView() {
+        
+        //SET FONT
+        self.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "")
     }
     
     func getVideoListing() {

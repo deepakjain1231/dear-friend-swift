@@ -20,6 +20,13 @@ class NewMusicListTVC: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnmore: UIButton!
     @IBOutlet weak var view_BG: UIView!
+    @IBOutlet weak var view_main_BG: UIView!
+    @IBOutlet weak var view_animateBG: UIView!
+    @IBOutlet weak var view_animateButtonBG: UIView!
+    @IBOutlet weak var constraint_view_main_BG_top: NSLayoutConstraint!
+    @IBOutlet weak var constraint_view_main_BG_leading: NSLayoutConstraint!
+    @IBOutlet weak var constraint_view_main_BG_trelling: NSLayoutConstraint!
+    
     
     var arrOFTitle = [PopMenuArray]()
     var isForCustom = false
@@ -31,6 +38,7 @@ class NewMusicListTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
         self.view_BG.backgroundColor = .primary?.withAlphaComponent(0.7)
     }
 
@@ -48,6 +56,43 @@ class NewMusicListTVC: UITableViewCell {
     
     @IBAction func btnPremiumTapped(_ sender: UIButton) {
         
+    }
+    
+    
+    func startAnimations() {
+        let options: UIView.KeyframeAnimationOptions = [.curveEaseInOut, .repeat]
+      UIView.animateKeyframes(withDuration: 1, delay: 0, options: options, animations: {
+        UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: {
+          self.view_animateBG.alpha = ANI_RIPPLE_ALPHA
+          self.view_main_BG.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+          self.view_animateBG.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        })
+        
+        UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+          self.view_main_BG.transform = CGAffineTransform.identity
+          self.view_animateBG.alpha = 0
+          self.view_animateBG.transform = CGAffineTransform(scaleX: aniRippleScale, y: aniRippleScale)
+        })
+        
+      }, completion: nil)
+    }
+    
+    func startAnimations_forButton() {
+        let options: UIView.KeyframeAnimationOptions = [.curveEaseInOut, .repeat]
+      UIView.animateKeyframes(withDuration: 1, delay: 0, options: options, animations: {
+        UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: {
+          self.view_animateButtonBG.alpha = ANI_RIPPLE_ALPHA
+            self.btnmore.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+          self.view_animateButtonBG.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        })
+        
+        UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+          self.btnmore.transform = CGAffineTransform.identity
+          self.view_animateButtonBG.alpha = 0
+          self.view_animateButtonBG.transform = CGAffineTransform(scaleX: aniRippleScale, y: aniRippleScale)
+        })
+        
+      }, completion: nil)
     }
 }
 

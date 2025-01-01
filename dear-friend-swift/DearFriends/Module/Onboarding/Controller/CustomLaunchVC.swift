@@ -7,10 +7,12 @@
 
 import UIKit
 import SwiftyJSON
+import AVFoundation
 
 class CustomLaunchVC: BaseVC {
     
     // MARK: - OUTLETS
+    var arrOfOnboarding = [OnboardingListModel]()
     
     @IBOutlet weak var acti: UIActivityIndicatorView!
     
@@ -78,9 +80,16 @@ class CustomLaunchVC: BaseVC {
         } else {
             self.getOnboarding { _ in
                 
+                self.get_AboutCreator_Onboarding { _ in
+                    
+                } failure: { errorResponse in
+                    
+                }
+                
             } failure: { errorResponse in
                 
             }
+
         }
     }
     
@@ -90,14 +99,14 @@ class CustomLaunchVC: BaseVC {
             
             print("Success Response:", response)
             if isSuccess == true {
-                var arrOfOnboarding = [OnboardingListModel]()
+                self.arrOfOnboarding = [OnboardingListModel]()
                 response["data"].arrayValue.forEach { model in
-                    arrOfOnboarding.append(OnboardingListModel(json: model))
+                    self.arrOfOnboarding.append(OnboardingListModel(json: model))
                 }
                 
-                let vc: OnbordingVC = OnbordingVC.instantiate(appStoryboard: .main)
-                vc.arrOfOnboarding = arrOfOnboarding
-                self.navigationController?.pushViewController(vc, animated: false)
+//                let vc: OnbordingVC = OnbordingVC.instantiate(appStoryboard: .main)
+//                vc.arrOfOnboarding = arrOfOnboarding
+//                self.navigationController?.pushViewController(vc, animated: false)
                 
                 success(response)
             } else {
@@ -110,7 +119,87 @@ class CustomLaunchVC: BaseVC {
         }
     }
     
-    // MARK: - Button Actions
+    
+    func get_AboutCreator_Onboarding(success: @escaping (JSON) -> Void, failure: @escaping (_ errorResponse: JSON) -> Void) {
+            
+        ServiceManager.shared.getRequest(ApiURL: .onboarding_about_creator, parameters: [:], isShowLoader: false) { response, isSuccess, error, statusCode in
+            
+            print("Success Response:", response)
+            if isSuccess == true {
+                dic_aboutCreator = OnboardingAboutCreatorModel(json: response["data"])
+
+                if let url = URL(string: dic_aboutCreator.file ?? "") {
+                    self.getMusicName(from: url) { title in
+                        if let title = title {
+                            dic_aboutCreator.title = title
+                        }
+                    }
+                    
+                    self.getSongDuration(from: url) { duration in
+                        if let duration = duration {
+                            dic_aboutCreator.audio_duration = Int(duration)
+                        }
+                    }
+                }
+                
+                let vc: OnbordingVC = OnbordingVC.instantiate(appStoryboard: .main)
+                vc.arrOfOnboarding = self.arrOfOnboarding
+                self.navigationController?.pushViewController(vc, animated: false)
+                
+                
+                success(response)
+            } else {
+                failure(response)
+            }
+            
+        } Failure: { response, isSuccess, error, statusCode in
+            print("Failure Response:", response)
+            failure(response)
+        }
+    }
+    
+    func getMusicName(from music_url: URL, completion: @escaping (String?) -> Void) {
+        let asset = AVAsset(url: music_url)
+        let metadataKey = "title"
+        
+        asset.loadValuesAsynchronously(forKeys: ["commonMetadata"]) {
+            var title: String?
+            
+            let status = asset.statusOfValue(forKey: "commonMetadata", error: nil)
+            if status == .loaded {
+                for metadataItem in asset.commonMetadata {
+                    if metadataItem.commonKey?.rawValue == metadataKey {
+                        title = metadataItem.stringValue
+                        break
+                    }
+                }
+            } else {
+                print("Failed to load metadata.")
+            }
+            
+            DispatchQueue.main.async {
+                completion(title)
+            }
+        }
+    }
+    
+    func getSongDuration(from url: URL, completion: @escaping (Double?) -> Void) {
+        let audioPlayer = AVPlayer()
+        let playerItem = AVPlayerItem(url: url)
+        audioPlayer.replaceCurrentItem(with: playerItem)
+        
+        // Wait for the duration to load
+        playerItem.asset.loadValuesAsynchronously(forKeys: ["duration"]) {
+            DispatchQueue.main.async {
+                if playerItem.asset.statusOfValue(forKey: "duration", error: nil) == .loaded {
+                    let duration = CMTimeGetSeconds(playerItem.asset.duration)
+                    completion(duration.isFinite ? duration : nil)
+                } else {
+                    completion(nil)
+                }
+            }
+        }
+    }
 }
 
 // MARK: - TableView Methods

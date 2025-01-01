@@ -14,7 +14,7 @@ import PopMenu
 import MarqueeLabel
 import SDWebImage
 
-class NewMusicVC: UIViewController {
+class NewMusicVC: UIViewController, delegate_done_showcase {
     
     // MARK: - OUTLETS
     
@@ -43,8 +43,9 @@ class NewMusicVC: UIViewController {
     @IBOutlet weak var lblNarrated: UILabel!
     @IBOutlet weak var btnCat: UIButton!
     @IBOutlet weak var lblName: MarqueeLabel!
-    @IBOutlet weak var btnFeedBack: UIButton!
     @IBOutlet weak var imgThumb: UIImageView!
+    @IBOutlet weak var stack_button: UIStackView!
+    @IBOutlet weak var btn_option_top: UIButton!
     
     // MARK: - VARIABLES
     
@@ -96,12 +97,35 @@ class NewMusicVC: UIViewController {
     var isHomePage : Bool = false
     var strHomeTitle : String = ""
     var strHomeImage : String = ""
+    var is_setup_showcase: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTheView()
         definesPresentationContext = true
         self.setupUI()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.setupBlurView()
+        }
+    }
+    
+    func setupBlurView() {
+        let objDialouge = ShowCaseDialouge1(nibName:"ShowCaseDialouge1", bundle:nil)
+        objDialouge.delegate = self
+        objDialouge.screenFrom = "player"
+        objDialouge.btnMusicOptionFrame = self.stack_button.frame
+        self.addChild(objDialouge)
+        objDialouge.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        self.view.addSubview((objDialouge.view)!)
+        objDialouge.didMove(toParent: self)
+    }
+    
+    func done_click_showcase(_ success: Bool) {
+        if success {
+            self.is_setup_showcase = false
+            self.setupUI()
+        }
     }
     
     //SET THE VIEW
@@ -139,33 +163,38 @@ class NewMusicVC: UIViewController {
         isFromFeedback = false
         self.dataBind(isForTimer: false)
         
-        if !appDelegate.isPlanPurchased && !self.isFromDownload {
-            self.setupAd()
-            self.setupFullAD { success in
-                if success {
-                    if let topVc = UIApplication.topViewController2(), topVc is NewMusicVC {
-                        self.showAD { success in
-                            if success {
-                                self.initPlayer()
+        if self.is_setup_showcase {
+            self.is_setup_showcase = false
+        }
+        else {
+            if !appDelegate.isPlanPurchased && !self.isFromDownload {
+                self.setupAd()
+                self.setupFullAD { success in
+                    if success {
+                        if let topVc = UIApplication.topViewController2(), topVc is NewMusicVC {
+                            self.showAD { success in
+                                if success {
+                                    self.initPlayer()
+                                }
                             }
                         }
                     }
                 }
+            } else {
+                self.initPlayer()
+                let songURL = self.songs[self.currentSongIndex]
+                self.managePlayerBeforePlay(destinationUrl: songURL)
+                var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+                if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+                    currentTime = 0
+                }
+                
+                self.lblCurrentTime.text = formatTime(currentTime)
+                self.vwSlider.setValue(Float(currentTime), animated: false)
+                self.vwSlider.value = Float(currentTime)
+                self.newplayer.seek(to: currentTime)
+                MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = NSNumber(value: currentTime)
             }
-        } else {
-            self.initPlayer()
-            let songURL = self.songs[self.currentSongIndex]
-            self.managePlayerBeforePlay(destinationUrl: songURL)
-            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-                currentTime = 0
-            }
-            
-            self.lblCurrentTime.text = formatTime(currentTime)
-            self.vwSlider.setValue(Float(currentTime), animated: false)
-            self.vwSlider.value = Float(currentTime)
-            self.newplayer.seek(to: currentTime)
-            MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = NSNumber(value: currentTime)
         }
         
         CurrentUser.shared.arrOfDownloadedBGAudios = CurrentUser.shared.arrOfDownloadedBGAudios.uniqued()
@@ -175,7 +204,7 @@ class NewMusicVC: UIViewController {
             self.btnLike.isHidden = true
             self.vwRepeat.isHidden = true
             self.vwRepeat2.isHidden = false
-            self.btnFeedBack.isHidden = true
+            self.btn_option_top.isHidden = true
             for it in arrDownloadedBGAudio {
                 if let url = URL(string: it.file ?? "") {
                     self.songsForBG.append(url)
@@ -1510,7 +1539,7 @@ extension NewMusicVC: PopMenuViewControllerDelegate, PopUpProtocol , UIPopoverPr
                activityViewController.popoverPresentationController?.sourceView = self.view
                 if UIDevice.current.userInterfaceIdiom == .pad {
                     activityViewController.popoverPresentationController?.sourceView = self.view
-                    activityViewController.popoverPresentationController?.sourceRect = self.btnFeedBack.frame
+                    activityViewController.popoverPresentationController?.sourceRect = self.btn_option_top.frame
                 }
                 activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook,UIActivity.ActivityType.postToTwitter,UIActivity.ActivityType.mail]
 

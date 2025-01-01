@@ -14,11 +14,37 @@ class SubscriptionVC: BaseVC {
     
     // MARK: - OUTLETS
     @IBOutlet weak var lblNavTitle: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var vwYearLeft: UIView!
     @IBOutlet weak var vwMonthLeft: UIView!
     @IBOutlet weak var vwMonth: UIView!
     @IBOutlet weak var vwYear: UIView!
     @IBOutlet weak var vwScroll: UIScrollView!
+    @IBOutlet weak var lbl_plan1_title: UILabel!
+    @IBOutlet weak var lbl_plan2_title: UILabel!
+    @IBOutlet weak var lbl_plan3_title: UILabel!
+    @IBOutlet weak var lbl_plan4_title: UILabel!
+    @IBOutlet weak var lbl_plan5_title: UILabel!
+    @IBOutlet weak var lbl_plan6_title: UILabel!
+    
+    @IBOutlet weak var lbl_plan1_subtitle: UILabel!
+    @IBOutlet weak var lbl_plan2_subtitle: UILabel!
+    @IBOutlet weak var lbl_plan3_subtitle: UILabel!
+    @IBOutlet weak var lbl_plan4_subtitle: UILabel!
+    @IBOutlet weak var lbl_plan5_subtitle: UILabel!
+    @IBOutlet weak var lbl_plan6_subtitle: UILabel!
+    
+    @IBOutlet weak var lbl_monthly_plan: UILabel!
+    @IBOutlet weak var lbl_monthly_plan_Price: UILabel!
+    @IBOutlet weak var lbl_monthly_plan_month: UILabel!
+    
+    @IBOutlet weak var lbl_yearly_plan: UILabel!
+    @IBOutlet weak var lbl_yearly_plan_Price: UILabel!
+    @IBOutlet weak var lbl_yearly_plan_month: UILabel!
+    @IBOutlet weak var btn_recommended: UIButton!
+    @IBOutlet weak var lbl_bottom_text: UILabel!
+    @IBOutlet weak var btn_Pay: UIButton!
+    @IBOutlet weak var btn_Restore: UIButton!
     
     // MARK: - VARIABLES
     
@@ -31,15 +57,6 @@ class SubscriptionVC: BaseVC {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.setTheView()
-        
-        self.vwYear.backgroundColor = hexStringToUIColor(hex: "#212159")
-        self.vwMonth.backgroundColor = hexStringToUIColor(hex: "#212159")
-        self.vwMonth.borderWidth = 0
-        self.vwYear.borderWidth = 0
-        self.vwMonth.borderColor = hexStringToUIColor(hex: "#776ADA")
-        self.vwYear.borderColor = hexStringToUIColor(hex: "#776ADA")
-        self.vwYearLeft.isHidden = false
-        self.vwMonthLeft.isHidden = false
         self.vwScroll.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 44, right: 0)
     }
     
@@ -48,7 +65,57 @@ class SubscriptionVC: BaseVC {
         
         //SET FONT
         self.lblNavTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "My Subscription")
+        self.lblTitle.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20, text: "Thank you for your consideration.\n\nThe Premium plan includes the following:")
+        
+        self.lbl_plan1_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Ad-Free Experience")
+        self.lbl_plan2_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Offline Accessibility")
+        self.lbl_plan3_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Extensive Meditation Library")
+        self.lbl_plan4_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Comprehensive Music Selection")
+        self.lbl_plan5_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Nature Sounds Collection")
+        self.lbl_plan6_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Background Audio Options")
+        
+        //SubTitles
+        self.lbl_plan1_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Enjoy uninterrupted access to your favorite meditations, music, and nature sounds.")
+        self.lbl_plan2_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Download and enjoy your favorite meditations and tracks anytime, anywhere.")
+        self.lbl_plan3_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Explore a growing collection of over 300 guided meditations across 30 unique categories, with new content added regularly.")
+        self.lbl_plan4_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Discover over 250 musical tracks, thoughtfully organized by instrument and style.")
+        self.lbl_plan5_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Immerse yourself in over 300 high-quality nature recordings from around the world.")
+        self.lbl_plan6_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Enhance your experience with a full suite of background audio options designed to support relaxation and focus.")
+        
+        
+        self.lbl_monthly_plan.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 16, text: "Monthly plan")
+        self.lbl_monthly_plan_month.configureLable(textColor: hexStringToUIColor(hex: "B2B1B9"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 14, text: "/month")
+        self.lbl_monthly_plan_Price.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 36, text: "$6.99")
+        
+        self.lbl_yearly_plan.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 16, text: "Yearly plan")
+        self.lbl_yearly_plan_month.configureLable(textColor: hexStringToUIColor(hex: "B2B1B9"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 14, text: "/year")
+        self.lbl_yearly_plan_Price.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 36, text: "$46.99")
+        
+        self.btn_recommended.configureLable(bgColour: .secondary, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 14, text: "Recommended")
+        
+        self.lbl_bottom_text.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 20, text: "Access the entire app completely free for 7 days, we’re grateful for the opportunity to be a a part of your journey.")
+        
+        
+        //SET VIEW
+        self.vwMonth.borderWidth = 0
+        self.vwMonth.viewCorneRadius(radius: 10)
+        self.vwMonthLeft.viewCorneRadius(radius: 10)
+        self.vwMonth.backgroundColor = hexStringToUIColor(hex: "#776ADA")
+        self.vwMonthLeft.backgroundColor = hexStringToUIColor(hex: "#212159")
+        
+        self.vwYear.borderWidth = 0
+        self.vwYear.viewCorneRadius(radius: 10)
+        self.vwYearLeft.viewCorneRadius(radius: 10)
+        self.vwYear.backgroundColor = hexStringToUIColor(hex: "#776ADA")
+        self.vwYearLeft.backgroundColor = hexStringToUIColor(hex: "#212159")
+        
+        self.btn_Pay.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20.0, text: "Pay")
+        self.btn_Pay.backgroundColor = .buttonBGColor
+        
+        
+        self.btn_Restore.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 18.0, text: "Restore Purchases")
     }
+    
     
     // MARK: - Other Functions
     
@@ -63,27 +130,25 @@ class SubscriptionVC: BaseVC {
     
     @IBAction func btnContinueTapped(_ sender: UIButton) {
         if self.index == -1 {
-            GeneralUtility().showErrorMessage(message: "Please select plan to contunue")
+            GeneralUtility().showErrorMessage(message: "Please select plan to continue")
             return
         }
         self.purchase(atomically: true, planid: appDelegate.planIDs[self.index])
     }
     
     @IBAction func btnPlanTapped(_ sender: UIButton) {
+        self.setTheView()
+        
         if sender.tag == 0 {
-            self.vwYear.backgroundColor = hexStringToUIColor(hex: "#212159")
-            self.vwMonth.backgroundColor = hexStringToUIColor(hex: "#776ADA")
-            self.vwYearLeft.isHidden = false
-            self.vwMonthLeft.isHidden = true
+            self.vwMonth.backgroundColor = hexStringToUIColor(hex: "#363C8A").withAlphaComponent(0.7)
+            self.vwMonthLeft.backgroundColor = .clear
             self.vwMonth.borderWidth = 1
-            self.vwYear.borderWidth = 0
+            self.vwMonth.layer.borderColor = UIColor(named: "secondary")?.cgColor
         } else {
-            self.vwYear.backgroundColor = hexStringToUIColor(hex: "#776ADA")
-            self.vwMonth.backgroundColor = hexStringToUIColor(hex: "#212159")
-            self.vwYearLeft.isHidden = true
-            self.vwMonthLeft.isHidden = false
-            self.vwMonth.borderWidth = 0
+            self.vwYear.backgroundColor = hexStringToUIColor(hex: "#363C8A")
+            self.vwYearLeft.backgroundColor = .clear
             self.vwYear.borderWidth = 1
+            self.vwYear.layer.borderColor = UIColor(named: "secondary")?.cgColor
         }
         self.index = sender.tag
     }

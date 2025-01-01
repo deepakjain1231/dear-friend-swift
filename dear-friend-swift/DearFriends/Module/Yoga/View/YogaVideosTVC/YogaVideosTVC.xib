@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,13 +27,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HnI-0x-ibf">
-                        <rect key="frame" x="20" y="8" width="341" height="312"/>
+                        <rect key="frame" x="20" y="8" width="341" height="301"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDU-5P-LSL">
-                                <rect key="frame" x="8" y="8" width="325" height="256"/>
+                                <rect key="frame" x="8" y="8" width="325" height="245"/>
                                 <subviews>
                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="9N1-1a-okk">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="256"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="245"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="8"/>
@@ -41,7 +41,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWq-YI-Hyx">
-                                        <rect key="frame" x="142.66666666666666" y="106.33333333333333" width="39.666666666666657" height="43.333333333333329"/>
+                                        <rect key="frame" x="142.66666666666666" y="101" width="39.666666666666657" height="43.333333333333343"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="ic_play2"/>
                                         <connections>
@@ -54,7 +54,7 @@
                                     <constraint firstItem="lWq-YI-Hyx" firstAttribute="centerY" secondItem="yDU-5P-LSL" secondAttribute="centerY" id="3yW-xx-fQr"/>
                                     <constraint firstItem="9N1-1a-okk" firstAttribute="top" secondItem="yDU-5P-LSL" secondAttribute="top" id="8cc-aU-CdM"/>
                                     <constraint firstAttribute="bottom" secondItem="9N1-1a-okk" secondAttribute="bottom" id="Kc3-gc-Xuu"/>
-                                    <constraint firstAttribute="height" constant="256" id="Zza-jS-vbM"/>
+                                    <constraint firstAttribute="height" constant="245" id="Zza-jS-vbM"/>
                                     <constraint firstItem="lWq-YI-Hyx" firstAttribute="centerX" secondItem="yDU-5P-LSL" secondAttribute="centerX" id="eSd-DO-lvZ"/>
                                     <constraint firstAttribute="trailing" secondItem="9N1-1a-okk" secondAttribute="trailing" id="gtO-jj-1qf"/>
                                     <constraint firstItem="9N1-1a-okk" firstAttribute="leading" secondItem="yDU-5P-LSL" secondAttribute="leading" id="sj4-b4-yUH"/>
@@ -66,7 +66,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vX5-o4-bL1">
-                                <rect key="frame" x="12" y="278" width="317" height="20"/>
+                                <rect key="frame" x="12" y="267" width="317" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinyasa Morning Flow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc5-Te-fgq">
                                         <rect key="frame" x="0.0" y="0.0" width="139.66666666666666" height="20"/>
@@ -86,7 +86,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="#212159"/>
+                        <color key="backgroundColor" name="primary"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vX5-o4-bL1" secondAttribute="trailing" constant="12" id="68A-XA-ltw"/>
                             <constraint firstItem="vX5-o4-bL1" firstAttribute="leading" secondItem="HnI-0x-ibf" secondAttribute="leading" constant="12" id="Moj-As-QTa"/>
@@ -103,7 +103,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_video_premiun" translatesAutoresizingMaskIntoConstraints="NO" id="s9B-cC-Epd">
-                        <rect key="frame" x="20" y="8" width="341" height="312"/>
+                        <rect key="frame" x="20" y="8" width="341" height="301"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="10"/>
@@ -136,11 +136,11 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_placeholder" width="1024" height="1024"/>
+        <image name="ic_placeholder" width="800" height="800"/>
         <image name="ic_play2" width="39.666667938232422" height="43.333332061767578"/>
         <image name="ic_video_premiun" width="335" height="312"/>
-        <namedColor name="#212159">
-            <color red="0.12941176470588237" green="0.12941176470588237" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="primary">
+            <color red="0.054901960784313725" green="0.023529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

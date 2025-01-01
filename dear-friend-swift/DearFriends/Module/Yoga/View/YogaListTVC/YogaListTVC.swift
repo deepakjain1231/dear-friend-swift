@@ -25,7 +25,7 @@ class YogaListTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        self.setTheView()
         self.setupUI()
     }
 
@@ -40,6 +40,14 @@ class YogaListTVC: UITableViewCell {
         self.colleView.dataSource = self
         self.colleView.registerCell(type: HomeListCVC.self)
         self.colleView.reloadData()
+    }
+    
+    //SET THE VIEW
+    func setTheView() {
+        
+        //SET FONT
+        self.lblName.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "")
+        self.lblType.configureLable(textColor: hexStringToUIColor(hex: "D2CDF3"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 14, text: "")
     }
     
     @IBAction func btnRightTapped(_ sender: UIButton) {
@@ -67,9 +75,12 @@ extension YogaListTVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         }
         
         let ddd = currentVideo?.video_duration?.doubleValue ?? 0
-        cell.lblTime.text = TimeInterval(ddd).formatDuration()
         
-        cell.lblTitle.text = currentVideo?.title ?? ""
+        let strvideoTitle = currentVideo?.title ?? ""
+        cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_SemiBold, fontSize: 14, text: strvideoTitle)
+        
+        cell.lblTime.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: TimeInterval(ddd).formatDuration())
+        
         GeneralUtility().setImage(imgView: cell.imgMain, imgPath: currentVideo?.image ?? "")
         
         cell.layoutIfNeeded()
@@ -78,7 +89,7 @@ extension YogaListTVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 226, height: 236)
+        return CGSize(width: 195, height: 195)
     }
     
     func extractYouTubeVideoID(from url: String) -> String? {
@@ -202,6 +213,38 @@ extension YogaListTVC: GADFullScreenContentDelegate {
     
     func openVideoScreen() {
         if let top = UIApplication.topViewController2() {
+            /*
+            if let video_id = currentVideo?.video_id {
+                appDelegate.callAPIforVimeoExtracter(vimeo_id: video_id, current_view: top) { is_success, str_videoURL in
+                    if is_success {
+                        guard let videoURL = URL(string: str_videoURL) else {
+                            return
+                        }
+                        top.HIDE_CUSTOM_LOADER()
+                        let player = AVPlayer(url: videoURL)
+                        let playerController = LandscapeAVPlayerController()
+                        playerController.player = player
+                        playerController.modalPresentationStyle = .overFullScreen
+                        top.present(playerController, animated: true) {
+                            player.play()
+                        }
+                    }
+                    else {
+                        top.HIDE_CUSTOM_LOADER()
+                        let alert = UIAlertController(title: "Error", message: "Invalid video URL", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        top.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
+            else {
+                top.HIDE_CUSTOM_LOADER()
+                let alert = UIAlertController(title: "Error", message: "Invalid video URL", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                top.present(alert, animated: true, completion: nil)
+            }
+            */
+            
             if let url = URL(string: "https://vimeo.com/\(currentVideo?.video_id ?? "")") {
                 self.getVideoURL(vc: top, url: url) { videoURL, error in
                     if let url = videoURL {
@@ -214,12 +257,14 @@ extension YogaListTVC: GADFullScreenContentDelegate {
                             player.play()
                         }
                     } else {
+                        top.HIDE_CUSTOM_LOADER()
                         let alert = UIAlertController(title: "Error", message: "Invalid video URL", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         top.present(alert, animated: true, completion: nil)
                     }
                 }
             }
+            
         }
     }
 }

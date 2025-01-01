@@ -14,7 +14,7 @@ import GoogleMobileAds
 class YogaInstructorVC: UIViewController {
     
     // MARK: - OUTLETS
-    
+    @IBOutlet weak var lblNavTitle: UILabel!
     @IBOutlet weak var consBtnHeight: NSLayoutConstraint!
     @IBOutlet weak var lblType: UILabel!
     @IBOutlet weak var imgUser: UIImageView!
@@ -25,6 +25,7 @@ class YogaInstructorVC: UIViewController {
     @IBOutlet weak var vwScroll: UIScrollView!
     @IBOutlet weak var consHeight: NSLayoutConstraint!
     @IBOutlet weak var tblMain: UITableView!
+    @IBOutlet weak var img_top: UIImageView!
     
     // MARK: - VARIABLES
     
@@ -36,8 +37,19 @@ class YogaInstructorVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setTheView()
         self.setupUI()
+    }
+    
+    //SET THE VIEW
+    func setTheView() {
+        
+        //SET FONT
+        self.lblNavTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 22, text: "Instructor")
+        self.lblName.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 16, text: "")
+        self.lblSub.configureLable(textColor: hexStringToUIColor(hex: "D2CDF3"), fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: "")
+        self.lblDesc.configureLable(textColor: hexStringToUIColor(hex: "D2CDF3"), fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 14, text: "")
+        self.lblType.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 18, text: "")
     }
     
     // MARK: - Other Functions
@@ -163,7 +175,10 @@ extension YogaInstructorVC: UITableViewDataSource, UITableViewDelegate {
             
             let current = self.yogaVM.currentInstructorDetails?.video?[indexPath.row]
             
-            cell.lblTitle.text = current?.title ?? ""
+            let str_yoga_Title = current?.title ?? ""
+            cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_SemiBold, fontSize: 14, text: str_yoga_Title)
+            cell.lblDuration.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 14, text: "")
+            
             GeneralUtility().setImage(imgView: cell.imgThumb, imgPath: current?.image ?? "")
             cell.imgThumb.isHidden = false
             
