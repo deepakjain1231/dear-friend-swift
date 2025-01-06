@@ -41,7 +41,7 @@ extension PopupViewController: UITableViewDelegate,UITableViewDataSource
         return arr_MenuList.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return manageWidth(size: 50)
+        return manageWidth(size: 40)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
@@ -49,8 +49,7 @@ extension PopupViewController: UITableViewDelegate,UITableViewDataSource
         if let cell = tableView.dequeueReusableCell(withIdentifier:"cellPopUpList", for: indexPath) as? cellPopUpList{
             cell.backgroundColor = indexPath.row == selectIndex ? hexStringToUIColor(hex: "0E064A") : .clear
             
-            cell.lblName.text = arr_MenuList[indexPath.row]
-            
+            cell.lblName.configureLable(textAlignment: .left, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12.0, text: arr_MenuList[indexPath.row])
             //SET IMAGE
             cell.imgSelect.isHidden = indexPath.row == selectIndex ? false : true
             cell.viewLine.borderColor = hexStringToUIColor(hex: "0E064A")

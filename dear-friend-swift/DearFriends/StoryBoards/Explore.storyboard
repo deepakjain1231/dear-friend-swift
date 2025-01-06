@@ -1844,12 +1844,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feeling Grateful" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9as-gx-SW3">
-                                                    <rect key="frame" x="16" y="16" width="100.5" height="32"/>
-                                                    <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
-                                                    <color key="textColor" red="0.81960784310000001" green="0.81568627449999997" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="by3-Ol-iEa">
                                                     <rect key="frame" x="12" y="64" width="390" height="1"/>
                                                     <color key="backgroundColor" name="#212159"/>
@@ -1864,9 +1858,15 @@
                                                         <constraint firstAttribute="height" constant="20" id="wyv-sd-jDG"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_new_premium" translatesAutoresizingMaskIntoConstraints="NO" id="kLP-G6-82g">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_premium_bg" translatesAutoresizingMaskIntoConstraints="NO" id="kLP-G6-82g">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feeling Grateful" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9as-gx-SW3">
+                                                    <rect key="frame" x="16" y="16" width="100.5" height="32"/>
+                                                    <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
+                                                    <color key="textColor" red="0.81960784310000001" green="0.81568627449999997" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -2148,7 +2148,6 @@
         <image name="ic_music_play" width="78" height="78"/>
         <image name="ic_music_repeat" width="46" height="46"/>
         <image name="ic_music_temp" width="227" height="227.33332824707031"/>
-        <image name="ic_new_premium" width="335" height="80"/>
         <image name="ic_next4" width="46" height="46"/>
         <image name="ic_previous" width="46" height="46"/>
         <image name="ic_right_drop" width="19" height="19"/>
@@ -2159,6 +2158,7 @@
         <image name="icon_back_dark" width="40" height="40"/>
         <image name="icon_img_bg" width="352" height="352"/>
         <image name="icon_menu" width="40" height="40"/>
+        <image name="icon_premium_bg" width="125" height="30"/>
         <image name="icon_select" width="16" height="16"/>
         <namedColor name="#212159">
             <color red="0.12941176470588237" green="0.12941176470588237" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

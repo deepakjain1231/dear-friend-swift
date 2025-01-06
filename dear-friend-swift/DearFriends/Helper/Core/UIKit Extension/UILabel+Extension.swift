@@ -163,15 +163,15 @@ extension UITextView{
     }
     
     
-    func setAttributedHtmlText(_ html: String) {
-        #if targetEnvironment(simulator)
-        self.text = html
-        #else
-        if let attributedText = html.attributedHtmlString {
-            self.attributedText = attributedText
-        }
-        #endif
-    }
+//    func setAttributedHtmlText(_ html: String) {
+//        #if targetEnvironment(simulator)
+//        self.text = html
+//        #else
+//        if let attributedText = html.attributedHtmlString {
+//            self.attributedText = attributedText
+//        }
+//        #endif
+//    }
 }
 //
 //
