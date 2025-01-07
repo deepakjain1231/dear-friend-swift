@@ -33,6 +33,9 @@ class LoginVC: BaseVC {
     @IBOutlet weak var btnSignUp1: UIButton!
     @IBOutlet weak var btnSignUp2: UIButton!
 
+    @IBOutlet weak var btnTerms1: UIButton!
+    @IBOutlet weak var btnTerms2: UIButton!
+
     @IBOutlet weak var btnLogin: UIButton!
     
     @IBOutlet weak var viewBiometrics: UIView!
@@ -113,6 +116,9 @@ class LoginVC: BaseVC {
         self.btnSignUp1.configureLable(bgColour: .clear, textColor: .background, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 16.0, text: "Don’t have an account?")
         self.btnSignUp2.configureLable(bgColour: .clear, textColor: .background, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24.0, text: "Sign up")
 
+        self.btnTerms1.configureLable(bgColour: .clear, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 14.0, text: "By proceeding, you agree to the")
+        self.btnTerms2.configureLable(bgColour: .clear, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 14.0, text: "Terms & conditions")
+        
         self.btnLogin.configureLable(bgColour: .buttonBGColor, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 24.0, text: "Log In")
         self.lblBiometrics.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 18.0, text: "Use Biometrics")
 
@@ -180,6 +186,12 @@ class LoginVC: BaseVC {
     }
     
     // MARK: - Button Actions
+    @IBAction func btnTermsTapped(_ sender: UIButton) {
+        let vc: CommonWebViewVC = CommonWebViewVC.instantiate(appStoryboard: .Profile)
+        vc.hidesBottomBarWhenPushed = true
+        vc.currentType = .termCondition
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     @IBAction func bntForgotTapped(_ sender: UIButton) {
         let vc: ForgotPasswordVC = ForgotPasswordVC.instantiate(appStoryboard: .main)

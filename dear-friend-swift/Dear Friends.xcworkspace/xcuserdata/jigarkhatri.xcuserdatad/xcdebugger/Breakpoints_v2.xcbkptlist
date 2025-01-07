@@ -336,7 +336,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "413"
             endingLineNumber = "413"
-            landmarkName = "dataBind(isForTimer:)"
+            landmarkName = "setupFullAD(success:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -368,8 +368,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "376"
             endingLineNumber = "376"
-            landmarkName = "manageCustomAudioView()"
-            landmarkType = "7">
+            landmarkName = "NewMusicVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

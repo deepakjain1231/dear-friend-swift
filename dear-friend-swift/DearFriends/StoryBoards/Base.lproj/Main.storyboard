@@ -301,7 +301,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7c2-r7-uAE" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1049.6666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1079.6666666666667"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Pg9-Ts-LWN">
                                                 <rect key="frame" x="20" y="4" width="353" height="300"/>
@@ -621,12 +621,40 @@
                                                     <constraint firstAttribute="height" constant="50" id="wm8-uL-t5x"/>
                                                 </constraints>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iCL-gq-EUS">
+                                                <rect key="frame" x="38" y="1039.6666666666667" width="317" height="20"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buv-04-4bp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="197" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="By proceeding, you agree to the">
+                                                            <color key="titleColor" red="0.69803921570000005" green="0.69411764710000001" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ng5-Le-8PC">
+                                                        <rect key="frame" x="201" y="0.0" width="116" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Terms &amp; conditions">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="btnTermsTapped:" destination="Kc3-LT-EPg" eventType="touchUpInside" id="8IR-V1-9SB"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="OA6-hG-rEt"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="hTQ-nG-qgQ" firstAttribute="leading" secondItem="7c2-r7-uAE" secondAttribute="leading" constant="20" id="1Jn-2a-hPa"/>
                                             <constraint firstItem="Pg9-Ts-LWN" firstAttribute="top" secondItem="7c2-r7-uAE" secondAttribute="top" constant="4" id="4Xg-yx-JrS"/>
                                             <constraint firstItem="Qpz-69-4nf" firstAttribute="leading" secondItem="7c2-r7-uAE" secondAttribute="leading" constant="32" id="7Li-ul-2wT"/>
+                                            <constraint firstItem="iCL-gq-EUS" firstAttribute="top" secondItem="Kwd-BJ-GDk" secondAttribute="bottom" constant="30" id="7ke-OZ-hDJ"/>
                                             <constraint firstItem="Si3-iW-rZj" firstAttribute="leading" secondItem="qSt-96-ZMy" secondAttribute="leading" id="Ebt-pU-iJK"/>
                                             <constraint firstItem="Pg9-Ts-LWN" firstAttribute="leading" secondItem="7c2-r7-uAE" secondAttribute="leading" constant="20" id="FEv-4y-mjR"/>
                                             <constraint firstItem="qSt-96-ZMy" firstAttribute="top" secondItem="4OQ-Ty-OAo" secondAttribute="bottom" constant="24" id="FsK-Aj-hu8"/>
@@ -640,9 +668,10 @@
                                             <constraint firstItem="hTQ-nG-qgQ" firstAttribute="top" secondItem="8Oq-yQ-iHT" secondAttribute="bottom" constant="16" id="SpI-tU-xSd"/>
                                             <constraint firstItem="4OQ-Ty-OAo" firstAttribute="leading" secondItem="7c2-r7-uAE" secondAttribute="leading" constant="20" id="UTm-8o-Ywo"/>
                                             <constraint firstItem="qSt-96-ZMy" firstAttribute="leading" secondItem="7c2-r7-uAE" secondAttribute="leading" constant="20" id="WFD-Lu-wEg"/>
+                                            <constraint firstAttribute="bottom" secondItem="iCL-gq-EUS" secondAttribute="bottom" constant="20" id="Wgc-ZU-9dS"/>
+                                            <constraint firstItem="iCL-gq-EUS" firstAttribute="centerX" secondItem="Kwd-BJ-GDk" secondAttribute="centerX" id="ZK8-sA-MP7"/>
                                             <constraint firstItem="4OQ-Ty-OAo" firstAttribute="top" secondItem="AvE-nb-8SY" secondAttribute="bottom" constant="12" id="awc-sC-rxU"/>
                                             <constraint firstItem="8Oq-yQ-iHT" firstAttribute="top" secondItem="zfy-52-Qdi" secondAttribute="bottom" constant="30" id="bRy-6l-Dff"/>
-                                            <constraint firstAttribute="bottom" secondItem="Kwd-BJ-GDk" secondAttribute="bottom" constant="40" id="gL3-5S-ciG"/>
                                             <constraint firstAttribute="trailing" secondItem="zfy-52-Qdi" secondAttribute="trailing" constant="20" id="j4f-1m-Tlo"/>
                                             <constraint firstAttribute="trailing" secondItem="4OQ-Ty-OAo" secondAttribute="trailing" constant="20" id="jdz-mI-BXZ"/>
                                             <constraint firstItem="Si3-iW-rZj" firstAttribute="centerY" secondItem="zfy-52-Qdi" secondAttribute="centerY" id="m6s-RC-P7z"/>
@@ -687,6 +716,8 @@
                         <outlet property="btnLogin" destination="lZq-6E-haj" id="Hfp-YL-Zon"/>
                         <outlet property="btnSignUp1" destination="tAA-Al-f8w" id="YDq-oq-vfx"/>
                         <outlet property="btnSignUp2" destination="Vb4-HC-uQD" id="hmV-Jy-hrp"/>
+                        <outlet property="btnTerms1" destination="buv-04-4bp" id="0H6-oO-xfG"/>
+                        <outlet property="btnTerms2" destination="ng5-Le-8PC" id="gpK-ac-mL1"/>
                         <outlet property="imgView" destination="Pg9-Ts-LWN" id="jpU-0m-yCE"/>
                         <outlet property="lblBiometrics" destination="4bV-gR-3dL" id="lvl-yn-mwf"/>
                         <outlet property="lblDescription" destination="92r-Ke-f8X" id="pF9-5Q-Fwa"/>
@@ -2424,7 +2455,7 @@ delete this stopover ?</string>
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary">
-            <color red="0.054999999701976776" green="0.024000000208616257" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.054901960784313725" green="0.023529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -1289,8 +1289,8 @@ extension NewMusicVC: PopMenuViewControllerDelegate, PopUpProtocol , UIPopoverPr
         popOverVC?.delegate = self
         popOverVC?.backgroundColor = hexStringToUIColor(hex: "#212159")
         popOverVC?.sourceView = sender
-        popOverVC?.sourceRect = CGRect(x: -manageWidth(size: 60.0), y: (CGFloat(self.arrOFTitle.count) * manageWidth(size: 50.0))/2, width: 0, height: 0)
-        popVC.preferredContentSize = CGSize(width: manageWidth(size: 130.0), height: CGFloat(self.arrOFTitle.count) * manageWidth(size: 50.0))
+        popOverVC?.sourceRect = CGRect(x: -manageWidth(size: 60.0), y: (CGFloat(self.arrOFTitle.count) * manageWidth(size: 40.0))/2, width: 0, height: 0)
+        popVC.preferredContentSize = CGSize(width: manageWidth(size: 150.0), height: CGFloat(self.arrOFTitle.count) * manageWidth(size: 40.0))
 
         popVC.modalTransitionStyle = .crossDissolve
         self.present(popVC, animated: true)
