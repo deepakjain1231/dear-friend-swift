@@ -125,6 +125,9 @@ class ShowCaseDialouge1: UIViewController {
             self.view_main.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
             self.view.backgroundColor = UIColor.black.withAlphaComponent(0.0)
             self.view.layoutIfNeeded()
+            if self.screenFrom == "" {
+                self.delegate?.done_click_showcase(true)
+            }
         }) { (success) in
             self.willMove(toParent: nil)
             self.view.removeFromSuperview()

@@ -8,7 +8,7 @@
 import UIKit
 import ExpandableLabel
 
-class ExploreDetailsVC: UIViewController {
+class ExploreDetailsVC: UIViewController, delegate_done_showcase {
     
     // MARK: - OUTLETS
     @IBOutlet weak var consTop: NSLayoutConstraint!
@@ -38,6 +38,7 @@ class ExploreDetailsVC: UIViewController {
     var isDownloadProgress = false
     var currentSongIndex = 0
     
+    var is_showcaseOpen = false
     var isExpanded = false
     var isFromViewAll = false
     
@@ -47,6 +48,10 @@ class ExploreDetailsVC: UIViewController {
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.3) {
             self.setupBlurView()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
+                self.is_showcaseOpen = true
+                self.tblMain.reloadData()
+            }
         }
     }
     
@@ -78,12 +83,17 @@ class ExploreDetailsVC: UIViewController {
         }
         objDialouge.currentSubCategory = self.homeVM.currentSubCategory
         objDialouge.tblFrame = CGRectMake(self.tblMain.frame.origin.x, self.tblMain.frame.origin.y, self.tblMain.frame.size.width, self.tblMain.frame.size.height)
-            //objDialouge.delegate = self
+            objDialouge.delegate = self
             self.addChild(objDialouge)
             objDialouge.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight)
             self.view.addSubview((objDialouge.view)!)
             objDialouge.didMove(toParent: self)
         //}
+    }
+    
+    func done_click_showcase(_ success: Bool) {
+        self.is_showcaseOpen = false
+        self.tblMain.reloadData()
     }
     
     //SET THE VIEW
@@ -245,6 +255,9 @@ extension ExploreDetailsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.is_showcaseOpen {
+            return self.homeVM.arrOfAudioList.count == 0 ? 1 : self.homeVM.arrOfAudioList.count
+        }
         return self.homeVM.arrOfAudioList.count
     }
     
@@ -252,104 +265,126 @@ extension ExploreDetailsVC: UITableViewDataSource, UITableViewDelegate {
         guard let cell = self.tblMain.dequeueReusableCell(withIdentifier: "NewMusicListTVC") as? NewMusicListTVC else { return UITableViewCell() }
         cell.selectionStyle = .none
         
-        let current = self.homeVM.arrOfAudioList[indexPath.row]
-        
-        cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 16, text: current.title ?? "")
-        cell.isCount1 = self.homeVM.arrOfAudioList.count == 1
-        
-        let ddd = current.audioDuration?.doubleValue ?? 0
-        cell.lblSub.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 10, text: TimeInterval(ddd).formatDuration())
-        
-        GeneralUtility().setImage(imgView: cell.img, imgPath: current.image ?? "")
-        
-        cell.isUnFav = (current.isLiked ?? 0) == 1
-        
-        if current.forSTr == "premium" && !appDelegate.isPlanPurchased {
-            cell.vwPremius.isHidden = false
-        } else {
+        if self.homeVM.arrOfAudioList.count == 0 {
+            cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 16, text: "Body Scan")
+            cell.lblSub.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 10, text: "10:23 min")
+            
+            cell.img.image = UIImage.init(named: "ic_temp3")
+            cell.isUnFav = false
+            
             cell.vwPremius.isHidden = true
+            
+            
+            cell.progress.isHidden = true
+            cell.imgPlayed.isHidden = true
+            cell.progress.isHidden = true
+            cell.progress.tintColor = hexStringToUIColor(hex: "#838383")
+            cell.imgPlayed.isHidden = true
+           
+            //SET PIN
+            cell.isPined = true
+            cell.imgPin.isHidden = true
+            
         }
-        
-        cell.progress.isHidden = true
-        cell.imgPlayed.isHidden = true
-        if appDelegate.isPlanPurchased{
-            cell.progress.isHidden = !(current.audioProgress ?? "" != "")
-            if let currentTime = current.audioProgress, let duration = current.audioDuration {
-                let progress = (Float(currentTime) ?? 0.0) / (Float(duration) ?? 0.0)
-                cell.progress.tintColor = progress <= 1 ? hexStringToUIColor(hex: "#7884E0") : hexStringToUIColor(hex: "#838383")
-                cell.imgPlayed.isHidden = progress <= 1
-                cell.progress.setProgress(Float(progress), animated: true)
+        else {
+            let current = self.homeVM.arrOfAudioList[indexPath.row]
+            
+            cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 16, text: current.title ?? "")
+            cell.isCount1 = self.homeVM.arrOfAudioList.count == 1
+            
+            let ddd = current.audioDuration?.doubleValue ?? 0
+            cell.lblSub.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 10, text: TimeInterval(ddd).formatDuration())
+            
+            GeneralUtility().setImage(imgView: cell.img, imgPath: current.image ?? "")
+            
+            cell.isUnFav = (current.isLiked ?? 0) == 1
+            
+            if current.forSTr == "premium" && !appDelegate.isPlanPurchased {
+                cell.vwPremius.isHidden = false
+            } else {
+                cell.vwPremius.isHidden = true
             }
-        }
-       
-        //SET PIN
-        cell.isPined = ((current.pin_date ?? "") != "")
-        cell.imgPin.isHidden = !cell.isPined
-        
-        cell.indexTapped = { ind in
-            if ind == 2 {
-                if current.pin_date ?? "" == "" {
-                    let pinCount = self.homeVM.arrOfAudioList.filter { $0.pin_date != "" }.count
-                    if pinCount >= 3{
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                            GeneralUtility.sharedInstance.showErrorMessage(message: "Pin Limit Reached - You can only pin up to 3 items. To pin another, unpin one of your current selections")
-                        })
-                        return
-                    }
+            
+            cell.progress.isHidden = true
+            cell.imgPlayed.isHidden = true
+            if appDelegate.isPlanPurchased{
+                cell.progress.isHidden = !(current.audioProgress ?? "" != "")
+                if let currentTime = current.audioProgress, let duration = current.audioDuration {
+                    let progress = (Float(currentTime) ?? 0.0) / (Float(duration) ?? 0.0)
+                    cell.progress.tintColor = progress <= 1 ? hexStringToUIColor(hex: "#7884E0") : hexStringToUIColor(hex: "#838383")
+                    cell.imgPlayed.isHidden = progress <= 1
+                    cell.progress.setProgress(Float(progress), animated: true)
                 }
-                
-                self.homeVM.pinAudio(audio_id: "\(current.internalIdentifier ?? 0)") { _ in
-                    self.homeVM.limit = 10
-                    self.homeVM.offset = 0
-                    self.homeVM.haseMoreData = false
-                    self.homeVM.isAPICalling = false
-                    self.getAudioList()
-                } failure: { errorResponse in
+            }
+            
+            //SET PIN
+            cell.isPined = ((current.pin_date ?? "") != "")
+            cell.imgPin.isHidden = !cell.isPined
+            
+            cell.indexTapped = { ind in
+                if ind == 2 {
+                    if current.pin_date ?? "" == "" {
+                        let pinCount = self.homeVM.arrOfAudioList.filter { $0.pin_date != "" }.count
+                        if pinCount >= 3{
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                                GeneralUtility.sharedInstance.showErrorMessage(message: "Pin Limit Reached - You can only pin up to 3 items. To pin another, unpin one of your current selections")
+                            })
+                            return
+                        }
+                    }
                     
-                }
-                
-            } else if ind == 1 {
-                self.homeVM.addOrRemoveLike(audio_id: "\(current.internalIdentifier ?? 0)") { _ in
-                    self.homeVM.limit = 10
-                    self.homeVM.offset = 0
-                    self.homeVM.haseMoreData = false
-                    self.homeVM.isAPICalling = false
-                    self.getAudioList()
-                } failure: { error in
+                    self.homeVM.pinAudio(audio_id: "\(current.internalIdentifier ?? 0)") { _ in
+                        self.homeVM.limit = 10
+                        self.homeVM.offset = 0
+                        self.homeVM.haseMoreData = false
+                        self.homeVM.isAPICalling = false
+                        self.getAudioList()
+                    } failure: { errorResponse in
+                        
+                    }
                     
-                }
-                
-            } else if ind == 0 {
-                if !appDelegate.isPlanPurchased {
-                    let popupVC: CommonBottomPopupVC = CommonBottomPopupVC.instantiate(appStoryboard: .Profile)
-                    popupVC.height = 260
-                    popupVC.presentDuration = 0.5
-                    popupVC.dismissDuration = 0.5
-                    popupVC.leftStr = "Not Yet"
-                    popupVC.rightStr = "Proceed To Premium"
-                    popupVC.titleStr = "To download content for offline use,  please subcribe to our premium membership"
-                    popupVC.yesTapped = {
-                        let vc: SubscriptionVC = SubscriptionVC.instantiate(appStoryboard: .Profile)
-                        vc.hidesBottomBarWhenPushed = true
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
-                    DispatchQueue.main.async {
-                        self.present(popupVC, animated: true, completion: nil)
-                    }
-                } else {
-                    if current.isDownloaded == true {
-                        GeneralUtility().showErrorMessage(message: "This music '\(current.title ?? "")' already downloaded in your account.")
+                } else if ind == 1 {
+                    self.homeVM.addOrRemoveLike(audio_id: "\(current.internalIdentifier ?? 0)") { _ in
+                        self.homeVM.limit = 10
+                        self.homeVM.offset = 0
+                        self.homeVM.haseMoreData = false
+                        self.homeVM.isAPICalling = false
+                        self.getAudioList()
+                    } failure: { error in
                         
-                    } else if self.isDownloadProgress {
-                        GeneralUtility().showErrorMessage(message: "Downloading is in progresss, Please wait.")
-                        
+                    }
+                    
+                } else if ind == 0 {
+                    if !appDelegate.isPlanPurchased {
+                        let popupVC: CommonBottomPopupVC = CommonBottomPopupVC.instantiate(appStoryboard: .Profile)
+                        popupVC.height = 260
+                        popupVC.presentDuration = 0.5
+                        popupVC.dismissDuration = 0.5
+                        popupVC.leftStr = "Not Yet"
+                        popupVC.rightStr = "Proceed To Premium"
+                        popupVC.titleStr = "To download content for offline use,  please subcribe to our premium membership"
+                        popupVC.yesTapped = {
+                            let vc: SubscriptionVC = SubscriptionVC.instantiate(appStoryboard: .Profile)
+                            vc.hidesBottomBarWhenPushed = true
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                        DispatchQueue.main.async {
+                            self.present(popupVC, animated: true, completion: nil)
+                        }
                     } else {
-                        self.downloadTapped(current: current)
+                        if current.isDownloaded == true {
+                            GeneralUtility().showErrorMessage(message: "This music '\(current.title ?? "")' already downloaded in your account.")
+                            
+                        } else if self.isDownloadProgress {
+                            GeneralUtility().showErrorMessage(message: "Downloading is in progresss, Please wait.")
+                            
+                        } else {
+                            self.downloadTapped(current: current)
+                        }
                     }
                 }
             }
         }
-        
         cell.selectionStyle = .none
         cell.layoutIfNeeded()
         return cell

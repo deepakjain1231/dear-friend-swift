@@ -72,13 +72,33 @@ extension HomeContentTVC: UICollectionViewDelegate, SkeletonCollectionViewDataSo
             if self.indxPosition < (self.arrAudio.count - 1) {
                 self.indxPosition = self.indxPosition + 1
 
-                let desiredOffset = CGPoint(x: self.indxPosition * (Int(screenWidth) - 40), y: 0)
-                self.colletView.setContentOffset(desiredOffset, animated: true)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+                    
+                    self.colletView.isPagingEnabled = false
+                    self.colletView.scrollToItem(
+                        at: IndexPath(item: self.indxPosition, section: 0),
+                        at: .centeredHorizontally,
+                        animated: true
+                    )
+                    self.colletView.isPagingEnabled = true
+//                    let desiredOffset = CGPoint(x: self.indxPosition * (Int(screenWidth) - 40), y: 0)
+//                    self.colletView.setContentOffset(desiredOffset, animated: true)
+                }
+                
+                
             }
             else {
                 self.indxPosition = 0
-                let desiredOffset = CGPoint(x: 0, y: 0)
-                self.colletView.setContentOffset(desiredOffset, animated: false)
+                
+                self.colletView.isPagingEnabled = false
+                self.colletView.scrollToItem(
+                    at: IndexPath(item: self.indxPosition, section: 0),
+                    at: .centeredHorizontally,
+                    animated: false
+                )
+                self.colletView.isPagingEnabled = true
+                //let desiredOffset = CGPoint(x: 0, y: 0)
+                //self.colletView.setContentOffset(desiredOffset, animated: false)
             }
         }
     }
