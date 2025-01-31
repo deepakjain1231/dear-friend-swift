@@ -9,6 +9,7 @@ import UIKit
 import StoreKit
 import SwiftyStoreKit
 import SwiftDate
+import Mixpanel
 
 class SubscriptionVC: BaseVC {
     
@@ -45,6 +46,7 @@ class SubscriptionVC: BaseVC {
     @IBOutlet weak var lbl_bottom_text: UILabel!
     @IBOutlet weak var btn_Pay: UIButton!
     @IBOutlet weak var btn_Restore: UIButton!
+    @IBOutlet weak var lbl_disclaimer: UILabel!
     
     // MARK: - VARIABLES
     
@@ -58,6 +60,8 @@ class SubscriptionVC: BaseVC {
         // Do any additional setup after loading the view.
         self.setTheView()
         self.vwScroll.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 44, right: 0)
+        
+        Mixpanel.mainInstance().track(event: Mixpanel_Event.UpgradePremium.rawValue, properties: nil)
     }
     
     //SET THE VIEW
@@ -95,6 +99,7 @@ class SubscriptionVC: BaseVC {
         
         self.lbl_bottom_text.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 20, text: "Access the entire app completely free for 7 days, we’re grateful for the opportunity to be a a part of your journey.")
         
+        self.lbl_disclaimer.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 13, text: "Disclaimer:\nThe numbers provided on this page (e.g., over 250 musical tracks, over 300 nature sounds, and over 250 meditations) are estimates and subject to change. We are constantly improving and updating our content library, which may involve adding new content, removing older content, or replacing existing material. As a result, the exact number of available tracks, sounds, and meditations may fluctuate over time. We strive to maintain a high-quality experience for our users, and these changes are part of our ongoing commitment to improvement. Thank you for your understanding.")
         
         //SET VIEW
         self.vwMonth.borderWidth = 0

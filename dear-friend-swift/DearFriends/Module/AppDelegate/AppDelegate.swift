@@ -22,6 +22,7 @@ import FacebookCore
 import GoogleSignIn
 import AVKit
 import Alamofire
+import Mixpanel
 
 enum InAppPlanID: String, CaseIterable {
     case monthly = "com.dearfriends.monthly"
@@ -113,7 +114,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "f1ef24afc9e90cc069b8b165f1bd90d7" ]
         
+        
+        // MIXPANEL INITIALIZE
+        Mixpanel.initialize(token: MIXPANEL_TOKEN, trackAutomaticEvents: false)
+        
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        Mixpanel.mainInstance().track(event: Mixpanel_Event.AppOpen.rawValue, properties: nil)
         
         return true
     }
@@ -156,6 +163,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
+        Mixpanel.mainInstance().track(event: Mixpanel_Event.SessionStart.rawValue, properties: nil)
         CurrentUser.shared.versionCheckAPI()
     }
     

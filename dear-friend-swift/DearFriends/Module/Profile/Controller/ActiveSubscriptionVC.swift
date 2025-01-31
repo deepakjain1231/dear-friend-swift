@@ -38,6 +38,8 @@ class ActiveSubscriptionVC: UIViewController {
     @IBOutlet weak var lbl_plan6_subtitle: UILabel!
     
     @IBOutlet weak var btnChangePlan: UIButton!
+    @IBOutlet weak var lbl_disclaimer: UILabel!
+    
     
     // MARK: - VARIABLES
     
@@ -83,6 +85,8 @@ class ActiveSubscriptionVC: UIViewController {
         self.lbl_plan6_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Enhance your experience with a full suite of background audio options designed to support relaxation and focus.")
 
         self.btnChangePlan.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 18.0, text: "Change Plan")
+        
+        self.lbl_disclaimer.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 13, text: "Disclaimer:\nThe numbers provided on this page (e.g., over 250 musical tracks, over 300 nature sounds, and over 250 meditations) are estimates and subject to change. We are constantly improving and updating our content library, which may involve adding new content, removing older content, or replacing existing material. As a result, the exact number of available tracks, sounds, and meditations may fluctuate over time. We strive to maintain a high-quality experience for our users, and these changes are part of our ongoing commitment to improvement. Thank you for your understanding.")
     }
     
     

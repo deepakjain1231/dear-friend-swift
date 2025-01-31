@@ -36,6 +36,8 @@ let showcase_2_indx_1_subTitle = "Choose the perfect background sound to enhance
 var BaseURL_Vimeo = "https://api.vimeo.com/videos/"
 var Kvimeo_access_Token = "Bearer 211e2d48814c3754f5c54417a75bdcce"
 
+var MIXPANEL_TOKEN = "9e517e56632fb5f4da649a6141c7dbe0"
+
 struct GlobalConstants
 {
     // Constant define here.

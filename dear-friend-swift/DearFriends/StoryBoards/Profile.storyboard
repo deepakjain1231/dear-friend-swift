@@ -1987,22 +1987,22 @@ to logout from this account?</string>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="Z3p-KC-a4u">
-                                <rect key="frame" x="0.0" y="115" width="393" height="737"/>
+                                <rect key="frame" x="0.0" y="115" width="393" height="736.99999999999977"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Gf-jR-RcF">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1161.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="427" height="1515"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LJt-Qa-HwK">
-                                                <rect key="frame" x="25" y="0.0" width="343" height="1161.3333333333333"/>
+                                                <rect key="frame" x="25" y="0.0" width="377" height="1515"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_on_logo" translatesAutoresizingMaskIntoConstraints="NO" id="QdQ-06-6XS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="184"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="184"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="184" id="oPP-al-qXZ"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEr-tm-oZv">
-                                                        <rect key="frame" x="0.0" y="204" width="343" height="60.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="204" width="377" height="60.666666666666686"/>
                                                         <string key="text">Thank you for your consideration.
 
 The Premium plan includes the following:</string>
@@ -2011,10 +2011,10 @@ The Premium plan includes the following:</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="da3-Zd-GCz">
-                                                        <rect key="frame" x="0.0" y="284.66666666666669" width="343" height="363.00000000000006"/>
+                                                        <rect key="frame" x="0.0" y="284.66666666666669" width="377" height="348.00000000000006"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xpb-Sm-Nn3">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="49.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="377" height="49.666666666666664"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="sap-yd-t7g">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -2023,16 +2023,16 @@ The Premium plan includes the following:</string>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xSB-nS-7pS">
-                                                                        <rect key="frame" x="30" y="0.0" width="313" height="49.666666666666664"/>
+                                                                        <rect key="frame" x="30" y="0.0" width="347" height="49.666666666666664"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access the growing library of guided meditations, without limitations" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DP-2b-bi8">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="313" height="30.333333333333332"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="347" height="30.333333333333332"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access the growing library of guided meditations, withou" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-mg-Z6d">
-                                                                                <rect key="frame" x="0.0" y="34.333333333333314" width="313" height="15.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="34.333333333333314" width="347" height="15.333333333333336"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2042,7 +2042,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="nfa-lI-1ri">
-                                                                <rect key="frame" x="0.0" y="71.666666666666629" width="343" height="49.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="71.666666666666629" width="377" height="49.666666666666657"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="IOc-kM-RRC">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -2051,16 +2051,16 @@ The Premium plan includes the following:</string>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="95B-W7-5C1">
-                                                                        <rect key="frame" x="30" y="0.0" width="313" height="49.666666666666664"/>
+                                                                        <rect key="frame" x="30" y="0.0" width="347" height="49.666666666666664"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access the growing library of guided meditations, without limitations" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evE-uO-pbt">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="313" height="30.333333333333332"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="347" height="30.333333333333332"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access the growing library of guided meditations, withou" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-14-z0y">
-                                                                                <rect key="frame" x="0.0" y="34.333333333333371" width="313" height="15.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="34.333333333333371" width="347" height="15.333333333333336"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2070,7 +2070,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FKN-db-QF2">
-                                                                <rect key="frame" x="0.0" y="143.33333333333331" width="343" height="49.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="143.33333333333331" width="377" height="34.666666666666657"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="luK-Ho-lTD">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -2079,16 +2079,16 @@ The Premium plan includes the following:</string>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mTs-uY-bXs">
-                                                                        <rect key="frame" x="30" y="0.0" width="313" height="49.666666666666664"/>
+                                                                        <rect key="frame" x="30" y="0.0" width="347" height="34.666666666666664"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expanded Selection of Ambient Music for a Deeper Experience" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHn-nh-svR">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="313" height="30.333333333333332"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="347" height="15.333333333333334"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expanded Selection of Ambient Music " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0h-S0-HN8">
-                                                                                <rect key="frame" x="0.0" y="34.333333333333371" width="313" height="15.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="19.333333333333371" width="347" height="15.333333333333336"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2098,10 +2098,10 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="D0E-AM-5af">
-                                                                <rect key="frame" x="0.0" y="214.99999999999994" width="343" height="34.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="199.99999999999994" width="377" height="34.666666666666657"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="nCI-N7-gMM">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="34.666666666666664"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="377" height="34.666666666666664"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="aab-ff-GcL">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -2110,16 +2110,16 @@ The Premium plan includes the following:</string>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="N1e-Ww-fR2">
-                                                                                <rect key="frame" x="30" y="0.0" width="313" height="34.666666666666664"/>
+                                                                                <rect key="frame" x="30" y="0.0" width="347" height="34.666666666666664"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unrestricted Access to the Full Suite of Nature Sounds" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qS8-Z3-ZXu">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="313" height="15.333333333333334"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="347" height="15.333333333333334"/>
                                                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                         <color key="textColor" name="#E4E1F8"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unrestricted Access to the Full Suite of Nature Sounds" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPe-PP-lRr">
-                                                                                        <rect key="frame" x="0.0" y="19.333333333333371" width="313" height="15.333333333333336"/>
+                                                                                        <rect key="frame" x="0.0" y="19.333333333333371" width="347" height="15.333333333333336"/>
                                                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                         <color key="textColor" name="#E4E1F8"/>
                                                                                         <nil key="highlightedColor"/>
@@ -2131,7 +2131,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="BUj-o3-EDZ">
-                                                                <rect key="frame" x="0.0" y="271.66666666666669" width="343" height="34.666666666666686"/>
+                                                                <rect key="frame" x="0.0" y="256.66666666666669" width="377" height="34.666666666666686"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="ufE-I0-zfZ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -2140,16 +2140,16 @@ The Premium plan includes the following:</string>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LRl-tR-qz5">
-                                                                        <rect key="frame" x="30" y="0.0" width="313" height="34.666666666666664"/>
+                                                                        <rect key="frame" x="30" y="0.0" width="347" height="34.666666666666664"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offline Usability" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2s-Du-aVX">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="313" height="15.333333333333334"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="347" height="15.333333333333334"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offline Usability" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX9-a9-fAG">
-                                                                                <rect key="frame" x="0.0" y="19.333333333333258" width="313" height="15.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="19.333333333333258" width="347" height="15.333333333333336"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2159,7 +2159,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="zYp-WZ-Lb9">
-                                                                <rect key="frame" x="0.0" y="328.33333333333331" width="343" height="34.666666666666686"/>
+                                                                <rect key="frame" x="0.0" y="313.33333333333331" width="377" height="34.666666666666686"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="9vd-0g-Kce">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -2168,16 +2168,16 @@ The Premium plan includes the following:</string>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="XIX-zD-lyG">
-                                                                        <rect key="frame" x="30" y="0.0" width="313" height="34.666666666666664"/>
+                                                                        <rect key="frame" x="30" y="0.0" width="347" height="34.666666666666664"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unrestricted Access to the Full Suite of Nature Sounds" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ks-cc-3aE">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="313" height="15.333333333333334"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="347" height="15.333333333333334"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unrestricted Access to the Full Suite of Nature Sounds" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M72-Uh-fdo">
-                                                                                <rect key="frame" x="0.0" y="19.333333333333371" width="313" height="15.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="19.333333333333371" width="347" height="15.333333333333336"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2189,10 +2189,10 @@ The Premium plan includes the following:</string>
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtx-7C-sOu">
-                                                        <rect key="frame" x="0.0" y="667.66666666666663" width="343" height="103"/>
+                                                        <rect key="frame" x="0.0" y="652.66666666666663" width="377" height="103"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lka-VM-nbe">
-                                                                <rect key="frame" x="8" y="0.0" width="335" height="103"/>
+                                                                <rect key="frame" x="8" y="0.0" width="369" height="103"/>
                                                                 <color key="backgroundColor" name="primary"/>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="LyU-0R-WpL">
@@ -2224,7 +2224,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ED8-dZ-k8Q">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="103"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="377" height="103"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="btnPlanTapped:" destination="102-i8-6o8" eventType="touchUpInside" id="dfG-US-fC3"/>
@@ -2252,10 +2252,10 @@ The Premium plan includes the following:</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bz0-1C-ClJ">
-                                                        <rect key="frame" x="0.0" y="790.66666666666663" width="343" height="103"/>
+                                                        <rect key="frame" x="0.0" y="775.66666666666663" width="377" height="103"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7w0-1Y-yEx">
-                                                                <rect key="frame" x="8" y="0.0" width="335" height="103"/>
+                                                                <rect key="frame" x="8" y="0.0" width="369" height="103"/>
                                                                 <color key="backgroundColor" name="primary"/>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="u0c-aP-QWf">
@@ -2287,7 +2287,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4j-r7-A9r">
-                                                                <rect key="frame" x="218" y="20" width="105" height="28"/>
+                                                                <rect key="frame" x="252" y="20" width="105" height="28"/>
                                                                 <color key="backgroundColor" red="0.46666666666666667" green="0.41568627450980389" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="105" id="Iyb-6H-UH1"/>
@@ -2304,7 +2304,7 @@ The Premium plan includes the following:</string>
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMI-cv-5wZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="103"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="377" height="103"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="btnPlanTapped:" destination="102-i8-6o8" eventType="touchUpInside" id="FzD-Gt-nwY"/>
@@ -2334,23 +2334,23 @@ The Premium plan includes the following:</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access the entire app completely free for 7 days, we’re grateful for the opportunity to be a a part of your journey." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akd-jm-bbf">
-                                                        <rect key="frame" x="0.0" y="913.66666666666674" width="343" height="60.666666666666629"/>
+                                                        <rect key="frame" x="0.0" y="898.66666666666663" width="377" height="60.666666666666629"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Bold" family="Outfit" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Muy-Nc-rLX">
-                                                        <rect key="frame" x="0.0" y="994.33333333333326" width="343" height="12"/>
+                                                        <rect key="frame" x="0.0" y="979.33333333333326" width="377" height="12"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="5r6-u1-0SP"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-ec-ZOy">
-                                                        <rect key="frame" x="0.0" y="1026.3333333333333" width="343" height="135"/>
+                                                        <rect key="frame" x="0.0" y="1011.3333333333333" width="377" height="135"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-pg-Wuq" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="54"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="377" height="54"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="54" id="UZN-2R-bPE"/>
                                                                 </constraints>
@@ -2366,10 +2366,10 @@ The Premium plan includes the following:</string>
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_line_saperator" translatesAutoresizingMaskIntoConstraints="NO" id="lJ0-oz-K80">
-                                                                <rect key="frame" x="0.0" y="69" width="343" height="1"/>
+                                                                <rect key="frame" x="0.0" y="69" width="377" height="1"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ3-66-moV">
-                                                                <rect key="frame" x="0.0" y="85" width="343" height="50"/>
+                                                                <rect key="frame" x="0.0" y="85" width="377" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="fvk-DI-IdQ"/>
                                                                 </constraints>
@@ -2384,6 +2384,26 @@ The Premium plan includes the following:</string>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C89-kA-Sab">
+                                                        <rect key="frame" x="0.0" y="1166.3333333333333" width="377" height="348.66666666666674"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ee-m4-Etw">
+                                                                <rect key="frame" x="20" y="12" width="337" height="324.66666666666669"/>
+                                                                <mutableString key="text">Disclaimer:
+The numbers provided on this page (e.g., over 250 musical tracks, over 300 nature sounds, and over 250 meditations) are estimates and subject to change. We are constantly improving and updating our content library, which may involve adding new content, removing older content, or replacing existing material. As a result, the exact number of available tracks, sounds, and meditations may fluctuate over time. We strive to maintain a high-quality experience for our users, and these changes are part of our ongoing commitment to improvement. Thank you for your understanding.</mutableString>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="6ee-m4-Etw" firstAttribute="top" secondItem="C89-kA-Sab" secondAttribute="top" constant="12" id="WQi-WJ-n3O"/>
+                                                            <constraint firstAttribute="trailing" secondItem="6ee-m4-Etw" secondAttribute="trailing" constant="20" id="YaO-OR-Giv"/>
+                                                            <constraint firstItem="6ee-m4-Etw" firstAttribute="leading" secondItem="C89-kA-Sab" secondAttribute="leading" constant="20" id="qRX-kJ-ENs"/>
+                                                            <constraint firstAttribute="bottom" secondItem="6ee-m4-Etw" secondAttribute="bottom" constant="12" id="y9j-Ef-vhU"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -2431,6 +2451,7 @@ The Premium plan includes the following:</string>
                         <outlet property="lblNavTitle" destination="3dr-rK-Fuo" id="Ky6-BH-ePU"/>
                         <outlet property="lblTitle" destination="NEr-tm-oZv" id="JRR-X9-iBp"/>
                         <outlet property="lbl_bottom_text" destination="akd-jm-bbf" id="eLY-iD-GGU"/>
+                        <outlet property="lbl_disclaimer" destination="6ee-m4-Etw" id="5to-Ce-a7e"/>
                         <outlet property="lbl_monthly_plan" destination="UGT-7B-iFw" id="T6a-Io-f1I"/>
                         <outlet property="lbl_monthly_plan_Price" destination="aYF-49-Mnj" id="nae-8A-OQC"/>
                         <outlet property="lbl_monthly_plan_month" destination="kAe-at-RIP" id="RhT-HR-hkb"/>
@@ -2821,7 +2842,7 @@ The Premium plan includes the following:</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adA-YH-Pdc">
-                                <rect key="frame" x="126.33333333333333" y="74.333333333333329" width="140.33333333333343" height="25.333333333333329"/>
+                                <rect key="frame" x="126.33333333333333" y="74.333333333333329" width="140.33333333333337" height="25.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -3179,10 +3200,10 @@ The Premium plan includes the following:</string>
                                 <rect key="frame" x="0.0" y="115" width="393" height="737"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZO-PL-5Nw">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="866.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1231"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lBl-Ll-2h1">
-                                                <rect key="frame" x="20" y="0.0" width="353" height="841.33333333333337"/>
+                                                <rect key="frame" x="20" y="0.0" width="353" height="1206"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_on_logo" translatesAutoresizingMaskIntoConstraints="NO" id="W3j-iZ-Nbc">
                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="184"/>
@@ -3501,6 +3522,26 @@ The Premium plan includes the following:</string>
                                                             <action selector="btnRestoreTapped:" destination="102-i8-6o8" eventType="touchUpInside" id="l7s-Cr-pZB"/>
                                                         </connections>
                                                     </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tf-6X-K8m">
+                                                        <rect key="frame" x="0.0" y="857.33333333333337" width="353" height="348.66666666666663"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZk-ep-TQO">
+                                                                <rect key="frame" x="20" y="12" width="313" height="324.66666666666669"/>
+                                                                <mutableString key="text">Disclaimer:
+The numbers provided on this page (e.g., over 250 musical tracks, over 300 nature sounds, and over 250 meditations) are estimates and subject to change. We are constantly improving and updating our content library, which may involve adding new content, removing older content, or replacing existing material. As a result, the exact number of available tracks, sounds, and meditations may fluctuate over time. We strive to maintain a high-quality experience for our users, and these changes are part of our ongoing commitment to improvement. Thank you for your understanding.</mutableString>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="rZk-ep-TQO" secondAttribute="trailing" constant="20" id="3M8-2J-JMo"/>
+                                                            <constraint firstItem="rZk-ep-TQO" firstAttribute="top" secondItem="9Tf-6X-K8m" secondAttribute="top" constant="12" id="UPF-LG-TsI"/>
+                                                            <constraint firstAttribute="bottom" secondItem="rZk-ep-TQO" secondAttribute="bottom" constant="12" id="nbb-kZ-n5u"/>
+                                                            <constraint firstItem="rZk-ep-TQO" firstAttribute="leading" secondItem="9Tf-6X-K8m" secondAttribute="leading" constant="20" id="zfj-9C-h7g"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -3553,6 +3594,7 @@ The Premium plan includes the following:</string>
                         <outlet property="lblPrice" destination="r9L-JO-FKu" id="Jtd-6c-q5b"/>
                         <outlet property="lblStatus" destination="khK-4g-anH" id="Li6-UP-ZT2"/>
                         <outlet property="lblStatusTitle" destination="qzP-Xh-tIm" id="lrB-lK-eO7"/>
+                        <outlet property="lbl_disclaimer" destination="rZk-ep-TQO" id="DNS-vJ-lxn"/>
                         <outlet property="lbl_plan1_subtitle" destination="jZL-Xk-E7a" id="7nB-Mp-ITi"/>
                         <outlet property="lbl_plan1_title" destination="YUy-1H-7Sg" id="z3i-lG-7vH"/>
                         <outlet property="lbl_plan2_subtitle" destination="Ga7-Rd-Fgi" id="FbZ-WQ-fp8"/>
@@ -5233,7 +5275,7 @@ Please follow the steps on your device to manage your subscription.</string>
             <color red="0.89411764705882357" green="0.88235294117647056" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor">
-            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.46666666865348816" green="0.41176474094390869" blue="0.85490196943283081" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="App_Blue_Color">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>

@@ -13,6 +13,7 @@ import MediaPlayer
 import PopMenu
 import MarqueeLabel
 import SDWebImage
+import Mixpanel
 
 class NewMusicVC: UIViewController, delegate_done_showcase {
     
@@ -108,6 +109,14 @@ class NewMusicVC: UIViewController, delegate_done_showcase {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             self.setupBlurView()
         }
+    }
+    
+    func set_TrackEvent(_ is_play: Bool) {
+        var str_event = Mixpanel_Event.MeditationEnd.rawValue
+        if is_play {
+            str_event = Mixpanel_Event.MeditationStart.rawValue
+        }
+        Mixpanel.mainInstance().track(event: str_event, properties: nil)
     }
     
     func setupBlurView() {
@@ -519,6 +528,7 @@ class NewMusicVC: UIViewController, delegate_done_showcase {
         self.newplayer.stop()
         self.timer.invalidate()
         self.clearLockScreenInfo()
+        self.set_TrackEvent(false)
     }
     
     @IBAction func btnMoreTapped(_ sender: UIButton) {
@@ -553,6 +563,7 @@ class NewMusicVC: UIViewController, delegate_done_showcase {
             if self.newplayer.state == .playing {
                 self.timer.invalidate()
                 self.newplayer.pause()
+                self.set_TrackEvent(false)
             } else {
                 self.timer.invalidate()
                 self.updateCurrentTimeLabel()
@@ -560,6 +571,7 @@ class NewMusicVC: UIViewController, delegate_done_showcase {
                     self.updateCurrentTimeLabel()
                 })
                 self.newplayer.resume()
+                self.set_TrackEvent(true)
             }
             if !self.btnPlay.isSelected {
                 self.backGroundPlayer?.pause()
@@ -647,6 +659,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
             self.songs = self.audioVM.arrOfAudioList.compactMap({$0.musicURL})
         }
         self.loadSong(index: self.currentSongIndex)
+        self.set_TrackEvent(true)
     }
     
     func manageButtons() {

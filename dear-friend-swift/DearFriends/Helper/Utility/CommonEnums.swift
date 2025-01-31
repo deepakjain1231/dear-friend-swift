@@ -32,3 +32,15 @@ enum GradientDirection {
     case BottomLeftToTopRight
     case BottomRightToTopLeft
 }
+
+
+enum Mixpanel_Event: String {
+    case MeditationStart = "meditation_start"
+    case MeditationEnd = "meditation_end"
+    case AppOpen = "app_open"
+    case SessionStart = "session_start"
+    case SignUp = "signup"
+    case UpgradePremium = "upgrade_to_premium"
+    case MeditationPlay = "meditation_play"
+    case MeditaionFavorite = "meditation_favorited"
+}

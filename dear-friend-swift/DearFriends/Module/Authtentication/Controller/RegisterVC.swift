@@ -7,6 +7,7 @@
 
 import UIKit
 import SKCountryPicker
+import Mixpanel
 
 class RegisterVC: BaseVC {
     
@@ -70,6 +71,8 @@ class RegisterVC: BaseVC {
         // Do any additional setup after loading the view.
         self.setTheView()
         self.setupUI()
+        
+        Mixpanel.mainInstance().track(event: Mixpanel_Event.SignUp.rawValue, properties: nil)
     }
     
     // MARK: - Other Functions

@@ -55,6 +55,9 @@ PODS:
     - JXPageControl/Common
   - lottie-ios (4.5.0)
   - MarqueeLabel (4.5.0)
+  - Mixpanel-swift (4.3.0):
+    - Mixpanel-swift/Complete (= 4.3.0)
+  - Mixpanel-swift/Complete (4.3.0)
   - MSCircularSlider (1.3.2)
   - NeatTipView (1.0.1)
   - NewPopMenu (2.1.2)
@@ -115,6 +118,7 @@ DEPENDENCIES:
   - JXPageControl
   - lottie-ios
   - MarqueeLabel
+  - Mixpanel-swift
   - MSCircularSlider
   - NeatTipView
   - NewPopMenu (~> 2.0)
@@ -157,6 +161,7 @@ SPEC REPOS:
     - JXPageControl
     - lottie-ios
     - MarqueeLabel
+    - Mixpanel-swift
     - MSCircularSlider
     - NeatTipView
     - NewPopMenu
@@ -220,6 +225,7 @@ SPEC CHECKSUMS:
   JXPageControl: e9487b39e2e58fc17790833214f3b8e935bef98b
   lottie-ios: a881093fab623c467d3bce374367755c272bdd59
   MarqueeLabel: 4b46d196abd253448e830cbd976f9eacc3af0849
+  Mixpanel-swift: 2192b9a24cf41b870749e4e0e10fbc9822bb2b4a
   MSCircularSlider: 07fe922e6a7e05fb67e876d449e365327fdad3d1
   NeatTipView: e1a80fcea835e74a0ed3fb260b1f62a907013e78
   NewPopMenu: c6129e08e8192f6257ceb5f9a4357e1b59c6e2e7
@@ -242,6 +248,6 @@ SPEC CHECKSUMS:
   youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
   YoutubePlayerView: 3870fc10f2db3f54156697757f44d304203bdc7e
 
-PODFILE CHECKSUM: 175e6e3118a938afe3a06e028023c9cc7f86166c
+PODFILE CHECKSUM: 06b803ca5b7c6ad4b430d741b706d832e8f6ffe2
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.16.2

@@ -39,6 +39,7 @@ target 'Dear Friends' do
   pod 'GoogleSignIn'
   pod 'JWTDecode', '~> 3.1'
   pod 'SwiftAudioPlayer' , :git => 'https://github.com/Kuama-IT/SwiftAudioPlayer.git', :branch => 'fix-ios-16-crash'
+  pod 'Mixpanel-swift'
   
   post_install do |installer|
     installer.pods_project.targets.each do |target|
