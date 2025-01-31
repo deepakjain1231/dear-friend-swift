@@ -2919,7 +2919,7 @@
 				CODE_SIGN_ENTITLEMENTS = DearFriends/DearFriends.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.11;
+				CURRENT_PROJECT_VERSION = 0.13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = BG93X8FNNQ;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -3130,7 +3130,7 @@
 				CODE_SIGN_ENTITLEMENTS = DearFriends/DearFriends.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.11;
+				CURRENT_PROJECT_VERSION = 0.13;
 				DEVELOPMENT_TEAM = BG93X8FNNQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DearFriends/AppSetting/Info.plist;

@@ -91,9 +91,9 @@
                                                 <rect key="frame" x="20" y="613" width="353" height="63.666666666666629"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_right_arroe_with_bg" translatesAutoresizingMaskIntoConstraints="NO" id="boK-r1-bdM">
-                                                        <rect key="frame" x="323" y="23" width="18" height="18"/>
+                                                        <rect key="frame" x="319" y="21" width="22" height="22"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="18" id="LAz-RE-gdm"/>
+                                                            <constraint firstAttribute="height" constant="22" id="LAz-RE-gdm"/>
                                                             <constraint firstAttribute="width" secondItem="boK-r1-bdM" secondAttribute="height" multiplier="1:1" id="LbO-S5-vhe"/>
                                                         </constraints>
                                                     </imageView>

@@ -107,6 +107,8 @@ class OnbordingVC: BaseVC {
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timerrr in
             timerrr.invalidate()
             self.setTheView()
+            self.setupUI()
+
         }
     }
     
