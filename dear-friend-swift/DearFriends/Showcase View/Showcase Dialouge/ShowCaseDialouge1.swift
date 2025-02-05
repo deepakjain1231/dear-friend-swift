@@ -6,7 +6,7 @@
 //
 
 protocol delegate_done_showcase {
-    func done_click_showcase(_ success: Bool)
+    func done_click_showcase(_ success: Bool, action: String)
 }
 
 
@@ -120,13 +120,13 @@ class ShowCaseDialouge1: UIViewController {
         }
     }
     
-    func clkToClose(_ action: Bool = false) {
+    func clkToClose(_ action: Bool = false, str_action_name: String = "") {
         UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
             self.view_main.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
             self.view.backgroundColor = UIColor.black.withAlphaComponent(0.0)
             self.view.layoutIfNeeded()
             if self.screenFrom == "" {
-                self.delegate?.done_click_showcase(true)
+                self.delegate?.done_click_showcase(true, action: str_action_name)
             }
         }) { (success) in
             self.willMove(toParent: nil)
@@ -134,7 +134,7 @@ class ShowCaseDialouge1: UIViewController {
             self.removeFromParent()
             
             if action {
-                self.delegate?.done_click_showcase(true)
+                self.delegate?.done_click_showcase(true, action: str_action_name)
             }
         }
     }
@@ -151,7 +151,7 @@ class ShowCaseDialouge1: UIViewController {
     */
 
     @IBAction func clkToClose(_ sender: Any) {
-        self.clkToClose(true)
+        self.clkToClose(true, str_action_name: "skip")
     }
     
     @IBAction func clkToPrev(_ sender: Any) {
@@ -170,7 +170,7 @@ class ShowCaseDialouge1: UIViewController {
             self.setupButton()
         }
         else {
-            self.clkToClose(true)
+            self.clkToClose(true, str_action_name: "done")
         }
     }
     

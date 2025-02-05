@@ -53,13 +53,15 @@ let lastProgressKey = "lastProgress"
 let biometricsEnable = "biometricsEnable"
 let lastPlanPurchsed = "LastPlanPurchsed"
 
-let intro_showcase_1 = "intro_showcase_1"
-let intro_showcase_lastKey = "intro_showcase_lastKey"
-let intro_showcase_maxPromptKey = "intro_showcase_maxPromptKey"
-let intro_showcase_maxPromptCount = 7
 
-let lastShowcaseDate = "lastShowcaseDate"
-let updateShowcase = "updateShowcase"
+let intro_showcase_1_completed = "intro_showcase_1_completed"
+let intro_showcase_1_SkippedDate = "intro_showcase_1_SkippedDate"
+
+let intro_showcase_2_completed = "intro_showcase_2_completed"
+let intro_showcase_2_SkippedDate = "intro_showcase_2_SkippedDate"
+
+
+
 
 // Success Messages
 struct SuccessMessage {

@@ -15,7 +15,7 @@ import MarqueeLabel
 import SDWebImage
 import Mixpanel
 
-class NewMusicVC: UIViewController, delegate_done_showcase {
+class NewMusicVC: UIViewController {
     
     // MARK: - OUTLETS
     
@@ -107,7 +107,7 @@ class NewMusicVC: UIViewController, delegate_done_showcase {
         self.setupUI()
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
-            self.setupBlurView()
+            self.ShowCasePromptIfNeeded()
         }
     }
     
@@ -119,32 +119,14 @@ class NewMusicVC: UIViewController, delegate_done_showcase {
         Mixpanel.mainInstance().track(event: str_event, properties: nil)
     }
     
-    func setupBlurView() {
-        let objDialouge = ShowCaseDialouge1(nibName:"ShowCaseDialouge1", bundle:nil)
-        objDialouge.delegate = self
-        objDialouge.screenFrom = "player"
-        objDialouge.btnMusicOptionFrame = self.stack_button.frame
-        self.addChild(objDialouge)
-        objDialouge.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        self.view.addSubview((objDialouge.view)!)
-        objDialouge.didMove(toParent: self)
-    }
-    
-    func done_click_showcase(_ success: Bool) {
-        if success {
-            self.is_setup_showcase = false
-            self.setupUI()
-        }
-    }
-    
     //SET THE VIEW
     func setTheView() {
         
         //SET FONT
         self.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 20, text: "")
-        self.lblName.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20, text: "")
-        self.btnCat.configureLable(bgColour: .clear, textColor: UIColor.init(hex: "#D1D0D5"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 15, text: "")
-        self.lblNarrated.configureLable(textColor: UIColor.init(hex: "#B2B1B9"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "")
+        self.lblName.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_SemiBold, fontSize: 18, text: "")
+        self.btnCat.configureLable(bgColour: .clear, textColor: UIColor.init(hex: "#D1D0D5"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 14, text: "")
+        self.lblNarrated.configureLable(textColor: UIColor.init(hex: "#B2B1B9"), fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: "")
     }
     
     
@@ -159,8 +141,8 @@ class NewMusicVC: UIViewController, delegate_done_showcase {
     // MARK: - Other Functions
     
     func setupUI() {
-        self.btnPlay.setBackgroundImage(UIImage(named: "ic_music_play"), for: .normal)
-        self.btnPlay.setBackgroundImage(UIImage(named: "ic_pause_new"), for: .selected)
+        self.btnPlay.setImage(UIImage(named: "icon_music_play"), for: .normal)
+        self.btnPlay.setImage(UIImage(named: "ic_pause_new"), for: .selected)
         
         self.btnLike.setImage(UIImage(named: "ic_like"), for: .normal)
         self.btnLike.setImage(UIImage(named: "ic_liked"), for: .selected)
@@ -250,7 +232,7 @@ class NewMusicVC: UIViewController, delegate_done_showcase {
     
     func updateThumb() {
   
-        self.consThumbHeight.constant = manageWidth(size: 330)
+        //self.consThumbHeight.constant = manageWidth(size: 330)
         self.imgThumb.layoutIfNeeded()
         self.imgThumb.layer.cornerRadius = self.imgThumb.frame.size.height / 2
     }
@@ -1805,6 +1787,72 @@ extension NewMusicVC: AudioPlayerDelegate {
     }
     
     func audioPlayerDidReadMetadata(player: AudioPlayer, metadata: [String : String]) {
+        
+    }
+}
+
+
+
+//MARK:  - ShowCase Logic
+extension NewMusicVC: delegate_done_showcase {
+    
+    private func shouldShowShowCasePrompt() -> Bool {
+        
+        // If the user completed the action, never show the popup
+        if UserDefaults.standard.bool(forKey: intro_showcase_2_completed) {
+            return false
+        }
+
+        // Check if the popup was skipped before
+        if let lastSkippedDate = UserDefaults.standard.object(forKey: intro_showcase_2_SkippedDate) as? Date {
+            let currentDate = Date()
+            let calendar = Calendar.current
+            if let daysPassed = calendar.dateComponents([.day], from: lastSkippedDate, to: currentDate).day, daysPassed < maxPromptCount {
+                return false
+            }
+        }
+
+        return true
+    }
+    
+    private func ShowCasePromptIfNeeded() {
+        
+        if shouldShowShowCasePrompt() {
+            
+            // Show your showcase popup here
+            setupBlurView()
+            
+        }
+        else {
+            self.is_setup_showcase = false
+            self.setupUI()
+        }
+    }
+    
+    func setupBlurView() {
+        let objDialouge = ShowCaseDialouge1(nibName:"ShowCaseDialouge1", bundle:nil)
+        objDialouge.delegate = self
+        objDialouge.screenFrom = "player"
+        objDialouge.btnMusicOptionFrame = self.stack_button.frame
+        self.addChild(objDialouge)
+        objDialouge.view.frame = CGRect.init(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        self.view.addSubview((objDialouge.view)!)
+        objDialouge.didMove(toParent: self)
+    }
+    
+    
+    func done_click_showcase(_ success: Bool, action: String) {
+        if action == "skip" {
+            UserDefaults.standard.set(Date(), forKey: intro_showcase_2_SkippedDate)
+        }
+        else if action == "done" {
+            UserDefaults.standard.set(true, forKey: intro_showcase_2_completed)
+        }
+
+        if success {
+            self.is_setup_showcase = false
+            self.setupUI()
+        }
         
     }
 }

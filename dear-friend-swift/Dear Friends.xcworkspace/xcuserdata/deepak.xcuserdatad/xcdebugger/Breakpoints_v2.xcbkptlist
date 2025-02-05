@@ -14,8 +14,8 @@
             filePath = "DearFriends/Module/Music/Controller/NewMusicVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "556"
-            endingLineNumber = "556"
+            startingLineNumber = "538"
+            endingLineNumber = "538"
             landmarkName = "btnPlayTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,48 +23,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0D39B400-84E8-4569-821F-CFE66D09DCD4"
+            uuid = "5FFEE08C-18EC-4F00-8C1D-77187FBBC153"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DearFriends/Module/Music/Controller/NewMusicVC.swift"
+            filePath = "DearFriends/Module/Explore/Controller/ExploreDetailsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "524"
-            endingLineNumber = "524"
-            landmarkName = "btnBackTapped(_:)"
+            startingLineNumber = "704"
+            endingLineNumber = "704"
+            landmarkName = "done_click_showcase(_:action:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A227B9BE-5C1C-4E8C-8665-CEFABAE36E74"
+            uuid = "83982826-06A7-465A-B10F-BA4702C45A7C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DearFriends/Module/Music/Controller/NewMusicVC.swift"
+            filePath = "DearFriends/Showcase View/Showcase Dialouge/ShowCaseDialouge1.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "setupUI()"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "clkToClose(_:str_action_name:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "093BFB18-AF8A-40CD-872C-DF7C74FDD359"
+            uuid = "B528628A-9A23-4B63-B91B-0B6D8F9A9810"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DearFriends/Module/Music/Controller/NewMusicVC.swift"
+            filePath = "DearFriends/Showcase View/Showcase Dialouge/ShowCaseDialouge1.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "661"
-            endingLineNumber = "661"
-            landmarkName = "initPlayer()"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "clkToDone(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07CF58DF-83D0-4EEB-84D4-04CFD85A215D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DearFriends/Showcase View/Showcase Dialouge/ShowCaseDialouge1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "clkToPrev(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FFC98D7-B890-420D-A085-04694322EDCD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DearFriends/Module/Explore/Controller/ExploreDetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "698"
+            endingLineNumber = "698"
+            landmarkName = "done_click_showcase(_:action:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A88331ED-5E59-4886-80F5-E75BC98E0F52"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DearFriends/Showcase View/Showcase Dialouge/ShowCaseDialouge1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "clkToClose(_:str_action_name:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
