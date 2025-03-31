@@ -166,7 +166,7 @@ extension MyPreferencesThemCatVC: SkeletonTableViewDataSource, UITableViewDelega
             let str_currentTile = dic_current?.title ?? ""
             cell.lblTitle.configureLable(textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: str_currentTile)
             
-            GeneralUtility().setImage(imgView: cell.img, placeHolderImage: placeholderImage, imgPath: dic_current?.image ?? "")
+            GeneralUtility().setImage(imgView: cell.img, placeHolderImage: placeholderImage, imgPath: dic_current?.icon ?? "")
             
             let count = "\(dic_current?.subCategory?.filter({$0.isSelect}).count ?? 0)"
             cell.lblSelected.configureLable(textColor: .text_color_light, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: "(\(count) selected)")
@@ -200,6 +200,10 @@ extension MyPreferencesThemCatVC: SkeletonTableViewDataSource, UITableViewDelega
             cell.arrOfSubCategory = dic_current?.subCategory ?? []
             cell.colleView.reloadData()
             
+            DispatchQueue.main.async {
+                cell.colleView.reloadData()
+            }
+            
             if (dic_current?.subCategory?.count ?? 0) == 0 {
                 cell.colleView.setEmptyMessage("No Subcategories Found")
             }
@@ -230,6 +234,11 @@ extension MyPreferencesThemCatVC: SkeletonTableViewDataSource, UITableViewDelega
         } else {
             self.indexRow.append(indexPath.row)
         }
-        self.tblMain.reloadRows(at: [indexPath], with: .automatic)
+
+        self.tblMain.beginUpdates()
+        self.tblMain.reloadRows(at: [indexPath], with: .fade)
+        self.tblMain.endUpdates()
+        
+        
     }
 }
