@@ -29,10 +29,10 @@
                                 <rect key="frame" x="0.0" y="110" width="1421" height="874"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phr-5J-pEa">
-                                        <rect key="frame" x="0.0" y="0.0" width="1421" height="424"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1421" height="624"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="E1g-s1-TIp">
-                                                <rect key="frame" x="20" y="0.0" width="1381" height="424"/>
+                                                <rect key="frame" x="20" y="0.0" width="1381" height="624"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFV-9q-vi0">
                                                         <rect key="frame" x="0.0" y="0.0" width="1381" height="250"/>
@@ -91,10 +91,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mq4-TJ-slX">
-                                                        <rect key="frame" x="0.0" y="324" width="1381" height="100"/>
+                                                        <rect key="frame" x="0.0" y="324" width="1381" height="300"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="e4z-ur-mOz"/>
+                                                            <constraint firstAttribute="height" constant="300" id="e4z-ur-mOz"/>
                                                         </constraints>
                                                     </tableView>
                                                 </subviews>

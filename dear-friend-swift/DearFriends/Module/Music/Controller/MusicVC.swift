@@ -14,7 +14,6 @@ import MediaPlayer
 enum CurrentRepeatMode {
     case None
     case SingleRepeat
-    case AllRepeat
 }
 
 class MusicVC: BaseVC {
@@ -174,13 +173,14 @@ class MusicVC: BaseVC {
             self.btnRepeat.setImage(UIImage(named: "ic_music_repeat_1"), for: .normal)
             
         } else if self.currentRepeatMode == .SingleRepeat {
-            self.currentRepeatMode = .AllRepeat
+//            self.currentRepeatMode = .AllRepeat
             self.btnRepeat.setImage(UIImage(named: "ic_music_repeat_all"), for: .normal)
             
-        } else if self.currentRepeatMode == .AllRepeat {
-            self.currentRepeatMode = .None
-            self.btnRepeat.setImage(UIImage(named: "ic_music_repeat"), for: .normal)
         }
+//        else if self.currentRepeatMode == .AllRepeat {
+//            self.currentRepeatMode = .None
+//            self.btnRepeat.setImage(UIImage(named: "ic_music_repeat"), for: .normal)
+//        }
     }
     
     @IBAction func btnPreviousTapped(_ sender: UIButton) {
@@ -483,7 +483,7 @@ extension MusicVC: AVAudioPlayerDelegate {
         self.pause()
         if self.currentSongIndex >= (self.songs.count - 1) {
             
-            if self.currentRepeatMode == .AllRepeat {
+            if self.currentRepeatMode == .SingleRepeat {
                 
                 self.currentSongIndex = 0
                 self.loadSong(index: currentSongIndex)

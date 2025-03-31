@@ -27,7 +27,10 @@ class HomeContentTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.con_CollectionView.constant = manageWidth(size: 180)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+            self.con_CollectionView.constant = manageWidth(size: 190)
+        })
+
 
         // Initialization code
         let gradient = SkeletonGradient(baseColor: hexStringToUIColor(hex: "#212159"))
@@ -134,6 +137,7 @@ extension HomeContentTVC: UICollectionViewDelegate, SkeletonCollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeListCVC", for: indexPath) as? HomeListCVC else { return UICollectionViewCell() }
+        cell.backgroundColor = .clear
         
         let current = self.arrAudio[indexPath.row]
         let ddd = current.audioDuration?.doubleValue ?? 0
@@ -141,7 +145,7 @@ extension HomeContentTVC: UICollectionViewDelegate, SkeletonCollectionViewDataSo
         cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 14, text: current.title ?? "")
         cell.lblTime.configureLable(textColor: .background, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: TimeInterval(ddd).formatDuration())
         
-        //GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current.image ?? "")
+//        GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current.image ?? "")
         
         if current.forSTr == "premium" && !appDelegate.isPlanPurchased {
             cell.vwPremium.isHidden = false
@@ -154,10 +158,7 @@ extension HomeContentTVC: UICollectionViewDelegate, SkeletonCollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: manageWidth(size: 210))
-
-//        return CGSize(width: 226, height: 236)
-        
+        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

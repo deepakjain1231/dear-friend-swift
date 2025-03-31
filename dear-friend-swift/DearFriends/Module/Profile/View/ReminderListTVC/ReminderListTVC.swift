@@ -67,7 +67,7 @@ extension ReminderListTVC: PopMenuViewControllerDelegate {
         
         let controller = PopMenuViewController(sourceView: sender, actions: arrays)
         // Customize appearance
-        controller.contentView.backgroundColor = hexStringToUIColor(hex: "#776ADA")
+        controller.contentView.backgroundColor = hexStringToUIColor(hex: "#7A7AFC")
         controller.appearance.popMenuFont = Font(.installed(.Medium), size: .standard(.S14)).instance
         controller.accessibilityLabel = "\(sender.tag)"
         

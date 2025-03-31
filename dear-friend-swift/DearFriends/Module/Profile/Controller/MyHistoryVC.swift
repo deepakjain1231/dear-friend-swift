@@ -120,7 +120,6 @@ class MyHistoryVC: BaseVC {
                 self.colleView.setEmptyMessage("No Content Has Been Added Here Yet")
             }
             
-            self.audioVM.arrOfAudioList.removeAll()
             
             for current in self.customVM.arrOfCustomRequests {
                 let newcurrent = CommonAudioList.init(json: "")
@@ -143,6 +142,10 @@ class MyHistoryVC: BaseVC {
         } failure: { errorResponse in
             
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.post(name: Notification.Name("MusicClose"), object: nil)
     }
     
     func fetchDownloadedData() {
@@ -547,6 +550,7 @@ extension MyHistoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             } else {
+                
                 let vc: NewMusicVC = NewMusicVC.instantiate(appStoryboard: .Explore)
                 vc.currentSong = self.audioVM.arrOfAudioList[indexPath.row]
                 vc.isFromDownload = false

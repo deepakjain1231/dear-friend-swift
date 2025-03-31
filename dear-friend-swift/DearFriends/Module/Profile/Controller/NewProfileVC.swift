@@ -7,6 +7,8 @@
 
 import UIKit
 import MessageUI
+import SwiftyJSON
+import AVFoundation
 
 class NewProfileVC: UIViewController {
     
@@ -32,6 +34,8 @@ class NewProfileVC: UIViewController {
     @IBOutlet weak var btnSetting: UIButton!
     @IBOutlet weak var btnContactUs: UIButton!
     @IBOutlet weak var lblContactUs: UILabel!
+    @IBOutlet weak var btnCreator: UIButton!
+    @IBOutlet weak var lblCreator: UILabel!
     @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var lblLogout: UILabel!
     @IBOutlet weak var lblNavTitle: UILabel!
@@ -48,6 +52,7 @@ class NewProfileVC: UIViewController {
     @IBOutlet weak var viewMySubscription: UIView!
     @IBOutlet weak var viewSetting: UIView!
     @IBOutlet weak var viewContactUs: UIView!
+    @IBOutlet weak var viewCreator: UIView!
     @IBOutlet weak var viewLogout: UIView!
     
     @IBOutlet weak var imgEditProfile_arrow: UIImageView!
@@ -58,12 +63,14 @@ class NewProfileVC: UIViewController {
     @IBOutlet weak var imgMySubscription_arrow: UIImageView!
     @IBOutlet weak var imgSetting_arrow: UIImageView!
     @IBOutlet weak var imgContactUs_arrow: UIImageView!
+    @IBOutlet weak var imgCreator_arrow: UIImageView!
     @IBOutlet weak var imgLogout_arrow: UIImageView!
     
     @IBOutlet weak var imgFavorite: UIImageView!
     @IBOutlet weak var imgHistory: UIImageView!
     @IBOutlet weak var imgDownload: UIImageView!
     @IBOutlet weak var imgContactUs: UIImageView!
+    @IBOutlet weak var imgCreator: UIImageView!
     @IBOutlet weak var imgLogout: UIImageView!
     
     
@@ -84,6 +91,22 @@ class NewProfileVC: UIViewController {
         self.setTheView()
         self.setupImage()
         self.setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            NotificationCenter.default.post(name: Notification.Name("BottomView"), object: nil, userInfo: ["hide": "0"])
+        }
+        
+        self.getAboutCreatot()
+    }
+    
+    func getAboutCreatot(){
+        self.get_AboutCreator_Onboarding { _ in
+            
+        } failure: { errorResponse in
+            
+        }
     }
     
     // MARK: - Other Functions
@@ -113,15 +136,16 @@ class NewProfileVC: UIViewController {
         
         self.lblGeneralTitle.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 18, text: "General")
         
-        self.btnEditProfile.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 15.0, text: "Edit Profile")
-        self.btnLinkAccount.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 15.0, text: "Link/Unlink Account")
-        self.btnMyBooking.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 15.0, text: "My Bookings")
-        self.btnPreference.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 15.0, text: "Preferences")
+        self.btnEditProfile.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16.0, text: "Edit Profile")
+        self.btnLinkAccount.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16.0, text: "Link/Unlink Account")
+        self.btnMyBooking.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16.0, text: "My Bookings")
+        self.btnPreference.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16.0, text: "Preferences")
         self.btnReminder.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16.0, text: "Reminders")
         self.btnMySubscription.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16.0, text: "My Subscription")
-        self.btnSetting.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 16.0, text: "Settings")
-        self.lblContactUs.configureLable(textColor: .text_color_light, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 16, text: "Contact Us")
-        self.lblLogout.configureLable(textColor: .text_color_light, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 16, text: "Logout")
+        self.btnSetting.configureLable(bgColour: .clear, textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16.0, text: "Settings")
+        self.lblContactUs.configureLable(textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "Contact Us")
+        self.lblCreator.configureLable(textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "About the Creator")
+        self.lblLogout.configureLable(textColor: .text_color_light, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "Logout")
         
         //SET VIEW
         self.viewFavorite.viewCorneRadius(radius: 10)
@@ -168,6 +192,11 @@ class NewProfileVC: UIViewController {
         self.viewContactUs.backgroundColor = .primary
         self.viewContactUs.viewBorderCorneRadius(borderColour: .secondary)
         
+        self.viewCreator.viewCorneRadius(radius: 15)
+        self.viewCreator.backgroundColor = .primary
+        self.viewCreator.viewBorderCorneRadius(borderColour: .secondary)
+
+        
         self.viewLogout.viewCorneRadius(radius: 15)
         self.viewLogout.backgroundColor = .primary
         self.viewLogout.viewBorderCorneRadius(borderColour: .secondary)
@@ -180,6 +209,7 @@ class NewProfileVC: UIViewController {
         self.imgMySubscription_arrow.viewCorneRadius(radius: 9)
         self.imgSetting_arrow.viewCorneRadius(radius: 9)
         self.imgContactUs_arrow.viewCorneRadius(radius: 9)
+        self.imgCreator_arrow.viewCorneRadius(radius: 9)
         self.imgLogout_arrow.viewCorneRadius(radius: 9)
     }
     
@@ -208,6 +238,9 @@ class NewProfileVC: UIViewController {
         self.imgContactUs.image = UIImage.init(named: "ic_contact_us")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         self.imgContactUs.tintColor = .secondary
         
+        self.imgCreator.image = UIImage.init(named: "ic_info")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        self.imgCreator.tintColor = .secondary
+
         self.imgLogout.image = UIImage.init(named: "ic_logout")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         self.imgLogout.tintColor = .secondary
         
@@ -226,6 +259,11 @@ class NewProfileVC: UIViewController {
         temp_Image = UIImage(named: "ic_contact_us")?.withRenderingMode(.alwaysTemplate)
         self.imgContactUs.image = temp_Image
         self.imgContactUs.tintColor = .secondary
+        
+        temp_Image = UIImage(named: "ic_info")?.withRenderingMode(.alwaysTemplate)
+        self.imgCreator.image = temp_Image
+        self.imgCreator.tintColor = .secondary
+
         
         temp_Image = UIImage(named: "ic_logout")?.withRenderingMode(.alwaysTemplate)
         self.imgLogout.image = temp_Image
@@ -307,6 +345,12 @@ class NewProfileVC: UIViewController {
         else if sender.tag == 13 {
             let vc: LinkUnlinkVC = LinkUnlinkVC.instantiate(appStoryboard: .Profile)
             self.push_screen(indx_tag: sender.tag, btn_click: self.btnLinkAccount, view_bg: self.viewLinkAccount, img_arrow: self.imgLinkAccount_arrow, current_vc: vc)
+        }
+        else if sender.tag == 14 {
+            let vc: AboutCreatorVC = AboutCreatorVC.instantiate(appStoryboard: .main)
+            vc.isSetting = true
+            self.push_screen(indx_tag: sender.tag, btn_click: self.btnCreator, view_bg: self.viewCreator, img_arrow: self.imgCreator_arrow, current_vc: vc)
+            
         }
     }
     
@@ -416,5 +460,55 @@ extension NewProfileVC: MFMailComposeViewControllerDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
+    }
+}
+
+
+
+extension NewProfileVC{
+    func get_AboutCreator_Onboarding(success: @escaping (JSON) -> Void, failure: @escaping (_ errorResponse: JSON) -> Void) {
+            
+        ServiceManager.shared.getRequest(ApiURL: .onboarding_about_creator, parameters: [:], isShowLoader: false) { response, isSuccess, error, statusCode in
+            
+            print("Success Response:", response)
+            if isSuccess == true {
+                dic_aboutCreator = OnboardingAboutCreatorModel(json: response["data"])
+
+                if let url = URL(string: dic_aboutCreator.file ?? "") {
+                    
+                    self.getSongDuration(from: url) { duration in
+                        if let duration = duration {
+                            dic_aboutCreator.audio_duration = Int(duration)
+                        }
+                    }
+                }
+                                
+                success(response)
+            } else {
+                failure(response)
+            }
+            
+        } Failure: { response, isSuccess, error, statusCode in
+            print("Failure Response:", response)
+            failure(response)
+        }
+    }
+    
+    func getSongDuration(from url: URL, completion: @escaping (Double?) -> Void) {
+        let audioPlayer = AVPlayer()
+        let playerItem = AVPlayerItem(url: url)
+        audioPlayer.replaceCurrentItem(with: playerItem)
+        
+        // Wait for the duration to load
+        playerItem.asset.loadValuesAsynchronously(forKeys: ["duration"]) {
+            DispatchQueue.main.async {
+                if playerItem.asset.statusOfValue(forKey: "duration", error: nil) == .loaded {
+                    let duration = CMTimeGetSeconds(playerItem.asset.duration)
+                    completion(duration.isFinite ? duration : nil)
+                } else {
+                    completion(nil)
+                }
+            }
+        }
     }
 }

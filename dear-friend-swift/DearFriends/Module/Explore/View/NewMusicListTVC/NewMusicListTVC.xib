@@ -36,6 +36,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yM0-i2-hsQ">
                                         <rect key="frame" x="0.0" y="0.0" width="440" height="88.333333333333329"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_BgAudio" translatesAutoresizingMaskIntoConstraints="NO" id="2aT-S7-Xw2">
+                                                <rect key="frame" x="0.0" y="0.0" width="440" height="88.333333333333329"/>
+                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:vnm-HM-gfR:image" translatesAutoresizingMaskIntoConstraints="NO" id="vnm-HM-gfR">
                                                 <rect key="frame" x="8" y="8.3333333333333357" width="64" height="64"/>
                                                 <constraints>
@@ -51,13 +54,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wrM-Wl-3AL">
                                                 <rect key="frame" x="88" y="21.666666666666671" width="101.66666666666669" height="37"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breath Focus 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="An7-ax-kg9">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Breath Focus 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="An7-ax-kg9">
                                                         <rect key="frame" x="0.0" y="0.0" width="101.66666666666667" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                         <color key="textColor" red="0.89411764709999997" green="0.88235294119999996" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:45 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2H8-zj-kqb">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="20:45 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2H8-zj-kqb">
                                                         <rect key="frame" x="0.0" y="24.333333333333332" width="101.66666666666667" height="12.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="10"/>
                                                         <color key="textColor" red="0.81960784310000001" green="0.81568627449999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,11 +83,11 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufy-aA-4Jt">
-                                                <rect key="frame" x="390" y="17.333333333333329" width="46" height="46"/>
+                                                <rect key="frame" x="380" y="17.333333333333329" width="46" height="46"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-Ed-9W5">
-                                                <rect key="frame" x="398" y="25.333333333333329" width="30" height="30"/>
+                                                <rect key="frame" x="388" y="25.333333333333329" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="cPK-5L-Owa"/>
                                                     <constraint firstAttribute="width" constant="30" id="yte-Ab-Aqe"/>
@@ -111,8 +114,10 @@
                                         <color key="backgroundColor" name="#212159"/>
                                         <constraints>
                                             <constraint firstItem="wrM-Wl-3AL" firstAttribute="leading" secondItem="vnm-HM-gfR" secondAttribute="trailing" constant="16" id="6TO-tj-bj2"/>
+                                            <constraint firstItem="2aT-S7-Xw2" firstAttribute="leading" secondItem="yM0-i2-hsQ" secondAttribute="leading" id="CLe-eH-dQp"/>
                                             <constraint firstAttribute="height" constant="88" id="Jsb-tM-gxV"/>
                                             <constraint firstItem="Ncf-Ed-9W5" firstAttribute="centerY" secondItem="yM0-i2-hsQ" secondAttribute="centerY" constant="-4" id="KTh-Bg-mwS"/>
+                                            <constraint firstAttribute="trailing" secondItem="2aT-S7-Xw2" secondAttribute="trailing" id="Oxb-mi-DHD"/>
                                             <constraint firstAttribute="trailing" secondItem="OPw-60-6R3" secondAttribute="trailing" constant="5" id="QSw-pN-b2k"/>
                                             <constraint firstItem="wrM-Wl-3AL" firstAttribute="top" secondItem="yM0-i2-hsQ" secondAttribute="top" constant="21.666666666666671" id="Qto-pJ-Q39"/>
                                             <constraint firstAttribute="trailing" secondItem="n0L-aY-5Wq" secondAttribute="trailing" id="XYD-ot-Tdn"/>
@@ -121,14 +126,16 @@
                                             <constraint firstItem="7yy-82-rNs" firstAttribute="top" secondItem="yM0-i2-hsQ" secondAttribute="top" id="chS-53-hrG"/>
                                             <constraint firstItem="vnm-HM-gfR" firstAttribute="centerY" secondItem="yM0-i2-hsQ" secondAttribute="centerY" constant="-4" id="gnO-oA-HPv"/>
                                             <constraint firstAttribute="bottom" secondItem="n0L-aY-5Wq" secondAttribute="bottom" id="jhe-Zq-3q4"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ncf-Ed-9W5" secondAttribute="trailing" constant="12" id="lU2-0T-Utb"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ncf-Ed-9W5" secondAttribute="trailing" constant="22" id="lU2-0T-Utb"/>
                                             <constraint firstItem="Ncf-Ed-9W5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wrM-Wl-3AL" secondAttribute="trailing" constant="12" id="n2f-Ri-bNV"/>
+                                            <constraint firstItem="2aT-S7-Xw2" firstAttribute="top" secondItem="yM0-i2-hsQ" secondAttribute="top" id="n4F-4J-a2g"/>
                                             <constraint firstItem="ufy-aA-4Jt" firstAttribute="trailing" secondItem="Ncf-Ed-9W5" secondAttribute="trailing" constant="8" id="n8t-bt-6Ae"/>
                                             <constraint firstAttribute="trailing" secondItem="7yy-82-rNs" secondAttribute="trailing" id="sIg-Dh-jSc"/>
                                             <constraint firstItem="vnm-HM-gfR" firstAttribute="leading" secondItem="yM0-i2-hsQ" secondAttribute="leading" constant="8" id="tme-xM-ssR"/>
                                             <constraint firstItem="wrM-Wl-3AL" firstAttribute="centerY" secondItem="yM0-i2-hsQ" secondAttribute="centerY" constant="-4" id="v8p-Nv-TTQ"/>
                                             <constraint firstItem="ufy-aA-4Jt" firstAttribute="leading" secondItem="Ncf-Ed-9W5" secondAttribute="leading" constant="-8" id="vfv-lJ-sy7"/>
                                             <constraint firstItem="n0L-aY-5Wq" firstAttribute="leading" secondItem="yM0-i2-hsQ" secondAttribute="leading" id="vwc-Nz-MXz"/>
+                                            <constraint firstAttribute="bottom" secondItem="2aT-S7-Xw2" secondAttribute="bottom" id="ww5-uE-ndq"/>
                                             <constraint firstItem="n0L-aY-5Wq" firstAttribute="top" secondItem="OPw-60-6R3" secondAttribute="bottom" constant="5" id="zbI-0v-e0z"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -204,6 +211,7 @@
                 <outlet property="constraint_view_main_BG_top" destination="Ffu-KS-WbD" id="5AQ-Te-VtO"/>
                 <outlet property="constraint_view_main_BG_trelling" destination="47Q-Jl-hIu" id="Wjw-Wj-4B1"/>
                 <outlet property="img" destination="vnm-HM-gfR" id="NOX-CZ-8P6"/>
+                <outlet property="imgBG" destination="2aT-S7-Xw2" id="rUo-cF-4Rz"/>
                 <outlet property="imgPin" destination="OPw-60-6R3" id="tNK-Wo-u8j"/>
                 <outlet property="imgPlayed" destination="7yy-82-rNs" id="SOY-6k-z08"/>
                 <outlet property="lblSub" destination="2H8-zj-kqb" id="BQs-II-Y0m"/>
@@ -223,6 +231,7 @@
         <image name="ic_new_premium" width="335" height="80"/>
         <image name="ic_played_music" width="46" height="48"/>
         <image name="ic_top_pin" width="12.666666984558105" height="12.666666984558105"/>
+        <image name="icon_BgAudio" width="335" height="88"/>
         <image name="imageView:vnm-HM-gfR:image" width="226" height="236">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T

@@ -41,7 +41,7 @@ extension PopupViewController: UITableViewDelegate,UITableViewDataSource
         return arr_MenuList.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return manageWidth(size: 40)
+        return manageWidth(size: 45)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {

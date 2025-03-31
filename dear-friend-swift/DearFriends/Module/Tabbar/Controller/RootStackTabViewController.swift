@@ -58,8 +58,8 @@ class RootStackTabViewController: UIViewController {
         
         //SET VIEW
         self.vwBottom.viewCorneRadius(radius: 0)
-        self.vwBottom.backgroundColor = .secondary
-        self.vwBottom.viewBorderCorneRadius(borderColour: .primary)
+        self.vwBottom.backgroundColor = .clear
+//        self.vwBottom.viewBorderCorneRadius(borderColour: .primary)
     }
     @objc func relosdMYPage(_ notification: NSNotification) {
         if let data = notification.userInfo?["hide"] as? String {

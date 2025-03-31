@@ -7,11 +7,13 @@
 
 import UIKit
 import SwiftDate
+import Mixpanel
 
 class ActiveSubscriptionVC: UIViewController {
     
     // MARK: - OUTLETS
-    
+//    @IBOutlet weak var con_logo: NSLayoutConstraint!
+
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblStatusTitle: UILabel!
     @IBOutlet weak var lblExpiry: UILabel!
@@ -29,14 +31,16 @@ class ActiveSubscriptionVC: UIViewController {
     @IBOutlet weak var lbl_plan4_title: UILabel!
     @IBOutlet weak var lbl_plan5_title: UILabel!
     @IBOutlet weak var lbl_plan6_title: UILabel!
-    
+    @IBOutlet weak var lbl_plan7_title: UILabel!
+
     @IBOutlet weak var lbl_plan1_subtitle: UILabel!
     @IBOutlet weak var lbl_plan2_subtitle: UILabel!
     @IBOutlet weak var lbl_plan3_subtitle: UILabel!
     @IBOutlet weak var lbl_plan4_subtitle: UILabel!
     @IBOutlet weak var lbl_plan5_subtitle: UILabel!
     @IBOutlet weak var lbl_plan6_subtitle: UILabel!
-    
+    @IBOutlet weak var lbl_plan7_subtitle: UILabel!
+
     @IBOutlet weak var btnChangePlan: UIButton!
     @IBOutlet weak var lbl_disclaimer: UILabel!
     
@@ -51,7 +55,8 @@ class ActiveSubscriptionVC: UIViewController {
     
     //SET THE VIEW
     func setTheView() {
-        
+//        self.con_logo.constant = manageWidth(size: 220)
+
         //SET FONT
         self.lblNavTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "My Subscription")
         
@@ -75,18 +80,20 @@ class ActiveSubscriptionVC: UIViewController {
         self.lbl_plan4_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Comprehensive Music Selection")
         self.lbl_plan5_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Nature Sounds Collection")
         self.lbl_plan6_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Background Audio Options")
-        
+        self.lbl_plan7_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Content Progress Bar")
+
         //SubTitles
-        self.lbl_plan1_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Enjoy uninterrupted access to your favorite meditations, music, and nature sounds.")
+        self.lbl_plan1_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Enjoy uninterrupted access to your favorite meditations, music, and nature sounds and sleep tools.")
         self.lbl_plan2_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Download and enjoy your favorite meditations and tracks anytime, anywhere.")
-        self.lbl_plan3_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Explore a growing collection of over 300 guided meditations across 30 unique categories, with new content added regularly.")
-        self.lbl_plan4_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Discover over 250 musical tracks, thoughtfully organized by instrument and style.")
-        self.lbl_plan5_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Immerse yourself in over 300 high-quality nature recordings from around the world.")
+        self.lbl_plan3_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Explore the full  collection of over 250+ guided meditations across 30+ unique categories. (This figure includes all the content in “Sleep”)")
+        self.lbl_plan4_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Get full access to over 250 musical tracks, thoughtfully organized by instrument and style.")
+        self.lbl_plan5_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Unlock a library of over 300  high-quality nature recordings from around the world.")
         self.lbl_plan6_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Enhance your experience with a full suite of background audio options designed to support relaxation and focus.")
+        self.lbl_plan7_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "See your progress at a glance with the Content Progress Bar. A purple line shows how far you’ve listened, while a white check mark and subtle gray line appear when the content is complete. This gentle guide helps you easily continue where you left off, and also encourages you to revisit your favorites anytime you want.")
 
         self.btnChangePlan.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 18.0, text: "Change Plan")
         
-        self.lbl_disclaimer.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 13, text: "Disclaimer:\nThe numbers provided on this page (e.g., over 250 musical tracks, over 300 nature sounds, and over 250 meditations) are estimates and subject to change. We are constantly improving and updating our content library, which may involve adding new content, removing older content, or replacing existing material. As a result, the exact number of available tracks, sounds, and meditations may fluctuate over time. We strive to maintain a high-quality experience for our users, and these changes are part of our ongoing commitment to improvement. Thank you for your understanding.")
+        self.lbl_disclaimer.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 14, text: "Disclaimer:\nThe numbers provided on this page (e.g., over 250 musical tracks, over 300 nature sounds, and over 250 meditations) are estimates and subject to change. We are constantly improving and updating our content library, which may involve adding new content, removing older content, or replacing existing material. As a result, the exact number of available tracks, sounds, and meditations may fluctuate over time. We strive to maintain a high-quality experience for our users, and these changes are part of our ongoing commitment to improvement. Thank you for your understanding.")
     }
     
     
@@ -134,6 +141,9 @@ class ActiveSubscriptionVC: UIViewController {
     }
         
     @IBAction func btnChangeTapped(_ sender: UIButton) {
+        Mixpanel.mainInstance().track(event: Mixpanel_Event.CancelPremium.rawValue, properties: nil)
+
+        
         let vc: SubscriptionVC = SubscriptionVC.instantiate(appStoryboard: .Profile)
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)

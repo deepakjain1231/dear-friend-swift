@@ -17,7 +17,8 @@ class CommonBottomPopupVC: BottomPopupViewController {
     @IBOutlet weak var lblNo: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var vwCancel: UIView!
-    
+    @IBOutlet weak var con_Height: NSLayoutConstraint!
+
     // MARK: - VARIABLES
     
     var titleStr = ""
@@ -73,6 +74,8 @@ class CommonBottomPopupVC: BottomPopupViewController {
         self.btnYes.titleLabel?.numberOfLines = 0
         self.btnYes.titleLabel?.lineBreakMode = .byWordWrapping
         self.btnYes.titleLabel?.textAlignment = .center
+        
+        self.con_Height.constant = popupHeight
     }
     
     //SET THE VIEW

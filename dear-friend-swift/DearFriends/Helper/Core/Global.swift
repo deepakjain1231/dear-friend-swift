@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import IQKeyboardManagerSwift
+import CloudKit
 
 let GradientBGColors = [UIColor.init(hex: "0F143A"), UIColor.init(hex: "251B62")]
 let About_GradientBGColors = [UIColor.init(hex: "0E064A").withAlphaComponent(0), UIColor.init(hex: "0E064A").withAlphaComponent(1)]
@@ -36,7 +37,8 @@ let showcase_2_indx_1_subTitle = "Choose the perfect background sound to enhance
 var BaseURL_Vimeo = "https://api.vimeo.com/videos/"
 var Kvimeo_access_Token = "Bearer 211e2d48814c3754f5c54417a75bdcce"
 
-var MIXPANEL_TOKEN = "9e517e56632fb5f4da649a6141c7dbe0"
+var MIXPANEL_TOKEN = "a25acd8983c79ef15a967f4598d99037"// "9e517e56632fb5f4da649a6141c7dbe0"
+
 
 struct GlobalConstants
 {
@@ -49,7 +51,9 @@ struct GlobalConstants
     static let screenWidthDeveloper : Double = checkDeviceiPad() ? 768 : 393
 
 
-     
+    //Name And Appdelegate Object
+    static let appDelegate = (UIApplication.shared.delegate as? AppDelegate)
+
     //System width height
     static let windowWidth: Double = checkLandscape() ? Double(UIScreen.main.bounds.size.height) : Double(UIScreen.main.bounds.size.width)
     static let windowHeight: Double = checkLandscape() ? Double(UIScreen.main.bounds.size.width) : Double(UIScreen.main.bounds.size.height)
@@ -73,7 +77,51 @@ struct GlobalConstants
 }
 let isRTL = UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft
 
+//GET VIEW TOP
+var getTopViewController: UIViewController? {
+    
+    guard let rootViewController = GlobalConstants.appDelegate?.window?.rootViewController else {
+        return nil
+    }
+    
+    return getVisibleViewController(rootViewController)
+}
 
+
+func getVisibleViewController(_ rootViewController: UIViewController) -> UIViewController? {
+    
+    if let presentedViewController = rootViewController.presentedViewController {
+        return getVisibleViewController(presentedViewController)
+    }
+    
+    if let navigationController = rootViewController as? UINavigationController {
+        return navigationController.visibleViewController
+    }
+    
+    if let tabBarController = rootViewController as? UITabBarController {
+        return tabBarController.selectedViewController
+    }
+    
+    return rootViewController
+}
+
+
+//............................... ALERT MESSAGE ...............................................//
+func showAlertMessage(strMessage: String) {
+
+    let alert = UIAlertController(title: "Dear Friend", message: strMessage, preferredStyle: UIAlertController.Style.alert)
+
+    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+    getTopViewController?.present(alert, animated: true, completion: nil)
+
+    //    //POPUP
+    //    let window = UIApplication.shared.keyWindow!
+    //    window.endEditing(true)
+    //    let aleartView = AlertMessage(frame: CGRect(x: 0, y: 0 ,width : window.frame.width, height: window.frame.height))
+    //    aleartView.loadPopUpView(strMessage: strMessage)
+    //    window.addSubview(aleartView)
+        
+}
 
 
 //............................... MANAGE ...............................................//
@@ -233,6 +281,41 @@ extension UIApplication {
 //    getTopViewController?.present(alert, animated: true, completion: nil)
 //}
 
+
+
+//GET VIEW TOP
+extension UIApplication {
+    class func getTopViewController(base: UIViewController? = GlobalConstants.appDelegate?.window?.rootViewController) -> UIViewController? {
+        if let nav = base as? UINavigationController {
+            return getTopViewController(base: nav.visibleViewController)
+        }
+        else if let tab = base as? UITabBarController, let selected = tab.selectedViewController {
+            return getTopViewController(base: selected)
+        }
+        else if let presented = base?.presentedViewController {
+            return getTopViewController(base: presented)
+        }
+        else  if let tabbar = base?.children.first(where: {$0 is RootStackTabViewController}) as? RootStackTabViewController {
+            return getTopViewController(base: tabbar)
+        }
+        else  if let tabbar = base?.children.first as? UINavigationController {
+            return getTopViewController(base: tabbar)
+        }
+        return base
+    }
+    
+    public var mainKeyWindow: UIWindow? {
+        if #available(iOS 13, *) {
+            return UIApplication.shared.connectedScenes
+                .filter { $0.activationState == .foregroundActive }
+                .first(where: { $0 is UIWindowScene })
+                .flatMap { $0 as? UIWindowScene }?.windows
+                .first(where: \.isKeyWindow)
+        } else {
+            return UIApplication.shared.windows.first { $0.isKeyWindow }
+        }
+    }
+}
 
 
 public extension UIColor {

@@ -6,7 +6,7 @@ target 'Dear Friends' do
   use_frameworks!
   
   pod 'IQKeyboardManagerSwift'
-  pod 'Alamofire', '~> 5.2'
+  pod 'Alamofb878701113695917', '~> 5.2'
   pod 'SwiftyJSON'
   pod 'NVActivityIndicatorView' , '~> 4.8.0'
   pod 'Haptico', '1.1.1'

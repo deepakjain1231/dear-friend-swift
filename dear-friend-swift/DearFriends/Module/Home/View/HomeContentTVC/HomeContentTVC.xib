@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZE3-9g-RPV">
-                        <rect key="frame" x="12" y="5" width="354" height="25"/>
+                        <rect key="frame" x="20" y="5" width="338" height="25"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beginners Path" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMg-hf-LAu">
                                 <rect key="frame" x="0.0" y="2.3333333333333339" width="109.66666666666667" height="20.333333333333329"/>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMO-UQ-kDe">
-                                <rect key="frame" x="318" y="-1.3333333333333339" width="36" height="28"/>
+                                <rect key="frame" x="302" y="-1.3333333333333339" width="36" height="28"/>
                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="See all">
@@ -54,21 +54,21 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NZ-5g-9Pp">
-                        <rect key="frame" x="12" y="46" width="354" height="180"/>
+                        <rect key="frame" x="20" y="46" width="338" height="180"/>
                         <subviews>
                             <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tVE-fQ-FdQ">
-                                <rect key="frame" x="0.0" y="0.0" width="354" height="180"/>
+                                <rect key="frame" x="0.0" y="0.0" width="338" height="180"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lwa-3a-E86">
-                                <rect key="frame" x="0.0" y="0.0" width="354" height="180"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0Ow-ew-OeN">
+                                <rect key="frame" x="0.0" y="0.0" width="338" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="X19-fK-Gp8">
-                                    <size key="itemSize" width="128" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eYU-LT-V8N">
+                                    <size key="itemSize" width="150" height="48"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -76,21 +76,21 @@
                                 <cells/>
                             </collectionView>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="una-zx-1Wg">
-                                <rect key="frame" x="140.66666666666666" y="149.33333333333334" width="73" height="25.666666666666657"/>
+                                <rect key="frame" x="132.66666666666666" y="149.33333333333334" width="73" height="25.666666666666657"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="lwa-3a-E86" secondAttribute="trailing" id="4o8-UW-JhX"/>
                             <constraint firstAttribute="bottom" secondItem="tVE-fQ-FdQ" secondAttribute="bottom" id="AA9-ch-Avv"/>
                             <constraint firstAttribute="trailing" secondItem="tVE-fQ-FdQ" secondAttribute="trailing" id="CTn-Ip-qLn"/>
+                            <constraint firstItem="0Ow-ew-OeN" firstAttribute="bottom" secondItem="tVE-fQ-FdQ" secondAttribute="bottom" id="KOH-kc-fVT"/>
                             <constraint firstAttribute="bottom" secondItem="una-zx-1Wg" secondAttribute="bottom" constant="5" id="Nhb-MO-SlN"/>
                             <constraint firstItem="tVE-fQ-FdQ" firstAttribute="leading" secondItem="9NZ-5g-9Pp" secondAttribute="leading" id="OHL-Q4-GvH"/>
-                            <constraint firstItem="lwa-3a-E86" firstAttribute="top" secondItem="9NZ-5g-9Pp" secondAttribute="top" id="Pzv-FJ-OeE"/>
-                            <constraint firstItem="lwa-3a-E86" firstAttribute="leading" secondItem="9NZ-5g-9Pp" secondAttribute="leading" id="V3M-QN-PJK"/>
                             <constraint firstItem="una-zx-1Wg" firstAttribute="centerX" secondItem="9NZ-5g-9Pp" secondAttribute="centerX" id="dS5-x7-OZl"/>
                             <constraint firstItem="tVE-fQ-FdQ" firstAttribute="top" secondItem="9NZ-5g-9Pp" secondAttribute="top" id="eBI-eg-Cdy"/>
-                            <constraint firstAttribute="bottom" secondItem="lwa-3a-E86" secondAttribute="bottom" id="pDe-21-9Lz"/>
+                            <constraint firstItem="0Ow-ew-OeN" firstAttribute="top" secondItem="tVE-fQ-FdQ" secondAttribute="top" id="gaR-Mq-oDb"/>
+                            <constraint firstItem="0Ow-ew-OeN" firstAttribute="leading" secondItem="tVE-fQ-FdQ" secondAttribute="leading" id="kPe-IE-12k"/>
+                            <constraint firstItem="0Ow-ew-OeN" firstAttribute="trailing" secondItem="tVE-fQ-FdQ" secondAttribute="trailing" id="mKR-PX-5pL"/>
                             <constraint firstAttribute="height" constant="180" id="tb0-Fw-KJr"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -103,12 +103,12 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="ZE3-9g-RPV" secondAttribute="trailing" constant="12" id="2JR-ZK-QC1"/>
-                    <constraint firstAttribute="trailing" secondItem="9NZ-5g-9Pp" secondAttribute="trailing" constant="12" id="3qG-0m-2tP"/>
+                    <constraint firstAttribute="trailing" secondItem="ZE3-9g-RPV" secondAttribute="trailing" constant="20" id="2JR-ZK-QC1"/>
+                    <constraint firstAttribute="trailing" secondItem="9NZ-5g-9Pp" secondAttribute="trailing" constant="20" id="3qG-0m-2tP"/>
                     <constraint firstItem="ZE3-9g-RPV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="4zl-Ix-1Yw"/>
-                    <constraint firstItem="ZE3-9g-RPV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="AVC-MV-vIv"/>
+                    <constraint firstItem="ZE3-9g-RPV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="AVC-MV-vIv"/>
                     <constraint firstAttribute="bottom" secondItem="9NZ-5g-9Pp" secondAttribute="bottom" constant="12" id="F2K-Ud-FCx"/>
-                    <constraint firstItem="9NZ-5g-9Pp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="RTf-EN-zXJ"/>
+                    <constraint firstItem="9NZ-5g-9Pp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="RTf-EN-zXJ"/>
                     <constraint firstItem="9NZ-5g-9Pp" firstAttribute="top" secondItem="ZE3-9g-RPV" secondAttribute="bottom" constant="16" id="qtf-P2-pdk"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>
@@ -122,7 +122,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="btnSeeAll" destination="oMO-UQ-kDe" id="PyQ-ih-tkG"/>
-                <outlet property="colletView" destination="lwa-3a-E86" id="t6m-NN-BBk"/>
+                <outlet property="colletView" destination="0Ow-ew-OeN" id="vMm-Eu-CBw"/>
                 <outlet property="con_CollectionView" destination="tb0-Fw-KJr" id="lUm-aO-vic"/>
                 <outlet property="img_Bg" destination="tVE-fQ-FdQ" id="ACv-Pq-EO0"/>
                 <outlet property="lblTitle" destination="AMg-hf-LAu" id="goO-tc-suX"/>

@@ -234,7 +234,7 @@ extension ContactSupportVC: PopMenuViewControllerDelegate {
         
         self.controller = PopMenuViewController(sourceView: sender, actions: arrays)
         // Customize appearance
-        self.controller?.contentView.backgroundColor = hexStringToUIColor(hex: "#776ADA")
+        self.controller?.contentView.backgroundColor = hexStringToUIColor(hex: "#7A7AFC")
         self.controller?.appearance.popMenuFont = Font(.installed(.Medium), size: .standard(.S14)).instance
         self.controller?.accessibilityLabel = "Contact Support"
         

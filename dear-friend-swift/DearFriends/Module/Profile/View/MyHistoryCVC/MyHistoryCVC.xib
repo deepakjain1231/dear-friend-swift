@@ -138,6 +138,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="btnMore" destination="iuJ-s5-aZy" id="l8S-wb-b13"/>
+                <outlet property="imgBG" destination="Cn7-FF-2zs" id="GtC-2u-Avg"/>
                 <outlet property="imgMain" destination="Rp3-Np-RQJ" id="pXZ-PM-I4T"/>
                 <outlet property="lblDuration" destination="3JQ-CI-mC4" id="9qi-mG-tno"/>
                 <outlet property="lblTitle" destination="13Y-7h-HQY" id="9fK-4X-Qmn"/>

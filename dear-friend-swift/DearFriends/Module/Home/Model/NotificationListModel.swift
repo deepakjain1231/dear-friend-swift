@@ -20,7 +20,8 @@ public class NotificationListModel {
     private let kNotificationListModelPushTitleKey: String = "push_title"
     private let kNotificationListModelUserIdKey: String = "user_id"
     private let kNotificationListModelPushMessageKey: String = "push_message"
-    
+    private let kNotificationListModelFileKey: String = "image"
+
     // MARK: Properties
     public var fromUserId: Int?
     public var pushType: Int?
@@ -31,6 +32,7 @@ public class NotificationListModel {
     public var pushTitle: String?
     public var userId: Int?
     public var pushMessage: String?
+    public var file: String?
     var read = 0
     
     // MARK: SwiftyJSON Initalizers
@@ -58,6 +60,7 @@ public class NotificationListModel {
         pushTitle = json[kNotificationListModelPushTitleKey].string
         userId = json[kNotificationListModelUserIdKey].int
         pushMessage = json[kNotificationListModelPushMessageKey].string
+        file = json[kNotificationListModelFileKey].string
         read = json["read"].intValue
     }
     
@@ -76,6 +79,7 @@ public class NotificationListModel {
         if let value = pushTitle { dictionary[kNotificationListModelPushTitleKey] = value }
         if let value = userId { dictionary[kNotificationListModelUserIdKey] = value }
         if let value = pushMessage { dictionary[kNotificationListModelPushMessageKey] = value }
+        if let value = file { dictionary[kNotificationListModelFileKey] = value }
         return dictionary
     }
     

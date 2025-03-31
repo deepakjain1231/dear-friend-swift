@@ -10,6 +10,7 @@ import PopMenu
 
 class NewMusicListTVC: UITableViewCell {
 
+    @IBOutlet weak var imgBG: UIImageView!
     @IBOutlet weak var imgPlayed: UIImageView!
     @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var vwPremius: UIView!
@@ -34,12 +35,13 @@ class NewMusicListTVC: UITableViewCell {
     var isUnFav = false
     var isCount1 = false
     var isPined = false
+    var isHomePage : Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
 
-        self.view_BG.backgroundColor = .primary?.withAlphaComponent(0.7)
+        self.view_BG.backgroundColor = .clear// .primary?.withAlphaComponent(0.7)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -120,7 +122,7 @@ extension NewMusicListTVC: PopMenuViewControllerDelegate {
         
         let controller = PopMenuViewController(sourceView: sender, actions: arrays)
         // Customize appearance
-        controller.contentView.backgroundColor = hexStringToUIColor(hex: "#776ADA")
+        controller.contentView.backgroundColor = hexStringToUIColor(hex: "#7A7AFC")
         controller.appearance.popMenuFont = Font(.installed(.Medium), size: .standard(.S14)).instance
         controller.accessibilityLabel = "\(sender.tag)"
         

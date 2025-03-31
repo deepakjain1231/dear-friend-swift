@@ -18,16 +18,22 @@ import AdSupport
 import AVFoundation
 import MediaPlayer
 import Stripe
-import FacebookCore
+//import FacebookCore
 import GoogleSignIn
 import AVKit
 import Alamofire
 import Mixpanel
+import FirebaseMessaging
 
 enum InAppPlanID: String, CaseIterable {
     case monthly = "com.dearfriends.monthly"
     case yearly = "com.dearfriends.yearly"
 }
+
+//NOTIFICATIN DIC
+var dicNotificationData : NSDictionary = [:]
+var isHomeScreen : Bool = false
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -51,8 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        UNUserNotificationCenter.current().delegate = self
-        
+        //SET FIREBASE AND NOTIFICATION
+        self.setFireBase_Notificaiton(application: application)
+
         SettingsBundleHelper.checkAndExecuteSettings()
         SettingsBundleHelper.setVersionAndBuildNumber()
         
@@ -68,8 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Reach().monitorReachabilityChanges()
         STPAPIClient.shared.publishableKey = stripePublishKey
         
-        FirebaseApp.configure()
-        sleep(1)
+//sleep(1)
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.toolbarPreviousNextAllowedClasses.append(UIStackView.self)
@@ -80,7 +86,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITextField.appearance().keyboardAppearance = .dark
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.registerForRemoteNotification()
         authVM.getAuthContent()
         CurrentUser.shared.versionCheckAPI()
         self.setOnboardingRoot()
@@ -118,7 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MIXPANEL INITIALIZE
         Mixpanel.initialize(token: MIXPANEL_TOKEN, trackAutomaticEvents: false)
         
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+//        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         Mixpanel.mainInstance().track(event: Mixpanel_Event.AppOpen.rawValue, properties: nil)
         
@@ -141,14 +146,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if handled {
             return true
         }
-        
+        return false
         //for facebook
-        return ApplicationDelegate.shared.application(
-            app,
-            open: url,
-            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-        )
+//        return ApplicationDelegate.shared.application(
+//            app,
+//            open: url,
+//            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+//            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+//        )
     }
     
     func requestIDFA() {
@@ -460,166 +465,6 @@ extension AppDelegate {
     }
 }
 
-//MARK: - Push notification
-extension AppDelegate : UNUserNotificationCenterDelegate {
-    
-    //MARK: - Register Remote Notification Methods // <= iOS 9.x
-    func registerForRemoteNotification() {
-        if #available(iOS 10.0, *) {
-            let center  = UNUserNotificationCenter.current()
-            center.delegate = self
-            center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
-                if error == nil {
-                    DispatchQueue.main.async(execute: {
-                        UIApplication.shared.registerForRemoteNotifications()
-                    })
-                }
-            }
-        } else {
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
-            UIApplication.shared.registerForRemoteNotifications()
-        }
-    }
-    
-    //MARK: - Remote Notification Methods // <= iOS 9.x
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        
-        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-        self.deviceToken = deviceTokenString
-        
-        print("deviceToken" ,deviceTokenString)
-        //NSLog("The NutTagDeviceToken is:- \(deviceTokenString)")
-    }
-    
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
-        if let userInfo = userInfo as? [String: Any] {
-            let jsonUserInfo = JSON(userInfo)
-            print("JSON didReceiveRemoteNotification", jsonUserInfo)
-                        
-            let state = UIApplication.shared.applicationState
-            if state == .background {
-                self.handlePush(json: jsonUserInfo)
-            }
-        }
-        completionHandler(UIBackgroundFetchResult.newData)
-    }
-    
-    // MARK: - UNUserNotificationCenter Delegate // >= iOS 10
-    //Called when a notification is delivered to a foreground app.
-    @available(iOS 10.0, *)
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
-        if let userInfo = notification.request.content.userInfo as? [String : Any] {
-            let jsonUserInfo = JSON(userInfo)
-            print("JSON willPresent", jsonUserInfo)
-            
-            let payload = jsonUserInfo["payload"]
-            let data = payload["data"]
-            
-            let pushType = data["push_type"].intValue
-            let object_id = data["object_id"].stringValue
-            
-            appDelegate.titleText = data["push_title"].stringValue
-            appDelegate.descText = data["push_message"].stringValue
-            
-            guard let topVc = UIApplication.topViewController2() else { return }
-            
-            if let notiVc = topVc as? NotificationsVC {
-                notiVc.setupUI()
-            }
-            
-            if pushType == 1 {
-                if let msgVC = topVc as? ChatMessageVC {
-                    completionHandler([.badge])
-                }
-                
-            } else if pushType == 6 {
-                if let pushVC = topVc as? NotificationsVC {
-                    pushVC.customID = object_id
-                    pushVC.setupUI()
-                }
-                completionHandler([.alert, .badge, .sound])
-                
-            } else {
-                self.handlePush(json: jsonUserInfo)
-                completionHandler([.alert, .badge, .sound])
-            }
-        }
-    }
-    
-    func handlePush(json: JSON) {
-        
-        let payload = json["payload"]
-        let data = payload["data"]
-        
-        let pushType = data["push_type"].intValue
-        let object_id = data["object_id"].stringValue
-        
-        appDelegate.titleText = data["push_title"].stringValue
-        appDelegate.descText = data["push_message"].stringValue
-        
-        guard let topVc = UIApplication.topViewController2() else { return }
-        
-        if pushType == 1 {
-            if let msgVC = UIApplication.topViewController2() as? ChatMessageVC {
-                if msgVC.customID == object_id {
-                    msgVC.getChatHistory(isShowloader: false)
-                }
-            }
-            
-        } else if pushType == 2 {
-            if let msgVC = UIApplication.topViewController2() as? MyReminderVC {
-                msgVC.dataBind()
-            }
-            
-        } else if pushType == 5 {
-            if let msgVC = UIApplication.topViewController2() as? BookingDetailsVC {
-                if msgVC.id ==  object_id {
-                    msgVC.getDetails()
-                }
-            }
-            
-        } else if pushType == 6 {
-            if let pushVC = topVc as? NotificationsVC {
-                pushVC.setupUI()
-                
-            } else {
-                self.setNotiRoot(customID: object_id)
-            }
-        }
-    }
-    
-    @available(iOS 10.0, *)
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        let userInfo = response.notification.request.content.userInfo as NSDictionary
-        let jsonUserInfo = JSON(userInfo)
-        print("JSON didReceive", userInfo)
-        
-        let payload = jsonUserInfo["payload"]
-        let data = payload["data"]
-        
-        let pushType = data["push_type"].intValue
-        let object_id = data["object_id"].stringValue
-                
-        appDelegate.titleText = data["push_title"].stringValue
-        appDelegate.descText = data["push_message"].stringValue
-        
-        if pushType == 1 {
-            self.setMessageRoot(customID: object_id)
-            
-        } else if pushType == 2 {
-            self.setReminderRoot()
-            
-        } else if pushType == 5 {
-            self.setBookingRoot(id: object_id)
-            
-        } else if pushType == 6 {
-            self.setNotiRoot(customID: object_id)
-        }
-    }
-}
 
 //MARK: - IN App Purchase
 extension AppDelegate {

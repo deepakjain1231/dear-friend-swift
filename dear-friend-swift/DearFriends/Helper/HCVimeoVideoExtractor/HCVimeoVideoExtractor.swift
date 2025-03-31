@@ -25,6 +25,7 @@
 
 #if canImport(UIKit)
 import UIKit
+import SwiftyJSON
 
 public class HCVimeoVideoExtractor: NSObject {
     fileprivate static let domain = "ph.hercsoft.HCVimeoVideoExtractor"
@@ -92,55 +93,77 @@ public class HCVimeoVideoExtractor: NSObject {
                 }
                 
                 do {
-                    guard let data = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] else {
-                        completion(nil, NSError(domain: HCVimeoVideoExtractor.domain, code:3, userInfo:[NSLocalizedDescriptionKey :  "Invalid response" , NSLocalizedFailureReasonErrorKey : "Failed to parse Vimeo response"]))
-                        return
+                    
+                    if let responseString = String(data: responseData, encoding: .utf8) {
+                        print("Raw Response: \(responseString)")
                     }
                     
-                    print("data", data)
-                    
-                    let video = HCVimeoVideo()
-                    if let title = (data as NSDictionary).value(forKeyPath: "video.title") as? String {
-                        video.title = title
+                    do {
+                        let json = try JSON(data: responseData)
+                        print(json)
+                    } catch {
+                        print("SwiftyJSON parsing error: \(error)")
                     }
                     
-                    if let thumbnails = (data as NSDictionary).value(forKeyPath: "video.thumbs") as? Dictionary<String,Any> {
-                        for (quality, url) in thumbnails {
-                            if let turl = url as? String {
-                                video.thumbnailURL[self.thumbnailQualityWith(string: quality)] = URL(string: turl)
-                            }
+                    let response = try JSONSerialization.jsonObject(with: data!)
+
+                    if let data = response as? NSDictionary{
+                        print("data", data)
+                        
+                        let video = HCVimeoVideo()
+                        if let title = (data as NSDictionary).value(forKeyPath: "video.title") as? String {
+                            video.title = title
                         }
-                    }
-                    
-                    if let files = (data as NSDictionary).value(forKeyPath: "request.files.progressive") as? Array<Dictionary<String,Any>> {
-                        if files.count > 0 {
-                            for file in files {
-                                if let quality = file["quality"] as? String {
-                                    if let url = file["url"] as? String {
-                                        video.videoURL[self.videoQualityWith(string: quality)] = URL(string: url)
-                                    }
+                        
+                        if let thumbnails = (data as NSDictionary).value(forKeyPath: "video.thumbs") as? Dictionary<String,Any> {
+                            for (quality, url) in thumbnails {
+                                if let turl = url as? String {
+                                    video.thumbnailURL[self.thumbnailQualityWith(string: quality)] = URL(string: turl)
                                 }
                             }
                         }
-                        else {
-                            if let hls = (data as NSDictionary).value(forKeyPath: "request.files.hls.cdns") as? [String: AnyObject],
-                               let url = hls.first?.value["url"] as? String {
-                                print("url", url)
-                                video.videoURL[.quality1080p] = URL(string: url)
-                                video.videoURL[.qualityUnknown] = URL(string: url)
+                        
+                        
+                        if let files = (data as NSDictionary).value(forKeyPath: "request.files.progressive") as? Array<Dictionary<String,Any>> {
+                            if files.count > 0 {
+                                for file in files {
+                                    if let quality = file["quality"] as? String {
+                                        if let url = file["url"] as? String {
+                                            video.videoURL[self.videoQualityWith(string: quality)] = URL(string: url)
+                                        }
+                                    }
+                                }
+                            }
+                            else {
+                                if let hls = (data as NSDictionary).value(forKeyPath: "request.files.hls.cdns") as? [String: AnyObject],
+                                   let url = hls.first?.value["url"] as? String {
+                                    print("url", url)
+                                    video.videoURL[.quality1080p] = URL(string: url)
+                                    video.videoURL[.qualityUnknown] = URL(string: url)
+                                }
+                            }
+                            
+                            if video.videoURL.count > 0 {
+                                completion(video, nil)
+                            }
+                            else {
+                                completion(nil, NSError(domain: HCVimeoVideoExtractor.domain, code:5, userInfo:[NSLocalizedDescriptionKey :  "Failed to retrive mp4 video url" , NSLocalizedFailureReasonErrorKey : "Failed to retrive mp4 video url"]))
                             }
                         }
-                        
-                        if video.videoURL.count > 0 {
-                            completion(video, nil)
-                        }
                         else {
-                            completion(nil, NSError(domain: HCVimeoVideoExtractor.domain, code:5, userInfo:[NSLocalizedDescriptionKey :  "Failed to retrive mp4 video url" , NSLocalizedFailureReasonErrorKey : "Failed to retrive mp4 video url"]))
+                            completion(nil, NSError(domain: HCVimeoVideoExtractor.domain, code:4, userInfo:[NSLocalizedDescriptionKey :  "Failed to retrive mp4 video url" , NSLocalizedFailureReasonErrorKey : "Failed to retrive mp4 video url"]))
                         }
                     }
-                    else {
-                        completion(nil, NSError(domain: HCVimeoVideoExtractor.domain, code:4, userInfo:[NSLocalizedDescriptionKey :  "Failed to retrive mp4 video url" , NSLocalizedFailureReasonErrorKey : "Failed to retrive mp4 video url"]))
-                    }
+//                    let json = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments)
+
+//                    guard let data = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: AnyObject] else {
+//                        completion(nil, NSError(domain: HCVimeoVideoExtractor.domain, code:3, userInfo:[NSLocalizedDescriptionKey :  "Invalid response" , NSLocalizedFailureReasonErrorKey : "Failed to parse Vimeo response"]))
+//                        return
+//                    }
+                    
+
+                    
+              
                 } catch  {
                     completion(nil, NSError(domain: HCVimeoVideoExtractor.domain, code:3, userInfo:[NSLocalizedDescriptionKey :  "Failed to parse Vimeo response" , NSLocalizedFailureReasonErrorKey : "Failed to parse Vimeo response"]))
                     return

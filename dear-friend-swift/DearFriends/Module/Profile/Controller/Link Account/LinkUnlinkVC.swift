@@ -8,8 +8,8 @@
 import UIKit
 import GoogleSignIn
 import SwiftyJSON
-import FacebookCore
-import FacebookLogin
+//import FacebookCore
+//import FacebookLogin
 
 class LinkUnlinkVC: BaseVC {
     
@@ -231,43 +231,43 @@ extension LinkUnlinkVC {
     }
     
     func faceBookLogin(isFirstTime: Bool = false) {
-        let fbLoginManager : LoginManager = LoginManager()
-        fbLoginManager.logIn(permissions:   ["public_profile", "email"], from: self) { (fbloginresult, error) -> Void in
-            
-            if (error == nil) {
-                guard fbloginresult != nil else {
-                    return
-                }
-                
-                let permissionDictionary = [
-                    "fields" : "id,name,first_name,last_name,gender,email,birthday,picture.type(large)"]
-                let pictureRequest = GraphRequest(graphPath: "me", parameters: permissionDictionary)
-                
-                pictureRequest.start { connection, result, error in
-                    
-                    if error == nil {
-                        guard let result = result else { return }
-                        
-                        let results = JSON(result)
-                        print("Logged in : \(String(describing: results))")
-                        
-                        self.socialParams = [String:Any]()
-                        self.socialParams["social_id"] = results["id"].stringValue
-                        self.socialParams["type"] = "facebook"
-                        self.socialParams[kemail] = results["email"].stringValue
-
-                        DispatchQueue.main.async {
-                            self.checkSocial()
-                        }
-                        
-                    } else {
-                        print("error \(String(describing: error.debugDescription))")
-                    }
-                }
-                let manager = LoginManager()
-                manager.logOut()
-            }
-        }
+//        let fbLoginManager : LoginManager = LoginManager()
+//        fbLoginManager.logIn(permissions:   ["public_profile", "email"], from: self) { (fbloginresult, error) -> Void in
+//            
+//            if (error == nil) {
+//                guard fbloginresult != nil else {
+//                    return
+//                }
+//                
+//                let permissionDictionary = [
+//                    "fields" : "id,name,first_name,last_name,gender,email,birthday,picture.type(large)"]
+//                let pictureRequest = GraphRequest(graphPath: "me", parameters: permissionDictionary)
+//                
+//                pictureRequest.start { connection, result, error in
+//                    
+//                    if error == nil {
+//                        guard let result = result else { return }
+//                        
+//                        let results = JSON(result)
+//                        print("Logged in : \(String(describing: results))")
+//                        
+//                        self.socialParams = [String:Any]()
+//                        self.socialParams["social_id"] = results["id"].stringValue
+//                        self.socialParams["type"] = "facebook"
+//                        self.socialParams[kemail] = results["email"].stringValue
+//
+//                        DispatchQueue.main.async {
+//                            self.checkSocial()
+//                        }
+//                        
+//                    } else {
+//                        print("error \(String(describing: error.debugDescription))")
+//                    }
+//                }
+//                let manager = LoginManager()
+//                manager.logOut()
+//            }
+//        }
     }
     
     func appleSignIN(isFirstTime: Bool = false) {
@@ -359,20 +359,30 @@ extension LinkUnlinkVC {
                     self.isApple = false
                     self.isFB = false
 
+                    self.viewGmail.isHidden = false
+                    self.viewApple.isHidden = false
+                    self.viewFacebook.isHidden = true
+
                     if dic["google"] as? Bool == true{
                         self.isGoogle = true
                         self.lblGamilLink.text = "Unlink"
+                        self.viewGmail.isHidden = false
+                        self.viewApple.isHidden = true
+
+
                     }
                     
-                    if dic["apple"] as? Bool == true{
+                    else if dic["apple"] as? Bool == true{
                         self.isApple = true
                         self.lblAppleLink.text = "Unlink"
+                        self.viewApple.isHidden = false
+                        self.viewGmail.isHidden = true
                     }
                     
-                    if dic["facebook"] as? Bool == true{
-                        self.isFB = true
-                        self.lblFBLink.text = "Unlink"
-                    }
+//                    if dic["facebook"] as? Bool == true{
+//                        self.isFB = true
+//                        self.lblFBLink.text = "Unlink"
+//                    }
                 }
             }
             else {

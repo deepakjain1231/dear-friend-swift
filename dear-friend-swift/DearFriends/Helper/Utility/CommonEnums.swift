@@ -9,7 +9,6 @@ import Foundation
 
 enum RandomUserSize: Float {
     case remove = 0
-    
     case lowest = 48 // 4 - 5
     case low = 52 // 3 - 4
     case medium = 56 // 2 - 3
@@ -41,6 +40,7 @@ enum Mixpanel_Event: String {
     case SessionStart = "session_start"
     case SignUp = "signup"
     case UpgradePremium = "upgrade_to_premium"
+    case CancelPremium = "cancel_to_premium"
     case MeditationPlay = "meditation_play"
     case MeditaionFavorite = "meditation_favorited"
 }

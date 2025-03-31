@@ -15,19 +15,59 @@ class CustomLaunchVC: BaseVC {
     var arrOfOnboarding = [OnboardingListModel]()
     
     @IBOutlet weak var acti: UIActivityIndicatorView!
-    
+    @IBOutlet weak var imgLogo: UIImageView!
+    @IBOutlet weak var imgText: UIImageView!
+    @IBOutlet weak var viewAnimtion: UIView!
+
     // MARK: - VARIABLES
     
     var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier.invalid
     var downloadTask: URLSessionDownloadTask?
-    
+    var imageview : UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.acti.startAnimating()
 
-        self.setupBaseAPI()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
+//            self.setupBaseAPI()
+//        })
+        
+        self.setTheView()
+        self.imgText.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
+        self.acti.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: {
+
+            UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
+                self.imgText.transform = .identity
+                self.view.layoutIfNeeded()
+            }) { (success) in
+                self.acti.isHidden = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                    self.setupBaseAPI()
+                })
+            }
+        })
         
         NotificationCenter.default.addObserver(self, selector: #selector(disconnectPaxiSocket(_:)), name: Notification.Name(rawValue: "ReloadApp"), object: nil)
+    }
+    
+    
+    func setTheView(){
+        DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+            do {
+                let gif = try UIImage(gifName: "DearFriend_logo")
+                self.imageview = UIImageView(gifImage: gif, loopCount: 1) // Will loop 3 times
+                self.imageview.backgroundColor = .red
+                self.imageview.frame = self.viewAnimtion.frame
+                self.imageview.backgroundColor = .clear
+                self.imageview.tag = 100
+                self.view.addSubview(self.imageview)
+            } catch {
+                self.setupBaseAPI()
+                self.acti.isHidden = false
+            }
+        })
     }
     
     @objc func disconnectPaxiSocket(_ notification: Notification) {

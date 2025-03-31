@@ -61,7 +61,7 @@ class OnbordingVC: BaseVC {
         self.lblTitle.configureLable(textColor: .background, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 24, text: "")
         self.lblSubTitle.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "")
         
-        self.lbl_about_creator_title.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "About the Creator")
+        self.lbl_about_creator_title.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 20, text: "About the Creator")
         self.lbl_about_creator_subtitle.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: "Meet Your Guide")
         
         self.btnSkip.configureLable(bgColour: .clear, textColor: .secondary_dark, fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 14.0, text: "Skip")

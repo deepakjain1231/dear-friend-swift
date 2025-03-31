@@ -15,7 +15,8 @@ class MyHistoryCVC: UICollectionViewCell {
     @IBOutlet weak var imgMain: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnMore: UIButton!
-    
+    @IBOutlet weak var imgBG: UIImageView!
+
     var playTapped: voidCloser?
     var moreTapped: voidCloser?
     var favTapped: voidCloser?
@@ -30,6 +31,8 @@ class MyHistoryCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.imgBG.viewCorneRadius(radius: 10)
     }
 
     @IBAction func btnPlayTapped(_ sender: UIButton) {
@@ -84,7 +87,7 @@ extension MyHistoryCVC: PopMenuViewControllerDelegate {
         
         let controller = PopMenuViewController(sourceView: sender, actions: arrays)
         // Customize appearance
-        controller.contentView.backgroundColor = hexStringToUIColor(hex: "#776ADA")
+        controller.contentView.backgroundColor = hexStringToUIColor(hex: "#7A7AFC")
         controller.appearance.popMenuFont = Font(.installed(.Medium), size: .standard(.S14)).instance
         controller.accessibilityLabel = "\(sender.tag)"
         

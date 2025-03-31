@@ -27,7 +27,7 @@ extension UILabel {
     func configureLable(textAlignment:NSTextAlignment = .left, textColor:UIColor?, fontName:String, fontSize : Double, text:String) {
         self.textAlignment = textAlignment
         self.textColor = textColor
-        self.font = SetTheFont(fontName: fontName, size: fontSize)
+        self.font = SetTheFont(fontName: fontName, size: fontSize + 2)
         self.text = text
     }
     
@@ -76,7 +76,7 @@ extension UIButton{
         self.backgroundColor = UIColor.clear
         self.backgroundColor = bgColour
         self.setTitleColor(textColor , for: .normal)
-        self.titleLabel?.font = SetTheFont(fontName: fontName, size: fontSize)
+        self.titleLabel?.font = SetTheFont(fontName: fontName, size: fontSize + 3)
         self.setTitle(text, for: .normal)
     }
     

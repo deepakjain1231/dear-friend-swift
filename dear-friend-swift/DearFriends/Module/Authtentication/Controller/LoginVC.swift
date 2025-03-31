@@ -120,10 +120,11 @@ class LoginVC: BaseVC {
         self.btnTerms2.configureLable(bgColour: .clear, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 14.0, text: "Terms & conditions")
         
         self.btnLogin.configureLable(bgColour: .buttonBGColor, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 24.0, text: "Log In")
-        self.lblBiometrics.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 18.0, text: "Use Biometrics")
+        self.lblBiometrics.configureLable(textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 18.0, text: "Use Face ID")
 
         self.lblSocialTitle.configureLable(textAlignment: .center, textColor: .background, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16.0, text: "Or use social media account for log in")
-
+        self.btnBiometrics.backgroundColor = .clear
+        
         //SET VIEW
         self.viewEmail.viewCorneRadius(radius: 10)
         self.viewEmail.backgroundColor = .primary

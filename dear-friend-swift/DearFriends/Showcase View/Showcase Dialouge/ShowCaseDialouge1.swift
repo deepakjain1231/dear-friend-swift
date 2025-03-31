@@ -64,6 +64,7 @@ class ShowCaseDialouge1: UIViewController {
         
         addDropShadow(to: self.btn_music_Option, color: .white, opacity: 0.5, x: 0, y: 4, blur: 4)
         addInnerShadow(to: self.btn_music_Option, color: .white, opacity: 0.5, x: 0, y: 4, blur: 15)
+        
     }
     
     func start_OptionButton_Animations() {
@@ -102,7 +103,7 @@ class ShowCaseDialouge1: UIViewController {
         if self.screenFrom == "player" {
             self.img_Option.isHidden = false
             self.btn_Option.isHidden = false
-            self.start_OptionButton_Animations()
+//            self.start_OptionButton_Animations()
         }
         
         self.btn_music_Option.frame = self.btnMusicOptionFrame
@@ -237,7 +238,7 @@ extension ShowCaseDialouge1: UICollectionViewDelegate, UICollectionViewDataSourc
             cell.consraint_stack_bottom.constant = indexPath.row == 0 ? -50 : 50
             cell.img_arrow_1.isHidden = indexPath.row == 0 ? false : true
             cell.img_option.image = UIImage.init(named: "icon_showcase_2_bottom")
-            cell.img_option.frame = CGRect(x: screenWidth - 155, y: self.btn_music_Option.frame.origin.y - 45, width: 90, height: 172)
+            cell.img_option.frame = CGRect(x: self.btn_music_Option.frame.origin.x - 120, y: self.btn_music_Option.frame.origin.y - 35, width: 125, height: 200)
         }
         else {
             //Table View
@@ -287,7 +288,7 @@ extension ShowCaseDialouge1: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.arr_AudioList.count == 0 ? 1 : self.arr_AudioList.count
+        return 2//self.arr_AudioList.count == 0 ? 1 : self.arr_AudioList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -295,78 +296,64 @@ extension ShowCaseDialouge1: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         
         
-        if self.arr_AudioList.count == 0 {
-            cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 16, text: "Body Scan")
+        cell.view_BG.backgroundColor = .clear
+
+        if indexPath.row == 0 {
+            cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 16, text: "Progressive Breath Focus")
             cell.lblSub.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 10, text: "10:23 min")
             
-            cell.img.image = UIImage.init(named: "ic_temp3")
+            cell.img.image = UIImage.init(named: "icon_animation1")
+            
             cell.isUnFav = false
-            
             cell.vwPremius.isHidden = true
-            
-            
-            cell.progress.isHidden = true
-            cell.imgPlayed.isHidden = true
-            cell.progress.isHidden = true
-            cell.progress.tintColor = hexStringToUIColor(hex: "#838383")
-            cell.imgPlayed.isHidden = true
-           
-            //SET PIN
-            cell.isPined = true
+            cell.imgPlayed.isHidden = false
             cell.imgPin.isHidden = true
+
+            cell.progress.isHidden = false
+            cell.progress.tintColor = hexStringToUIColor(hex: "#838383")
+            cell.progress.setProgress(1, animated: true)
             
         }
         else {
-            let current = self.arr_AudioList[indexPath.row]
-            cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 16, text: current.title ?? "")
+            cell.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 16, text: "Full Body Release ")
+            cell.lblSub.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 10, text: "12:23 min")
             
-            let ddd = current.audioDuration?.doubleValue ?? 0
-            cell.lblSub.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 10, text: TimeInterval(ddd).formatDuration())
+            cell.img.image = UIImage.init(named: "icon_animation2")
             
-            GeneralUtility().setImage(imgView: cell.img, imgPath: current.image ?? "")
-            
-            cell.isUnFav = (current.isLiked ?? 0) == 1
-            
-            if current.forSTr == "premium" && !appDelegate.isPlanPurchased {
-                cell.vwPremius.isHidden = false
-            } else {
-                cell.vwPremius.isHidden = true
-            }
-            
-            cell.progress.isHidden = true
+            cell.isUnFav = false
+            cell.vwPremius.isHidden = true
             cell.imgPlayed.isHidden = true
-            if appDelegate.isPlanPurchased{
-                cell.progress.isHidden = !(current.audioProgress ?? "" != "")
-                if let currentTime = current.audioProgress, let duration = current.audioDuration {
-                    let progress = (Float(currentTime) ?? 0.0) / (Float(duration) ?? 0.0)
-                    cell.progress.tintColor = progress <= 1 ? hexStringToUIColor(hex: "#7884E0") : hexStringToUIColor(hex: "#838383")
-                    cell.imgPlayed.isHidden = progress <= 1
-                    cell.progress.setProgress(Float(progress), animated: true)
-                }
-            }
-           
-            //SET PIN
-            cell.isPined = ((current.pin_date ?? "") != "")
-            cell.imgPin.isHidden = !cell.isPined
+            cell.imgPin.isHidden = true
+
+            cell.progress.isHidden = false
+            cell.progress.tintColor = hexStringToUIColor(hex: "#7884E0")
+            cell.progress.setProgress(0.5, animated: true)
         }
-        cell.isCount1 = self.arr_AudioList.count == 1
         
         if tableView.accessibilityHint == "0" {
-            cell.startAnimations()
+//            cell.startAnimations()
             cell.lblTitle.isHidden = false
             cell.lblSub.isHidden = false
             cell.img.isHidden = false
+            cell.imgBG.isHidden = false
             cell.view_BG.backgroundColor = .primary
             cell.constraint_view_main_BG_top.constant = 12
             cell.constraint_view_main_BG_leading.constant = 12
             cell.constraint_view_main_BG_trelling.constant = 12
         }
         else {
-            cell.startAnimations_forButton()
+            if indexPath.row == 1 {
+                cell.btnmore.isHidden = true
+            }
+//            cell.startAnimations_forButton()
+            cell.progress.isHidden = true
             cell.lblTitle.isHidden = true
             cell.lblSub.isHidden = true
             cell.img.isHidden = true
+            
             cell.isUnFav = true
+            cell.imgBG.isHidden = true
+            cell.view_animateBG.isHidden = true
             cell.vwPremius.isHidden = true
             cell.imgPlayed.isHidden = true
             cell.isPined = true

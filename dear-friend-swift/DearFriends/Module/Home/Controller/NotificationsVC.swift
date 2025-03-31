@@ -226,6 +226,7 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
             let vc: NotificationPopupVC = NotificationPopupVC.instantiate(appStoryboard: .main)
             vc.titleText = current.pushTitle ?? ""
             vc.homeVM = self.homeVM
+            vc.file = current.file ?? ""
             vc.isFromPush = self.isFromPush
             vc.customID = "\(current.internalIdentifier ?? 0)"
             vc.reloadIndex = { index in

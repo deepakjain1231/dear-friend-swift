@@ -21,24 +21,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="160" height="219"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYo-Pa-Itd">
-                                <rect key="frame" x="16" y="186" width="128" height="21"/>
+                                <rect key="frame" x="16" y="193" width="128" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xW5-AS-EpB">
-                                <rect key="frame" x="12" y="12" width="136" height="162"/>
+                                <rect key="frame" x="5" y="5" width="150" height="183"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="xW5-AS-EpB" secondAttribute="trailing" constant="12" id="06D-GG-ocC"/>
-                            <constraint firstItem="MYo-Pa-Itd" firstAttribute="top" secondItem="xW5-AS-EpB" secondAttribute="bottom" constant="12" id="AuD-w0-02p"/>
+                            <constraint firstAttribute="trailing" secondItem="xW5-AS-EpB" secondAttribute="trailing" constant="5" id="06D-GG-ocC"/>
+                            <constraint firstItem="MYo-Pa-Itd" firstAttribute="top" secondItem="xW5-AS-EpB" secondAttribute="bottom" constant="5" id="AuD-w0-02p"/>
                             <constraint firstAttribute="trailing" secondItem="MYo-Pa-Itd" secondAttribute="trailing" constant="16" id="VTJ-tv-rbd"/>
-                            <constraint firstItem="xW5-AS-EpB" firstAttribute="leading" secondItem="Zmh-ir-P3o" secondAttribute="leading" constant="12" id="VxB-wy-f9X"/>
+                            <constraint firstItem="xW5-AS-EpB" firstAttribute="leading" secondItem="Zmh-ir-P3o" secondAttribute="leading" constant="5" id="VxB-wy-f9X"/>
                             <constraint firstItem="MYo-Pa-Itd" firstAttribute="leading" secondItem="Zmh-ir-P3o" secondAttribute="leading" constant="16" id="kbd-kR-yyp"/>
-                            <constraint firstAttribute="bottom" secondItem="MYo-Pa-Itd" secondAttribute="bottom" constant="12" id="p2s-BS-wT4"/>
-                            <constraint firstItem="xW5-AS-EpB" firstAttribute="top" secondItem="Zmh-ir-P3o" secondAttribute="top" constant="12" id="yvP-cU-NWW"/>
+                            <constraint firstAttribute="bottom" secondItem="MYo-Pa-Itd" secondAttribute="bottom" constant="5" id="p2s-BS-wT4"/>
+                            <constraint firstItem="xW5-AS-EpB" firstAttribute="top" secondItem="Zmh-ir-P3o" secondAttribute="top" constant="5" id="yvP-cU-NWW"/>
                         </constraints>
                     </view>
                 </subviews>

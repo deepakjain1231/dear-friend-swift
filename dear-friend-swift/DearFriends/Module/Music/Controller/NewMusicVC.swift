@@ -24,8 +24,8 @@ class NewMusicVC: UIViewController {
 //    @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnRepeat2: UIButton!
-    @IBOutlet weak var vwRepeat2: UIView!
-    @IBOutlet weak var vwRepeat: UIView!
+//    @IBOutlet weak var vwRepeat2: UIView!
+//    @IBOutlet weak var vwRepeat: UIView!
     @IBOutlet weak var acti2: UIActivityIndicatorView!
     @IBOutlet weak var stackMore: UIStackView!
     @IBOutlet weak var stackControls: UIStackView!
@@ -99,7 +99,10 @@ class NewMusicVC: UIViewController {
     var strHomeTitle : String = ""
     var strHomeImage : String = ""
     var is_setup_showcase: Bool = true
-
+    var isAddShowing : Bool = false
+    var isMusicStop : Bool = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTheView()
@@ -109,6 +112,12 @@ class NewMusicVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
             self.ShowCasePromptIfNeeded()
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.stopMusic), name: Notification.Name("MusicClose"), object: nil)
+    }
+    
+    @objc func stopMusic() {
+        self.isMusicStop = true
     }
     
     func set_TrackEvent(_ is_play: Bool) {
@@ -132,6 +141,7 @@ class NewMusicVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.isMusicStop = false
         if isFromFeedback {
             self.newplayer.resume()
             self.backGroundPlayer?.play()
@@ -141,11 +151,11 @@ class NewMusicVC: UIViewController {
     // MARK: - Other Functions
     
     func setupUI() {
-        self.btnPlay.setImage(UIImage(named: "icon_music_play"), for: .normal)
-        self.btnPlay.setImage(UIImage(named: "ic_pause_new"), for: .selected)
+        self.btnPlay.setImage(UIImage(named: "icon_playAudio"), for: .normal)
+        self.btnPlay.setImage(UIImage(named: "icon_pushAudio"), for: .selected)
         
-        self.btnLike.setImage(UIImage(named: "ic_like"), for: .normal)
-        self.btnLike.setImage(UIImage(named: "ic_liked"), for: .selected)
+        self.btnLike.setImage(UIImage(named: "icon_unlike"), for: .normal)
+        self.btnLike.setImage(UIImage(named: "icon_like"), for: .selected)
         self.btnLike.isSelected = false
         
         if (self.currentSong?.isLiked ?? 0) == 1 {
@@ -172,6 +182,7 @@ class NewMusicVC: UIViewController {
                     }
                 }
             } else {
+                self.isAddShowing = false
                 self.initPlayer()
                 let songURL = self.songs[self.currentSongIndex]
                 self.managePlayerBeforePlay(destinationUrl: songURL)
@@ -190,11 +201,15 @@ class NewMusicVC: UIViewController {
         
         CurrentUser.shared.arrOfDownloadedBGAudios = CurrentUser.shared.arrOfDownloadedBGAudios.uniqued()
         
+        self.btnRepeat2.isHidden = true
+        self.btnRepeat.isHidden = false
         if self.isFromDownload {
-            self.btnBG.isHidden = true
+//            self.btnBG.isHidden = true
             self.btnLike.isHidden = true
-            self.vwRepeat.isHidden = true
-            self.vwRepeat2.isHidden = false
+//            self.vwRepeat.isHidden = true
+//            self.vwRepeat2.isHidden = false
+            self.btnRepeat2.isHidden = false
+            self.btnRepeat.isHidden = true
             self.btn_option_top.isHidden = true
             for it in arrDownloadedBGAudio {
                 if let url = URL(string: it.file ?? "") {
@@ -233,6 +248,10 @@ class NewMusicVC: UIViewController {
     func updateThumb() {
   
         //self.consThumbHeight.constant = manageWidth(size: 330)
+        DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+            self.imgThumb.isHidden = false
+        })
+        
         self.imgThumb.layoutIfNeeded()
         self.imgThumb.layer.cornerRadius = self.imgThumb.frame.size.height / 2
     }
@@ -395,9 +414,9 @@ class NewMusicVC: UIViewController {
     func manageCustomAudioView() {
         self.btnBG.isHidden = true
         self.btnLike.isHidden = true
-        self.vwRepeat.isHidden = true
+        self.btnRepeat.isHidden = true
         self.btnMore.isHidden = true
-        self.vwRepeat2.isHidden = false
+        self.btnRepeat2.isHidden = false
     }
     
     func setupFullAD(success: @escaping (Bool) -> Void) {
@@ -430,7 +449,7 @@ class NewMusicVC: UIViewController {
             
             self.lblName.text = current.title ?? ""
             self.btnCat.setTitle(current.subCategory?.title ?? "", for: .normal)
-            self.btnBG.isHidden = current.is_background_audio == strNo || (isFromDownload ? self.arrDownloadedBGAudio.count == 0 : current.backgrounds?.count == 0 || self.currentSong?.backgrounds?.count == nil) || self.isHomePage
+            self.btnBG.isHidden = current.is_background_audio == strNo || (isFromDownload ? self.arrDownloadedBGAudio.count == 0 : current.backgrounds?.count == 0 || self.currentSong?.backgrounds?.count == nil) //|| self.isHomePage
             self.btnMore.isHidden = (current.file == "" || current.femaleAudioStr == "")
             self.lblNarrated.isHidden = current.narratedBy == ""
             
@@ -447,6 +466,7 @@ class NewMusicVC: UIViewController {
             if (current.narratedBy ?? "") != "" {
                 self.lblNarrated.text = "\(strGuidedBy)\(current.narratedBy ?? "")"
             }
+            self.imgThumb.isHidden = false
             if self.isFromCustom {
                 self.imgThumb.image = UIImage(named: "ic_custom_place")
                 
@@ -555,6 +575,7 @@ class NewMusicVC: UIViewController {
                 self.newplayer.resume()
                 self.set_TrackEvent(true)
             }
+            
             if !self.btnPlay.isSelected {
                 self.backGroundPlayer?.pause()
             } else {
@@ -564,22 +585,20 @@ class NewMusicVC: UIViewController {
     }
     
     @IBAction func btnNextTapped(_ sender: UIButton) {
-        self.audioPlayed()
-        if self.currentRepeatMode == .SingleRepeat {
-            self.currentRepeatMode = .AllRepeat
-            self.btnRepeat.setImage(UIImage(named: "ic_music_repeat_all"), for: .normal)
-            self.btnRepeat2.setImage(UIImage(named: "ic_music_repeat_all"), for: .normal)
+        
+        if self.currentSongIndex <= (self.songs.count - 1) {
+            self.currentSongIndex = self.currentSongIndex + 1
         }
+        
+//        self.audioPlayed()
         self.nextSong()
     }
     
     @IBAction func btnPreviousTapped(_ sender: UIButton) {
-        self.audioPlayed()
-        if self.currentRepeatMode == .SingleRepeat {
-            self.currentRepeatMode = .AllRepeat
-            self.btnRepeat.setImage(UIImage(named: "ic_music_repeat_all"), for: .normal)
-            self.btnRepeat2.setImage(UIImage(named: "ic_music_repeat_all"), for: .normal)
-        }
+//        if self.currentSongIndex != 0{
+//            self.currentSongIndex = self.currentSongIndex - 1
+//        }
+//        self.audioPlayed()
         self.previousSong()
     }
     
@@ -590,14 +609,10 @@ class NewMusicVC: UIViewController {
             self.btnRepeat2.setImage(UIImage(named: "ic_music_repeat_1"), for: .normal)
             
         } else if self.currentRepeatMode == .SingleRepeat {
-            self.currentRepeatMode = .AllRepeat
-            self.btnRepeat.setImage(UIImage(named: "ic_music_repeat_all"), for: .normal)
-            self.btnRepeat2.setImage(UIImage(named: "ic_music_repeat_all"), for: .normal)
-            
-        } else if self.currentRepeatMode == .AllRepeat {
             self.currentRepeatMode = .None
             self.btnRepeat.setImage(UIImage(named: "ic_music_repeat"), for: .normal)
             self.btnRepeat2.setImage(UIImage(named: "ic_music_repeat"), for: .normal)
+            
         }
     }
     
@@ -632,7 +647,9 @@ class NewMusicVC: UIViewController {
 
 // MARK: - Music Player
 
-extension NewMusicVC: AVAudioPlayerDelegate {
+extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
+   
+    
     
     func initPlayer() {
         if self.isFromDownload {
@@ -671,7 +688,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
         self.managePlayer()
         self.backGroundPlayer?.pause()
         
-        self.btnBG.isHidden = self.currentSong?.is_background_audio == strNo || (isFromDownload ? self.arrDownloadedBGAudio.count == 0 : self.currentSong?.backgrounds?.count == 0 || self.currentSong?.backgrounds?.count == nil) || isFromDownload
+        self.btnBG.isHidden = self.currentSong?.is_background_audio == strNo || (isFromDownload ? self.arrDownloadedBGAudio.count == 0 : self.currentSong?.backgrounds?.count == 0 || self.currentSong?.backgrounds?.count == nil) //|| isFromDownload
       
         self.btnMore.isHidden = (self.currentSong?.file == "" || self.currentSong?.femaleAudioStr == "")
         self.lblNarrated.isHidden = self.currentSong?.narratedBy == ""
@@ -700,35 +717,63 @@ extension NewMusicVC: AVAudioPlayerDelegate {
         }
     }
     
-    func managePremium() {
-        self.timer.invalidate()
+    func setAudio(isStop : Bool){
+//        self.btnPlay.isSelected = !isStop
+        if isStop {
+            self.btnPlay.isSelected = false
+            self.timer.invalidate()
+            self.newplayer.pause()
+            self.set_TrackEvent(false)
+        } else {
+            self.btnPlay.isSelected = true
+            self.timer.invalidate()
+            self.updateCurrentTimeLabel()
+            self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+                self.updateCurrentTimeLabel()
+            })
+            self.newplayer.resume()
+            self.set_TrackEvent(true)
+        }
+        
+        if !self.btnPlay.isSelected {
+            self.backGroundPlayer?.pause()
+        } else {
+            self.backGroundPlayer?.play()
+        }
+    }
+    
+    func setTheAudio(isAudioPlay: Bool) {
+        self.setAudio(isStop: false)
+    }
+    
+    func managePremium(isBgPremium: Bool = false) {
         
         var isPremim = (self.currentSong?.forSTr ?? "") == "premium"
         if self.isFromDownload {
             isPremim = (self.arrOfDownloads[self.currentSongIndex].forStr) == "premium"
         }
         
-        if isPremim && !appDelegate.isPlanPurchased {
-            
-            self.stackControls.alpha = 0.5
-            self.stackControls.isUserInteractionEnabled = false
-            self.stackMore.alpha = 0.5
-            self.stackMore.isUserInteractionEnabled = false
-            self.vwSlider.alpha = 0.5
-            self.vwSlider.isUserInteractionEnabled = false
-            
+        if (isPremim && !appDelegate.isPlanPurchased) || isBgPremium{
+
             let popupVC: CommonBottomPopupVC = CommonBottomPopupVC.instantiate(appStoryboard: .Profile)
-            popupVC.height = 260
+            popupVC.height = manageWidth(size: 280)
             popupVC.presentDuration = 0.5
             popupVC.dismissDuration = 0.5
             popupVC.leftStr = "Not Yet"
             popupVC.rightStr = "Proceed To Premium"
-            popupVC.titleStr = "To play this meditation, subcribe today!"
+            popupVC.titleStr = isBgPremium ? "Upgrade to premium to unlock this background sound and access a full library of immersive audio to enhance your practice." : "To play this meditation, subcribe today!"
             popupVC.noTapped = {
-                self.goBack(isGoingTab: true)
+                if isBgPremium == false{
+                    self.goBack(isGoingTab: true)
+                }
             }
             popupVC.yesTapped = {
+                self.setAudio(isStop: true)
+                
+                print(self.btnPlay.isSelected)
+                
                 let vc: SubscriptionVC = SubscriptionVC.instantiate(appStoryboard: .Profile)
+                vc.delegate = self
                 vc.hidesBottomBarWhenPushed = true
                 vc.isFromPlayer = true
                 vc.reloadView = {
@@ -781,7 +826,8 @@ extension NewMusicVC: AVAudioPlayerDelegate {
                 self.vwSlider.maximumValue = Float(self.currentDownload?.female_music_duration_secods ?? "") ?? 0
             }
             self.lblCurrentTime.text = "00:00"
-            
+            self.lblEndTime.text = TimeInterval(self.vwSlider.maximumValue).formatDuration(isForMusic: true)
+
             if self.currentDownload?.isForCustom == 1 {
                 self.btnMore.isHidden = true
             } else {
@@ -866,11 +912,13 @@ extension NewMusicVC: AVAudioPlayerDelegate {
             if !isPremium || appDelegate.isPlanPurchased {
                 self.audioVM.playMusic(audio_id: "\(self.currentSong?.internalIdentifier ?? 0)", audioProgress: "\(Float(ceil((self.vwSlider.value + 1))))") { _ in
                     if toBack {
+                        self.removeObserver()
                         self.backGroundPlayer?.pause()
                         self.goBack(isGoingTab: true)
                     }
                 } failure: { error in
                     if toBack {
+                        self.removeObserver()
                         self.backGroundPlayer?.pause()
                         self.goBack(isGoingTab: true)
                     }
@@ -878,6 +926,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
             }
         } else {
             if toBack {
+                self.removeObserver()
                 self.backGroundPlayer?.pause()
                 self.goBack(isGoingTab: true)
             }
@@ -905,6 +954,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
                 self.btnCat.isHidden = true
             }
             
+            self.imgThumb.isHidden = false
             if let music_image = self.currentDownload?.music_image {
                 self.imgThumb.image = UIImage(data: music_image)
             } else {
@@ -922,24 +972,7 @@ extension NewMusicVC: AVAudioPlayerDelegate {
         }
     }
    
-    func prepareForNextSong() {
-        if self.currentSongIndex == self.songs.count - 1 {
-            if self.currentRepeatMode == .AllRepeat {
-                self.currentSongIndex = 0
-            }
-        } else {
-            if self.currentSongIndex >= (self.songs.count - 1) {
-                if self.currentRepeatMode == .AllRepeat {
-                    self.currentSongIndex = 0
-                }
-            } else {
-                if self.currentRepeatMode != .SingleRepeat {
-                    self.currentSongIndex += 1
-                }
-                print("currentSongIndex += \(currentSongIndex)")
-            }
-        }
-    }
+
     
     func clearLockScreenInfo() {
         print("clearLockScreenInfo")
@@ -954,6 +987,8 @@ extension NewMusicVC: AVAudioPlayerDelegate {
     }
     
     func nextSong() {
+        
+        
         self.isPreviousTapped = false
         self.clearLockScreenInfo()
         self.timer.invalidate()
@@ -964,10 +999,8 @@ extension NewMusicVC: AVAudioPlayerDelegate {
         }
         self.newplayer.seek(to: currentTime)
         self.lblCurrentTime.text = formatTime(currentTime)
-//        self.prepareForNextSong()
         
         if !appDelegate.isPlanPurchased {
-            self.prepareForNextSong()
             self.SHOW_CUSTOM_LOADER()
             self.setupFullAD { success in
                 if success {
@@ -982,7 +1015,10 @@ extension NewMusicVC: AVAudioPlayerDelegate {
                 }
             }
         } else {
-            self.perfomeNext()
+            self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
+            self.dataBind()
+            self.initPlayer()
+
             let songURL = self.songs[self.currentSongIndex]
             var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
             if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
@@ -994,42 +1030,41 @@ extension NewMusicVC: AVAudioPlayerDelegate {
         }
     }
     
-    func perfomeNext() {
-        self.controller?.dismiss(animated: true)
-        if self.currentRepeatMode == .SingleRepeat {
-            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-                currentTime = 0
-            }
-            self.newplayer.seek(to: currentTime)
-            self.newplayer.resume()
-            
-        } else {
-            if self.currentSongIndex == self.songs.count - 1 {
-                if self.currentRepeatMode == .AllRepeat {
-                    self.currentSongIndex = 0
-                    self.dataBind()
-                    self.initPlayer()
-                } else {
-                    self.isTimeUpAndSongOver = true
-                }
-            } else {
-                if self.currentSongIndex >= (self.songs.count - 1) {
-                    if self.currentRepeatMode == .AllRepeat {
-                        self.currentSongIndex = 0
-                    }
-                } else {
-                    self.currentSongIndex += 1
-                    print("currentSongIndex += \(currentSongIndex)")
-                }
-                
-                self.dataBind()
-                self.initPlayer()
-            }
-        }
-    }
+//    func perfomeNext() {
+//        self.controller?.dismiss(animated: true)
+//        if self.currentRepeatMode == .SingleRepeat {
+//            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+//            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+//                currentTime = 0
+//            }
+//            self.newplayer.seek(to: currentTime)
+//            self.newplayer.resume()
+//            
+//        } else {
+//            if self.currentSongIndex == self.songs.count - 1 {
+//                if self.currentRepeatMode == .AllRepeat {
+//                    self.currentSongIndex = 0
+//                    self.dataBind()
+//                    self.initPlayer()
+//                } else {
+//                    self.isTimeUpAndSongOver = true
+//                }
+//            } else {
+//                if self.currentSongIndex >= (self.songs.count - 1) {
+//                    if self.currentRepeatMode == .AllRepeat {
+//                        self.currentSongIndex = 0
+//                    }
+//                } else {
+//                    self.currentSongIndex += 1
+//                    print("currentSongIndex += \(currentSongIndex)")
+//                }
+//                
+//            }
+//        }
+//    }
     
     func previousSong() {
+    
         self.isPreviousTapped = true
         self.timer.invalidate()
         updateCurrentTimeLabel()
@@ -1044,52 +1079,105 @@ extension NewMusicVC: AVAudioPlayerDelegate {
         self.newplayer.seek(to: currentTime)
         self.lblCurrentTime.text = formatTime(currentTime)
         
-        var isPremim = (self.currentSong?.forSTr ?? "") == "premium"
-        if self.isFromDownload {
-            isPremim = (self.currentDownload?.forStr) == "premium"
-        }
-        if isPremim && !appDelegate.isPlanPurchased {
-            self.managePremium()
-            
+//        var isPremim = (self.currentSong?.forSTr ?? "") == "premium"
+//        if self.isFromDownload {
+//            isPremim = (self.currentDownload?.forStr) == "premium"
+//        }
+//        
+        
+//        fsdsfsdf
+        
+        if !appDelegate.isPlanPurchased {
+            self.SHOW_CUSTOM_LOADER()
+            self.setupFullAD { success in
+                if success {
+                    self.showAD { success in
+                        self.HIDE_CUSTOM_LOADER()
+                        if success {
+                            self.initPlayer()
+                        }
+                    }
+                } else {
+                    self.HIDE_CUSTOM_LOADER()
+                }
+            }
         } else {
+            self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
+            self.dataBind()
+            self.initPlayer()
+
             let songURL = self.songs[self.currentSongIndex]
+            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+                currentTime = 0
+            }
+            self.newplayer.seek(to: currentTime)
+            self.lblCurrentTime.text = formatTime(currentTime)
             self.managePlayerBeforePlay(destinationUrl: songURL)
         }
+
     }
     
-    // MARK: AVAudioPlayerDelegate
+
     
+    // MARK: AVAudioPlayerDelegate
     @objc func updateCurrentTimeLabel() {
+    
+        if self.isMusicStop{
+            if let topVC = UIApplication.getTopViewController() {
+                if !(topVC is NewMusicVC){
+                    print("No full-screen AdMob ad is currently active.")
+                    
+                    self.removeObserver()
+                    self.backGroundPlayer?.pause()
+                    self.backGroundPlayer = nil
+                    
+                    self.clearLockScreenInfo()
+                    self.timer.invalidate()
+                    self.newplayer.pause()
+                    
+                    return
+                }
+            }
+        }
+
+        
+        
         let currentTime = self.newplayer.progress
         print("currentTime", currentTime)
         UserDefaults.standard.set("\(currentTime)", forKey: lastProgressKey)
         UserDefaults.standard.set("\(self.currentSong?.internalIdentifier ?? 0)", forKey: lastAudioIdKey)
         if Float(ceil((currentTime.rounded(toPlaces: 1)))) < self.vwSlider.maximumValue {
             self.lblCurrentTime.text = formatTime(currentTime)
-        } else if Float(ceil((currentTime.rounded(toPlaces: 1)))) >= Float(ceil((self.vwSlider.maximumValue))) {
-            self.audioPlayed(toBack: true)
-            self.isPreviousTapped = false
-            self.clearLockScreenInfo()
-            self.timer.invalidate()
-            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-                currentTime = 0
+        }
+
+        else {
+            if self.currentRepeatMode == .None {
+                self.audioPlayed(toBack: true)
+                self.isPreviousTapped = false
+                self.clearLockScreenInfo()
+                self.timer.invalidate()
+                var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+                if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+                    currentTime = 0
+                }
+                self.lblCurrentTime.text = formatTime(currentTime)
+                self.newplayer.seek(to: currentTime)
+                self.newplayer.pause()
             }
-            self.lblCurrentTime.text = formatTime(currentTime)
-            self.newplayer.seek(to: currentTime)
-            self.newplayer.pause()
-        } else {
-            self.audioPlayed(toBack: true)
-            self.isPreviousTapped = false
-            self.clearLockScreenInfo()
-            self.timer.invalidate()
-            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-                currentTime = 0
+            else{
+                if self.isFromDownload {
+                    self.setupUI()
+                }
+                else{
+                    let obj = self.audioVM.arrOfAudioList[self.currentSongIndex]
+                    obj.audioProgress = "0"
+                    self.audioVM.arrOfAudioList.remove(at: self.currentSongIndex)
+                    self.audioVM.arrOfAudioList.insert(obj, at: self.currentSongIndex)
+                    self.nextSong()
+                }
+                
             }
-            self.lblCurrentTime.text = formatTime(currentTime)
-            self.newplayer.seek(to: currentTime)
-            self.newplayer.pause()
         }
         
         MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = NSNumber(value: Double(currentTime))
@@ -1124,6 +1212,8 @@ extension NewMusicVC: AVAudioPlayerDelegate {
 extension NewMusicVC: GADBannerViewDelegate {
     
     func setupAd() {
+        self.isAddShowing = true
+        
         let adSize = GADAdSizeFromCGSize(CGSize(width: self.view.frame.size.width, height: 70))
         bannerView = GADBannerView(adSize: adSize)
         bannerView.adUnitID = Constant.BANNERAD
@@ -1169,6 +1259,7 @@ extension NewMusicVC: GADBannerViewDelegate {
         print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
         self.vwBanner.isHidden = true
         self.vwSpace.isHidden = false
+        self.isAddShowing = false
     }
     
     func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
@@ -1183,6 +1274,7 @@ extension NewMusicVC: GADBannerViewDelegate {
         print("bannerViewWillDIsmissScreen")
         self.vwBanner.isHidden = true
         self.vwSpace.isHidden = false
+        self.isAddShowing = false
     }
     
     func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
@@ -1213,6 +1305,8 @@ extension NewMusicVC: GADFullScreenContentDelegate {
         if self.isFromDownload {
             isPremim = (self.currentDownload?.forStr ?? "") == "premium"
         }
+        
+        self.isAddShowing = false
         if isPremim && !appDelegate.isPlanPurchased {
             self.managePremium()
             
@@ -1231,23 +1325,22 @@ extension NewMusicVC: PopMenuViewControllerDelegate, PopUpProtocol , UIPopoverPr
    
     func SelctMenuIndex(Index: Int, type: String) {
         if type.lowercased() == "premium" && !appDelegate.isPlanPurchased {
-            
-            let vc: SubscriptionVC = SubscriptionVC.instantiate(appStoryboard: .Profile)
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
-            
+            self.managePremium(isBgPremium: true)
         }
         else{
+            self.removeObserver()
+
             if self.backgrondSelec == Index {
                 self.backGroundPlayer?.pause()
                 self.backGroundPlayer = nil
                 self.backgrondSelec = -1
+
             } else {
                 self.backgrondSelec = Index
                 self.backGroundPlayer?.pause()
                 self.backGroundPlayer = nil
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                     self.manageBGPlayerBeforePlay(destinationUrl: self.songsForBG[Index])
                 }
             }
@@ -1260,7 +1353,7 @@ extension NewMusicVC: PopMenuViewControllerDelegate, PopUpProtocol , UIPopoverPr
             GeneralUtility().showErrorMessage(message: "Background music not downloaded")
             return
         }
-        
+
         self.arrOFTitle.removeAll()
         var arrType : [String] = []
         if self.isFromDownload {
@@ -1285,7 +1378,7 @@ extension NewMusicVC: PopMenuViewControllerDelegate, PopUpProtocol , UIPopoverPr
         popOverVC?.backgroundColor = hexStringToUIColor(hex: "#212159")
         popOverVC?.sourceView = sender
         popOverVC?.sourceRect = CGRect(x: -manageWidth(size: 60.0), y: (CGFloat(self.arrOFTitle.count) * manageWidth(size: 40.0))/2, width: 0, height: 0)
-        popVC.preferredContentSize = CGSize(width: manageWidth(size: 150.0), height: CGFloat(self.arrOFTitle.count) * manageWidth(size: 40.0))
+        popVC.preferredContentSize = CGSize(width: manageWidth(size: 150.0), height: CGFloat(self.arrOFTitle.count) * manageWidth(size: 45.0))
 
         popVC.modalTransitionStyle = .crossDissolve
         self.present(popVC, animated: true)
@@ -1333,7 +1426,7 @@ extension NewMusicVC: PopMenuViewControllerDelegate, PopUpProtocol , UIPopoverPr
         
         self.controller = PopMenuViewController(sourceView: sender, actions: arrays)
         // Customize appearance
-        self.controller?.contentView.backgroundColor = hexStringToUIColor(hex: "#776ADA")
+        self.controller?.contentView.backgroundColor = hexStringToUIColor(hex: "#7A7AFC")
         self.controller?.appearance.popMenuFont = Font(.installed(.Medium), size: .standard(.S14)).instance
         self.controller?.accessibilityLabel = "Background"
         
@@ -1366,7 +1459,7 @@ extension NewMusicVC: PopMenuViewControllerDelegate, PopUpProtocol , UIPopoverPr
         
         let controller = PopMenuViewController(sourceView: sender, actions: arrays)
         // Customize appearance
-        controller.contentView.backgroundColor = hexStringToUIColor(hex: "#776ADA")
+        controller.contentView.backgroundColor = hexStringToUIColor(hex: "#7A7AFC")
         controller.appearance.popMenuFont = Font(.installed(.Medium), size: .standard(.S14)).instance
         controller.accessibilityLabel = "Menu"
 
@@ -1592,16 +1685,17 @@ extension NewMusicVC {
         self.removeObserver()
         self.backGroundPlayer = nil
         if self.isFromDownload == false{
-            let playerItem2 = AVPlayerItem(url: finalURL)
-            self.backGroundPlayer = AVPlayer(playerItem: playerItem2)
-            self.backGroundPlayer?.volume = 0.8
-            self.backGroundPlayer?.playImmediately(atRate: 1.0)
-            self.loopVideo(videoPlayer: (self.backGroundPlayer)!)
             self.newplayer.resume()
-
         }
-        
+
+        let playerItem2 = AVPlayerItem(url: finalURL)
+        self.backGroundPlayer = AVPlayer(playerItem: playerItem2)
+        self.backGroundPlayer?.volume = 0.8
+        self.backGroundPlayer?.playImmediately(atRate: 1.0)
+        self.loopVideo(videoPlayer: (self.backGroundPlayer)!)
+
     }
+    
     
     
     func loopVideo(videoPlayer: AVPlayer) {
@@ -1771,11 +1865,7 @@ extension NewMusicVC: AudioPlayerDelegate {
     }
     
     func audioPlayerDidFinishPlaying(player: AudioPlayer, entryId: AudioEntryId, stopReason: AudioPlayerStopReason, progress: Double, duration: Double) {
-        
-//        print("audioPlayerDidFinishPlaying", stopReason)
-//        if stopReason != .userAction && !self.isPreviousTapped {
-//            self.nextSong()
-//        }
+  
     }
     
     func audioPlayerUnexpectedError(player: AudioPlayer, error: AudioPlayerError) {

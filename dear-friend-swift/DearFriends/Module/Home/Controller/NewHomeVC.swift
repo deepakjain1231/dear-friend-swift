@@ -46,10 +46,21 @@ class NewHomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isHomeScreen = true
+
         GADMobileAds.sharedInstance().start()
         self.setTheView()
         self.setupUI()
         self.showRatingPromptIfNeeded()
+        
+        
+        //OPEN NOTIFICATION SCREEN
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+
+            if dicNotificationData.count != 0{
+                GlobalConstants.appDelegate?.moveToNotificaitonScreen(dicData: dicNotificationData)
+            }
+        }
     }
     
     // MARK: - Other Functions
@@ -146,6 +157,8 @@ class NewHomeVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.post(name: Notification.Name("MusicClose"), object: nil)
+
         self.viewNotiIndicator.isHidden = appDelegate.unread_count == 0 ? true : false
         self.colleRec.reloadData()
         self.colleView.reloadData()
@@ -642,6 +655,21 @@ extension NewHomeVC: UITableViewDelegate, UITableViewDataSource {
 
 extension NewHomeVC : PreferenceProtocol{
     
+    //SHOW RATING POPUP
+    private func showRatingPromptIfNeeded() {
+        if shouldShowRatingPrompt() {
+            // Show your rating popup here
+            showRatingPopup()
+            let promptCount = UserDefaults.standard.integer(forKey: maxPromptCountKey)
+            // Update the last prompt date and increment the prompt count
+            UserDefaults.standard.set(Date(), forKey: lastPromptKey)
+            UserDefaults.standard.set(promptCount + 1, forKey: maxPromptCountKey)
+        }
+        else{
+            self.showPreferencePromptIfNeeded()
+        }
+    }
+    
     private func shouldShowRatingPrompt() -> Bool {
         // Check if the user has already rated the app (replace with your rating logic)
         if UserDefaults.standard.bool(forKey: userRatedApp) {
@@ -663,23 +691,11 @@ extension NewHomeVC : PreferenceProtocol{
         }
     }
 
-    private func showRatingPromptIfNeeded() {
-        if shouldShowRatingPrompt() {
-            // Show your rating popup here
-            showRatingPopup()
-            let promptCount = UserDefaults.standard.integer(forKey: maxPromptCountKey)
-            // Update the last prompt date and increment the prompt count
-            UserDefaults.standard.set(Date(), forKey: lastPromptKey)
-            UserDefaults.standard.set(promptCount + 1, forKey: maxPromptCountKey)
-        }
-        else{
-            self.showPreferencePromptIfNeeded()
-        }
-    }
+   
     
     
     func showRatingPopup() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             
             //POPUP
             let window = UIApplication.shared.keyWindow!
@@ -692,6 +708,17 @@ extension NewHomeVC : PreferenceProtocol{
     
     
     
+    
+    //SHOW PREFERNCE POPUP
+    private func showPreferencePromptIfNeeded() {
+        if shouldShowPreferencePrompt() {
+            // Show your rating popup here
+            showPreferencePopup()
+            // Update the last prompt date and increment the prompt count
+            UserDefaults.standard.set(Date(), forKey: lastPreferenceDate)
+        }
+    }
+    
     private func shouldShowPreferencePrompt() -> Bool {
       
         // Get the last prompt date and prompt count
@@ -701,21 +728,14 @@ extension NewHomeVC : PreferenceProtocol{
             let timeElapsed = Date().timeIntervalSince(lastPromptDate)
             
             // Check if 14 days have passed and the prompt count is less than the maximum
-            return timeElapsed >= 1 * 24 * 60 * 60
+            return timeElapsed >= 14 * 24 * 60 * 60
         } else {
             UserDefaults.standard.set(Date(), forKey: lastPreferenceDate)
             return false
         }
     }
     
-    private func showPreferencePromptIfNeeded() {
-        if shouldShowPreferencePrompt() {
-            // Show your rating popup here
-            showPreferencePopup()
-            // Update the last prompt date and increment the prompt count
-            UserDefaults.standard.set(Date(), forKey: lastPreferenceDate)
-        }
-    }
+   
     
     func showPreferencePopup() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

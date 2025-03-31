@@ -13,23 +13,25 @@ class AboutCreatorVC: BaseVC {
     
     // MARK: - OUTLETS
     @IBOutlet weak var lblNavTitle: UILabel!
-    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblsubTitle: UILabel!
-    @IBOutlet weak var viewBottomBG: UIView!
     @IBOutlet weak var music_slider: UISlider!
     @IBOutlet weak var lblrunningTime: UILabel!
     @IBOutlet weak var lblTotalTime: UILabel!
     @IBOutlet weak var btnPlayPause: UIButton!
     @IBOutlet weak var lbl_musicName: UILabel!
     
+    @IBOutlet weak var viewBG: UIView!
+    @IBOutlet weak var viewLine: UIView!
+    @IBOutlet weak var con_play: NSLayoutConstraint!
+
     var audioPlayer: AVPlayer?
     var playerItem: AVPlayerItem?
     var timeObserver: Any?
+    var isSetting : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTheView()
-        self.create_gradient()
         
         setupAudioPlayer()
         setupSlider()
@@ -37,27 +39,22 @@ class AboutCreatorVC: BaseVC {
     
     //SET THE VIEW
     func setTheView() {
+        self.con_play.constant = manageWidth(size: 37)
         
         //SET FONT
         self.lblNavTitle.configureLable(textColor: .white, fontName: GlobalConstants.OUTFIT_FONT_SemiBold, fontSize: 18, text: "About the Creator")
-        self.lblTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Regular, fontSize: 28, text: "Meet Your Guide")
         self.lblsubTitle.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 16, text: dic_aboutCreator.about ?? "")
         self.lblrunningTime.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: "00:00")
         self.lblTotalTime.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: "")
-        self.lbl_musicName.configureLable(textColor: hexStringToUIColor(hex: "D1D0D5"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 14, text: dic_aboutCreator.title ?? "")
+        self.lbl_musicName.configureLable(textColor: hexStringToUIColor(hex: "D1D0D5"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 20, text: "Listen to the Creator’s Story")
 
         self.lblTotalTime.text = formatTime(seconds: dic_aboutCreator.audio_duration ?? 0)
+        
+        //SET VIEW
+        self.viewBG.backgroundColor = .primary
+        self.viewLine.backgroundColor = .buttonBGColor
     }
-    
-    func create_gradient() {
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
-            if let gradientColor = CAGradientLayer.init(frame: self.viewBottomBG.frame, colors: About_GradientBGColors, direction: GradientDirection.Bottom).creatGradientImage() {
-                self.viewBottomBG.backgroundColor = UIColor.init(patternImage: gradientColor)
-                self.viewBottomBG.layoutIfNeeded()
-            }
-//        }
-    }
-    
+
     func setupAudioPlayer() {
         guard let url = URL(string: dic_aboutCreator.file ?? "") else {
             print("Invalid URL")
@@ -123,17 +120,17 @@ class AboutCreatorVC: BaseVC {
     @IBAction func playPauseButtonTapped(_ sender: UIButton) {
         if audioPlayer?.rate == 0 {
             audioPlayer?.play()
-            self.btnPlayPause.setImage(UIImage.init(named: "ic_pause_new"), for: .normal)
+            self.btnPlayPause.setImage(UIImage.init(named: "icon_GuidePlay"), for: .normal)
         } else {
             audioPlayer?.pause()
-            self.btnPlayPause.setImage(UIImage.init(named: "ic_music_play"), for: .normal)
+            self.btnPlayPause.setImage(UIImage.init(named: "icon_GuidePush"), for: .normal)
         }
     }
     
     @objc func playerDidFinishPlaying() {
         self.music_slider.value = 0
         self.lblrunningTime.text = "00:00"
-        self.btnPlayPause.setImage(UIImage.init(named: "ic_music_play"), for: .normal)
+        self.btnPlayPause.setImage(UIImage.init(named: "icon_GuidePush"), for: .normal)
     }
     
     deinit {
@@ -149,6 +146,6 @@ class AboutCreatorVC: BaseVC {
     
     @IBAction func btnBackTapped(_ sender: UIButton) {
         self.audioPlayer?.pause()
-        self.navigationController?.popViewController(animated: true)
+        self.goBack(isGoingTab: self.isSetting)
     }
 }

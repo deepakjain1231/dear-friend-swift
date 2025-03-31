@@ -20,7 +20,7 @@ class ExploreSubCategoryVC: BaseVC {
     var currentIndex = 0
     var homeVM = HomeViewModel()
     var strTitle : String = ""
-    var arrSize : [Float] = [160, 210, 200, 190]
+    var arrSize : [Float] = [170, 220, 210, 200]
     var previousSize : Float = 0
     // Extract unique numbers
 //    let uniqueNumbers = Array(Set(inputNumbers))

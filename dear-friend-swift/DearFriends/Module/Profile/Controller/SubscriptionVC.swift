@@ -11,9 +11,18 @@ import SwiftyStoreKit
 import SwiftDate
 import Mixpanel
 
+
+protocol SubscriptionProtocol : AnyObject {
+    func setTheAudio(isAudioPlay : Bool)
+}
+
 class SubscriptionVC: BaseVC {
-    
+    weak var delegate : SubscriptionProtocol? = nil
+
     // MARK: - OUTLETS
+//    @IBOutlet weak var con_logo: NSLayoutConstraint!
+    @IBOutlet weak var con_Price: NSLayoutConstraint!
+
     @IBOutlet weak var lblNavTitle: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var vwYearLeft: UIView!
@@ -27,22 +36,25 @@ class SubscriptionVC: BaseVC {
     @IBOutlet weak var lbl_plan4_title: UILabel!
     @IBOutlet weak var lbl_plan5_title: UILabel!
     @IBOutlet weak var lbl_plan6_title: UILabel!
-    
+    @IBOutlet weak var lbl_plan7_title: UILabel!
+
     @IBOutlet weak var lbl_plan1_subtitle: UILabel!
     @IBOutlet weak var lbl_plan2_subtitle: UILabel!
     @IBOutlet weak var lbl_plan3_subtitle: UILabel!
     @IBOutlet weak var lbl_plan4_subtitle: UILabel!
     @IBOutlet weak var lbl_plan5_subtitle: UILabel!
     @IBOutlet weak var lbl_plan6_subtitle: UILabel!
-    
+    @IBOutlet weak var lbl_plan7_subtitle: UILabel!
+
     @IBOutlet weak var lbl_monthly_plan: UILabel!
+    @IBOutlet weak var lbl_monthly_planDetails: UILabel!
     @IBOutlet weak var lbl_monthly_plan_Price: UILabel!
     @IBOutlet weak var lbl_monthly_plan_month: UILabel!
     
     @IBOutlet weak var lbl_yearly_plan: UILabel!
+    @IBOutlet weak var lbl_yearly_planDetails: UILabel!
     @IBOutlet weak var lbl_yearly_plan_Price: UILabel!
     @IBOutlet weak var lbl_yearly_plan_month: UILabel!
-    @IBOutlet weak var btn_recommended: UIButton!
     @IBOutlet weak var lbl_bottom_text: UILabel!
     @IBOutlet weak var btn_Pay: UIButton!
     @IBOutlet weak var btn_Restore: UIButton!
@@ -54,6 +66,7 @@ class SubscriptionVC: BaseVC {
     var isFromPlayer = false
     var goBack: voidCloser?
     var reloadView: voidCloser?
+    var isAudioPlay: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,14 +74,16 @@ class SubscriptionVC: BaseVC {
         self.setTheView()
         self.vwScroll.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 44, right: 0)
         
-        Mixpanel.mainInstance().track(event: Mixpanel_Event.UpgradePremium.rawValue, properties: nil)
     }
     
     //SET THE VIEW
     func setTheView() {
-        
+        //SET
+//        self.con_logo.constant = manageWidth(size: 220)
+        self.con_Price.constant = manageWidth(size: 105)
+
         //SET FONT
-        self.lblNavTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "My Subscription")
+        self.lblNavTitle.configureLable(textColor: .white, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "Subscription Options")
         self.lblTitle.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20, text: "Thank you for your consideration.\n\nThe Premium plan includes the following:")
         
         self.lbl_plan1_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Ad-Free Experience")
@@ -77,29 +92,32 @@ class SubscriptionVC: BaseVC {
         self.lbl_plan4_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Comprehensive Music Selection")
         self.lbl_plan5_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Nature Sounds Collection")
         self.lbl_plan6_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Background Audio Options")
-        
+        self.lbl_plan7_title.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 12, text: "Content Progress Bar")
+
         //SubTitles
-        self.lbl_plan1_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Enjoy uninterrupted access to your favorite meditations, music, and nature sounds.")
+        self.lbl_plan1_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Enjoy uninterrupted access to your favorite meditations, music, and nature sounds and sleep tools.")
         self.lbl_plan2_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Download and enjoy your favorite meditations and tracks anytime, anywhere.")
-        self.lbl_plan3_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Explore a growing collection of over 300 guided meditations across 30 unique categories, with new content added regularly.")
-        self.lbl_plan4_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Discover over 250 musical tracks, thoughtfully organized by instrument and style.")
-        self.lbl_plan5_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Immerse yourself in over 300 high-quality nature recordings from around the world.")
+        self.lbl_plan3_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Explore the full  collection of over 250 guided meditations across 30+ unique categories. (This figure includes all the content in “Sleep”)")
+        self.lbl_plan4_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Get full access to over 250 musical tracks, thoughtfully organized by instrument and style.")
+        self.lbl_plan5_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Unlock a library of over 300 high-quality nature recordings from around the world.")
         self.lbl_plan6_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "Enhance your experience with a full suite of background audio options designed to support relaxation and focus.")
-        
+        self.lbl_plan7_subtitle.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 12, text: "See your progress at a glance with the Content Progress Bar. A purple line shows how far you’ve listened, while a white check mark and subtle gray line appear when the content is complete. This gentle guide helps you easily continue where you left off, and also encourages you to revisit your favorites anytime you want.")
+
         
         self.lbl_monthly_plan.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 16, text: "Monthly plan")
+        self.lbl_monthly_planDetails.configureLable(textColor: hexStringToUIColor(hex: "FEFEFE").withAlphaComponent(0.6), fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 13, text: "Cancel anytime.")
         self.lbl_monthly_plan_month.configureLable(textColor: hexStringToUIColor(hex: "B2B1B9"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 14, text: "/month")
-        self.lbl_monthly_plan_Price.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 36, text: "$6.99")
+        self.lbl_monthly_plan_Price.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 36, text: "$7.99")
         
         self.lbl_yearly_plan.configureLable(textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 16, text: "Yearly plan")
+        self.lbl_yearly_planDetails.configureLable(textColor: hexStringToUIColor(hex: "FEFEFE").withAlphaComponent(0.6), fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 13, text: "Recommended -\nSAVE 37% off\nfrom $96 per\nyear.")
+        self.lbl_yearly_planDetails.numberOfLines = 0
         self.lbl_yearly_plan_month.configureLable(textColor: hexStringToUIColor(hex: "B2B1B9"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 14, text: "/year")
-        self.lbl_yearly_plan_Price.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 36, text: "$46.99")
+        self.lbl_yearly_plan_Price.configureLable(textColor: hexStringToUIColor(hex: "E4E1F8"), fontName: GlobalConstants.OUTFIT_FONT_Medium, fontSize: 36, text: "$59.00")
+                
+        self.lbl_bottom_text.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 20, text: "Access the entire app completely free for 7 days,")
         
-        self.btn_recommended.configureLable(bgColour: .secondary, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 14, text: "Recommended")
-        
-        self.lbl_bottom_text.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 20, text: "Access the entire app completely free for 7 days, we’re grateful for the opportunity to be a a part of your journey.")
-        
-        self.lbl_disclaimer.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 13, text: "Disclaimer:\nThe numbers provided on this page (e.g., over 250 musical tracks, over 300 nature sounds, and over 250 meditations) are estimates and subject to change. We are constantly improving and updating our content library, which may involve adding new content, removing older content, or replacing existing material. As a result, the exact number of available tracks, sounds, and meditations may fluctuate over time. We strive to maintain a high-quality experience for our users, and these changes are part of our ongoing commitment to improvement. Thank you for your understanding.")
+        self.lbl_disclaimer.configureLable(textAlignment: .center, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Regular, fontSize: 14, text: "Disclaimer:\nThe numbers provided on this page (e.g., over 250 musical tracks, over 300 nature sounds, and over 250 meditations) are estimates and subject to change. We are constantly improving and updating our content library, which may involve adding new content, removing older content, or replacing existing material. As a result, the exact number of available tracks, sounds, and meditations may fluctuate over time. We strive to maintain a high-quality experience for our users, and these changes are part of our ongoing commitment to improvement. Thank you for your understanding.")
         
         //SET VIEW
         self.vwMonth.borderWidth = 0
@@ -114,7 +132,7 @@ class SubscriptionVC: BaseVC {
         self.vwYear.backgroundColor = hexStringToUIColor(hex: "#776ADA")
         self.vwYearLeft.backgroundColor = hexStringToUIColor(hex: "#212159")
         
-        self.btn_Pay.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20.0, text: "Pay")
+        self.btn_Pay.configureLable(bgColour: .clear, textColor: .white, fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 20.0, text: "Subscribe Now")
         self.btn_Pay.backgroundColor = .buttonBGColor
         
         
@@ -129,6 +147,7 @@ class SubscriptionVC: BaseVC {
     @IBAction func btnBackTapped(_ sender: UIButton) {
         self.goBack(isGoingTab: true)
         if self.isFromPlayer {
+            self.delegate?.setTheAudio(isAudioPlay: self.isAudioPlay)
             self.goBack?()
         }
     }
@@ -138,6 +157,9 @@ class SubscriptionVC: BaseVC {
             GeneralUtility().showErrorMessage(message: "Please select plan to continue")
             return
         }
+        
+        Mixpanel.mainInstance().track(event: Mixpanel_Event.UpgradePremium.rawValue, properties: nil)
+
         self.purchase(atomically: true, planid: appDelegate.planIDs[self.index])
     }
     

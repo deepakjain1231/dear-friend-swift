@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 import SwiftyJSON
 import GoogleSignIn
-import FacebookCore
-import FacebookLogin
+//import FacebookCore
+//import FacebookLogin
 
 class AuthViewModel {
     
@@ -536,54 +536,54 @@ extension AuthViewModel {
     }
     
     func faceBookLogin(isFirstTime: Bool = false) {
-        let fbLoginManager : LoginManager = LoginManager()
-        fbLoginManager.logIn(permissions:   ["public_profile", "email"], from: self.vc!) { (fbloginresult, error) -> Void in
-            
-            if (error == nil) {
-                guard fbloginresult != nil else {
-                    return
-                }
-                
-                let permissionDictionary = [
-                    "fields" : "id,name,first_name,last_name,gender,email,birthday,picture.type(large)"]
-                let pictureRequest = GraphRequest(graphPath: "me", parameters: permissionDictionary)
-                
-                pictureRequest.start { connection, result, error in
-                    
-                    if error == nil {
-                        guard let result = result else { return }
-                        
-                        let results = JSON(result)
-                        print("Logged in : \(String(describing: results))")
-                        
-                        var parameters = [String:Any]()
-                        parameters["social_id"] = results["id"].stringValue
-                        let nameArray = results["name"].stringValue.components(separatedBy: " ")
-                        parameters["first_name"] = nameArray.first ?? ""
-                        parameters["last_name"] = nameArray.last ?? ""
-                        parameters[kemail] = results["email"].stringValue
-                        parameters["type"] = "facebook"
-                        parameters[kDeviceID] = UIDevice.current.identifierForVendor?.uuidString ?? ""
-                        parameters[kDeviceType] = kiOS
-                        parameters[kPushToken] = appDelegate.deviceToken
-                        
-                        self.firstName = nameArray.first ?? ""
-                        self.lastName = nameArray.last ?? ""
-                        self.email = results["email"].stringValue
-                        self.socialParams = parameters
-
-                        DispatchQueue.main.async {
-                            self.checkSocial()
-                        }
-                        
-                    } else {
-                        print("error \(String(describing: error.debugDescription))")
-                    }
-                }
-                let manager = LoginManager()
-                manager.logOut()
-            }
-        }
+//        let fbLoginManager : LoginManager = LoginManager()
+//        fbLoginManager.logIn(permissions:   ["public_profile", "email"], from: self.vc!) { (fbloginresult, error) -> Void in
+//            
+//            if (error == nil) {
+//                guard fbloginresult != nil else {
+//                    return
+//                }
+//                
+//                let permissionDictionary = [
+//                    "fields" : "id,name,first_name,last_name,gender,email,birthday,picture.type(large)"]
+//                let pictureRequest = GraphRequest(graphPath: "me", parameters: permissionDictionary)
+//                
+//                pictureRequest.start { connection, result, error in
+//                    
+//                    if error == nil {
+//                        guard let result = result else { return }
+//                        
+//                        let results = JSON(result)
+//                        print("Logged in : \(String(describing: results))")
+//                        
+//                        var parameters = [String:Any]()
+//                        parameters["social_id"] = results["id"].stringValue
+//                        let nameArray = results["name"].stringValue.components(separatedBy: " ")
+//                        parameters["first_name"] = nameArray.first ?? ""
+//                        parameters["last_name"] = nameArray.last ?? ""
+//                        parameters[kemail] = results["email"].stringValue
+//                        parameters["type"] = "facebook"
+//                        parameters[kDeviceID] = UIDevice.current.identifierForVendor?.uuidString ?? ""
+//                        parameters[kDeviceType] = kiOS
+//                        parameters[kPushToken] = appDelegate.deviceToken
+//                        
+//                        self.firstName = nameArray.first ?? ""
+//                        self.lastName = nameArray.last ?? ""
+//                        self.email = results["email"].stringValue
+//                        self.socialParams = parameters
+//
+//                        DispatchQueue.main.async {
+//                            self.checkSocial()
+//                        }
+//                        
+//                    } else {
+//                        print("error \(String(describing: error.debugDescription))")
+//                    }
+//                }
+//                let manager = LoginManager()
+//                manager.logOut()
+//            }
+//        }
     }
     
     func appleSignIN(isFirstTime: Bool = false) {
