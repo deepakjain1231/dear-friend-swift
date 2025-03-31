@@ -237,13 +237,15 @@ extension ExploreDetailsVC: UITableViewDataSource, UITableViewDelegate {
         
         if current.forSTr == "premium" && !appDelegate.isPlanPurchased {
             cell.vwPremius.isHidden = false
+            cell.btnmore.isHidden = true
         } else {
+            cell.btnmore.isHidden = false
             cell.vwPremius.isHidden = true
         }
         
         cell.progress.isHidden = true
         cell.imgPlayed.isHidden = true
-        if appDelegate.isPlanPurchased{
+        if appDelegate.isPlanPurchased {
             cell.progress.isHidden = !(current.audioProgress ?? "" != "")
             if let currentTime = current.audioProgress, let duration = current.audioDuration {
                 let progress = (Float(currentTime) ?? 0.0) / (Float(duration) ?? 0.0)

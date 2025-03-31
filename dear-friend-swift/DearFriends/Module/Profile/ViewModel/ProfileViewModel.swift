@@ -185,7 +185,11 @@ extension ProfileViewModel {
     func getPrefParams() -> [String: Any] {
         var dict = [String: Any]()
         
-        let finalArray = self.arrOfCategory.flatMap({$0.subCategory ?? []}).filter({$0.isSelect})
+        let theme_cat = self.arrOfCategory.flatMap({$0.themeCategory ?? []}).flatMap({$0.subCategory ?? []}).filter({$0.isSelect})
+
+        let sub_cat_array = self.arrOfCategory.flatMap({$0.subCategory ?? []}).filter({$0.isSelect})
+        
+        let finalArray = theme_cat + sub_cat_array
         
         var index = 0
         for it in finalArray {

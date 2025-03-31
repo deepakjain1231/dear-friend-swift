@@ -2448,6 +2448,82 @@ delete this stopover ?</string>
             </objects>
             <point key="canvasLocation" x="-34.351145038167935" y="577.46478873239437"/>
         </scene>
+        <!--Full ImageVC-->
+        <scene sceneID="mkk-jY-dVP">
+            <objects>
+                <viewController storyboardIdentifier="FullImageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MIG-M9-9EI" customClass="FullImageVC" customModule="Dear_Friends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WlL-0F-pbR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZX-3Y-f2d">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcP-Uj-Zf5">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xCD-2o-keh">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="xCD-2o-keh" firstAttribute="centerX" secondItem="FcP-Uj-Zf5" secondAttribute="centerX" id="FwU-R5-ut9"/>
+                                            <constraint firstAttribute="bottom" secondItem="xCD-2o-keh" secondAttribute="bottom" id="PaK-ej-JQH"/>
+                                            <constraint firstItem="xCD-2o-keh" firstAttribute="top" secondItem="FcP-Uj-Zf5" secondAttribute="top" id="bYz-Zr-AaY"/>
+                                            <constraint firstItem="xCD-2o-keh" firstAttribute="centerY" secondItem="FcP-Uj-Zf5" secondAttribute="centerY" id="bi2-OK-BHJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="xCD-2o-keh" secondAttribute="trailing" id="lzP-5r-oNc"/>
+                                            <constraint firstItem="xCD-2o-keh" firstAttribute="leading" secondItem="FcP-Uj-Zf5" secondAttribute="leading" id="y2u-tN-maO"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="FcP-Uj-Zf5" secondAttribute="bottom" id="DEg-4E-DoR"/>
+                                    <constraint firstItem="FcP-Uj-Zf5" firstAttribute="top" secondItem="SZX-3Y-f2d" secondAttribute="top" id="HLo-6A-Tvl"/>
+                                    <constraint firstAttribute="trailing" secondItem="FcP-Uj-Zf5" secondAttribute="trailing" id="XVl-1S-t40"/>
+                                    <constraint firstItem="FcP-Uj-Zf5" firstAttribute="leading" secondItem="SZX-3Y-f2d" secondAttribute="leading" id="ZMP-bo-UpL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="SecondCommonShadow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-ls-7tQ">
+                                <rect key="frame" x="341" y="71" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="QmR-am-idr"/>
+                                    <constraint firstAttribute="height" constant="30" id="v1U-D2-8p5"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic_close2"/>
+                                <connections>
+                                    <action selector="btnCloseTapped:" destination="MIG-M9-9EI" eventType="touchUpInside" id="auT-y1-Btr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jje-pN-Oqx"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="SZX-3Y-f2d" firstAttribute="leading" secondItem="Jje-pN-Oqx" secondAttribute="leading" id="14a-SD-0ml"/>
+                            <constraint firstAttribute="bottom" secondItem="SZX-3Y-f2d" secondAttribute="bottom" id="D3M-nF-Esg"/>
+                            <constraint firstItem="SZX-3Y-f2d" firstAttribute="top" secondItem="WlL-0F-pbR" secondAttribute="top" id="KOC-P2-9VZ"/>
+                            <constraint firstItem="Jje-pN-Oqx" firstAttribute="trailing" secondItem="SZX-3Y-f2d" secondAttribute="trailing" id="OSk-ak-17F"/>
+                            <constraint firstItem="Jje-pN-Oqx" firstAttribute="trailing" secondItem="GDc-ls-7tQ" secondAttribute="trailing" constant="22" id="bjI-xe-Lwm"/>
+                            <constraint firstItem="GDc-ls-7tQ" firstAttribute="top" secondItem="Jje-pN-Oqx" secondAttribute="top" constant="12" id="kk3-1B-czD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnClose" destination="GDc-ls-7tQ" id="Tnd-81-so4"/>
+                        <outlet property="img" destination="xCD-2o-keh" id="LZN-99-dan"/>
+                        <outlet property="scrollView" destination="FcP-Uj-Zf5" id="P65-v5-r1u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XhV-wZ-2FB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="218" y="1432"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_apple" width="48" height="48"/>

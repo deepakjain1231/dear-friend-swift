@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0004DF5C2D9AA0080002D5B8 /* MyPreferencesThemCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0004DF5B2D9AA0060002D5B8 /* MyPreferencesThemCatVC.swift */; };
+		0004DF5E2D9AB73D0002D5B8 /* FullImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0004DF5D2D9AB7340002D5B8 /* FullImageVC.swift */; };
 		0012B2AE2D184A06000B7AB9 /* MusicCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0012B2AD2D184A06000B7AB9 /* MusicCategoryCVC.swift */; };
 		0012B2B02D184A4E000B7AB9 /* MusicCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0012B2AF2D184A4E000B7AB9 /* MusicCategoryCVC.xib */; };
 		002F773C2D2126AF004431BD /* ShowCaseDialouge1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002F773B2D2126AF004431BD /* ShowCaseDialouge1.xib */; };
@@ -393,6 +395,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0004DF5B2D9AA0060002D5B8 /* MyPreferencesThemCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPreferencesThemCatVC.swift; sourceTree = "<group>"; };
+		0004DF5D2D9AB7340002D5B8 /* FullImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageVC.swift; sourceTree = "<group>"; };
 		0012B2AD2D184A06000B7AB9 /* MusicCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCategoryCVC.swift; sourceTree = "<group>"; };
 		0012B2AF2D184A4E000B7AB9 /* MusicCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCategoryCVC.xib; sourceTree = "<group>"; };
 		002F773A2D2126AF004431BD /* ShowCaseDialouge1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseDialouge1.swift; sourceTree = "<group>"; };
@@ -935,6 +939,7 @@
 				C56D08EB2D1C09CB00494BE3 /* SubsciptionDeleteVC.swift */,
 				29DF02812AE68EE400FAF987 /* SetReminderVC.swift */,
 				43EAD8552A12415000B58953 /* MyPreferencesVC.swift */,
+				0004DF5B2D9AA0060002D5B8 /* MyPreferencesThemCatVC.swift */,
 				438B1EF32A13A75E00DF9A3E /* MyHistoryVC.swift */,
 				4360556B2A0E7199002B6B66 /* SettingsVC.swift */,
 				43BB895E2A1397600018E7A2 /* MyReminderVC.swift */,
@@ -974,6 +979,7 @@
 			isa = PBXGroup;
 			children = (
 				291E0DA42BA44DF900DFEA24 /* NotificationPopupVC.swift */,
+				0004DF5D2D9AB7340002D5B8 /* FullImageVC.swift */,
 			);
 			path = Conroller;
 			sourceTree = "<group>";
@@ -2650,6 +2656,7 @@
 				BD91BBFD2CCA8ACE006B00E6 /* UnsafeMutablePointer+Helpers.swift in Sources */,
 				29CC6E3F29FFBEBA00638A05 /* AppButton.swift in Sources */,
 				298A89232B08CBA50029BF0C /* CustomAudioRequestListingModel.swift in Sources */,
+				0004DF5E2D9AB73D0002D5B8 /* FullImageVC.swift in Sources */,
 				29319D362B230DCC008BF681 /* AvailabilityDatesListModel.swift in Sources */,
 				29CC6E3C29FFBAF500638A05 /* OnbordingVC.swift in Sources */,
 				29A5DAB52AB4187F00D2A329 /* ScheduleTimeCVC.swift in Sources */,
@@ -2745,6 +2752,7 @@
 				BD91BBEF2CCA8ACE006B00E6 /* AudioRendererContext.swift in Sources */,
 				2998DD0A2AE142C60071A323 /* CreateStep1VC.swift in Sources */,
 				4337BA80294D812D0090E0A5 /* AppCommonTextField.swift in Sources */,
+				0004DF5C2D9AA0080002D5B8 /* MyPreferencesThemCatVC.swift in Sources */,
 				43908ADF2A25D2DC004F65CA /* HomeDataModel.swift in Sources */,
 				29AD52892A2F46D300512272 /* DownloadCoreDataModel.xcdatamodeld in Sources */,
 				C53A2B492D1537F200DB828D /* AppRatePopup.swift in Sources */,

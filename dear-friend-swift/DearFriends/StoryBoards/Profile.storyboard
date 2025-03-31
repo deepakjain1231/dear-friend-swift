@@ -2951,7 +2951,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adA-YH-Pdc">
-                                <rect key="frame" x="126.33333333333333" y="74.333333333333329" width="140.33333333333343" height="25.333333333333329"/>
+                                <rect key="frame" x="126.33333333333333" y="74.333333333333329" width="140.33333333333337" height="25.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -5337,6 +5337,100 @@ Please follow the steps on your device to manage your subscription.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mX-9o-Aik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4804" y="1354"/>
+        </scene>
+        <!--My Preferences Them CatVC-->
+        <scene sceneID="Sor-jD-wn8">
+            <objects>
+                <viewController storyboardIdentifier="MyPreferencesThemCatVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ex3-2X-SOC" customClass="MyPreferencesThemCatVC" customModule="Dear_Friends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eEn-XC-ccZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home_bg" translatesAutoresizingMaskIntoConstraints="NO" id="cES-QG-hf4">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpO-bu-HQ5">
+                                <rect key="frame" x="20" y="67" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UsY-5D-EvK"/>
+                                    <constraint firstAttribute="width" constant="40" id="lGA-3m-BGE"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="icon_back_dark"/>
+                                <connections>
+                                    <action selector="btnBackTapped:" destination="Ex3-2X-SOC" eventType="touchUpInside" id="iTq-7N-TT4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED8-dj-hFg">
+                                <rect key="frame" x="126.33333333333333" y="74.333333333333329" width="140.33333333333337" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LC4-s3-MWd">
+                                <rect key="frame" x="0.0" y="167" width="393" height="565"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ww9-HR-K0z" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
+                                <rect key="frame" x="20" y="752" width="353" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="6go-x0-orN"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Update"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="SuperBlack" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnSaveTapped:" destination="ecy-53-LRj" eventType="touchUpInside" id="OSJ-UQ-Y0D"/>
+                                    <action selector="btnSubmitTapped:" destination="Ex3-2X-SOC" eventType="touchUpInside" id="jBS-36-cpp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’ll use these preferences to recommend content to you that aligns with  your goals and interests" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czy-Bb-bdM">
+                                <rect key="frame" x="20" y="111.66666666666667" width="353" height="43.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sNL-BG-QSB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qpO-bu-HQ5" firstAttribute="leading" secondItem="sNL-BG-QSB" secondAttribute="leading" constant="20" id="17e-WT-hUK"/>
+                            <constraint firstItem="sNL-BG-QSB" firstAttribute="trailing" secondItem="LC4-s3-MWd" secondAttribute="trailing" id="3k5-or-qKv"/>
+                            <constraint firstItem="ED8-dj-hFg" firstAttribute="centerY" secondItem="qpO-bu-HQ5" secondAttribute="centerY" id="7nq-xH-oFI"/>
+                            <constraint firstItem="czy-Bb-bdM" firstAttribute="leading" secondItem="sNL-BG-QSB" secondAttribute="leading" constant="20" id="CwY-4z-ftV"/>
+                            <constraint firstItem="sNL-BG-QSB" firstAttribute="trailing" secondItem="ww9-HR-K0z" secondAttribute="trailing" constant="20" id="Jzs-BD-g3e"/>
+                            <constraint firstItem="LC4-s3-MWd" firstAttribute="leading" secondItem="sNL-BG-QSB" secondAttribute="leading" id="OtF-3t-bQX"/>
+                            <constraint firstAttribute="bottom" secondItem="cES-QG-hf4" secondAttribute="bottom" id="UEf-dN-qeU"/>
+                            <constraint firstItem="qpO-bu-HQ5" firstAttribute="top" secondItem="sNL-BG-QSB" secondAttribute="top" constant="8" id="a01-Np-59F"/>
+                            <constraint firstItem="czy-Bb-bdM" firstAttribute="top" secondItem="ED8-dj-hFg" secondAttribute="bottom" constant="12" id="a2E-cJ-7jE"/>
+                            <constraint firstItem="sNL-BG-QSB" firstAttribute="trailing" secondItem="czy-Bb-bdM" secondAttribute="trailing" constant="20" id="bVC-md-3oZ"/>
+                            <constraint firstItem="cES-QG-hf4" firstAttribute="top" secondItem="eEn-XC-ccZ" secondAttribute="top" id="eN8-46-ryZ"/>
+                            <constraint firstItem="sNL-BG-QSB" firstAttribute="trailing" secondItem="cES-QG-hf4" secondAttribute="trailing" id="fEc-mW-aNz"/>
+                            <constraint firstItem="ww9-HR-K0z" firstAttribute="leading" secondItem="sNL-BG-QSB" secondAttribute="leading" constant="20" id="lhi-3B-301"/>
+                            <constraint firstItem="sNL-BG-QSB" firstAttribute="bottom" secondItem="ww9-HR-K0z" secondAttribute="bottom" constant="12" id="mXF-ZV-oUJ"/>
+                            <constraint firstItem="LC4-s3-MWd" firstAttribute="top" secondItem="czy-Bb-bdM" secondAttribute="bottom" constant="12" id="nXB-s5-nXe"/>
+                            <constraint firstItem="ED8-dj-hFg" firstAttribute="centerX" secondItem="sNL-BG-QSB" secondAttribute="centerX" id="pIz-RB-SSk"/>
+                            <constraint firstItem="ww9-HR-K0z" firstAttribute="top" secondItem="LC4-s3-MWd" secondAttribute="bottom" constant="20" id="raC-10-JEb"/>
+                            <constraint firstItem="LC4-s3-MWd" firstAttribute="top" secondItem="qpO-bu-HQ5" secondAttribute="bottom" constant="60" id="v2T-Qc-TlD"/>
+                            <constraint firstItem="cES-QG-hf4" firstAttribute="leading" secondItem="sNL-BG-QSB" secondAttribute="leading" id="ziV-uI-Hxs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yQe-JC-2pp"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="updatesStatusBarAppearanceAutomatically" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="btn_Save" destination="ww9-HR-K0z" id="CYH-j7-lTL"/>
+                        <outlet property="lblTitle" destination="ED8-dj-hFg" id="RTW-Yz-UqO"/>
+                        <outlet property="tblMain" destination="LC4-s3-MWd" id="di9-XE-AO6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqR-IH-GRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1054" y="2011"/>
         </scene>
     </scenes>
     <resources>

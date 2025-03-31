@@ -223,28 +223,61 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
             
         } else if (current.pushType ?? 0) == 6 {
             self.isNavigateDone = false
-            let vc: NotificationPopupVC = NotificationPopupVC.instantiate(appStoryboard: .main)
-            vc.titleText = current.pushTitle ?? ""
-            vc.homeVM = self.homeVM
-            vc.file = current.file ?? ""
-            vc.isFromPush = self.isFromPush
-            vc.customID = "\(current.internalIdentifier ?? 0)"
-            vc.reloadIndex = { index in
-                self.isNavigateDone = false
-                self.homeVM.arrOfNotifications[index].read = 1
-                self.tblMain.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+
+            let notificationVC = NotificationPopupVC.instantiate(appStoryboard: .main)
+            let fullImageVC = FullImageVC.instantiate(appStoryboard: .main)
+
+            var vc: UIViewController = notificationVC
+
+            if (current.file ?? "") != "" {
+                vc = fullImageVC
                 
-                if appDelegate.unread_count > 0 {
-                    appDelegate.unread_count -= 1
-                    UIApplication.shared.applicationIconBadgeNumber = appDelegate.unread_count
+                if let fullImageVC = vc as? FullImageVC {
+                    fullImageVC.file = current.file ?? ""
+                    fullImageVC.homeVM = self.homeVM
+                    fullImageVC.isFromPush = self.isFromPush
+                    fullImageVC.customID = "\(current.internalIdentifier ?? 0)"
+                    
+                    fullImageVC.reloadIndex = { index in
+                        self.isNavigateDone = false
+                        self.homeVM.arrOfNotifications[index].read = 1
+                        self.tblMain.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+                        
+                        if appDelegate.unread_count > 0 {
+                            appDelegate.unread_count -= 1
+                            UIApplication.shared.applicationIconBadgeNumber = appDelegate.unread_count
+                        }
+                    }
                 }
             }
-            vc.descText = current.pushMessage ?? ""
+            else {
+                if let popupVC = vc as? NotificationPopupVC {
+                    popupVC.titleText = current.pushTitle ?? ""
+                    popupVC.descText = current.pushMessage ?? ""
+                    popupVC.file = current.file ?? ""
+                    popupVC.homeVM = self.homeVM
+                    popupVC.isFromPush = self.isFromPush
+                    popupVC.customID = "\(current.internalIdentifier ?? 0)"
+                    
+                    popupVC.reloadIndex = { index in
+                        self.isNavigateDone = false
+                        self.homeVM.arrOfNotifications[index].read = 1
+                        self.tblMain.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+                        
+                        if appDelegate.unread_count > 0 {
+                            appDelegate.unread_count -= 1
+                            UIApplication.shared.applicationIconBadgeNumber = appDelegate.unread_count
+                        }
+                    }
+                }
+            }
+            
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .overFullScreen
+
             DispatchQueue.main.async {
                 self.present(vc, animated: true, completion: nil)
-            }
+            }            
         }
     }
     
