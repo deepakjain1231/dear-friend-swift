@@ -55,6 +55,26 @@ class HomeViewModel {
 
 extension HomeViewModel {
     
+    func tokenParams() -> [String: Any] {
+        var params: [String: Any] = ["type": "ios",
+                                     kDeviceID: UIDevice.current.identifierForVendor?.uuidString ?? "",
+                                     kPushToken: appDelegate.deviceToken]
+            
+        return params
+    }
+    
+    func updateTokenAPI() {
+        let params = tokenParams()
+        ServiceManager.shared.postRequest(ApiURL: .tokenUpdate, parameters: params, isShowErrorAlerts: false) { response, isSuccess, error, statusCode in
+            
+            print("Success Response:", response)
+           
+            
+        } Failure: { response, isSuccess, error, statusCode in
+            print("Failure Response:", response)
+        }
+    }
+    
     func getHomeData(isShowLoader : Bool = false, success: @escaping (JSON) -> Void, failure: @escaping (_ errorResponse: JSON) -> Void) {
         
         ServiceManager.shared.getRequest(ApiURL: .homeData, parameters: [:], isShowLoader: isShowLoader) { response, isSuccess, error, statusCode in

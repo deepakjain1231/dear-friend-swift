@@ -2951,7 +2951,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adA-YH-Pdc">
-                                <rect key="frame" x="126.33333333333333" y="74.333333333333329" width="140.33333333333337" height="25.333333333333329"/>
+                                <rect key="frame" x="126.33333333333333" y="74.333333333333329" width="140.33333333333343" height="25.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -5362,7 +5362,7 @@ Please follow the steps on your device to manage your subscription.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED8-dj-hFg">
-                                <rect key="frame" x="126.33333333333333" y="74.333333333333329" width="140.33333333333337" height="25.333333333333329"/>
+                                <rect key="frame" x="133.66666666666666" y="76.666666666666671" width="125.66666666666666" height="21"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -5388,7 +5388,7 @@ Please follow the steps on your device to manage your subscription.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’ll use these preferences to recommend content to you that aligns with  your goals and interests" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czy-Bb-bdM">
-                                <rect key="frame" x="20" y="111.66666666666667" width="353" height="43.333333333333329"/>
+                                <rect key="frame" x="20" y="109.66666666666667" width="353" height="45.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

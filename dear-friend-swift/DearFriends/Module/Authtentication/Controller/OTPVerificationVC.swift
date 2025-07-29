@@ -116,6 +116,15 @@ class OTPVerificationVC: BaseVC {
         } else {
             self.authVM.registerAPI { _ in
                 CurrentUser.shared.getBackAudioList { _ in
+                    UserDefaults.standard.set(nil, forKey: intro_showcase_1_completed)
+                    UserDefaults.standard.set(nil, forKey: intro_showcase_1_SkippedDate)
+                    UserDefaults.standard.set(nil, forKey: intro_showcase_2_completed)
+                    UserDefaults.standard.set(nil, forKey: intro_showcase_2_SkippedDate)
+                    UserDefaults.standard.set(nil, forKey: userRatedApp)
+                    UserDefaults.standard.set(nil, forKey: lastPromptKey)
+                    UserDefaults.standard.set(nil, forKey: maxPromptCountKey)
+                    UserDefaults.standard.set(nil, forKey: lastPreferenceDate)
+                    
                     self.presentBiometricAlert()
                 } failure: { errorResponse in
                     // Handle error (if needed)

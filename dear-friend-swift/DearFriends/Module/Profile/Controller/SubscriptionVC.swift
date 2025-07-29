@@ -276,6 +276,9 @@ extension SubscriptionVC {
             default:
                 return alertWithTitle("Purchase failed", message: (error as NSError).localizedDescription)
             }
+        @unknown default:
+            return nil
+
         }
     }
     

@@ -357,8 +357,10 @@ extension MyHistoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
                 
                 if (current.forSTr ?? "") == "premium" && !appDelegate.isPlanPurchased {
                     cell.vwPremium.isHidden = false
+                    cell.btnMore.isHidden = true
                 } else {
                     cell.vwPremium.isHidden = true
+                    cell.btnMore.isHidden = false
                 }
 
                 cell.newMenuTapped = { ind in
@@ -445,8 +447,11 @@ extension MyHistoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
                 
                 if self.arrOfDownloads[indexPath.row].forStr == "premium" && !appDelegate.isPlanPurchased {
                     cell.vwPremium.isHidden = false
+                    cell.btnMore.isHidden = true
                 } else {
                     cell.vwPremium.isHidden = true
+                    cell.btnMore.isHidden = false
+                    
                 }
                 
                 cell.playTapped = {

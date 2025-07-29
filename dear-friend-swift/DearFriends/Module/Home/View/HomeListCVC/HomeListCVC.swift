@@ -20,9 +20,13 @@ class HomeListCVC: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         self.borderColor = .red
-
-        self.vwPremium.viewCorneRadius(radius: 10)
+        
         self.vwPremium.backgroundColor = .black.withAlphaComponent(0.6)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+            self.vwPremium.viewCorneRadius(radius: 10)
+            self.vwPremium.backgroundColor = .black.withAlphaComponent(0.6)
+        })
+        
         self.lblPremium.configureLable(textColor: .background?.withAlphaComponent(0.7), fontName: GlobalConstants.RAMBLA_FONT_Bold, fontSize: 16, text: "Unlock With Premium")
         self.isSkeletonable = true
         self.subviews.forEach { viw in

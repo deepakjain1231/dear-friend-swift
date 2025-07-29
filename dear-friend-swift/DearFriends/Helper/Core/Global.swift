@@ -35,7 +35,7 @@ let showcase_2_indx_1_subTitle = "Choose the perfect background sound to enhance
 
 //MARK: - Vimeo Access
 var BaseURL_Vimeo = "https://api.vimeo.com/videos/"
-var Kvimeo_access_Token = "Bearer 211e2d48814c3754f5c54417a75bdcce"
+var Kvimeo_access_Token = "Bearer f175f11de1fe5d8a06f9fda1143a3a77"
 
 var MIXPANEL_TOKEN = "a25acd8983c79ef15a967f4598d99037"// "9e517e56632fb5f4da649a6141c7dbe0"
 

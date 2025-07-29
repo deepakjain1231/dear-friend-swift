@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mYb-r9-KdT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mYb-r9-KdT">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -45,7 +45,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="yic-PV-uC9">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="666"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAz-dD-lBF">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="766.66666666666663"/>
@@ -298,12 +298,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="6ap-S5-X72">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7c2-r7-uAE" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1079.6666666666667"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Pg9-Ts-LWN">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pg9-Ts-LWN">
                                                 <rect key="frame" x="20" y="4" width="353" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="d86-Nu-NdI"/>
@@ -327,7 +327,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Login to Your Account" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92r-Ke-f8X" userLabel="Awaken Mind, Body, and Soul.">
-                                                        <rect key="frame" x="0.0" y="34.333333333333314" width="353" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="34.333333333333371" width="353" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                         <color key="textColor" red="0.73333333329999995" green="0.70980392160000005" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -581,7 +581,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Kwd-BJ-GDk">
-                                                <rect key="frame" x="140.66666666666666" y="959.66666666666663" width="112" height="50"/>
+                                                <rect key="frame" x="140.66666666666666" y="959.66666666666674" width="112" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djw-DA-yPz">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -892,10 +892,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_no_net" translatesAutoresizingMaskIntoConstraints="NO" id="7aa-yT-5d2">
-                                <rect key="frame" x="94.000000000000014" y="201.33333333333337" width="205.33333333333337" height="185"/>
+                                <rect key="frame" x="94.000000000000014" y="214" width="205.33333333333337" height="185"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OBk-X8-6vl">
-                                <rect key="frame" x="40" y="418.33333333333331" width="313" height="40.333333333333314"/>
+                                <rect key="frame" x="40" y="431" width="313" height="40.333333333333314"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ooops!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-Ru-jO8">
                                         <rect key="frame" x="83.666666666666671" y="0.0" width="145.66666666666663" height="0.0"/>
@@ -914,7 +914,7 @@ check your internet settings</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nXy-LL-117">
-                                <rect key="frame" x="71.666666666666686" y="670" width="250" height="128"/>
+                                <rect key="frame" x="71.666666666666686" y="636" width="250" height="128"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZA-wp-R8P">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="54"/>
@@ -1036,7 +1036,7 @@ check your internet settings</string>
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-Ms-KaL">
-                                <rect key="frame" x="178" y="749" width="37" height="37"/>
+                                <rect key="frame" x="178" y="715" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pWn-wB-qT7">
@@ -1091,12 +1091,12 @@ check your internet settings</string>
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="DZx-eH-919">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6E-tY-ZWh">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1265.6666666666667"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_register_top" translatesAutoresizingMaskIntoConstraints="NO" id="9iW-op-saw">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9iW-op-saw">
                                                 <rect key="frame" x="20" y="4" width="353" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="F4P-W7-dYR"/>
@@ -1120,7 +1120,7 @@ check your internet settings</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Create Your Account" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0X-4w-HI2" userLabel="Awaken Mind, Body, and Soul.">
-                                                        <rect key="frame" x="0.0" y="34.333333333333314" width="353" height="20.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="34.333333333333371" width="353" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                         <color key="textColor" red="0.73333333329999995" green="0.70980392160000005" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1677,12 +1677,12 @@ check your internet settings</string>
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="dHn-os-ZRh">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3co-DM-MxT">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="761.33333333333337"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_forgot_top" translatesAutoresizingMaskIntoConstraints="NO" id="B71-b5-A7J">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B71-b5-A7J">
                                                 <rect key="frame" x="20" y="4" width="353" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="HQL-b7-fLr"/>
@@ -1706,7 +1706,7 @@ check your internet settings</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t worry! It happens. Please enter the email which is associate with your account." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4R-Zq-Q5F" userLabel="Awaken Mind, Body, and Soul.">
-                                                        <rect key="frame" x="0.0" y="34.333333333333314" width="353" height="40.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="34.333333333333371" width="353" height="40.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                         <color key="textColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1872,12 +1872,12 @@ check your internet settings</string>
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="al5-FZ-5SW">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6h-qD-17y">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="726.66666666666663"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_otp_bg" translatesAutoresizingMaskIntoConstraints="NO" id="B7H-37-Ts6">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B7H-37-Ts6">
                                                 <rect key="frame" x="20" y="4" width="353" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="eo8-gS-AFY"/>
@@ -1901,7 +1901,7 @@ check your internet settings</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter 6-Digit code we just sent at your email address moinuddingmiraj03@gmail.com" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfl-oN-eoK">
-                                                        <rect key="frame" x="0.0" y="34.333333333333314" width="353" height="40.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="34.333333333333371" width="353" height="40.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                         <color key="textColor" red="0.73333333329999995" green="0.70980392160000005" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2058,7 +2058,7 @@ check your internet settings</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rW-pk-NUU">
-                                                        <rect key="frame" x="129.00000000000003" y="0.0" width="82" height="20"/>
+                                                        <rect key="frame" x="129" y="0.0" width="82" height="20"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Resend Code">
@@ -2173,10 +2173,31 @@ check your internet settings</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIy-M2-LOO">
-                                <rect key="frame" x="20" y="119.66666666666669" width="353" height="638"/>
+                                <rect key="frame" x="20" y="388" width="353" height="126"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QCj-5S-GtV">
+                                        <rect key="frame" x="30" y="16" width="293" height="94"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUt-0S-XBe">
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="45.666666666666664"/>
+                                                <string key="text">Are you sure you want to
+delete this stopover ?</string>
+                                                <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-w4-mLi">
+                                                <rect key="frame" x="0.0" y="53.666666666666686" width="293" height="40.333333333333343"/>
+                                                <string key="text">Are you sure you want to
+delete this stopover ?</string>
+                                                <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
+                                                <color key="textColor" red="0.81960784313725488" green="0.81568627450980391" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjT-9y-qnH">
-                                        <rect key="frame" x="307" y="11.999999999999986" width="30" height="30"/>
+                                        <rect key="frame" x="307" y="12" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="Ap3-47-7Bf"/>
                                             <constraint firstAttribute="height" constant="30" id="Arq-Df-zZw"/>
@@ -2187,46 +2208,15 @@ check your internet settings</string>
                                             <action selector="btnCloseTapped:" destination="rbU-XU-ak5" eventType="touchUpInside" id="4dX-tO-hvu"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QCj-5S-GtV">
-                                        <rect key="frame" x="50" y="11.999999999999986" width="253" height="94"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUt-0S-XBe">
-                                                <rect key="frame" x="0.0" y="0.0" width="253" height="45.666666666666664"/>
-                                                <string key="text">Are you sure you want to
-delete this stopover ?</string>
-                                                <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-w4-mLi">
-                                                <rect key="frame" x="0.0" y="53.666666666666686" width="253" height="40.333333333333343"/>
-                                                <string key="text">Are you sure you want to
-delete this stopover ?</string>
-                                                <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
-                                                <color key="textColor" red="0.81960784313725488" green="0.81568627450980391" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vSx-4p-mUD">
-                                        <rect key="frame" x="0.0" y="118" width="353" height="520"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="520" id="Oi0-uO-hMh"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14509803921568626" green="0.10588235294117647" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="QCj-5S-GtV" firstAttribute="leading" secondItem="kIy-M2-LOO" secondAttribute="leading" constant="50" id="048-3O-3Wr"/>
-                                    <constraint firstItem="vSx-4p-mUD" firstAttribute="top" secondItem="QCj-5S-GtV" secondAttribute="bottom" constant="12" id="0gd-XA-oc8"/>
+                                    <constraint firstItem="QCj-5S-GtV" firstAttribute="leading" secondItem="kIy-M2-LOO" secondAttribute="leading" constant="30" id="048-3O-3Wr"/>
                                     <constraint firstAttribute="trailing" secondItem="pjT-9y-qnH" secondAttribute="trailing" constant="16" id="5xN-OB-x9E"/>
-                                    <constraint firstAttribute="bottom" secondItem="vSx-4p-mUD" secondAttribute="bottom" id="MpM-UA-Izx"/>
-                                    <constraint firstItem="vSx-4p-mUD" firstAttribute="leading" secondItem="kIy-M2-LOO" secondAttribute="leading" id="Pp8-OD-IjP"/>
                                     <constraint firstItem="pjT-9y-qnH" firstAttribute="top" secondItem="kIy-M2-LOO" secondAttribute="top" constant="12" id="Wtu-1x-T5r"/>
-                                    <constraint firstAttribute="trailing" secondItem="QCj-5S-GtV" secondAttribute="trailing" constant="50" id="dw5-ow-gCH"/>
-                                    <constraint firstItem="QCj-5S-GtV" firstAttribute="top" secondItem="kIy-M2-LOO" secondAttribute="top" constant="12" id="rY0-LC-bkw"/>
-                                    <constraint firstAttribute="trailing" secondItem="vSx-4p-mUD" secondAttribute="trailing" id="y0e-e7-g9b"/>
+                                    <constraint firstAttribute="trailing" secondItem="QCj-5S-GtV" secondAttribute="trailing" constant="30" id="dw5-ow-gCH"/>
+                                    <constraint firstItem="QCj-5S-GtV" firstAttribute="top" secondItem="kIy-M2-LOO" secondAttribute="top" constant="16" id="rY0-LC-bkw"/>
+                                    <constraint firstAttribute="bottom" secondItem="QCj-5S-GtV" secondAttribute="bottom" constant="16" id="wr1-n8-8t5"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2241,13 +2231,13 @@ delete this stopover ?</string>
                         <constraints>
                             <constraint firstItem="kIy-M2-LOO" firstAttribute="centerY" secondItem="q1q-bc-o0o" secondAttribute="centerY" id="4w4-mO-u2q"/>
                             <constraint firstItem="kIy-M2-LOO" firstAttribute="centerX" secondItem="q1q-bc-o0o" secondAttribute="centerX" id="Cy5-yU-wwl"/>
+                            <constraint firstItem="q1q-bc-o0o" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kIy-M2-LOO" secondAttribute="bottom" constant="20" id="Mbl-wn-Iqg"/>
                             <constraint firstItem="kIy-M2-LOO" firstAttribute="leading" secondItem="q1q-bc-o0o" secondAttribute="leading" constant="20" id="cWX-8s-kXs"/>
+                            <constraint firstItem="kIy-M2-LOO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="q1q-bc-o0o" secondAttribute="top" constant="20" id="k4g-3T-qcl"/>
                             <constraint firstItem="q1q-bc-o0o" firstAttribute="trailing" secondItem="kIy-M2-LOO" secondAttribute="trailing" constant="20" id="qBL-aR-Qy1"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="con_img" destination="Oi0-uO-hMh" id="d7K-yf-90T"/>
-                        <outlet property="img" destination="vSx-4p-mUD" id="uBm-hu-QYY"/>
                         <outlet property="lblSub" destination="c8a-w4-mLi" id="bNO-no-y7j"/>
                         <outlet property="lblTitle" destination="FUt-0S-XBe" id="tgy-8f-Nbv"/>
                     </connections>
@@ -2268,7 +2258,7 @@ delete this stopover ?</string>
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6h-xA-lXJ">
-                                <rect key="frame" x="20" y="75" width="40" height="40"/>
+                                <rect key="frame" x="20" y="134" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="AqH-QR-hp4"/>
                                     <constraint firstAttribute="height" constant="40" id="rr3-Dt-q5w"/>
@@ -2280,16 +2270,16 @@ delete this stopover ?</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About the Creator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egw-8C-JL2">
-                                <rect key="frame" x="114.33333333333333" y="82.333333333333329" width="164.33333333333337" height="25.333333333333329"/>
+                                <rect key="frame" x="114.33333333333333" y="141.33333333333334" width="164.33333333333337" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZt-Cu-587">
-                                <rect key="frame" x="0.0" y="130" width="393" height="688"/>
+                                <rect key="frame" x="0.0" y="189" width="393" height="595"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMa-SO-XF7">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="688"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="595"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7h-9g-fQO">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="234"/>
@@ -2491,7 +2481,7 @@ delete this stopover ?</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-ls-7tQ">
-                                <rect key="frame" x="341" y="71" width="30" height="30"/>
+                                <rect key="frame" x="341" y="130" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="QmR-am-idr"/>
                                     <constraint firstAttribute="height" constant="30" id="v1U-D2-8p5"/>
@@ -2535,15 +2525,11 @@ delete this stopover ?</string>
         <image name="ic_down" width="20.333333969116211" height="20"/>
         <image name="ic_eye_hidden" width="20" height="20"/>
         <image name="ic_fb" width="48" height="48"/>
-        <image name="ic_forgot_top" width="332.33334350585938" height="279"/>
         <image name="ic_google" width="48" height="48"/>
         <image name="ic_home_bg" width="375" height="812"/>
-        <image name="ic_login_bg" width="330.66665649414062" height="278"/>
         <image name="ic_next" width="56" height="56"/>
         <image name="ic_no_net" width="205.33332824707031" height="185"/>
         <image name="ic_on_logo" width="70" height="70"/>
-        <image name="ic_otp_bg" width="332" height="279"/>
-        <image name="ic_register_top" width="332" height="279"/>
         <image name="ic_right_arroe_with_bg" width="9" height="9"/>
         <image name="ic_uncheck" width="20" height="20.333333969116211"/>
         <image name="icon_GuidePush" width="43" height="43.333332061767578"/>
@@ -2562,7 +2548,7 @@ delete this stopover ?</string>
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

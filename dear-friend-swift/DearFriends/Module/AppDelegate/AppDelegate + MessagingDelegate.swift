@@ -122,11 +122,15 @@ extension AppDelegate : MessagingDelegate{
             print("Dismiss Action")
         case UNNotificationDefaultActionIdentifier:
             print("Select")
-            if isHomeScreen{
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    self.moveToNotificaitonScreen(dicData: dicNotificationData)
+            if (CurrentUser.shared.user) != nil{
+                if isHomeScreen{
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        self.moveToNotificaitonScreen(dicData: dicNotificationData)
+                    }
                 }
+
             }
+
         default:
             print("default")
         }

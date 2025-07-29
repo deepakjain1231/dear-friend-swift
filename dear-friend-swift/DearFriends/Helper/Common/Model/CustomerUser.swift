@@ -44,6 +44,7 @@ class CurrentUser {
             appDelegate.isPlanPurchased = false
             CurrentUser.shared.clear()
             appDelegate.setLoginRoot()
+            CurrentUser.shared.user = nil
         } failure: { errorResponse in
             
         }

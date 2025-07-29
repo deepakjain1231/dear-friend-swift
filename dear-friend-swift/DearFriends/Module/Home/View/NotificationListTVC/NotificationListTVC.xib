@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,7 +30,7 @@
                         <rect key="frame" x="12" y="6" width="328" height="78.333333333333329"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_notification_white" translatesAutoresizingMaskIntoConstraints="NO" id="G4h-Te-O3t">
-                                <rect key="frame" x="12" y="24.333333333333329" width="30" height="30"/>
+                                <rect key="frame" x="12" y="20" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0Vx-4l-2yc"/>
                                     <constraint firstAttribute="width" secondItem="G4h-Te-O3t" secondAttribute="height" multiplier="1:1" id="r3L-pW-Hyk"/>
@@ -63,6 +63,10 @@
                                 <color key="textColor" red="0.82352941176470584" green="0.80392156862745101" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOw-Mg-ldb">
+                                <rect key="frame" x="2" y="10" width="50" height="50"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="primary"/>
                         <constraints>
@@ -71,12 +75,16 @@
                             <constraint firstItem="mnv-pg-spx" firstAttribute="leading" secondItem="G4h-Te-O3t" secondAttribute="trailing" constant="15" id="Bzo-nX-tTZ"/>
                             <constraint firstItem="jlg-yz-Fzl" firstAttribute="top" secondItem="e7H-5q-Djf" secondAttribute="top" constant="12" id="GKS-Qo-gKa"/>
                             <constraint firstItem="wnR-rz-ITe" firstAttribute="top" secondItem="mnv-pg-spx" secondAttribute="bottom" constant="2" id="KQ2-XZ-ylO"/>
+                            <constraint firstItem="AOw-Mg-ldb" firstAttribute="top" secondItem="G4h-Te-O3t" secondAttribute="top" constant="-10" id="PHh-k8-daA"/>
                             <constraint firstItem="G4h-Te-O3t" firstAttribute="leading" secondItem="e7H-5q-Djf" secondAttribute="leading" constant="12" id="R6b-um-T2P"/>
                             <constraint firstItem="jlg-yz-Fzl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mnv-pg-spx" secondAttribute="trailing" constant="12" id="cjr-hi-zwY"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wnR-rz-ITe" secondAttribute="trailing" constant="12" id="f1k-qV-Vat"/>
                             <constraint firstItem="wnR-rz-ITe" firstAttribute="leading" secondItem="mnv-pg-spx" secondAttribute="leading" id="gXR-DL-ELR"/>
                             <constraint firstItem="mnv-pg-spx" firstAttribute="top" secondItem="e7H-5q-Djf" secondAttribute="top" constant="20" id="hdO-8u-rFF"/>
-                            <constraint firstItem="G4h-Te-O3t" firstAttribute="centerY" secondItem="e7H-5q-Djf" secondAttribute="centerY" id="swd-KP-4QD"/>
+                            <constraint firstItem="AOw-Mg-ldb" firstAttribute="bottom" secondItem="G4h-Te-O3t" secondAttribute="bottom" constant="10" id="nwC-IT-zoG"/>
+                            <constraint firstItem="G4h-Te-O3t" firstAttribute="top" secondItem="mnv-pg-spx" secondAttribute="top" id="oIG-wt-nwK"/>
+                            <constraint firstItem="AOw-Mg-ldb" firstAttribute="trailing" secondItem="G4h-Te-O3t" secondAttribute="trailing" constant="10" id="r8v-Jn-cDi"/>
+                            <constraint firstItem="AOw-Mg-ldb" firstAttribute="leading" secondItem="G4h-Te-O3t" secondAttribute="leading" constant="-10" id="xUf-kr-6vL"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -97,6 +105,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="btnClicked" destination="AOw-Mg-ldb" id="fuq-UL-0JH"/>
+                <outlet property="con_img" destination="0Vx-4l-2yc" id="cnF-im-Tqu"/>
+                <outlet property="imgView" destination="G4h-Te-O3t" id="jsj-yI-cQZ"/>
                 <outlet property="lblMsg" destination="wnR-rz-ITe" id="t3N-te-Lwz"/>
                 <outlet property="lblTime" destination="jlg-yz-Fzl" id="avD-Th-nNT"/>
                 <outlet property="lblTitle" destination="mnv-pg-spx" id="kNS-FL-EKw"/>
@@ -108,7 +119,7 @@
     <resources>
         <image name="icon_notification_white" width="24" height="24"/>
         <namedColor name="primary">
-            <color red="0.054999999701976776" green="0.024000000208616257" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.054901960784313725" green="0.023529411764705882" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

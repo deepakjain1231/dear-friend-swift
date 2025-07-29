@@ -689,6 +689,8 @@ extension ExploreDetailsVC: delegate_done_showcase {
         else if action == "done" {
             UserDefaults.standard.set(true, forKey: intro_showcase_1_completed)
         }
+        
+        
         self.is_showcaseOpen = false
         self.tblMain.reloadData()
     }

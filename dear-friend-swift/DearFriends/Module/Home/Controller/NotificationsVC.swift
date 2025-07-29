@@ -165,12 +165,67 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
                 cell.vwMain.backgroundColor = .primary
             }
             
+            
+            //SET IMAGE
+            cell.btnClicked.isHidden = true
+            cell.con_img.constant = 30
+            cell.imgView.image = UIImage(named: "icon_notification_white")
+            if (current.file ?? "") != "" {
+//                cell.btnClicked.isHidden = false
+                cell.con_img.constant = 50
+                
+                GeneralUtility().setImage(imgView: cell.imgView, imgPath: current.file ?? "")
+                
+                // BUTTON ACTION
+//                cell.btnClicked.tag = indexPath.row
+//                cell.btnClicked.addTarget(self, action: #selector(self.btnImgClicked(_:)), for: .touchUpInside)
+
+            }
+            
             cell.selectionStyle = .none
             cell.layoutIfNeeded()
             return cell
         }
     }
         
+//    @objc func btnImgClicked(_ sender : UIButton) {
+//        let notificationVC = NotificationPopupVC.instantiate(appStoryboard: .main)
+//        let fullImageVC = FullImageVC.instantiate(appStoryboard: .main)
+//        let current = self.homeVM.arrOfNotifications[sender.tag]
+//
+//        var vc: UIViewController = notificationVC
+//
+//        if (current.file ?? "") != "" {
+//            vc = fullImageVC
+//            
+//            if let fullImageVC = vc as? FullImageVC {
+//                fullImageVC.file = current.file ?? ""
+//                fullImageVC.homeVM = self.homeVM
+//                fullImageVC.isFromPush = self.isFromPush
+//                fullImageVC.customID = "\(current.internalIdentifier ?? 0)"
+//                
+//                fullImageVC.reloadIndex = { index in
+//                    self.isNavigateDone = false
+//                    self.homeVM.arrOfNotifications[index].read = 1
+//                    self.tblMain.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+//                    
+//                    if appDelegate.unread_count > 0 {
+//                        appDelegate.unread_count -= 1
+//                        UIApplication.shared.applicationIconBadgeNumber = appDelegate.unread_count
+//                    }
+//                }
+//            }
+//            vc.modalTransitionStyle = .crossDissolve
+//            vc.modalPresentationStyle = .overFullScreen
+//
+//            DispatchQueue.main.async {
+//                self.present(vc, animated: true, completion: nil)
+//            }
+//
+//        }
+//    }
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -254,7 +309,7 @@ extension NotificationsVC: UITableViewDataSource, UITableViewDelegate {
                 if let popupVC = vc as? NotificationPopupVC {
                     popupVC.titleText = current.pushTitle ?? ""
                     popupVC.descText = current.pushMessage ?? ""
-                    popupVC.file = current.file ?? ""
+//                    popupVC.file = current.file ?? ""
                     popupVC.homeVM = self.homeVM
                     popupVC.isFromPush = self.isFromPush
                     popupVC.customID = "\(current.internalIdentifier ?? 0)"

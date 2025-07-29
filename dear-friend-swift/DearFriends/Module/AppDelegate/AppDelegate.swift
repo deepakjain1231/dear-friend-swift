@@ -703,3 +703,60 @@ extension AppDelegate {
         }
     }
 }
+
+//
+//func callAPIforVimeoExtracter(vimeo_url: String, current_view: UIViewController, completion: @escaping (Bool, String)->Void ) {
+//    //API Call
+//    if Utils.isConnectedToNetwork() {
+//      Utils.startActivityIndicatorInView(current_view.view, userInteraction: false)
+//      let arr_url = vimeo_url.components(separatedBy: "/")
+//      let urlString = BaseURL_Vimeo + (arr_url.last ?? "")
+//      AF.request(urlString, method: .get, parameters: nil, encoding:URLEncoding.default, headers: ["Authorization": Kvimeo_access_Token]).validate().responseJSON(queue: DispatchQueue.main, options: JSONSerialization.ReadingOptions.allowFragments) { response in
+//        switch response.result {
+//        case .success(let value):
+//          print("API URL: - \(urlString)\n\n\nResponse: - \(response)")
+//          guard let dicResponse = (value as? [String: Any]) else {
+//            completion(false, "")
+//            return
+//          }
+//          guard let arr_video_file = dicResponse["files"] as? [[String: Any]] else {
+//            completion(false, "")
+//            return
+//          }
+//          if arr_video_file.count != 0 {
+//            var str_video_url = ""
+//            let arr_filter_video_file = arr_video_file.filter({ dic_vimeo in
+//              return (dic_vimeo["rendition"] as? String ?? "") == "540p"
+//            })
+//            if arr_filter_video_file.count != 0 {
+//              str_video_url = arr_filter_video_file.first?["link"] as? String ?? ""
+//            }
+//            else {
+//              str_video_url = arr_video_file.first?["link"] as? String ?? ""
+//            }
+//            completion(true, str_video_url)
+//          }
+//          else {
+//            completion(false, "")
+//            Utils.showAlertWithTitleInController(APP_NAME, message: "Something went wrong, please try again later", controller: current_view)
+//          }
+//        case .failure(let error):
+//          print(error)
+//          completion(false, "")
+//          Utils.showAlertWithTitleInController(APP_NAME, message: error.localizedDescription, controller: current_view)
+//        }
+//        DispatchQueue.main.async(execute: {
+//          Utils.stopActivityIndicatorinView(current_view.view)
+//        })
+//      }
+//    }
+//    else {
+//      completion(false, "")
+//      Utils.showAlertWithTitleInController(APP_NAME, message: NO_NETWORK, controller: current_view)
+//    }
+//  }
+//
+//
+//
+//
+//

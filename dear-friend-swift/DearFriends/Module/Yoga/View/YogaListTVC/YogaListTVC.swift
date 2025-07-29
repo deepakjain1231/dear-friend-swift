@@ -213,7 +213,7 @@ extension YogaListTVC: GADFullScreenContentDelegate {
     
     func openVideoScreen() {
         if let top = UIApplication.topViewController2() {
-            /*
+        
             if let video_id = currentVideo?.video_id {
                 appDelegate.callAPIforVimeoExtracter(vimeo_id: video_id, current_view: top) { is_success, str_videoURL in
                     if is_success {
@@ -243,27 +243,27 @@ extension YogaListTVC: GADFullScreenContentDelegate {
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 top.present(alert, animated: true, completion: nil)
             }
-            */
+        
             
-            if let url = URL(string: "https://vimeo.com/\(currentVideo?.video_id ?? "")") {
-                self.getVideoURL(vc: top, url: url) { videoURL, error in
-                    if let url = videoURL {
-                        top.HIDE_CUSTOM_LOADER()
-                        let player = AVPlayer(url: url)
-                        let playerController = LandscapeAVPlayerController()
-                        playerController.player = player
-                        playerController.modalPresentationStyle = .overFullScreen
-                        top.present(playerController, animated: true) {
-                            player.play()
-                        }
-                    } else {
-                        top.HIDE_CUSTOM_LOADER()
-                        let alert = UIAlertController(title: "Error", message: "Invalid video URL", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                        top.present(alert, animated: true, completion: nil)
-                    }
-                }
-            }
+//            if let url = URL(string: "https://vimeo.com/\(currentVideo?.video_id ?? "")") {
+//                self.getVideoURL(vc: top, url: url) { videoURL, error in
+//                    if let url = videoURL {
+//                        top.HIDE_CUSTOM_LOADER()
+//                        let player = AVPlayer(url: url)
+//                        let playerController = LandscapeAVPlayerController()
+//                        playerController.player = player
+//                        playerController.modalPresentationStyle = .overFullScreen
+//                        top.present(playerController, animated: true) {
+//                            player.play()
+//                        }
+//                    } else {
+//                        top.HIDE_CUSTOM_LOADER()
+//                        let alert = UIAlertController(title: "Error", message: "Invalid video URL", preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                        top.present(alert, animated: true, completion: nil)
+//                    }
+//                }
+//            }
             
         }
     }

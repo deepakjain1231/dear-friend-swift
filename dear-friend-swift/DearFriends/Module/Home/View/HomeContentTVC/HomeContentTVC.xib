@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -54,18 +54,18 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NZ-5g-9Pp">
-                        <rect key="frame" x="20" y="46" width="338" height="180"/>
+                        <rect key="frame" x="20" y="46" width="338" height="190"/>
                         <subviews>
                             <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tVE-fQ-FdQ">
-                                <rect key="frame" x="0.0" y="0.0" width="338" height="180"/>
+                                <rect key="frame" x="0.0" y="0.0" width="338" height="190"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0Ow-ew-OeN">
-                                <rect key="frame" x="0.0" y="0.0" width="338" height="180"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0Ow-ew-OeN">
+                                <rect key="frame" x="0.0" y="0.0" width="338" height="190"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eYU-LT-V8N">
                                     <size key="itemSize" width="150" height="48"/>
@@ -76,7 +76,7 @@
                                 <cells/>
                             </collectionView>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="una-zx-1Wg">
-                                <rect key="frame" x="132.66666666666666" y="149.33333333333334" width="73" height="25.666666666666657"/>
+                                <rect key="frame" x="132.66666666666666" y="159.33333333333334" width="73" height="25.666666666666657"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,7 +91,7 @@
                             <constraint firstItem="0Ow-ew-OeN" firstAttribute="top" secondItem="tVE-fQ-FdQ" secondAttribute="top" id="gaR-Mq-oDb"/>
                             <constraint firstItem="0Ow-ew-OeN" firstAttribute="leading" secondItem="tVE-fQ-FdQ" secondAttribute="leading" id="kPe-IE-12k"/>
                             <constraint firstItem="0Ow-ew-OeN" firstAttribute="trailing" secondItem="tVE-fQ-FdQ" secondAttribute="trailing" id="mKR-PX-5pL"/>
-                            <constraint firstAttribute="height" constant="180" id="tb0-Fw-KJr"/>
+                            <constraint firstAttribute="height" constant="190" id="tb0-Fw-KJr"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -123,7 +123,6 @@
             <connections>
                 <outlet property="btnSeeAll" destination="oMO-UQ-kDe" id="PyQ-ih-tkG"/>
                 <outlet property="colletView" destination="0Ow-ew-OeN" id="vMm-Eu-CBw"/>
-                <outlet property="con_CollectionView" destination="tb0-Fw-KJr" id="lUm-aO-vic"/>
                 <outlet property="img_Bg" destination="tVE-fQ-FdQ" id="ACv-Pq-EO0"/>
                 <outlet property="lblTitle" destination="AMg-hf-LAu" id="goO-tc-suX"/>
                 <outlet property="pagecontrol" destination="una-zx-1Wg" id="bzr-YP-cW8"/>

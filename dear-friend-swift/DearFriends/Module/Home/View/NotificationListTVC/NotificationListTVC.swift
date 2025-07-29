@@ -14,6 +14,10 @@ class NotificationListTVC: UITableViewCell {
     @IBOutlet weak var lblMsg: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var con_img: NSLayoutConstraint!
+    @IBOutlet weak var btnClicked: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

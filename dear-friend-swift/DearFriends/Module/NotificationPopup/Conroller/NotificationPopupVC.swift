@@ -11,8 +11,6 @@ class NotificationPopupVC: UIViewController {
     
     // MARK: - OUTLETS
     
-    @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var con_img: NSLayoutConstraint!
     @IBOutlet weak var lblSub: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     
@@ -22,7 +20,6 @@ class NotificationPopupVC: UIViewController {
     var titleText = ""
     var descText = ""
     var customID = ""
-    var file = ""
     var reloadIndex: intCloser?
     var isFromPush = false
     
@@ -32,19 +29,19 @@ class NotificationPopupVC: UIViewController {
         // Do any additional setup after loading the view.
         self.setupUI()
         
-        self.con_img.constant = 0
-        self.img.isHidden = true
-        if self.file != ""{
-            self.img.isHidden = false
-            self.con_img.constant = manageWidth(size: 520)
-            GeneralUtility().setImage(imgView: self.img, imgPath: self.file)
-            
-            self.img.backgroundColor = .clear
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                self.img.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 12)
-            })
-            
-        }
+//        self.con_img.constant = 0
+//        self.img.isHidden = true
+//        if self.file != ""{
+//            self.img.isHidden = false
+//            self.con_img.constant = manageWidth(size: 520)
+//            GeneralUtility().setImage(imgView: self.img, imgPath: self.file)
+//            
+//            self.img.backgroundColor = .clear
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+//                self.img.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 12)
+//            })
+//            
+//        }
     }
     
     // MARK: - Other Functions

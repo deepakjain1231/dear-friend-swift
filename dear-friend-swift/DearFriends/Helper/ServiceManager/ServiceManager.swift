@@ -21,6 +21,7 @@ enum ApiURL {
     case signup
     case terms
     case login
+    case tokenUpdate
     case logout
     case updateProfile
     case getProfile
@@ -93,6 +94,8 @@ enum ApiURL {
             str = "content/term_condition"
         case .login:
             str = "login"
+        case .tokenUpdate:
+            str = "user/token-update"
         case .logout:
             str = "user/logout"
         case .updateProfile:
@@ -220,7 +223,8 @@ class ServiceManager: NSObject {
     let manager: Session
     
     var isPrintResponse = true
-    
+//    
+   
     var headers: HTTPHeaders {
         var header: HTTPHeaders = ["Accept-Language": "en"]
         if (CurrentUser.shared.user?.token ?? "") != "" {
@@ -237,30 +241,42 @@ class ServiceManager: NSObject {
     var paramEncode: ParameterEncoding = URLEncoding.default
     
     override init() {
+        let memoryCapacity = 50 * 1024 * 1024  // 50 MB
+        let diskCapacity = 100 * 1024 * 1024   // 100 MB
+        let cache = URLCache(memoryCapacity: memoryCapacity, diskCapacity: diskCapacity, diskPath: "myCache")
+        URLCache.shared = cache
+
         
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 60*2
         configuration.timeoutIntervalForResource = 60*2
 //        configuration.requestCachePolicy = .returnCacheDataElseLoad
+        
+        
         manager = Session(configuration: configuration)
+        
         
         super.init()
     }
     
     // MARK:- API CAlling methods
     
-    func postRequestForSendFCM(ApiURL : String, strURLAdd : String = "",
-                               parameters : [String: Any] ,
-                               isShowLoader : Bool = true,
-                               isPassHeader : Bool = true,
-                               additionalHeader : HTTPHeaders = [:],
-                               isShowErrorAlerts : Bool = true,
-                               Success successBlock:@escaping APIResponseBlock,
-                               Failure failureBlock:@escaping APIResponseBlock) {
+    //GET
+    func getRequest(newAPIURL: String = "" ,ApiURL : ApiURL , strAddInURL : String = "",
+                    parameters : [String: Any] ,
+                    isShowLoader : Bool = true,
+                    isPassHeader : Bool = true,
+                    isPrintData : Bool = true,
+                    isShowErrorAlerts : Bool = true,
+                    Success successBlock:@escaping APIResponseBlock,
+                    Failure failureBlock:@escaping APIResponseBlock) {
         
         do {
             
-            var header : HTTPHeaders = additionalHeader
+            var header : HTTPHeaders = []
+            if isPassHeader {
+                header = self.headers
+            }
             
             if ServiceManager.checkInterNet() {
                 
@@ -270,12 +286,28 @@ class ServiceManager: NSObject {
                     }
                 }
                 
-                let url = try getFullUrl(relPath: ApiURL + strURLAdd)
+                let url = try getFullUrl(relPath: (newAPIURL == "" ? ApiURL.strURL() : newAPIURL))
                 
-                // printing headers and parametes
-                printStart(header: header, Parameter: parameters, url: url)
-                               
-                _ = manager.request(url, method: .post, parameters: nil, encoding: BodyStringEncoding(body: JSON(parameters).rawString(.ascii, options: .sortedKeys) ?? ""), headers: header).responseJSON(completionHandler: { (resObj) in
+                //CATCH DATA
+                var urlRequest = URLRequest(url: url)
+                urlRequest.httpMethod = "GET"
+                urlRequest.cachePolicy = .reloadIgnoringLocalCacheData
+
+                // ⚡️ Check for cached response
+                if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
+                    print("✅ Returned from cache \(cachedResponse.data)")
+                    self.handleSucess(json: cachedResponse.data, statusCode: 200, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+//                    return
+                }
+
+                
+                
+                let parameters = parameters
+
+                //printing headers and parametes
+                printStart(header: header ,Parameter: parameters , url: url)
+                
+                _ = manager.request(url, method: .get, parameters: parameters, encoding: paramEncode, headers: header).responseData(completionHandler: { (resObj) in
                     
                     if isShowLoader {
                         DispatchQueue.main.async {
@@ -289,7 +321,18 @@ class ServiceManager: NSObject {
                     
                     switch resObj.result {
                     case .success(let json) :
-                        print("SuccessJSON \(json)")
+                        
+                        if isPrintData {
+                            print("SuccessJSON \(json)")
+                        }
+                       
+                        //SAVE CATCH DATA
+                        if let data = resObj.data, let response = resObj.response {
+                            let cachedURLResponse = CachedURLResponse(response: response, data: data)
+                            URLCache.shared.storeCachedResponse(cachedURLResponse, for: urlRequest)
+
+                        }
+                        
                         
                         self.handleSucess(json: json, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                         
@@ -302,10 +345,11 @@ class ServiceManager: NSObject {
                         
                         self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                     }
+                    
                 })
             }
             
-        } catch let error {
+        }catch let error {
             self.jprint(items: error)
             if isShowLoader {
                 DispatchQueue.main.async {
@@ -315,72 +359,8 @@ class ServiceManager: NSObject {
         }
     }
     
-    func postRequestForStipe(ApiURL : String, strURLAdd : String = "",
-                               parameters : [String: Any] ,
-                               isShowLoader : Bool = true,
-                               isPassHeader : Bool = true,
-                               additionalHeader : HTTPHeaders = [:],
-                               isShowErrorAlerts : Bool = true,
-                               Success successBlock:@escaping APIResponseBlock,
-                               Failure failureBlock:@escaping APIResponseBlock) {
-        
-        do {
-            
-            var header : HTTPHeaders = additionalHeader
-            
-            if ServiceManager.checkInterNet() {
-                
-                if isShowLoader {
-                    DispatchQueue.main.async {
-                        SHOW_CUSTOM_LOADER()
-                    }
-                }
-                
-                let url = try getFullUrl(relPath: ApiURL + strURLAdd)
-                
-                // printing headers and parametes
-                printStart(header: header, Parameter: parameters, url: url)
-                               
-                _ = manager.request(url, method: .post, parameters: parameters, encoding: paramEncode, headers: header).responseJSON(completionHandler: { (resObj) in
-                    
-                    if isShowLoader {
-                        DispatchQueue.main.async {
-                            HIDE_CUSTOM_LOADER()
-                        }
-                    }
-                    
-                    self.printSucess(json: resObj)
-                    
-                    let statusCode = resObj.response?.statusCode ?? 0
-                    
-                    switch resObj.result {
-                    case .success(let json) :
-                        print("SuccessJSON \(json)")
-                        
-                        self.handleSucess(json: json, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-                        
-                    case .failure(let err) :
-                        print(err)
-                        
-                        if let data = resObj.data, let str = String(data: data, encoding: String.Encoding.utf8){
-                            print("Server Error: " + str)
-                        }
-                        
-                        self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-                    }
-                })
-            }
-            
-        } catch let error {
-            self.jprint(items: error)
-            if isShowLoader {
-                DispatchQueue.main.async {
-                    HIDE_CUSTOM_LOADER()
-                }
-            }
-        }
-    }
     
+    //POST
     func postRequest(ApiURL : ApiURL , strURLAdd : String = "",
                      parameters : [String: Any] ,
                      isShowLoader : Bool = true,
@@ -407,12 +387,26 @@ class ServiceManager: NSObject {
                 
                 let url = try getFullUrl(relPath: ApiURL.strURL() + strURLAdd)
                 
+                //CATCH DATA
+                var urlRequest = URLRequest(url: url)
+                urlRequest.httpMethod = "POST"
+                urlRequest.cachePolicy = .reloadIgnoringLocalCacheData
+
+                // ⚡️ Check for cached response
+                if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
+                    print("✅ Returned from cache \(cachedResponse.data)")
+                    self.handleSucess(json: cachedResponse.data, statusCode: 200, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+                    
+//                    return
+                }
+
+                
                 let parameters = parameters
                 
                 //printing headers and parametes
                 printStart(header: header, Parameter: parameters, url: url)
                 
-                _ = manager.request(url, method: .post, parameters: parameters, encoding: paramEncode, headers: header).responseJSON(completionHandler: { (resObj) in
+                _ = manager.request(url, method: .post, parameters: parameters, encoding: paramEncode, headers: header).responseData(completionHandler: { (resObj) in
                     
                     if isShowLoader {
                         DispatchQueue.main.async {
@@ -428,6 +422,12 @@ class ServiceManager: NSObject {
                     case .success(let json) :
                         print("SuccessJSON \(json)")
                         
+                        //SAVE CATCH DATA
+                        if let data = resObj.data, let response = resObj.response {
+                            let cachedURLResponse = CachedURLResponse(response: response, data: data)
+                            URLCache.shared.storeCachedResponse(cachedURLResponse, for: urlRequest)
+
+                        }
                         self.handleSucess(json: json, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                         
                     case .failure(let err) :
@@ -453,94 +453,19 @@ class ServiceManager: NSObject {
         }
     }
     
-    func postRequest1(ApiURL : ApiURL ,
-                      parameters : [String: Any] ,
-                      isShowLoader : Bool = true,
-                      isPassHeader : Bool = true,
-                      isShowErrorAlerts : Bool = true,
-                      Success successBlock:@escaping APIResponseBlock,
-                      Failure failureBlock:@escaping APIResponseBlock) {
-        
-        do {
-            
-            var header : HTTPHeaders = []
-            if isPassHeader {
-                header = self.headers
-            }
-            
-            if ServiceManager.checkInterNet() {
-                
-                if isShowLoader {
-                    DispatchQueue.main.async {
-                        SHOW_CUSTOM_LOADER()
-                    }
-                }
-                
-                var parameters = parameters
-
-                let url = try getFullUrl(relPath: (ApiURL.strURL()))
-                
-                //printing headers and parametes
-                printStart(header: header ,Parameter: parameters , url: url)
-                
-                _ = manager.request(url, method: .post, parameters: parameters, encoding: paramEncode, headers: header).responseString { resObj in
-                    
-                    if isShowLoader {
-                        DispatchQueue.main.async {
-                            HIDE_CUSTOM_LOADER()
-                        }
-                    }
-                    
-                    self.printSucess(json: resObj)
-                    
-                    let statusCode = resObj.response?.statusCode ?? 0
-                    
-                    switch resObj.result {
-                    case .success(let json) :
-                        print("SuccessJSON \(json)")
-                        
-                        self.handleSucess(json: json,isStringJSON : true, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-                        
-                    case .failure(let err) :
-                        print(err)
-                        
-                        if let data = resObj.data, let str = String(data: data, encoding: String.Encoding.utf8){
-                            print("Server Error: " + str)
-                        }
-                        
-                        self.handleFailure(json: "",isStringJSON : true, error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-                    }
-                    
-                }
-                
-                
-            }
-            
-        }catch let error {
-            self.jprint(items: error)
-            if isShowLoader {
-                DispatchQueue.main.async {
-                    HIDE_CUSTOM_LOADER()
-                }
-            }
-        }
-    }
     
-    func getRequest(newAPIURL: String = "" ,ApiURL : ApiURL , strAddInURL : String = "",
-                    parameters : [String: Any] ,
-                    isShowLoader : Bool = true,
-                    isPassHeader : Bool = true,
-                    isPrintData : Bool = true,
-                    isShowErrorAlerts : Bool = true,
-                    Success successBlock:@escaping APIResponseBlock,
-                    Failure failureBlock:@escaping APIResponseBlock) {
+    func postRequestForStipe(ApiURL : String, strURLAdd : String = "",
+                               parameters : [String: Any] ,
+                               isShowLoader : Bool = true,
+                               isPassHeader : Bool = true,
+                               additionalHeader : HTTPHeaders = [:],
+                               isShowErrorAlerts : Bool = true,
+                               Success successBlock:@escaping APIResponseBlock,
+                               Failure failureBlock:@escaping APIResponseBlock) {
         
         do {
             
-            var header : HTTPHeaders = []
-            if isPassHeader {
-                header = self.headers
-            }
+            let header : HTTPHeaders = additionalHeader
             
             if ServiceManager.checkInterNet() {
                 
@@ -550,85 +475,12 @@ class ServiceManager: NSObject {
                     }
                 }
                 
-                let url = try getFullUrl(relPath: (newAPIURL == "" ? ApiURL.strURL() : newAPIURL))
-                let parameters = parameters
-
-                //printing headers and parametes
-                printStart(header: header ,Parameter: parameters , url: url)
+                let url = try getFullUrl(relPath: ApiURL + strURLAdd)
                 
-                _ = manager.request(url, method: .get, parameters: parameters, encoding: paramEncode, headers: header).responseJSON(completionHandler: { (resObj) in
-                    
-                    if isShowLoader {
-                        DispatchQueue.main.async {
-                            HIDE_CUSTOM_LOADER()
-                        }
-                    }
-                    
-                    self.printSucess(json: resObj)
-                    
-                    let statusCode = resObj.response?.statusCode ?? 0
-                    
-                    switch resObj.result {
-                    case .success(let json) :
-                        
-                        if isPrintData {
-                            print("SuccessJSON \(json)")
-                        }
-                        
-                        self.handleSucess(json: json, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-                        
-                    case .failure(let err) :
-                        print(err)
-                        
-                        if let data = resObj.data, let str = String(data: data, encoding: String.Encoding.utf8){
-                            print("Server Error: " + str)
-                        }
-                        
-                        self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-                    }
-                    
-                })
-            }
-            
-        }catch let error {
-            self.jprint(items: error)
-            if isShowLoader {
-                DispatchQueue.main.async {
-                    HIDE_CUSTOM_LOADER()
-                }
-            }
-        }
-    }
-    
-    func putRequest(ApiURL : ApiURL ,
-                    parameters : [String: Any] ,
-                    isShowLoader : Bool = true,
-                    isPassHeader : Bool = true,
-                    isShowErrorAlerts : Bool = true,
-                    Success successBlock:@escaping APIResponseBlock,
-                    Failure failureBlock:@escaping APIResponseBlock) {
-        
-        do {
-            
-            var header : HTTPHeaders = []
-            if isPassHeader {
-                header = self.headers
-            }
-            
-            if ServiceManager.checkInterNet() {
-                if isShowLoader {
-                    DispatchQueue.main.async {
-                        SHOW_CUSTOM_LOADER()
-                    }
-                }
-                
-                let url = try getFullUrl(relPath: ApiURL.strURL())
-                var parameters = parameters
-
-                //printing headers and parametes
-                printStart(header: header ,Parameter: parameters , url: url)
-                
-                _ = manager.request(url, method: .put, parameters: parameters, encoding: paramEncode, headers: header).responseJSON(completionHandler: { (resObj) in
+                // printing headers and parametes
+                printStart(header: header, Parameter: parameters, url: url)
+                               
+                _ = manager.request(url, method: .post, parameters: parameters, encoding: paramEncode, headers: header).responseData(completionHandler: { (resObj) in
                     
                     if isShowLoader {
                         DispatchQueue.main.async {
@@ -655,11 +507,10 @@ class ServiceManager: NSObject {
                         
                         self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                     }
-                    
                 })
             }
             
-        }catch let error {
+        } catch let error {
             self.jprint(items: error)
             if isShowLoader {
                 DispatchQueue.main.async {
@@ -668,6 +519,8 @@ class ServiceManager: NSObject {
             }
         }
     }
+  
+    
     
     struct MultiPartDataType {
         var mimetype: String  = "image/png"
@@ -748,7 +601,7 @@ class ServiceManager: NSObject {
                     .uploadProgress(queue: .main, closure: { progress in
                         print("Upload Progress: \(progress.fractionCompleted)")
                     })
-                    .responseJSON(completionHandler: { (resObj) in
+                    .responseData(completionHandler: { (resObj) in
                         
                         if isShowLoader {
                             DispatchQueue.main.async {

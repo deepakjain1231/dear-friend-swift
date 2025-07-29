@@ -16,7 +16,7 @@ class HomeContentTVC: UITableViewCell {
     @IBOutlet weak var img_Bg: UIImageView!
     @IBOutlet weak var colletView: UICollectionView!
     @IBOutlet weak var pagecontrol: UIPageControl!
-    @IBOutlet weak var con_CollectionView: NSLayoutConstraint!
+//    @IBOutlet weak var con_CollectionView: NSLayoutConstraint!
 
     var timer: Timer?
     var indxPosition: Int = 0
@@ -27,9 +27,7 @@ class HomeContentTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
-            self.con_CollectionView.constant = manageWidth(size: 190)
-        })
+  
 
 
         // Initialization code
@@ -146,12 +144,22 @@ extension HomeContentTVC: UICollectionViewDelegate, SkeletonCollectionViewDataSo
         cell.lblTime.configureLable(textColor: .background, fontName: GlobalConstants.OUTFIT_FONT_Regular, fontSize: 12, text: TimeInterval(ddd).formatDuration())
         
 //        GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current.image ?? "")
+        cell.vwPremium.backgroundColor = .black.withAlphaComponent(0.6)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+            cell.vwPremium.viewCorneRadius(radius: 10)
+            cell.vwPremium.backgroundColor = .black.withAlphaComponent(0.6)
+        })
         
-        if current.forSTr == "premium" && !appDelegate.isPlanPurchased {
-            cell.vwPremium.isHidden = false
-        } else {
-            cell.vwPremium.isHidden = true
-        }
+
+        cell.vwPremium.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            if current.forSTr == "premium" && !appDelegate.isPlanPurchased {
+                cell.vwPremium.isHidden = false
+            } else {
+                cell.vwPremium.isHidden = true
+            }
+        })
+        
         
         cell.layoutIfNeeded()
         return cell

@@ -52,7 +52,8 @@ class NewHomeVC: UIViewController {
         self.setTheView()
         self.setupUI()
         self.showRatingPromptIfNeeded()
-        
+//        self.homeVM.updateTokenAPI()
+
         
         //OPEN NOTIFICATION SCREEN
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -606,6 +607,10 @@ extension NewHomeVC: UITableViewDelegate, UITableViewDataSource {
         let str_img = self.homeVM.arrOfHomeDynamic[indexPath.row].image ?? ""
         GeneralUtility().setImage(imgView: cell.img_Bg, imgPath: str_img)
         
+        DispatchQueue.main.async {
+//            cell.con_CollectionView.constant = manageWidth(size: 190)
+        }
+        
         cell.strHomeImage = self.homeVM.arrOfHomeDynamic[indexPath.row].image ?? ""
         cell.arrAudio = audioList
         cell.setupCollection()
@@ -671,6 +676,10 @@ extension NewHomeVC : PreferenceProtocol{
     }
     
     private func shouldShowRatingPrompt() -> Bool {
+        UserDefaults.standard.set(nil, forKey: userRatedApp)
+        UserDefaults.standard.set(nil, forKey: lastPromptKey)
+        UserDefaults.standard.set(nil, forKey: maxPromptCountKey)
+        
         // Check if the user has already rated the app (replace with your rating logic)
         if UserDefaults.standard.bool(forKey: userRatedApp) {
             return false
@@ -720,7 +729,7 @@ extension NewHomeVC : PreferenceProtocol{
     }
     
     private func shouldShowPreferencePrompt() -> Bool {
-      
+        
         // Get the last prompt date and prompt count
         if let lastPromptDate = UserDefaults.standard.object(forKey: lastPreferenceDate) as? Date {
             

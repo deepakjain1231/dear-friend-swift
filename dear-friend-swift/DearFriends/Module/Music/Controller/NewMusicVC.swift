@@ -759,6 +759,7 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
             popupVC.height = manageWidth(size: 280)
             popupVC.presentDuration = 0.5
             popupVC.dismissDuration = 0.5
+            popupVC.shouldBeganDismiss = false
             popupVC.leftStr = "Not Yet"
             popupVC.rightStr = "Proceed To Premium"
             popupVC.titleStr = isBgPremium ? "Upgrade to premium to unlock this background sound and access a full library of immersive audio to enhance your practice." : "To play this meditation, subcribe today!"
@@ -780,6 +781,7 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
                     self.setupUI()
                 }
                 vc.goBack = {
+                    self.stopPlayer()
                     self.managePremium()
                 }
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -1030,39 +1032,7 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         }
     }
     
-//    func perfomeNext() {
-//        self.controller?.dismiss(animated: true)
-//        if self.currentRepeatMode == .SingleRepeat {
-//            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-//            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-//                currentTime = 0
-//            }
-//            self.newplayer.seek(to: currentTime)
-//            self.newplayer.resume()
-//            
-//        } else {
-//            if self.currentSongIndex == self.songs.count - 1 {
-//                if self.currentRepeatMode == .AllRepeat {
-//                    self.currentSongIndex = 0
-//                    self.dataBind()
-//                    self.initPlayer()
-//                } else {
-//                    self.isTimeUpAndSongOver = true
-//                }
-//            } else {
-//                if self.currentSongIndex >= (self.songs.count - 1) {
-//                    if self.currentRepeatMode == .AllRepeat {
-//                        self.currentSongIndex = 0
-//                    }
-//                } else {
-//                    self.currentSongIndex += 1
-//                    print("currentSongIndex += \(currentSongIndex)")
-//                }
-//                
-//            }
-//        }
-//    }
-    
+
     func previousSong() {
     
         self.isPreviousTapped = true
@@ -1118,6 +1088,19 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
 
     }
     
+    
+    func stopPlayer(){
+        self.timer.invalidate()
+        self.backGroundPlayer?.pause()
+        self.newplayer.pause()
+        var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+            currentTime = 0
+        }
+        self.newplayer.seek(to: currentTime)
+        self.lblCurrentTime.text = formatTime(currentTime)
+        
+    }
 
     
     // MARK: AVAudioPlayerDelegate
