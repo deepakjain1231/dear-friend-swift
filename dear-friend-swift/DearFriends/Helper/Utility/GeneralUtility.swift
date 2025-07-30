@@ -349,7 +349,7 @@ class GeneralUtility: NSObject {
                 thumbnailSize.width *= UIScreen.main.scale
                 thumbnailSize.height *= UIScreen.main.scale
                 SDImageCoderHelper.defaultScaleDownLimitBytes = UInt(imgView.frame.size.width * imgView.frame.size.height * 4)
-                let optins: SDWebImageOptions = [.retryFailed]
+                let optins: SDWebImageOptions = [.refreshCached]
                 imgView.sd_imageTransition = .fade
                 imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
                 imgView.sd_setImage(with: URL(string: imgPath), placeholderImage: nil, options: optins, context: [.imageThumbnailPixelSize : thumbnailSize])

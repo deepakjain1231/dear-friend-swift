@@ -19,7 +19,6 @@
 		29028C7F2A02776000D0A747 /* HomeCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29028C7D2A02776000D0A747 /* HomeCategoryCVC.swift */; };
 		29028C802A02776000D0A747 /* HomeCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29028C7E2A02776000D0A747 /* HomeCategoryCVC.xib */; };
 		290326362B27143B00E5D289 /* BGAudioListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290326352B27143B00E5D289 /* BGAudioListModel.swift */; };
-		290340CA2A00F379002ED6FF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290340C92A00F379002ED6FF /* HomeVC.swift */; };
 		29091F792B9F0AFC00373026 /* HCVimeoVideoExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29091F772B9F0AFC00373026 /* HCVimeoVideoExtractor.swift */; };
 		29091F7A2B9F0AFC00373026 /* HCVimeoVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29091F782B9F0AFC00373026 /* HCVimeoVideo.swift */; };
 		290EA6CB2ABAC5BB00B0D297 /* YogaInstructorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290EA6CA2ABAC5BB00B0D297 /* YogaInstructorVC.swift */; };
@@ -408,7 +407,6 @@
 		29028C7D2A02776000D0A747 /* HomeCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCVC.swift; sourceTree = "<group>"; };
 		29028C7E2A02776000D0A747 /* HomeCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryCVC.xib; sourceTree = "<group>"; };
 		290326352B27143B00E5D289 /* BGAudioListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGAudioListModel.swift; sourceTree = "<group>"; };
-		290340C92A00F379002ED6FF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		29091F772B9F0AFC00373026 /* HCVimeoVideoExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCVimeoVideoExtractor.swift; sourceTree = "<group>"; };
 		29091F782B9F0AFC00373026 /* HCVimeoVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCVimeoVideo.swift; sourceTree = "<group>"; };
 		290EA6CA2ABAC5BB00B0D297 /* YogaInstructorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaInstructorVC.swift; sourceTree = "<group>"; };
@@ -878,7 +876,6 @@
 		290340C82A00F363002ED6FF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				290340C92A00F379002ED6FF /* HomeVC.swift */,
 				29529C9E2AA83E3C0077A237 /* NewHomeVC.swift */,
 				2980CD622AA8ADDC000B5C57 /* NotificationsVC.swift */,
 				43D80B7D2A14E69C00229B87 /* TopPicsListVC.swift */,
@@ -2685,7 +2682,6 @@
 				43915FB42A122D4600457ABE /* CommonWebViewVC.swift in Sources */,
 				43908AD02A25CFDC004F65CA /* HomeViewModel.swift in Sources */,
 				4360556C2A0E7199002B6B66 /* SettingsVC.swift in Sources */,
-				290340CA2A00F379002ED6FF /* HomeVC.swift in Sources */,
 				296D4CB12AE7909C00166604 /* RequestDetailsVC.swift in Sources */,
 				43908AD92A25D2DC004F65CA /* Backgrounds.swift in Sources */,
 				29A264532ABAB8E300785FE5 /* YogaListTVC.swift in Sources */,

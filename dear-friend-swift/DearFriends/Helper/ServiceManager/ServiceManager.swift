@@ -280,12 +280,6 @@ class ServiceManager: NSObject {
             
             if ServiceManager.checkInterNet() {
                 
-                if isShowLoader {
-                    DispatchQueue.main.async {
-                        SHOW_CUSTOM_LOADER()
-                    }
-                }
-                
                 let url = try getFullUrl(relPath: (newAPIURL == "" ? ApiURL.strURL() : newAPIURL))
                 
                 //CATCH DATA
@@ -298,6 +292,13 @@ class ServiceManager: NSObject {
                     print("✅ Returned from cache \(cachedResponse.data)")
                     self.handleSucess(json: cachedResponse.data, statusCode: 200, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
 //                    return
+                }
+                else {
+                    if isShowLoader {
+                        DispatchQueue.main.async {
+                            SHOW_CUSTOM_LOADER()
+                        }
+                    }
                 }
 
                 
@@ -378,13 +379,7 @@ class ServiceManager: NSObject {
             }
             
             if ServiceManager.checkInterNet() {
-                
-                if isShowLoader {
-                    DispatchQueue.main.async {
-                        SHOW_CUSTOM_LOADER()
-                    }
-                }
-                
+
                 let url = try getFullUrl(relPath: ApiURL.strURL() + strURLAdd)
                 
                 //CATCH DATA
@@ -398,6 +393,13 @@ class ServiceManager: NSObject {
                     self.handleSucess(json: cachedResponse.data, statusCode: 200, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                     
 //                    return
+                }
+                else {
+                    if isShowLoader {
+                        DispatchQueue.main.async {
+                            SHOW_CUSTOM_LOADER()
+                        }
+                    }
                 }
 
                 

@@ -17,7 +17,7 @@ class BaseVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if let vc = UIApplication.topViewController2() {
-            if (vc is NewProfileVC) || (vc is ExploreVC) || (vc is HomeVC) {
+            if (vc is NewProfileVC) || (vc is ExploreVC) || (vc is NewHomeVC) {
                 //NotificationCenter.default.post(name: Notification.Name("BottomView"), object: nil, userInfo: ["hide": "0"])
             } else {
                 NotificationCenter.default.post(name: Notification.Name("BottomView"), object: nil, userInfo: ["hide": "1"])
