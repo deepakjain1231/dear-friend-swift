@@ -33,7 +33,7 @@
                         <rect key="frame" x="6" y="8" width="138.33333333333334" height="138.33333333333334"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cat_bg" translatesAutoresizingMaskIntoConstraints="NO" id="U5m-eU-ECc">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U5m-eU-ECc">
                         <rect key="frame" x="15.999999999999993" y="17.999999999999993" width="118.33333333333331" height="112.33333333333331"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -89,7 +89,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ic_cat_bg" width="54" height="54"/>
         <image name="icon_cat_bg" width="138.33332824707031" height="138"/>
     </resources>
 </document>

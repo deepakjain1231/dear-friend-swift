@@ -283,9 +283,15 @@ class ServiceManager: NSObject {
                 let url = try getFullUrl(relPath: (newAPIURL == "" ? ApiURL.strURL() : newAPIURL))
                 
                 //CATCH DATA
-                var urlRequest = URLRequest(url: url)
+                var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
+                components.queryItems = parameters.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
+
+                guard let finalURL = components.url else { return }
+                
+                var urlRequest = URLRequest(url: finalURL)
                 urlRequest.httpMethod = "GET"
                 urlRequest.cachePolicy = .reloadIgnoringLocalCacheData
+                
 
                 // ⚡️ Check for cached response
                 if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
@@ -383,7 +389,12 @@ class ServiceManager: NSObject {
                 let url = try getFullUrl(relPath: ApiURL.strURL() + strURLAdd)
                 
                 //CATCH DATA
-                var urlRequest = URLRequest(url: url)
+                var cache_url = try getFullUrl(relPath: ApiURL.strURL() + strURLAdd)
+                if let jsonString = jsonStringSorted(from: parameters) {
+                    cache_url = try getFullUrl(relPath: ApiURL.strURL() + strURLAdd + "/\(jsonString)")
+                }
+
+                var urlRequest = URLRequest(url: cache_url)
                 urlRequest.httpMethod = "POST"
                 urlRequest.cachePolicy = .reloadIgnoringLocalCacheData
 
@@ -861,4 +872,22 @@ extension BodyStringEncoding.Errors: LocalizedError {
             case .encodingProblem: return "Encoding problem"
         }
     }
+}
+
+
+func jsonStringSorted(from dictionary: [String: Any]) -> String? {
+    // Sort keys alphabetically
+    let sortedKeys = dictionary.keys.sorted()
+    var jsonPairs: [String] = []
+    for key in sortedKeys {
+        let value = dictionary[key]!
+        let valueString: String
+        if let str = value as? String {
+            valueString = "\"\(str)\""
+        } else {
+            valueString = "\(value)"
+        }
+        jsonPairs.append("\"\(key)\":\(valueString)")
+    }
+    return "{\(jsonPairs.joined(separator: ","))}"
 }

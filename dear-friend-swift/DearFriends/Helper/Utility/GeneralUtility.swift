@@ -344,16 +344,21 @@ class GeneralUtility: NSObject {
         
         let imageNew = imgPath
         if let _ = URL(string: imageNew), let imgView = imgView {
-            DispatchQueue.main.async {
-                var thumbnailSize = imgView.frame.size
-                thumbnailSize.width *= UIScreen.main.scale
-                thumbnailSize.height *= UIScreen.main.scale
-                SDImageCoderHelper.defaultScaleDownLimitBytes = UInt(imgView.frame.size.width * imgView.frame.size.height * 4)
-                let optins: SDWebImageOptions = [.refreshCached]
-                imgView.sd_imageTransition = .fade
-                imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
-                imgView.sd_setImage(with: URL(string: imgPath), placeholderImage: nil, options: optins, context: [.imageThumbnailPixelSize : thumbnailSize])
-            }
+            //DispatchQueue.main.async {
+
+                RemoteImageCacheLoader.shared.loadImage(from: imgPath, into: imgView, placeholder: nil)
+                
+                
+                
+//                var thumbnailSize = imgView.frame.size
+//                thumbnailSize.width *= UIScreen.main.scale
+//                thumbnailSize.height *= UIScreen.main.scale
+//                SDImageCoderHelper.defaultScaleDownLimitBytes = UInt(imgView.frame.size.width * imgView.frame.size.height * 4)
+//                let optins: SDWebImageOptions = [.refreshCached]
+//                imgView.sd_imageTransition = .fade
+//                imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
+//                imgView.sd_setImage(with: URL(string: imgPath), placeholderImage: nil, options: optins, context: [.imageThumbnailPixelSize : thumbnailSize])
+            //}
             
         } else {
             DispatchQueue.main.async {
@@ -1702,5 +1707,87 @@ class AppExpandableLabel: ExpandableLabel {
         self.textReplacementType = .word
         self.numberOfLines = 2
 //        self.collapsed = true
+    }
+}
+
+
+
+
+import UIKit
+
+class RemoteImageCacheLoader {
+    static let shared = RemoteImageCacheLoader()
+    
+    private let imageCache = NSCache<NSString, UIImage>()
+    
+    /// Loads image from memory cache → Documents folder → Downloads if needed, shows loader.
+    func loadImage(from urlString: String,
+                   into imageView: UIImageView,
+                   placeholder: UIImage? = nil) {
+
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL: \(urlString)")
+            return
+        }
+        
+        let fileName = url.lastPathComponent
+        let localURL = getDocumentsDirectory().appendingPathComponent(fileName)
+        
+        // ✅ 1) Check memory cache
+        if let cached = imageCache.object(forKey: fileName as NSString) {
+            imageView.image = cached
+            return
+        }
+        
+        // ✅ 2) Check Documents folder
+        if FileManager.default.fileExists(atPath: localURL.path),
+           let localImage = UIImage(contentsOfFile: localURL.path) {
+            imageCache.setObject(localImage, forKey: fileName as NSString)
+            imageView.image = localImage
+            return
+        }
+        
+        // ✅ 3) Show loader while downloading
+        let loader = UIActivityIndicatorView(style: .medium)
+        loader.color = .white 
+        loader.translatesAutoresizingMaskIntoConstraints = false
+        loader.startAnimating()
+        
+        DispatchQueue.main.async {
+            imageView.addSubview(loader)
+            NSLayoutConstraint.activate([
+                loader.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+                loader.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
+            ])
+        }
+        
+        // ✅ 4) Download
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            defer {
+                DispatchQueue.main.async {
+                    loader.removeFromSuperview()
+                }
+            }
+            
+            guard let data = data, let image = UIImage(data: data) else {
+                print("Image download failed for: \(urlString)")
+                return
+            }
+            
+            // Save to memory cache
+            self.imageCache.setObject(image, forKey: fileName as NSString)
+            
+            // Save to Documents folder
+            try? data.write(to: localURL)
+            
+            DispatchQueue.main.async {
+                imageView.image = image
+            }
+            
+        }.resume()
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
 }

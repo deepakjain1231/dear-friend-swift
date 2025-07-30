@@ -233,7 +233,7 @@ class NewHomeVC: UIViewController {
         self.stackPicks.isHidden = true
         self.stackRecm.isHidden = true
         
-        _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { timer in
+        //_ = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { timer in
             self.homeVM.getHomeData { model in
                 
                 self.viewNotiIndicator.isHidden = appDelegate.unread_count == 0 ? true : false
@@ -278,7 +278,7 @@ class NewHomeVC: UIViewController {
             } failure: { errorResponse in
                 
             }
-        })
+        //})
     }
     
 }
