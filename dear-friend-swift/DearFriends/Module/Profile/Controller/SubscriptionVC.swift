@@ -60,6 +60,9 @@ class SubscriptionVC: BaseVC {
     @IBOutlet weak var btn_Restore: UIButton!
     @IBOutlet weak var lbl_disclaimer: UILabel!
     
+    @IBOutlet weak var viewAnimtion: UIView!
+    var imageview : UIImageView!
+
     // MARK: - VARIABLES
     
     var index = -1
@@ -72,8 +75,30 @@ class SubscriptionVC: BaseVC {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.setTheView()
+        self.setLogoAnimation()
+
         self.vwScroll.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 44, right: 0)
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+    }
+    func setLogoAnimation(){
+        DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+            do {
+                let gif = try UIImage(gifName: "DearFriend_logo")
+                self.imageview = UIImageView(gifImage: gif, loopCount: 1) // Will loop 3 times
+                self.imageview.backgroundColor = .clear
+                self.imageview.frame = CGRect(x: 0, y: 0, width: self.viewAnimtion.frame.size.width, height: self.viewAnimtion.frame.size.height)
+                self.imageview.backgroundColor = .clear
+                self.imageview.tag = 100
+                self.viewAnimtion.addSubview(self.imageview)
+           
+            } catch {
+//                self.acti.isHidden = false
+            }
+        })
     }
     
     //SET THE VIEW

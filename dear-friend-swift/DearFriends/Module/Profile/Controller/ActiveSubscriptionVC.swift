@@ -43,7 +43,10 @@ class ActiveSubscriptionVC: UIViewController {
 
     @IBOutlet weak var btnChangePlan: UIButton!
     @IBOutlet weak var lbl_disclaimer: UILabel!
-    
+
+    @IBOutlet weak var viewAnimtion: UIView!
+    var imageview : UIImageView!
+
     
     // MARK: - VARIABLES
     
@@ -51,8 +54,28 @@ class ActiveSubscriptionVC: UIViewController {
         super.viewDidLoad()
         self.setTheView()
         self.setupUI()
+        self.setLogoAnimation()
+        
     }
     
+    
+    func setLogoAnimation(){
+        DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+            do {
+                let gif = try UIImage(gifName: "DearFriend_logo")
+                self.imageview = UIImageView(gifImage: gif, loopCount: 1) // Will loop 3 times
+                self.imageview.backgroundColor = .clear
+                self.imageview.frame = CGRect(x: 0, y: 0, width: self.viewAnimtion.frame.size.width, height: self.viewAnimtion.frame.size.height)
+                self.imageview.backgroundColor = .clear
+                self.imageview.tag = 100
+                self.viewAnimtion.addSubview(self.imageview)
+           
+            } catch {
+//                self.acti.isHidden = false
+            }
+        })
+    }
+
     //SET THE VIEW
     func setTheView() {
 //        self.con_logo.constant = manageWidth(size: 220)

@@ -398,6 +398,7 @@ class ServiceManager: NSObject {
                 urlRequest.httpMethod = "POST"
                 urlRequest.cachePolicy = .reloadIgnoringLocalCacheData
 
+                
                 // ⚡️ Check for cached response
                 if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
                     print("✅ Returned from cache \(cachedResponse.data)")

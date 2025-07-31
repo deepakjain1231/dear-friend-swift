@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cYd-59-Gyt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cYd-59-Gyt">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -45,10 +45,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1e-iC-1C8">
-                                <rect key="frame" x="0.0" y="63" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="122" width="393" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-mq-OtD">
-                                        <rect key="frame" x="169.66666666666666" y="8.6666666666666714" width="53.666666666666657" height="23"/>
+                                        <rect key="frame" x="169.66666666666666" y="8.6666666666666572" width="53.666666666666657" height="23"/>
                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="aGa-Bh-Bh7">
-                                <rect key="frame" x="0.0" y="107" width="393" height="745"/>
+                                <rect key="frame" x="0.0" y="166" width="393" height="686"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7x-bp-fgG">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -86,7 +86,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="MSV-iM-ras">
-                                                                <rect key="frame" x="71.999999999999986" y="7.6666666666666714" width="140.66666666666663" height="44.666666666666664"/>
+                                                                <rect key="frame" x="71.999999999999986" y="7.6666666666666572" width="140.66666666666663" height="44.666666666666664"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moin Uddin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mr3-Px-RGh">
                                                                         <rect key="frame" x="0.0" y="0.0" width="140.66666666666666" height="23"/>
@@ -95,7 +95,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="moinuddin@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sx-eX-5bJ">
-                                                                        <rect key="frame" x="0.0" y="26.999999999999986" width="140.66666666666666" height="17.666666666666671"/>
+                                                                        <rect key="frame" x="0.0" y="27" width="140.66666666666666" height="17.666666666666671"/>
                                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
                                                                         <color key="textColor" red="0.89411764709999997" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -151,7 +151,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="107" height="76"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pnx-5s-WV0">
-                                                                        <rect key="frame" x="0.0" y="14.666666666666654" width="107" height="46.666666666666657"/>
+                                                                        <rect key="frame" x="0.0" y="14.666666666666682" width="107" height="46.666666666666657"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_favorite" translatesAutoresizingMaskIntoConstraints="NO" id="crV-bf-Vb6">
                                                                                 <rect key="frame" x="41.666666666666664" y="0.0" width="23.999999999999993" height="24"/>
@@ -203,7 +203,7 @@
                                                                 <rect key="frame" x="123" y="0.0" width="107" height="76"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PXk-lT-YQB">
-                                                                        <rect key="frame" x="0.0" y="14.666666666666654" width="107" height="46.666666666666657"/>
+                                                                        <rect key="frame" x="0.0" y="14.666666666666682" width="107" height="46.666666666666657"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_history" translatesAutoresizingMaskIntoConstraints="NO" id="6yx-KS-uUj">
                                                                                 <rect key="frame" x="41.666666666666657" y="0.0" width="24" height="24"/>
@@ -255,7 +255,7 @@
                                                                 <rect key="frame" x="246" y="0.0" width="107" height="76"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="o2Q-pA-rdM">
-                                                                        <rect key="frame" x="0.0" y="14.666666666666654" width="107" height="46.666666666666657"/>
+                                                                        <rect key="frame" x="0.0" y="14.666666666666682" width="107" height="46.666666666666657"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_download" translatesAutoresizingMaskIntoConstraints="NO" id="pKz-me-DBP">
                                                                                 <rect key="frame" x="41.666666666666686" y="0.0" width="24" height="24"/>
@@ -403,7 +403,7 @@
                                                         <rect key="frame" x="0.0" y="360" width="353" height="56"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_right_arroe_with_bg" translatesAutoresizingMaskIntoConstraints="NO" id="FM2-uD-p2w">
-                                                                <rect key="frame" x="332" y="23.666666666666686" width="9" height="9"/>
+                                                                <rect key="frame" x="332" y="23.666666666666629" width="9" height="9"/>
                                                             </imageView>
                                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7K-Se-XZ1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="56"/>
@@ -883,7 +883,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8J-rT-SUQ">
-                                <rect key="frame" x="20" y="75" width="40" height="40"/>
+                                <rect key="frame" x="20" y="134" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="KRX-CC-ZWf"/>
                                     <constraint firstAttribute="height" constant="40" id="jHR-j7-FR3"/>
@@ -895,13 +895,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud9-ye-ZQb">
-                                <rect key="frame" x="159" y="82.333333333333329" width="75" height="25.333333333333329"/>
+                                <rect key="frame" x="159" y="141.33333333333334" width="75" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="r6G-0v-rMz">
-                                <rect key="frame" x="0.0" y="127" width="393" height="691"/>
+                                <rect key="frame" x="0.0" y="186" width="393" height="598"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUE-2F-nqF">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="264"/>
@@ -1247,7 +1247,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYf-lx-DjT">
-                                <rect key="frame" x="20" y="75" width="40" height="40"/>
+                                <rect key="frame" x="20" y="134" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="35j-8Q-yaJ"/>
                                     <constraint firstAttribute="width" constant="40" id="Ezc-jp-juQ"/>
@@ -1259,13 +1259,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhM-PO-T5B">
-                                <rect key="frame" x="113.33333333333333" y="82.333333333333329" width="166.66666666666669" height="25.333333333333329"/>
+                                <rect key="frame" x="113.33333333333333" y="141.33333333333334" width="166.66666666666669" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CmA-cY-xer">
-                                <rect key="frame" x="20" y="145" width="353" height="262"/>
+                                <rect key="frame" x="20" y="204" width="353" height="262"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjT-py-GGA">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="74"/>
@@ -1378,7 +1378,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMB-vD-7vG" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                <rect key="frame" x="20" y="744" width="353" height="54"/>
+                                <rect key="frame" x="20" y="710" width="353" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="w6w-XQ-E7g"/>
                                 </constraints>
@@ -1446,7 +1446,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41a-Fg-5q6">
-                                <rect key="frame" x="20" y="75" width="40" height="40"/>
+                                <rect key="frame" x="20" y="134" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="C0M-Aa-2cF"/>
                                     <constraint firstAttribute="width" constant="40" id="Vjx-xX-wAH"/>
@@ -1458,13 +1458,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pI2-vQ-sBC">
-                                <rect key="frame" x="151.66666666666666" y="83.666666666666671" width="90" height="23"/>
+                                <rect key="frame" x="151.66666666666666" y="142.66666666666666" width="90" height="23"/>
                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq9-jz-byO" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                <rect key="frame" x="20" y="744" width="353" height="54"/>
+                                <rect key="frame" x="20" y="710" width="353" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="6Ca-QX-XZb"/>
                                 </constraints>
@@ -1479,7 +1479,7 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="0cy-Xq-Dx9">
-                                <rect key="frame" x="0.0" y="127" width="393" height="597"/>
+                                <rect key="frame" x="0.0" y="186" width="393" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXK-l3-PJh">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="470"/>
@@ -1877,7 +1877,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3wx-km-EeQ">
-                                <rect key="frame" x="0.0" y="59" width="393" height="260"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="260"/>
                                 <color key="backgroundColor" name="primary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="260" id="BRv-2I-4X8"/>
@@ -1887,7 +1887,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLq-aj-oSK">
-                                <rect key="frame" x="169" y="75" width="55" height="5"/>
+                                <rect key="frame" x="169" y="134" width="55" height="5"/>
                                 <color key="backgroundColor" red="0.38823529411764707" green="0.34509803921568627" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="MuW-hA-NEq"/>
@@ -1898,7 +1898,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjN-ff-4nv">
-                                <rect key="frame" x="50" y="109.00000000000001" width="293" height="50.666666666666671"/>
+                                <rect key="frame" x="50" y="168" width="293" height="50.666666666666657"/>
                                 <string key="text">Are you sure you want 
 to logout from this account?</string>
                                 <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="20"/>
@@ -1907,7 +1907,7 @@ to logout from this account?</string>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="eWc-ON-EZ9">
-                                <rect key="frame" x="30" y="201.66666666666666" width="333" height="52"/>
+                                <rect key="frame" x="30" y="260.66666666666669" width="333" height="52"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZrV-d7-12C">
                                         <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="52"/>
@@ -1926,7 +1926,7 @@ to logout from this account?</string>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wP-2I-wBR">
-                                                <rect key="frame" x="70" y="17.333333333333343" width="18.333333333333329" height="17.666666666666671"/>
+                                                <rect key="frame" x="70" y="17.333333333333314" width="18.333333333333329" height="17.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2018,7 +2018,7 @@ to logout from this account?</string>
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6E-SN-WS5">
-                                <rect key="frame" x="0.0" y="63" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="122" width="393" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWw-il-o7u">
                                         <rect key="frame" x="20" y="0.0" width="40" height="40"/>
@@ -2029,7 +2029,7 @@ to logout from this account?</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Subscription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dr-rK-Fuo">
-                                        <rect key="frame" x="131.66666666666669" y="8.6666666666666714" width="129.66666666666669" height="23"/>
+                                        <rect key="frame" x="131.66666666666669" y="8.6666666666666572" width="129.66666666666669" height="23"/>
                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2045,19 +2045,26 @@ to logout from this account?</string>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="Z3p-KC-a4u">
-                                <rect key="frame" x="0.0" y="115" width="393" height="737"/>
+                                <rect key="frame" x="0.0" y="174" width="393" height="678"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Gf-jR-RcF">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1782"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1832"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2U4-24-x6C">
+                                                <rect key="frame" x="-159" y="-50" width="711" height="400"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="GcE-YF-SvZ"/>
+                                                </constraints>
+                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LJt-Qa-HwK">
-                                                <rect key="frame" x="25" y="0.0" width="343" height="1782"/>
+                                                <rect key="frame" x="25" y="320" width="343" height="1512"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="QdQ-06-6XS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="250"/>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="QdQ-06-6XS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="0.0"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEr-tm-oZv">
-                                                        <rect key="frame" x="0.0" y="270" width="343" height="60.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="60.666666666666664"/>
                                                         <string key="text">Thank you for your consideration.
 
 The Premium plan includes the following:</string>
@@ -2066,7 +2073,7 @@ The Premium plan includes the following:</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="da3-Zd-GCz">
-                                                        <rect key="frame" x="0.0" y="350.66666666666663" width="343" height="419.66666666666663"/>
+                                                        <rect key="frame" x="0.0" y="80.666666666666657" width="343" height="419.66666666666674"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xpb-Sm-Nn3">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="49.666666666666664"/>
@@ -2087,7 +2094,7 @@ The Premium plan includes the following:</string>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access the growing library of guided meditations, withou" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezb-mg-Z6d">
-                                                                                <rect key="frame" x="0.0" y="34.333333333333314" width="313" height="15.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="34.333333333333371" width="313" height="15.333333333333336"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2097,7 +2104,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="nfa-lI-1ri">
-                                                                <rect key="frame" x="0.0" y="71.666666666666686" width="343" height="49.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="71.666666666666742" width="343" height="49.666666666666657"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="IOc-kM-RRC">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -2125,7 +2132,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FKN-db-QF2">
-                                                                <rect key="frame" x="0.0" y="143.33333333333331" width="343" height="49.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="143.33333333333337" width="343" height="49.666666666666657"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="luK-Ho-lTD">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -2153,7 +2160,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="D0E-AM-5af">
-                                                                <rect key="frame" x="0.0" y="214.99999999999994" width="343" height="34.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="215" width="343" height="34.666666666666657"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="nCI-N7-gMM">
                                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="34.666666666666664"/>
@@ -2186,7 +2193,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="BUj-o3-EDZ">
-                                                                <rect key="frame" x="0.0" y="271.66666666666669" width="343" height="34.666666666666686"/>
+                                                                <rect key="frame" x="0.0" y="271.66666666666674" width="343" height="34.666666666666686"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="ufE-I0-zfZ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -2214,7 +2221,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="zYp-WZ-Lb9">
-                                                                <rect key="frame" x="0.0" y="328.33333333333331" width="343" height="34.666666666666686"/>
+                                                                <rect key="frame" x="0.0" y="328.33333333333337" width="343" height="34.666666666666686"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="9vd-0g-Kce">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -2242,7 +2249,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6s2-pp-Kax">
-                                                                <rect key="frame" x="0.0" y="384.99999999999994" width="343" height="34.666666666666686"/>
+                                                                <rect key="frame" x="0.0" y="385" width="343" height="34.666666666666686"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="WoN-WN-4EK">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -2272,21 +2279,21 @@ The Premium plan includes the following:</string>
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tpm-Fc-wLw">
-                                                        <rect key="frame" x="0.0" y="790.33333333333337" width="343" height="20"/>
+                                                        <rect key="frame" x="0.0" y="520.33333333333337" width="343" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="Nd2-yR-wOc"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtx-7C-sOu">
-                                                        <rect key="frame" x="0.0" y="830.33333333333337" width="343" height="103"/>
+                                                        <rect key="frame" x="0.0" y="560.33333333333326" width="343" height="103"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lka-VM-nbe">
                                                                 <rect key="frame" x="8" y="0.0" width="335" height="103"/>
                                                                 <color key="backgroundColor" name="primary"/>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="LyU-0R-WpL">
-                                                                <rect key="frame" x="20" y="15.666666666666629" width="146.33333333333334" height="72"/>
+                                                                <rect key="frame" x="20" y="15.666666666666742" width="146.33333333333334" height="72"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGT-7B-iFw">
                                                                         <rect key="frame" x="0.0" y="0.0" width="146.33333333333334" height="20.333333333333332"/>
@@ -2295,7 +2302,7 @@ The Premium plan includes the following:</string>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lkg-cE-4im">
-                                                                        <rect key="frame" x="0.0" y="26.333333333333368" width="146.33333333333334" height="45.666666666666657"/>
+                                                                        <rect key="frame" x="0.0" y="26.333333333333254" width="146.33333333333334" height="45.666666666666657"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$6.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYF-49-Mnj">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="90.666666666666671" height="45.666666666666664"/>
@@ -2314,7 +2321,7 @@ The Premium plan includes the following:</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94N-Ho-df0">
-                                                                <rect key="frame" x="218" y="15.666666666666627" width="125" height="20.333333333333329"/>
+                                                                <rect key="frame" x="218" y="15.666666666666741" width="125" height="20.333333333333329"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="125" id="5JA-U5-tCf"/>
                                                                 </constraints>
@@ -2353,7 +2360,7 @@ The Premium plan includes the following:</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bz0-1C-ClJ">
-                                                        <rect key="frame" x="0.0" y="953.33333333333326" width="343" height="103"/>
+                                                        <rect key="frame" x="0.0" y="683.33333333333326" width="343" height="103"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7w0-1Y-yEx">
                                                                 <rect key="frame" x="8" y="0.0" width="335" height="103"/>
@@ -2426,27 +2433,27 @@ The Premium plan includes the following:</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dn2-N8-5Oh">
-                                                        <rect key="frame" x="0.0" y="1076.3333333333333" width="343" height="20"/>
+                                                        <rect key="frame" x="0.0" y="806.33333333333326" width="343" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="KJo-BF-Thn"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access the entire app completely free for 7 days, we’re grateful for the opportunity to be a a part of your journey." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akd-jm-bbf">
-                                                        <rect key="frame" x="0.0" y="1116.3333333333333" width="343" height="60.666666666666742"/>
+                                                        <rect key="frame" x="0.0" y="846.33333333333326" width="343" height="60.666666666666629"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Bold" family="Outfit" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Muy-Nc-rLX">
-                                                        <rect key="frame" x="0.0" y="1197" width="343" height="20"/>
+                                                        <rect key="frame" x="0.0" y="927" width="343" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="5r6-u1-0SP"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-ec-ZOy">
-                                                        <rect key="frame" x="0.0" y="1237" width="343" height="135"/>
+                                                        <rect key="frame" x="0.0" y="967" width="343" height="135"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-pg-Wuq" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="54"/>
@@ -2484,10 +2491,10 @@ The Premium plan includes the following:</string>
                                                         </subviews>
                                                     </stackView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_line_saperator" translatesAutoresizingMaskIntoConstraints="NO" id="qLK-pP-rRm">
-                                                        <rect key="frame" x="0.0" y="1392" width="343" height="1"/>
+                                                        <rect key="frame" x="0.0" y="1122" width="343" height="1"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C89-kA-Sab">
-                                                        <rect key="frame" x="0.0" y="1413" width="343" height="369"/>
+                                                        <rect key="frame" x="0.0" y="1143" width="343" height="369"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ee-m4-Etw">
                                                                 <rect key="frame" x="20" y="12" width="303" height="345"/>
@@ -2517,7 +2524,10 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                             <constraint firstAttribute="bottom" secondItem="LJt-Qa-HwK" secondAttribute="bottom" id="329-mE-70z"/>
                                             <constraint firstAttribute="trailing" secondItem="LJt-Qa-HwK" secondAttribute="trailing" constant="25" id="ENt-Z7-3De"/>
                                             <constraint firstItem="LJt-Qa-HwK" firstAttribute="leading" secondItem="1Gf-jR-RcF" secondAttribute="leading" constant="25" id="HLr-4r-Yxs"/>
-                                            <constraint firstItem="LJt-Qa-HwK" firstAttribute="top" secondItem="1Gf-jR-RcF" secondAttribute="top" id="nMK-GT-IqD"/>
+                                            <constraint firstItem="2U4-24-x6C" firstAttribute="top" secondItem="1Gf-jR-RcF" secondAttribute="top" constant="-50" id="dd6-PL-prk"/>
+                                            <constraint firstItem="2U4-24-x6C" firstAttribute="centerX" secondItem="1Gf-jR-RcF" secondAttribute="centerX" id="fic-DU-pqR"/>
+                                            <constraint firstItem="LJt-Qa-HwK" firstAttribute="top" secondItem="2U4-24-x6C" secondAttribute="bottom" constant="-30" id="kVC-K4-dOq"/>
+                                            <constraint firstItem="2U4-24-x6C" firstAttribute="width" secondItem="2U4-24-x6C" secondAttribute="height" multiplier="16:9" id="rNa-8j-C6a"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2579,6 +2589,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                         <outlet property="lbl_yearly_planDetails" destination="2ZX-Ay-h9p" id="cVX-uI-zbH"/>
                         <outlet property="lbl_yearly_plan_Price" destination="Fhy-fT-R3K" id="XNK-9r-aa4"/>
                         <outlet property="lbl_yearly_plan_month" destination="S3u-m1-f5i" id="12M-3C-xVF"/>
+                        <outlet property="viewAnimtion" destination="2U4-24-x6C" id="gmj-2o-eRC"/>
                         <outlet property="vwMonth" destination="mtx-7C-sOu" id="mLD-lV-KAU"/>
                         <outlet property="vwMonthLeft" destination="lka-VM-nbe" id="HHv-aI-aAt"/>
                         <outlet property="vwScroll" destination="Z3p-KC-a4u" id="PX9-yV-nJx"/>
@@ -2602,7 +2613,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvE-c7-CH9">
-                                <rect key="frame" x="20" y="67" width="40" height="40"/>
+                                <rect key="frame" x="20" y="126" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="N7v-1L-Eni"/>
                                     <constraint firstAttribute="height" constant="40" id="ilm-bZ-zRc"/>
@@ -2614,13 +2625,13 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtR-sW-NdF">
-                                <rect key="frame" x="148.66666666666666" y="74.333333333333329" width="96" height="25.333333333333329"/>
+                                <rect key="frame" x="148.66666666666666" y="133.33333333333334" width="96" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4fy-fc-EeE">
-                                <rect key="frame" x="0.0" y="123" width="393" height="729"/>
+                                <rect key="frame" x="0.0" y="182" width="393" height="670"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="xl1-W3-nFx">
                                     <size key="itemSize" width="128" height="128"/>
@@ -2631,7 +2642,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 <cells/>
                             </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9N-up-mLy">
-                                <rect key="frame" x="10" y="-61" width="373" height="70"/>
+                                <rect key="frame" x="10" y="-2" width="373" height="70"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_music_temp" translatesAutoresizingMaskIntoConstraints="NO" id="6nz-iP-e7P">
                                         <rect key="frame" x="12" y="16" width="38" height="38"/>
@@ -2644,7 +2655,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KR-D2-CcA">
-                                        <rect key="frame" x="62" y="8.6666666666666625" width="76" height="18.333333333333329"/>
+                                        <rect key="frame" x="62" y="8.6666666666666696" width="76" height="18.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2741,7 +2752,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBZ-yb-Kth">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="666"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3O-Ew-nSf">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="851"/>
@@ -2758,7 +2769,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZN5-W6-cOr">
-                                                <rect key="frame" x="338" y="-0.3333333333333357" width="50" height="50"/>
+                                                <rect key="frame" x="338" y="-0.3333333333333286" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="JOf-GH-2gt"/>
                                                     <constraint firstAttribute="height" constant="50" id="kcp-CK-k52"/>
@@ -2791,7 +2802,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                 </constraints>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line_middle" translatesAutoresizingMaskIntoConstraints="NO" id="8vW-AD-rf0">
-                                                <rect key="frame" x="61.333333333333329" y="157.33333333333334" width="255.66666666666669" height="1"/>
+                                                <rect key="frame" x="61.333333333333329" y="157.33333333333331" width="255.66666666666669" height="1"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="eB9-kS-fTf"/>
                                                 </constraints>
@@ -2807,7 +2818,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                         </constraints>
                                                     </tableView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="YTK-CS-BnR">
-                                                        <rect key="frame" x="0.0" y="416" width="361" height="160.66666666666663"/>
+                                                        <rect key="frame" x="0.0" y="416.00000000000006" width="361" height="160.66666666666669"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-Dd-h6Y">
                                                                 <rect key="frame" x="0.0" y="0.0" width="361" height="17.666666666666668"/>
@@ -2939,7 +2950,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ey0-gT-DPe">
-                                <rect key="frame" x="20" y="67" width="40" height="40"/>
+                                <rect key="frame" x="20" y="126" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="kQd-fc-lqd"/>
                                     <constraint firstAttribute="height" constant="40" id="rG3-Jf-478"/>
@@ -2951,17 +2962,17 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adA-YH-Pdc">
-                                <rect key="frame" x="126.33333333333333" y="74.333333333333329" width="140.33333333333343" height="25.333333333333329"/>
+                                <rect key="frame" x="126.33333333333333" y="133.33333333333334" width="140.33333333333337" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChR-87-d5r">
-                                <rect key="frame" x="0.0" y="167" width="393" height="565"/>
+                                <rect key="frame" x="0.0" y="226" width="393" height="472"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiJ-b1-m9H" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                <rect key="frame" x="20" y="752" width="353" height="54"/>
+                                <rect key="frame" x="20" y="718" width="353" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="QT8-Z0-yYG"/>
                                 </constraints>
@@ -2977,7 +2988,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’ll use these preferences to recommend content to you that aligns with  your goals and interests" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbw-h4-u1G">
-                                <rect key="frame" x="20" y="111.66666666666667" width="353" height="43.333333333333329"/>
+                                <rect key="frame" x="20" y="170.66666666666666" width="353" height="43.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -3033,7 +3044,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbS-Z9-syp">
-                                <rect key="frame" x="20" y="75" width="40" height="40"/>
+                                <rect key="frame" x="20" y="134" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="RMt-oj-qml"/>
                                     <constraint firstAttribute="height" constant="40" id="tJm-ah-Dqv"/>
@@ -3045,17 +3056,17 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eED-qp-uxS">
-                                <rect key="frame" x="151.66666666666666" y="83.666666666666671" width="90" height="23"/>
+                                <rect key="frame" x="151.66666666666666" y="142.66666666666666" width="90" height="23"/>
                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="0yf-ey-IBk">
-                                <rect key="frame" x="0.0" y="127" width="393" height="4"/>
+                                <rect key="frame" x="0.0" y="186" width="393" height="4"/>
                                 <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4c-3L-rei">
-                                <rect key="frame" x="0.0" y="291" width="393" height="561"/>
+                                <rect key="frame" x="0.0" y="350" width="393" height="502"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -3063,14 +3074,14 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="74c-Xf-Ocj">
-                                <rect key="frame" x="136.66666666666666" y="151" width="119.99999999999997" height="120"/>
+                                <rect key="frame" x="136.66666666666666" y="210" width="119.99999999999997" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="DL7-gW-rFi"/>
                                     <constraint firstAttribute="width" constant="120" id="ixE-pr-vYu"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Cze-qM-t6z">
-                                <rect key="frame" x="0.0" y="291" width="393" height="561"/>
+                                <rect key="frame" x="0.0" y="350" width="393" height="502"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="12"/>
@@ -3132,7 +3143,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fd0-KU-FWg">
-                                <rect key="frame" x="20" y="67" width="40" height="40"/>
+                                <rect key="frame" x="20" y="126" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ALC-df-2OP"/>
                                     <constraint firstAttribute="width" constant="40" id="TXd-Xp-t3V"/>
@@ -3144,7 +3155,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="F8O-4t-TAu">
-                                <rect key="frame" x="161.33333333333334" y="70" width="70.333333333333343" height="34"/>
+                                <rect key="frame" x="161.33333333333334" y="129" width="70.333333333333343" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8O-yN-cCu">
                                         <rect key="frame" x="0.0" y="0.0" width="38.333333333333336" height="34"/>
@@ -3160,14 +3171,14 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egc-I7-TpM">
-                                <rect key="frame" x="161.33333333333334" y="70" width="70.333333333333343" height="34"/>
+                                <rect key="frame" x="161.33333333333334" y="129" width="70.333333333333343" height="34"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <connections>
                                     <action selector="btnMonthTapped:" destination="vEA-eP-656" eventType="touchUpInside" id="D9r-oe-uWi"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hF-MT-bFr" customClass="FSCalendar">
-                                <rect key="frame" x="20" y="127" width="353" height="300"/>
+                                <rect key="frame" x="20" y="186" width="353" height="300"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="w1O-NO-r5c"/>
@@ -3202,11 +3213,11 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTi-fO-L5A">
-                                <rect key="frame" x="0.0" y="427" width="393" height="425"/>
+                                <rect key="frame" x="0.0" y="486" width="393" height="366"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5G-sY-LUJ">
-                                <rect key="frame" x="317" y="742" width="56" height="56"/>
+                                <rect key="frame" x="317" y="708" width="56" height="56"/>
                                 <color key="backgroundColor" name="#776ADA"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="HlE-xa-VB0"/>
@@ -3279,7 +3290,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kty-li-eb9">
-                                <rect key="frame" x="0.0" y="63" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="122" width="393" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rX-zU-HPi">
                                         <rect key="frame" x="20" y="0.0" width="40" height="40"/>
@@ -3290,7 +3301,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Subscription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD4-og-lcF">
-                                        <rect key="frame" x="131.66666666666669" y="8.6666666666666714" width="129.66666666666669" height="23"/>
+                                        <rect key="frame" x="131.66666666666669" y="8.6666666666666572" width="129.66666666666669" height="23"/>
                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -3306,19 +3317,27 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="XBD-jy-okW">
-                                <rect key="frame" x="0.0" y="115" width="393" height="737"/>
+                                <rect key="frame" x="0.0" y="174" width="393" height="678"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZO-PL-5Nw">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1353.6666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1407.6666666666667"/>
                                         <subviews>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gz8-5G-XJq">
+                                                <rect key="frame" x="-159" y="-50" width="711" height="400"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="gz8-5G-XJq" secondAttribute="height" multiplier="16:9" id="VSl-hZ-IQ3"/>
+                                                    <constraint firstAttribute="height" constant="400" id="rZo-r7-kTy"/>
+                                                </constraints>
+                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lBl-Ll-2h1">
-                                                <rect key="frame" x="20" y="0.0" width="353" height="1328.6666666666667"/>
+                                                <rect key="frame" x="20" y="320" width="353" height="1062.6666666666667"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="W3j-iZ-Nbc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="250"/>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="W3j-iZ-Nbc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="0.0"/>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWc-3S-QB8">
-                                                        <rect key="frame" x="0.0" y="266" width="353" height="160"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="160"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_diomond" translatesAutoresizingMaskIntoConstraints="NO" id="LGC-eb-gfB">
                                                                 <rect key="frame" x="16" y="16" width="40" height="40"/>
@@ -3337,7 +3356,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are now a Member" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SO-SK-CX1">
-                                                                        <rect key="frame" x="0.0" y="24.333333333333314" width="121.66666666666667" height="15.333333333333336"/>
+                                                                        <rect key="frame" x="0.0" y="24.333333333333368" width="121.66666666666667" height="15.333333333333332"/>
                                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                         <color key="textColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -3362,14 +3381,14 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                                 </subviews>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfu-wi-3ME">
-                                                                <rect key="frame" x="20" y="77.666666666666686" width="313" height="1"/>
+                                                                <rect key="frame" x="20" y="77.666666666666629" width="313" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="wpV-mg-sv4"/>
                                                                 </constraints>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qX1-VV-DNF">
-                                                                <rect key="frame" x="20" y="88.666666666666686" width="313" height="17.666666666666671"/>
+                                                                <rect key="frame" x="20" y="88.666666666666629" width="313" height="17.666666666666671"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzP-Xh-tIm">
                                                                         <rect key="frame" x="0.0" y="0.0" width="268.66666666666669" height="17.666666666666668"/>
@@ -3386,7 +3405,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="aF0-cU-Dsp">
-                                                                <rect key="frame" x="20" y="122.33333333333333" width="313" height="17.666666666666671"/>
+                                                                <rect key="frame" x="20" y="122.33333333333339" width="313" height="17.666666666666671"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Valid Till" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlx-e0-x9b">
                                                                         <rect key="frame" x="0.0" y="0.0" width="224.33333333333334" height="17.666666666666668"/>
@@ -3430,13 +3449,13 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is included?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ho-52-wK9">
-                                                        <rect key="frame" x="0.0" y="442" width="353" height="20.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="176" width="353" height="20.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Bold" family="Outfit" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="lY5-Xa-7Bb">
-                                                        <rect key="frame" x="0.0" y="478.33333333333337" width="353" height="419.66666666666663"/>
+                                                        <rect key="frame" x="0.0" y="212.33333333333337" width="353" height="419.66666666666674"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wvY-rU-oFl">
                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="49.666666666666664"/>
@@ -3584,7 +3603,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hPk-F8-8uN">
-                                                                <rect key="frame" x="0.0" y="328.33333333333326" width="353" height="34.666666666666686"/>
+                                                                <rect key="frame" x="0.0" y="328.33333333333337" width="353" height="34.666666666666686"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="kH1-yI-ajC">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -3602,7 +3621,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unrestricted Access to the Full Suite of Nature Sounds" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD4-4e-c1Q">
-                                                                                <rect key="frame" x="0.0" y="19.333333333333371" width="323" height="15.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="19.333333333333258" width="323" height="15.333333333333336"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
@@ -3612,7 +3631,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="US4-Mb-1Qj">
-                                                                <rect key="frame" x="0.0" y="385" width="353" height="34.666666666666686"/>
+                                                                <rect key="frame" x="0.0" y="384.99999999999989" width="353" height="34.666666666666686"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rightcheck" translatesAutoresizingMaskIntoConstraints="NO" id="lK9-Cf-n8P">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -3630,7 +3649,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unrestricted Access to the Full Suite of Nature Sounds" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpx-Wv-K4B">
-                                                                                <rect key="frame" x="0.0" y="19.333333333333258" width="323" height="15.333333333333336"/>
+                                                                                <rect key="frame" x="0.0" y="19.333333333333485" width="323" height="15.333333333333336"/>
                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="12"/>
                                                                                 <color key="textColor" name="#E4E1F8"/>
                                                                                 <nil key="highlightedColor"/>
@@ -3642,10 +3661,10 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                         </subviews>
                                                     </stackView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_line_saperator" translatesAutoresizingMaskIntoConstraints="NO" id="mtd-jd-u24">
-                                                        <rect key="frame" x="0.0" y="914" width="353" height="1"/>
+                                                        <rect key="frame" x="0.0" y="648" width="353" height="1"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2U-hb-b77">
-                                                        <rect key="frame" x="0.0" y="931" width="353" height="33"/>
+                                                        <rect key="frame" x="0.0" y="665" width="353" height="33"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="16"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Change Plan">
@@ -3657,7 +3676,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tf-6X-K8m">
-                                                        <rect key="frame" x="0.0" y="979.99999999999989" width="353" height="348.66666666666663"/>
+                                                        <rect key="frame" x="0.0" y="714" width="353" height="348.66666666666674"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZk-ep-TQO">
                                                                 <rect key="frame" x="20" y="12" width="313" height="324.66666666666669"/>
@@ -3682,8 +3701,10 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="lBl-Ll-2h1" secondAttribute="bottom" constant="25" id="4Ra-Ww-Zb4"/>
-                                            <constraint firstItem="lBl-Ll-2h1" firstAttribute="top" secondItem="tZO-PL-5Nw" secondAttribute="top" id="Jjh-H8-Tnh"/>
+                                            <constraint firstItem="gz8-5G-XJq" firstAttribute="centerX" secondItem="tZO-PL-5Nw" secondAttribute="centerX" id="7S0-J4-Ads"/>
+                                            <constraint firstItem="gz8-5G-XJq" firstAttribute="top" secondItem="tZO-PL-5Nw" secondAttribute="top" constant="-50" id="PUk-Oe-s7E"/>
                                             <constraint firstItem="lBl-Ll-2h1" firstAttribute="leading" secondItem="tZO-PL-5Nw" secondAttribute="leading" constant="20" id="i3j-Ib-oxX"/>
+                                            <constraint firstItem="lBl-Ll-2h1" firstAttribute="top" secondItem="gz8-5G-XJq" secondAttribute="bottom" constant="-30" id="opD-Cf-VMx"/>
                                             <constraint firstAttribute="trailing" secondItem="lBl-Ll-2h1" secondAttribute="trailing" constant="20" id="pLh-1L-v2D"/>
                                         </constraints>
                                     </view>
@@ -3743,6 +3764,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                         <outlet property="lbl_plan6_title" destination="mmb-Mb-hQs" id="Em2-vA-Dez"/>
                         <outlet property="lbl_plan7_subtitle" destination="gpx-Wv-K4B" id="Mwo-Jy-Y2E"/>
                         <outlet property="lbl_plan7_title" destination="IQo-JP-u2T" id="CWH-ZZ-K5u"/>
+                        <outlet property="viewAnimtion" destination="gz8-5G-XJq" id="JbI-UL-apF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zDb-vy-1EI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3761,7 +3783,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcl-bu-gfq">
-                                <rect key="frame" x="20" y="67" width="40" height="40"/>
+                                <rect key="frame" x="20" y="126" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8eW-Fq-p8H"/>
                                     <constraint firstAttribute="width" constant="40" id="y1Y-ad-W5T"/>
@@ -3773,7 +3795,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="XEC-vt-YOa">
-                                <rect key="frame" x="135.33333333333334" y="74.333333333333329" width="122.33333333333334" height="25.333333333333329"/>
+                                <rect key="frame" x="135.33333333333334" y="133.33333333333334" width="122.33333333333334" height="25.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-C6-7r3">
                                         <rect key="frame" x="0.0" y="0.0" width="122.33333333333333" height="25.333333333333332"/>
@@ -3784,7 +3806,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="pX5-oj-AFu">
-                                <rect key="frame" x="0.0" y="127" width="393" height="605"/>
+                                <rect key="frame" x="0.0" y="186" width="393" height="512"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFH-rZ-VCa">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="612"/>
@@ -4018,7 +4040,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkx-VE-Who" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                <rect key="frame" x="20" y="752" width="353" height="54"/>
+                                <rect key="frame" x="20" y="718" width="353" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="BHo-nS-OsG"/>
                                 </constraints>
@@ -4088,7 +4110,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kEV-sh-mkk">
-                                <rect key="frame" x="0.0" y="63" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="122" width="393" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDV-eY-dRB">
                                         <rect key="frame" x="20" y="0.0" width="40" height="40"/>
@@ -4099,7 +4121,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3y-oU-jKw">
-                                        <rect key="frame" x="129" y="8.6666666666666714" width="135" height="23"/>
+                                        <rect key="frame" x="129" y="8.6666666666666572" width="135" height="23"/>
                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -4115,7 +4137,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="vGf-X5-sZa">
-                                <rect key="frame" x="20" y="126.99999999999997" width="353" height="427.33333333333326"/>
+                                <rect key="frame" x="20" y="185.99999999999997" width="353" height="427.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Syn-2l-17W">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="73.666666666666671"/>
@@ -4175,7 +4197,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                         </subviews>
                                     </stackView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqA-RL-L4M">
-                                        <rect key="frame" x="0.0" y="88.666666666666657" width="353" height="88"/>
+                                        <rect key="frame" x="0.0" y="88.666666666666686" width="353" height="88"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_upload_scrip" translatesAutoresizingMaskIntoConstraints="NO" id="Whv-08-qm4">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="88"/>
@@ -4193,13 +4215,13 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                         <state key="normal" image="ic_upload_media"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload your file here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSh-zX-ssC">
-                                                        <rect key="frame" x="92.333333333333357" y="40.000000000000028" width="128.66666666666663" height="0.0"/>
+                                                        <rect key="frame" x="92.333333333333357" y="40" width="128.66666666666663" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
                                                         <color key="textColor" name="#E4E1F8"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9E-Rh-v9b">
-                                                        <rect key="frame" x="0.0" y="48.000000000000028" width="313" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="48" width="313" height="0.0"/>
                                                         <string key="text">Please upload a photo or a video to show us what's going on, we really appreciate you taking the time to bring this to our attention</string>
                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
                                                         <color key="textColor" red="0.81960784310000001" green="0.81568627449999997" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4232,7 +4254,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIo-7t-jcf">
-                                        <rect key="frame" x="0.0" y="103.66666666666666" width="353" height="140"/>
+                                        <rect key="frame" x="0.0" y="103.66666666666669" width="353" height="140"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_upload_scrip" translatesAutoresizingMaskIntoConstraints="NO" id="1GM-g7-V9J">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="140"/>
@@ -4488,7 +4510,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UwS-Qq-ghQ">
-                                <rect key="frame" x="0.0" y="59" width="393" height="609"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="609"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFJ-1m-dU3">
                                         <rect key="frame" x="161.66666666666666" y="22" width="55" height="5"/>
@@ -4502,7 +4524,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OS9-Su-Iq6">
-                                        <rect key="frame" x="338" y="-0.3333333333333357" width="50" height="50"/>
+                                        <rect key="frame" x="338" y="-0.3333333333333286" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1Ad-CS-Yaq"/>
                                             <constraint firstAttribute="width" constant="50" id="nfe-h0-px9"/>
@@ -4535,13 +4557,13 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                         </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line_middle" translatesAutoresizingMaskIntoConstraints="NO" id="vlx-Cm-IKn">
-                                        <rect key="frame" x="50" y="157.33333333333334" width="278.66666666666669" height="1"/>
+                                        <rect key="frame" x="50" y="157.33333333333331" width="278.66666666666669" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Xzm-YE-yIT"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="6X4-1j-xOl">
-                                        <rect key="frame" x="16" y="183.33333333333334" width="361" height="285.66666666666663"/>
+                                        <rect key="frame" x="16" y="183.33333333333329" width="361" height="285.66666666666674"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kM4-hB-S9A">
                                                 <rect key="frame" x="0.0" y="0.0" width="361" height="20"/>
@@ -4707,7 +4729,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AN2-9M-azW">
-                                <rect key="frame" x="20" y="75" width="40" height="40"/>
+                                <rect key="frame" x="20" y="134" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3eb-3s-Ral"/>
                                     <constraint firstAttribute="width" constant="40" id="odu-31-eiv"/>
@@ -4719,13 +4741,13 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link/Unlink Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaq-ce-jq7">
-                                <rect key="frame" x="105.33333333333333" y="82.333333333333329" width="182.66666666666669" height="25.333333333333329"/>
+                                <rect key="frame" x="105.33333333333333" y="141.33333333333334" width="182.66666666666669" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="XBP-3o-rx9">
-                                <rect key="frame" x="0.0" y="127" width="393" height="691"/>
+                                <rect key="frame" x="0.0" y="186" width="393" height="598"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAr-Y6-eet">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
@@ -4810,7 +4832,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZK-wF-s9G">
-                                                                <rect key="frame" x="285.33333333333331" y="17.333333333333343" width="25.666666666666686" height="17.666666666666671"/>
+                                                                <rect key="frame" x="285.33333333333331" y="17.333333333333314" width="25.666666666666686" height="17.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="14"/>
                                                                 <color key="textColor" name="#BBB5ED"/>
                                                                 <nil key="highlightedColor"/>
@@ -4981,7 +5003,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1UX-qW-jLx">
-                                <rect key="frame" x="0.0" y="59" width="393" height="500"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="500"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.19215686269999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="gg3-r4-vGj"/>
@@ -4991,7 +5013,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7e1-2I-M3v">
-                                <rect key="frame" x="169" y="75" width="55" height="5"/>
+                                <rect key="frame" x="169" y="134" width="55" height="5"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.34509803919999998" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="5cJ-VC-Hgc"/>
@@ -5002,7 +5024,7 @@ The numbers provided on this page (e.g., over 250 musical tracks, over 300 natur
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkU-X1-BiS">
-                                <rect key="frame" x="50" y="109.00000000000001" width="293" height="50.666666666666671"/>
+                                <rect key="frame" x="50" y="168" width="293" height="50.666666666666657"/>
                                 <string key="text">Are you sure you want 
 to logout from this account?</string>
                                 <fontDescription key="fontDescription" name="Outfit-Medium" family="Outfit" pointSize="20"/>
@@ -5011,7 +5033,7 @@ to logout from this account?</string>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fgW-IP-uUf">
-                                <rect key="frame" x="30" y="179.66666666666663" width="333" height="164"/>
+                                <rect key="frame" x="30" y="238.66666666666663" width="333" height="164"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWJ-fH-yF3" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="74"/>
@@ -5026,7 +5048,7 @@ to logout from this account?</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjk-hV-ydx" customClass="AppCommonTextField" customModule="Dear_Friends" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="24" width="333" height="50"/>
+                                                        <rect key="frame" x="0.0" y="24.000000000000028" width="333" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="0d3-kl-k65"/>
                                                         </constraints>
@@ -5088,7 +5110,7 @@ to logout from this account?</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="X0P-Jn-sey">
-                                <rect key="frame" x="30" y="373.66666666666669" width="333" height="52"/>
+                                <rect key="frame" x="30" y="432.66666666666669" width="333" height="52"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuT-cy-XAg">
                                         <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="52"/>
@@ -5200,7 +5222,7 @@ to logout from this account?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAm-oD-7Wc">
-                                <rect key="frame" x="0.0" y="59" width="393" height="505"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="505"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuz-7s-NL6">
                                         <rect key="frame" x="161.66666666666666" y="22" width="55" height="5"/>
@@ -5214,7 +5236,7 @@ to logout from this account?</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTc-JI-E2b">
-                                        <rect key="frame" x="338" y="-0.3333333333333357" width="50" height="50"/>
+                                        <rect key="frame" x="338" y="-0.3333333333333286" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="jeC-Wm-esr"/>
                                             <constraint firstAttribute="height" constant="50" id="rxw-BI-Db6"/>
@@ -5247,13 +5269,13 @@ to logout from this account?</string>
                                         </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line_middle" translatesAutoresizingMaskIntoConstraints="NO" id="9SU-Cn-nZg">
-                                        <rect key="frame" x="50" y="157.33333333333334" width="278.66666666666669" height="1"/>
+                                        <rect key="frame" x="50" y="157.33333333333331" width="278.66666666666669" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="OXj-q2-2KJ"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="BHp-9U-4Zo">
-                                        <rect key="frame" x="16" y="183.33333333333337" width="361" height="181.66666666666663"/>
+                                        <rect key="frame" x="16" y="183.33333333333331" width="361" height="181.66666666666669"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V5v-7O-9ne">
                                                 <rect key="frame" x="0.0" y="0.0" width="361" height="181.66666666666666"/>
@@ -5350,7 +5372,7 @@ Please follow the steps on your device to manage your subscription.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpO-bu-HQ5">
-                                <rect key="frame" x="20" y="67" width="40" height="40"/>
+                                <rect key="frame" x="20" y="126" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="UsY-5D-EvK"/>
                                     <constraint firstAttribute="width" constant="40" id="lGA-3m-BGE"/>
@@ -5362,17 +5384,17 @@ Please follow the steps on your device to manage your subscription.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED8-dj-hFg">
-                                <rect key="frame" x="133.66666666666666" y="76.666666666666671" width="125.66666666666666" height="21"/>
+                                <rect key="frame" x="126.33333333333333" y="133.33333333333334" width="140.33333333333343" height="25.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LC4-s3-MWd">
-                                <rect key="frame" x="0.0" y="167" width="393" height="565"/>
+                                <rect key="frame" x="0.0" y="226" width="393" height="472"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ww9-HR-K0z" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                <rect key="frame" x="20" y="752" width="353" height="54"/>
+                                <rect key="frame" x="20" y="718" width="353" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="6go-x0-orN"/>
                                 </constraints>
@@ -5388,7 +5410,7 @@ Please follow the steps on your device to manage your subscription.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’ll use these preferences to recommend content to you that aligns with  your goals and interests" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czy-Bb-bdM">
-                                <rect key="frame" x="20" y="109.66666666666667" width="353" height="45.333333333333329"/>
+                                <rect key="frame" x="20" y="170.66666666666666" width="353" height="43.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -5506,7 +5528,7 @@ Please follow the steps on your device to manage your subscription.</string>
             <color red="0.89411764705882357" green="0.88235294117647056" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AccentColor">
-            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.46666666865348816" green="0.41176474094390869" blue="0.85490196943283081" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="App_Blue_Color">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
