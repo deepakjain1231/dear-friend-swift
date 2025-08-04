@@ -62,9 +62,7 @@ class MusicVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
-        
         self.setupUI()
     }
     
@@ -173,14 +171,8 @@ class MusicVC: BaseVC {
             self.btnRepeat.setImage(UIImage(named: "ic_music_repeat_1"), for: .normal)
             
         } else if self.currentRepeatMode == .SingleRepeat {
-//            self.currentRepeatMode = .AllRepeat
             self.btnRepeat.setImage(UIImage(named: "ic_music_repeat_all"), for: .normal)
-            
         }
-//        else if self.currentRepeatMode == .AllRepeat {
-//            self.currentRepeatMode = .None
-//            self.btnRepeat.setImage(UIImage(named: "ic_music_repeat"), for: .normal)
-//        }
     }
     
     @IBAction func btnPreviousTapped(_ sender: UIButton) {
@@ -244,7 +236,6 @@ extension MusicVC: AVAudioPlayerDelegate {
             self.songs = self.audioVM.arrOfAudioList.compactMap({$0.musicURL})
         }
         self.loadSong(index: self.currentSongIndex)
-        //        self.play()
     }
     
     func manageButtons() {
@@ -272,53 +263,7 @@ extension MusicVC: AVAudioPlayerDelegate {
         self.managePlayer()
         self.backGroundPlayer?.pause()
     }
-    
-    //    func downloadFile(stringURL: String,
-    //                      isForBG: Bool = false) {
-    //
-    //        if let audioUrl = URL(string: stringURL) {
-    //            // then lets create your document folder url
-    //            let documentsDirectoryURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    //
-    //            // lets create your destination file url
-    //            let destinationUrl = documentsDirectoryURL.appendingPathComponent(audioUrl.lastPathComponent)
-    //            print(destinationUrl)
-    //
-    //            // to check if it exists before downloading it
-    //            if FileManager.default.fileExists(atPath: destinationUrl.path) {
-    //                print("The file already exists at path")
-    //
-    //                if isForBG {
-    //                    self.managePlayerBeforeBGPlay(destinationUrl: destinationUrl)
-    //                } else {
-    //                    self.songs[self.currentSongIndex] = destinationUrl
-    //                    self.managePlayerBeforePlay(destinationUrl: destinationUrl)
-    //                }
-    //
-    //            } else {
-    //
-    //                // you can use NSURLSession.sharedSession to download the data asynchronously
-    //                URLSession.shared.downloadTask(with: audioUrl, completionHandler: { (location, response, error) -> Void in
-    //                    guard let location = location, error == nil else { return }
-    //                    do {
-    //                        // after downloading your file you need to move it to your destination url
-    //                        try FileManager.default.moveItem(at: location, to: destinationUrl)
-    //                        print("File moved to documents folder")
-    //
-    //                        if isForBG {
-    //                            self.managePlayerBeforeBGPlay(destinationUrl: destinationUrl)
-    //                        } else {
-    //                            self.managePlayerBeforePlay(destinationUrl: destinationUrl)
-    //                        }
-    //
-    //                    } catch let error as NSError {
-    //                        print(error.localizedDescription)
-    //                    }
-    //                }).resume()
-    //            }
-    //        }
-    //    }
-    
+
     func managePlayerBeforePlay(destinationUrl: URL) {
         
         if self.isFromDownload {
@@ -365,10 +310,7 @@ extension MusicVC: AVAudioPlayerDelegate {
                 if let music_image = current.music_image {
                     self.imgSong.image = UIImage(data: music_image)
                     self.imgBg.image = UIImage(data: music_image)
-                }
-//                self.setupNowPlaying()
-//                self.setupRemoteCommandCenter()
-                
+                }                
             } else {
                 self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
                 
@@ -706,5 +648,129 @@ extension MusicVC: GADFullScreenContentDelegate {
     /// Tells the delegate that the ad dismissed full screen content.
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print("Ad did dismiss full screen content.")
+    }
+}
+
+
+
+
+
+
+
+extension Sequence where Element: Hashable {
+    func uniqued() -> [Element] {
+        var set = Set<Element>()
+        return filter { set.insert($0).inserted }
+    }
+}
+
+extension TimeInterval {
+    func formatDuration(isForMusic: Bool = false) -> String {
+        let hours = Int(self / 3600)
+        let minutes = Int((self.truncatingRemainder(dividingBy: 3600)) / 60)
+        let remainingSeconds = Int(self.truncatingRemainder(dividingBy: 60))
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        var formatString = ""
+        var components: [String] = []
+        
+        if hours > 0 {
+            formatString += "HH:"
+            components.append(String(format: "%02d", hours))
+        }
+        
+        if minutes > 0 || (hours == 0 && remainingSeconds == 0) {
+            formatString += "mm:"
+            components.append(String(format: "%02d", minutes))
+        }
+        
+        if remainingSeconds > 0 && hours == 0 && minutes == 0 {
+            
+            formatString += "ss"
+            components.append(String(format: "%02d", remainingSeconds))
+            
+        } else {
+            formatString += "ss"
+            components.append(String(format: "%02d", remainingSeconds))
+        }
+        
+        formatter.dateFormat = formatString
+        let dateString = components.joined(separator: ":")
+        let formattedDuration = formatter.string(from: formatter.date(from: dateString)!) // Force unwrapping is safe here
+        
+        if isForMusic {
+            if remainingSeconds > 0 && hours == 0 && minutes == 0 {
+                return "00:\(formattedDuration)"
+                
+            } else {
+                return "\(formattedDuration)"
+            }
+            
+        } else {
+            var durationText = ""
+            
+            if Double(self) > 86400 {
+                durationText = "hours"
+                
+            } else if Double(self) < 3600 && Double(self) > 60 {
+                durationText = "mins"
+                
+            } else if Double(self) < 60 {
+                durationText = "seconds"
+            }
+            
+            return "\(formattedDuration) \(durationText.trimmingCharacters(in: .whitespacesAndNewlines))"
+        }
+    }
+}
+
+
+public enum Result<T> {
+    case success(T)
+    case failure
+}
+
+class CacheManager {
+    
+    static let shared = CacheManager()
+    private let fileManager = FileManager.default
+    private lazy var mainDirectoryUrl: URL = {
+        
+        let documentsUrl = self.fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        return documentsUrl
+    }()
+    
+    func getFileWith(stringUrl: String, completionHandler: @escaping (Result<URL>) -> Void ) {
+        let file = directoryFor(stringUrl: stringUrl)
+        
+        //return file path if already exists in cache directory
+        guard !fileManager.fileExists(atPath: file.path)  else {
+            completionHandler(Result.success(file))
+            return
+        }
+        
+        DispatchQueue.global().async {
+            
+            if let videoData = NSData(contentsOf: URL(string: stringUrl)!) {
+                videoData.write(to: file, atomically: true)
+                
+                DispatchQueue.main.async {
+                    completionHandler(Result.success(file))
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completionHandler(Result.failure)
+                }
+            }
+        }
+    }
+    
+    private func directoryFor(stringUrl: String) -> URL {
+        let fileURL = URL(string: stringUrl)!.lastPathComponent
+        let file = self.mainDirectoryUrl.appendingPathComponent(fileURL)
+        
+        return file
     }
 }

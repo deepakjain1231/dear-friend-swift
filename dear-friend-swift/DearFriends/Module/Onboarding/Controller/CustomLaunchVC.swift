@@ -109,7 +109,7 @@ class CustomLaunchVC: BaseVC {
                         if UserDefaults.standard.string(forKey: lastPlanPurchsed) != nil {
                             appDelegate.verifyPlanReciptMain()
                         } else {
-                            appDelegate.setTabbarRoot()
+                            appDelegate.setTabbarRootInitialTime(is_initialTime: true)
                         }
                     }
                 } failure: { _ in

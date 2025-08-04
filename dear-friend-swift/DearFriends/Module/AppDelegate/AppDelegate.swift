@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var descText = ""
     var isOpenedFromNoti = false
     var finalAmountMain = ""
+    var isInitialAppLoad = true
     var authVM = AuthViewModel()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -461,6 +462,38 @@ extension AppDelegate {
             })
         } else {
             
+        }
+        
+    }
+    
+    func setTabbarRootInitialTime(is_initialTime: Bool = false) {
+        if self.isInitialAppLoad == false {
+            return
+        }
+        
+        self.isInitialAppLoad = is_initialTime
+        
+        if self.isInitialAppLoad {
+            self.isInitialAppLoad = false
+            
+            debugPrint("setTabbarRoot")
+            let vc: RootStackTabViewController = RootStackTabViewController.instantiate(appStoryboard: .Tabbar)
+            let win = self.window ?? UIApplication.shared.keyWindow
+            
+            if(win != nil){
+                UIView.transition(with: win!, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                let nav:UINavigationController = UINavigationController(rootViewController: vc)
+                nav.isNavigationBarHidden = true
+                win!.rootViewController = nav
+                win!.makeKeyAndVisible()
+                self.isNetRootSet = false
+                
+                }, completion: { completed in
+                
+                })
+            } else {
+                
+            }
         }
     }
 }

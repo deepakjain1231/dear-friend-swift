@@ -964,9 +964,9 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PIf-CE-JWr">
-                                <rect key="frame" x="20" y="683.5" width="374" height="49.5"/>
+                                <rect key="frame" x="20" y="691.5" width="374" height="49.5"/>
                                 <subviews>
-                                    <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q1M-xP-dlr">
+                                    <progressView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q1M-xP-dlr">
                                         <rect key="frame" x="2" y="14" width="370" height="4"/>
                                         <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="trackTintColor" red="0.69803921568627447" green="0.69411764705882351" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -1009,8 +1009,15 @@
                                     <constraint firstItem="RFR-kz-y7Y" firstAttribute="centerY" secondItem="XjP-gY-EyT" secondAttribute="centerY" id="w87-Hz-Zzn"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dm-cm-BcU">
+                                <rect key="frame" x="20" y="664" width="374" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="mct-R9-hrB"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="gz8-aT-ih6">
-                                <rect key="frame" x="20" y="551.5" width="181.5" height="108"/>
+                                <rect key="frame" x="20" y="559.5" width="181.5" height="108"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gratitude And Beyond" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xuk-q1-9GD" customClass="MarqueeLabel" customModule="MarqueeLabel">
                                         <rect key="frame" x="0.0" y="0.0" width="181.5" height="23"/>
@@ -1041,7 +1048,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="YQI-oc-0JZ">
-                                <rect key="frame" x="244" y="551.5" width="150" height="48"/>
+                                <rect key="frame" x="244" y="559.5" width="150" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwY-db-NAi">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -1080,7 +1087,7 @@
                                 </subviews>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="p4A-aC-Zfl">
-                                <rect key="frame" x="258" y="565.5" width="20" height="20"/>
+                                <rect key="frame" x="258" y="573.5" width="20" height="20"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                         </subviews>
@@ -1092,9 +1099,11 @@
                             <constraint firstItem="p4A-aC-Zfl" firstAttribute="centerY" secondItem="XwY-db-NAi" secondAttribute="centerY" id="3Zz-64-XmK"/>
                             <constraint firstItem="HX2-yt-EXk" firstAttribute="trailing" secondItem="ywQ-KX-T5x" secondAttribute="trailing" id="4Tt-md-2Fy"/>
                             <constraint firstItem="eJn-Ou-tZT" firstAttribute="height" secondItem="FFg-MU-irc" secondAttribute="height" multiplier="0.79" id="7iS-2m-6Xx"/>
+                            <constraint firstItem="0dm-cm-BcU" firstAttribute="trailing" secondItem="PIf-CE-JWr" secondAttribute="trailing" id="80Y-c7-x6a"/>
                             <constraint firstItem="lPn-zE-bam" firstAttribute="centerX" secondItem="HX2-yt-EXk" secondAttribute="centerX" id="ANd-9M-RRt"/>
-                            <constraint firstItem="4Ue-GO-W5j" firstAttribute="top" secondItem="PIf-CE-JWr" secondAttribute="bottom" constant="16" id="AvS-ZZ-cGw"/>
+                            <constraint firstItem="4Ue-GO-W5j" firstAttribute="top" secondItem="PIf-CE-JWr" secondAttribute="bottom" constant="8" id="AvS-ZZ-cGw"/>
                             <constraint firstItem="ywQ-KX-T5x" firstAttribute="top" secondItem="HX2-yt-EXk" secondAttribute="top" constant="4" id="B6l-Iz-POm"/>
+                            <constraint firstItem="0dm-cm-BcU" firstAttribute="leading" secondItem="PIf-CE-JWr" secondAttribute="leading" id="MIP-ry-PUb"/>
                             <constraint firstItem="PIf-CE-JWr" firstAttribute="top" secondItem="gz8-aT-ih6" secondAttribute="bottom" constant="24" id="Nb1-AJ-3TG"/>
                             <constraint firstItem="HX2-yt-EXk" firstAttribute="trailing" secondItem="YQI-oc-0JZ" secondAttribute="trailing" constant="20" id="O3A-Z9-kTQ"/>
                             <constraint firstItem="4Ue-GO-W5j" firstAttribute="leading" secondItem="HX2-yt-EXk" secondAttribute="leading" id="RNW-eQ-pXM"/>
@@ -1108,6 +1117,7 @@
                             <constraint firstItem="mFY-6k-ozH" firstAttribute="centerY" secondItem="hrG-7I-4WS" secondAttribute="centerY" id="ZqG-mg-d0F"/>
                             <constraint firstItem="gz8-aT-ih6" firstAttribute="leading" secondItem="HX2-yt-EXk" secondAttribute="leading" constant="20" id="bqI-0z-jcL"/>
                             <constraint firstItem="HX2-yt-EXk" firstAttribute="trailing" secondItem="PIf-CE-JWr" secondAttribute="trailing" constant="20" id="cGo-1i-Xdl"/>
+                            <constraint firstItem="0dm-cm-BcU" firstAttribute="bottom" secondItem="PIf-CE-JWr" secondAttribute="bottom" constant="-22" id="d2d-hA-NxQ"/>
                             <constraint firstItem="PIf-CE-JWr" firstAttribute="leading" secondItem="HX2-yt-EXk" secondAttribute="leading" constant="20" id="j36-dh-Ge2"/>
                             <constraint firstItem="YQI-oc-0JZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gz8-aT-ih6" secondAttribute="trailing" constant="20" id="lvT-N5-BfB"/>
                             <constraint firstItem="65m-Xb-gmp" firstAttribute="centerX" secondItem="eJn-Ou-tZT" secondAttribute="centerX" multiplier="1.03" id="m4H-Nz-38G"/>
@@ -1145,6 +1155,7 @@
                         <outlet property="stackControls" destination="AHs-25-ejt" id="kVm-CT-rf3"/>
                         <outlet property="stackMore" destination="YQI-oc-0JZ" id="Tac-qu-aI5"/>
                         <outlet property="stack_button" destination="YQI-oc-0JZ" id="BiR-af-O9R"/>
+                        <outlet property="viewMusicWaves" destination="0dm-cm-BcU" id="4Lb-gC-j9E"/>
                         <outlet property="vwBanner" destination="Lqy-QE-Xi0" id="q7Y-0s-qCY"/>
                         <outlet property="vwSlider" destination="5lV-4w-c5d" id="nUk-BT-LRm"/>
                         <outlet property="vwSpace" destination="5zZ-DN-ePh" id="oXN-Og-JQ5"/>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0004DF5C2D9AA0080002D5B8 /* MyPreferencesThemCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0004DF5B2D9AA0060002D5B8 /* MyPreferencesThemCatVC.swift */; };
 		0004DF5E2D9AB73D0002D5B8 /* FullImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0004DF5D2D9AB7340002D5B8 /* FullImageVC.swift */; };
+		00099AA32E3CD20F00F63195 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00099AA22E3CD20B00F63195 /* WaveformView.swift */; };
 		0012B2AE2D184A06000B7AB9 /* MusicCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0012B2AD2D184A06000B7AB9 /* MusicCategoryCVC.swift */; };
 		0012B2B02D184A4E000B7AB9 /* MusicCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0012B2AF2D184A4E000B7AB9 /* MusicCategoryCVC.xib */; };
 		002F773C2D2126AF004431BD /* ShowCaseDialouge1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002F773B2D2126AF004431BD /* ShowCaseDialouge1.xib */; };
@@ -16,6 +17,7 @@
 		002F77422D2127B9004431BD /* ShowCaseCollectionCell_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002F77412D2127B9004431BD /* ShowCaseCollectionCell_1.xib */; };
 		002F77432D2127B9004431BD /* ShowCaseCollectionCell_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002F77402D2127B9004431BD /* ShowCaseCollectionCell_1.swift */; };
 		00ABC9BD2D1E50E20031B3D9 /* AboutCreatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABC9BC2D1E50E20031B3D9 /* AboutCreatorVC.swift */; };
+		00EF7E472E4088F900D132EC /* sample_wave.json in Resources */ = {isa = PBXBuildFile; fileRef = 00EF7E462E4088F900D132EC /* sample_wave.json */; };
 		29028C7F2A02776000D0A747 /* HomeCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29028C7D2A02776000D0A747 /* HomeCategoryCVC.swift */; };
 		29028C802A02776000D0A747 /* HomeCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29028C7E2A02776000D0A747 /* HomeCategoryCVC.xib */; };
 		290326362B27143B00E5D289 /* BGAudioListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290326352B27143B00E5D289 /* BGAudioListModel.swift */; };
@@ -396,6 +398,7 @@
 /* Begin PBXFileReference section */
 		0004DF5B2D9AA0060002D5B8 /* MyPreferencesThemCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPreferencesThemCatVC.swift; sourceTree = "<group>"; };
 		0004DF5D2D9AB7340002D5B8 /* FullImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageVC.swift; sourceTree = "<group>"; };
+		00099AA22E3CD20B00F63195 /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		0012B2AD2D184A06000B7AB9 /* MusicCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCategoryCVC.swift; sourceTree = "<group>"; };
 		0012B2AF2D184A4E000B7AB9 /* MusicCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCategoryCVC.xib; sourceTree = "<group>"; };
 		002F773A2D2126AF004431BD /* ShowCaseDialouge1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseDialouge1.swift; sourceTree = "<group>"; };
@@ -403,6 +406,7 @@
 		002F77402D2127B9004431BD /* ShowCaseCollectionCell_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseCollectionCell_1.swift; sourceTree = "<group>"; };
 		002F77412D2127B9004431BD /* ShowCaseCollectionCell_1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowCaseCollectionCell_1.xib; sourceTree = "<group>"; };
 		00ABC9BC2D1E50E20031B3D9 /* AboutCreatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCreatorVC.swift; sourceTree = "<group>"; };
+		00EF7E462E4088F900D132EC /* sample_wave.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample_wave.json; sourceTree = "<group>"; };
 		11CD7D134A180267A2A4AEDA /* Pods-Dear Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear Friends.debug.xcconfig"; path = "Target Support Files/Pods-Dear Friends/Pods-Dear Friends.debug.xcconfig"; sourceTree = "<group>"; };
 		29028C7D2A02776000D0A747 /* HomeCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCVC.swift; sourceTree = "<group>"; };
 		29028C7E2A02776000D0A747 /* HomeCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryCVC.xib; sourceTree = "<group>"; };
@@ -1571,6 +1575,7 @@
 				43098B7C2A1731C0003D6307 /* DearFriends.entitlements */,
 				29AD52872A2F46D300512272 /* DownloadCoreDataModel.xcdatamodeld */,
 				C5F19E0D2D5E07C40019E294 /* DearFriend_logo.gif */,
+				00EF7E462E4088F900D132EC /* sample_wave.json */,
 				002F773E2D21272E004431BD /* Showcase View */,
 				29D86E742A00E4B800751453 /* StoryBoards */,
 				4337BACF294D82630090E0A5 /* Module */,
@@ -1583,6 +1588,7 @@
 		4337BA1A294D812D0090E0A5 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				00099AA22E3CD20B00F63195 /* WaveformView.swift */,
 				C58B068D2D06C2C100382EC4 /* Core */,
 				BD91BB9A2CCA8ABC006B00E6 /* AudioPlayer */,
 				29091F762B9F0AFC00373026 /* HCVimeoVideoExtractor */,
@@ -2467,6 +2473,7 @@
 				432CABD52A24B7AF0039B55C /* Settings.bundle in Resources */,
 				29F5C3A42B2C2177007929C4 /* TimelineTVC.xib in Resources */,
 				29CC6E2D29FFB90D00638A05 /* Poppins-BoldItalic.otf in Resources */,
+				00EF7E472E4088F900D132EC /* sample_wave.json in Resources */,
 				29CC6E2729FFB90D00638A05 /* Poppins-SemiBoldItalic.otf in Resources */,
 				C5E0326E2D06D30C0010AC5D /* Play-Regular.ttf in Resources */,
 				C53A2B472D1537F200DB828D /* AppRatePopup.xib in Resources */,
@@ -2753,6 +2760,7 @@
 				C526F7D12D54EB9E00BB03AF /* UIImage+SwiftyGif.swift in Sources */,
 				C526F7D22D54EB9E00BB03AF /* ObjcAssociatedWeakObject.swift in Sources */,
 				BD91BBDD2CCA8ACE006B00E6 /* SeekRequest.swift in Sources */,
+				00099AA32E3CD20F00F63195 /* WaveformView.swift in Sources */,
 				BD91BBEF2CCA8ACE006B00E6 /* AudioRendererContext.swift in Sources */,
 				2998DD0A2AE142C60071A323 /* CreateStep1VC.swift in Sources */,
 				4337BA80294D812D0090E0A5 /* AppCommonTextField.swift in Sources */,

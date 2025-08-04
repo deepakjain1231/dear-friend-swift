@@ -17,15 +17,13 @@ import Mixpanel
 
 class NewMusicVC: UIViewController {
     
+    let waveformView = WaveformView()
+    
     // MARK: - OUTLETS
     
-    @IBOutlet weak var consThumbHeight: NSLayoutConstraint!
     @IBOutlet weak var vwSpace: UIView!
-//    @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnRepeat2: UIButton!
-//    @IBOutlet weak var vwRepeat2: UIView!
-//    @IBOutlet weak var vwRepeat: UIView!
     @IBOutlet weak var acti2: UIActivityIndicatorView!
     @IBOutlet weak var stackMore: UIStackView!
     @IBOutlet weak var stackControls: UIStackView!
@@ -47,6 +45,8 @@ class NewMusicVC: UIViewController {
     @IBOutlet weak var imgThumb: UIImageView!
     @IBOutlet weak var stack_button: UIStackView!
     @IBOutlet weak var btn_option_top: UIButton!
+    
+    @IBOutlet weak var viewMusicWaves: UIView!
     
     // MARK: - VARIABLES
     
@@ -105,6 +105,7 @@ class NewMusicVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.vwSlider.isHidden = true
         self.setTheView()
         definesPresentationContext = true
         self.setupUI()
@@ -194,6 +195,8 @@ class NewMusicVC: UIViewController {
                 self.lblCurrentTime.text = formatTime(currentTime)
                 self.vwSlider.setValue(Float(currentTime), animated: false)
                 self.vwSlider.value = Float(currentTime)
+                self.waveformView.progress = CGFloat(currentTime)
+                
                 self.newplayer.seek(to: currentTime)
                 MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = NSNumber(value: currentTime)
             }
@@ -204,10 +207,7 @@ class NewMusicVC: UIViewController {
         self.btnRepeat2.isHidden = true
         self.btnRepeat.isHidden = false
         if self.isFromDownload {
-//            self.btnBG.isHidden = true
             self.btnLike.isHidden = true
-//            self.vwRepeat.isHidden = true
-//            self.vwRepeat2.isHidden = false
             self.btnRepeat2.isHidden = false
             self.btnRepeat.isHidden = true
             self.btn_option_top.isHidden = true
@@ -216,7 +216,6 @@ class NewMusicVC: UIViewController {
                     self.songsForBG.append(url)
                 }
             }
-            
         } else {
             self.songsForBG.removeAll()
             for it in currentSong?.backgrounds ?? [] {
@@ -224,19 +223,6 @@ class NewMusicVC: UIViewController {
                     self.songsForBG.append(url)
                 }
             }
-           /* if CurrentUser.shared.arrOfDownloadedBGAudios.count == CurrentUser.shared.arrOfBGAudios.count {
-                for it in CurrentUser.shared.arrOfDownloadedBGAudios {
-                    if let url = URL(string: it.file ?? "") {
-                        self.songsForBG.append(url)
-                    }
-                }
-            } else {
-                for it in CurrentUser.shared.arrOfBGAudios {
-                    if let url = URL(string: it.file ?? "") {
-                        self.songsForBG.append(url)
-                    }
-                }
-            }*/
         }
         
         self.newplayer.delegate = self
@@ -246,8 +232,6 @@ class NewMusicVC: UIViewController {
     }
     
     func updateThumb() {
-  
-        //self.consThumbHeight.constant = manageWidth(size: 330)
         DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
             self.imgThumb.isHidden = false
         })
@@ -266,7 +250,6 @@ class NewMusicVC: UIViewController {
         
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = self.vwSlider.maximumValue
         nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = 0.0
-//        nowPlayingInfo[MPMediaItemPropertyArtist] = self.lblNarrated.text?.replace(strGuidedBy, withString: "") ?? "Your Dear Friend"
         nowPlayingInfo[MPMediaItemPropertyArtist] = self.btnCat.titleLabel?.text ?? "Your Dear Friend"
         
         nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = self.lblTitle.text ?? ""
@@ -294,8 +277,6 @@ class NewMusicVC: UIViewController {
                             
                             MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPMediaItemPropertyArtwork] = artwork
                             
-                        } else {
-//                            print("error", error)
                         }
                     }
                 }
@@ -346,70 +327,9 @@ class NewMusicVC: UIViewController {
             self.updateCurrentTimeLabel()
         })
         self.vwSlider.value = Float(time)
+        self.waveformView.progress = CGFloat(time)
         return MPRemoteCommandHandlerStatus.success
     }
-    
-//    func managePlayerBuffer() {
-//        self.bufferId = SAPlayer.Updates.StreamingBuffer.subscribe{ [weak self] buffer in
-//            guard let self = self else { return }
-//            
-//            print("Buffer", buffer.bufferingProgress)
-//            self.progress.isHidden = true
-//            self.acti.startAnimating()
-//
-//            self.isPlayable = buffer.isReadyForPlaying
-//            
-//            if self.isPlayable {
-//                self.acti.stopAnimating()
-//            }
-//            
-//            if self.isPlayable && self.isUserTapped == false {
-//                SAPlayer.shared.play()
-//            }
-//        }
-//    }
-//    
-//    func manageDuration() {
-//        durationId = SAPlayer.Updates.Duration.subscribe { [weak self] (duration) in
-//            guard let self = self else { return }
-//            self.lblEndTime.text = TimeInterval(duration).formatDuration(isForMusic: true)
-//        }
-//    }
-//    
-//    func manageSeconds() {
-//        self.elapsedId = SAPlayer.Updates.ElapsedTime.subscribe({ ElapsedTime in
-//            print("ElapsedTime", ElapsedTime)
-//            self.updateCurrentTimeLabel()
-//        })
-//    }
-//    
-//    func managePlayStatus() {
-//        playingStatusId = SAPlayer.Updates.PlayingStatus.subscribe2({ playing in
-//            print("playing", playing)
-//            switch playing {
-//            case .playing:
-//                self.isPlayable = true
-//                self.btnPlay.isSelected = true
-//                return
-//            case .paused:
-//                self.isPlayable = true
-//                self.btnPlay.isSelected = false
-//                return
-//            case .buffering:
-//                self.isPlayable = false
-//                self.btnPlay.isSelected = false
-//                self.acti.startAnimating()
-//                return
-//            case .ended:
-//                if self.currentRepeatMode == .SingleRepeat {
-//                    
-//                }
-//                return
-//            @unknown default:
-//                print("")
-//            }
-//        })
-//    }
     
     func manageCustomAudioView() {
         self.btnBG.isHidden = true
@@ -420,10 +340,6 @@ class NewMusicVC: UIViewController {
     }
     
     func setupFullAD(success: @escaping (Bool) -> Void) {
-//#if DEBUG
-//        return
-//#endif
-        
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID: Constant.INTERAD,
                                request: request,
@@ -484,6 +400,11 @@ class NewMusicVC: UIViewController {
             } else {
                 self.vwSlider.maximumValue = Float(self.currentSong?.female_audio_duration ?? "") ?? 0
             }
+            
+            //Set Waves
+            self.setupWaveform()
+
+            
             self.lblEndTime.text = TimeInterval(self.vwSlider.maximumValue).formatDuration(isForMusic: true)
             
             if isForTimer {
@@ -499,6 +420,51 @@ class NewMusicVC: UIViewController {
             self.btnMore.isHidden = (current.file == "" || current.femaleAudioStr == "")
             self.lblNarrated.isHidden = current.narratedBy == ""
         }
+    }
+    
+    func setupWaveform() {
+        var indx = 0
+        var tempWave = [CGFloat]()
+        let currentWave = loadWaveformJSON()
+        for wavess in currentWave {
+            tempWave.append(wavess)
+            indx += 1
+            if indx == 50 {
+                break
+            }
+        }
+        
+        self.waveformView.amplitudes = tempWave// loadWaveformJSON()
+        self.waveformView.frame = CGRect(x: -8, y: 0, width: view.bounds.width - 32, height: 55)
+        self.waveformView.backgroundColor = .clear
+        self.viewMusicWaves.addSubview(waveformView)
+        
+        self.waveformView.onProgressChanged = { [weak self] newProgress in
+            guard let self = self else { return }
+            let duration = Double(self.vwSlider.maximumValue)
+            let newTime = Double(newProgress) * duration
+            
+            // ✅ Seek audio
+            self.newplayer.seek(to: newTime)
+            
+            // ✅ Update slider too if you keep it
+            self.vwSlider.value = Float(newTime)
+            
+            // ✅ Update Now Playing info
+            MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = NSNumber(value: newTime)
+            
+            // ✅ Also update your label
+            self.lblCurrentTime.text = self.formatTime(newTime)
+        }
+    }
+ 
+    func loadWaveformJSON() -> [CGFloat] {
+        guard let url = Bundle.main.url(forResource: "sample_wave", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let raw = try? JSONDecoder().decode([Double].self, from: data) else {
+            return []
+        }
+        return raw.map { CGFloat($0) }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -585,20 +551,13 @@ class NewMusicVC: UIViewController {
     }
     
     @IBAction func btnNextTapped(_ sender: UIButton) {
-        
         if self.currentSongIndex <= (self.songs.count - 1) {
             self.currentSongIndex = self.currentSongIndex + 1
         }
-        
-//        self.audioPlayed()
         self.nextSong()
     }
     
     @IBAction func btnPreviousTapped(_ sender: UIButton) {
-//        if self.currentSongIndex != 0{
-//            self.currentSongIndex = self.currentSongIndex - 1
-//        }
-//        self.audioPlayed()
         self.previousSong()
     }
     
@@ -648,8 +607,6 @@ class NewMusicVC: UIViewController {
 // MARK: - Music Player
 
 extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
-   
-    
     
     func initPlayer() {
         if self.isFromDownload {
@@ -718,7 +675,6 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
     }
     
     func setAudio(isStop : Bool){
-//        self.btnPlay.isSelected = !isStop
         if isStop {
             self.btnPlay.isSelected = false
             self.timer.invalidate()
@@ -801,6 +757,7 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         }
         self.vwSlider.setValue(Float(currentTime), animated: false)
         self.vwSlider.value = Float(currentTime)
+        self.waveformView.progress = CGFloat(currentTime)
         self.newplayer.seek(to: currentTime)
         self.setupNowPlaying()
         if self.isFromDownload {
@@ -989,8 +946,6 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
     }
     
     func nextSong() {
-        
-        
         self.isPreviousTapped = false
         self.clearLockScreenInfo()
         self.timer.invalidate()
@@ -1048,15 +1003,7 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         }
         self.newplayer.seek(to: currentTime)
         self.lblCurrentTime.text = formatTime(currentTime)
-        
-//        var isPremim = (self.currentSong?.forSTr ?? "") == "premium"
-//        if self.isFromDownload {
-//            isPremim = (self.currentDownload?.forStr) == "premium"
-//        }
-//        
-        
-//        fsdsfsdf
-        
+
         if !appDelegate.isPlanPurchased {
             self.SHOW_CUSTOM_LOADER()
             self.setupFullAD { success in
@@ -1132,6 +1079,12 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         UserDefaults.standard.set("\(self.currentSong?.internalIdentifier ?? 0)", forKey: lastAudioIdKey)
         if Float(ceil((currentTime.rounded(toPlaces: 1)))) < self.vwSlider.maximumValue {
             self.lblCurrentTime.text = formatTime(currentTime)
+            if currentTime == 0.0 {
+                waveformView.progress = 0
+            }
+            else {
+                waveformView.progress = CGFloat(currentTime / self.newplayer.duration)
+            }
         }
 
         else {
@@ -1391,19 +1344,14 @@ extension NewMusicVC: PopMenuViewControllerDelegate, PopUpProtocol , UIPopoverPr
         } else {
             self.arrOFTitle = currentSong?.backgrounds?.compactMap({$0.title}) ?? []
         }
-        
-//        self.arrOFTitle = CurrentUser.shared.arrOfDownloadedBGAudios.filter({$0.isShow}).compactMap({$0.title})
+
         var arrays: [PopMenuAction] = self.arrOFTitle.map({PopMenuDefaultAction(title: $0, color: UIColor.white)})
         if self.backgrondSelec != -1 && self.arrOFTitle.count != 0 {
-            
-//            let action = PopMenuDefaultAction(title: self.arrOFTitle[self.backgrondSelec], image: UIImage(named: "ic_selected_check"), color: hexStringToUIColor(hex: "#776ADA"), highlighted: true, backgroundColor2: hexStringToUIColor(hex: "#212159"))
 
             let action = PopMenuDefaultAction(title: self.arrOFTitle[self.backgrondSelec], image: UIImage(named: "ic_selected_check"), color: hexStringToUIColor(hex: "#212159"))
             action.highlightActionView(true)
             action.tintColor = .white
             action.view.backgroundColor = .red
-//            action.back
-            
             arrays[self.backgrondSelec] = action
         }
         
@@ -1471,8 +1419,6 @@ extension NewMusicVC: PopMenuViewControllerDelegate, PopUpProtocol , UIPopoverPr
         var arrays: [PopMenuAction] = []
         
         if self.genderSelected == 0 {
-            
-//            let action = PopMenuDefaultAction(title: "Male", image: UIImage(named: "ic_selected_check"), color: hexStringToUIColor(hex: "#776ADA"), highlighted: true, backgroundColor2: hexStringToUIColor(hex: "#212159"))
             let action = PopMenuDefaultAction(title: "Male", image: UIImage(named: "ic_selected_check"), color: hexStringToUIColor(hex: "#776ADA"))
 
             action.highlightActionView(true)
@@ -1590,19 +1536,6 @@ extension NewMusicVC: PopMenuViewControllerDelegate, PopUpProtocol , UIPopoverPr
                 //Enter link to your app here
                 self.strShareURL = "https://apps.apple.com/in/app/id\(GlobalConstants.appStoreId)"
 
-//                let activityVC = UIActivityViewController(activityItems: [self], applicationActivities: nil)
-////                activityVC.excludedActivityTypes = []
-//                
-//                if UIDevice.current.userInterfaceIdiom == .pad {
-//                    activityVC.popoverPresentationController?.sourceView = self.view
-//                    activityVC.popoverPresentationController?.sourceRect = self.btnFeedBack.frame
-//                }
-//                self.present(activityVC, animated: true, completion: nil)
-//                
-//                
-//                
-//                
-                
                 let someText:String = "Hey, I think you’ll like this, you can try the app for free for 7 days \n\n"
                let objectsToShare:URL = URL(string: strShareURL)!
                let sharedObjects:[AnyObject] = [objectsToShare as AnyObject,someText as AnyObject]
@@ -1679,8 +1612,6 @@ extension NewMusicVC {
 
     }
     
-    
-    
     func loopVideo(videoPlayer: AVPlayer) {
        
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { notification in
@@ -1695,122 +1626,7 @@ extension NewMusicVC {
     }
 }
 
-public enum Result<T> {
-    case success(T)
-    case failure
-}
 
-class CacheManager {
-    
-    static let shared = CacheManager()
-    private let fileManager = FileManager.default
-    private lazy var mainDirectoryUrl: URL = {
-        
-        let documentsUrl = self.fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
-        return documentsUrl
-    }()
-    
-    func getFileWith(stringUrl: String, completionHandler: @escaping (Result<URL>) -> Void ) {
-        let file = directoryFor(stringUrl: stringUrl)
-        
-        //return file path if already exists in cache directory
-        guard !fileManager.fileExists(atPath: file.path)  else {
-            completionHandler(Result.success(file))
-            return
-        }
-        
-        DispatchQueue.global().async {
-            
-            if let videoData = NSData(contentsOf: URL(string: stringUrl)!) {
-                videoData.write(to: file, atomically: true)
-                
-                DispatchQueue.main.async {
-                    completionHandler(Result.success(file))
-                }
-            } else {
-                DispatchQueue.main.async {
-                    completionHandler(Result.failure)
-                }
-            }
-        }
-    }
-    
-    private func directoryFor(stringUrl: String) -> URL {
-        let fileURL = URL(string: stringUrl)!.lastPathComponent
-        let file = self.mainDirectoryUrl.appendingPathComponent(fileURL)
-        
-        return file
-    }
-}
-
-extension TimeInterval {
-    func formatDuration(isForMusic: Bool = false) -> String {
-        let hours = Int(self / 3600)
-        let minutes = Int((self.truncatingRemainder(dividingBy: 3600)) / 60)
-        let remainingSeconds = Int(self.truncatingRemainder(dividingBy: 60))
-        
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        
-        var formatString = ""
-        var components: [String] = []
-        
-        if hours > 0 {
-            formatString += "HH:"
-            components.append(String(format: "%02d", hours))
-        }
-        
-        if minutes > 0 || (hours == 0 && remainingSeconds == 0) {
-            formatString += "mm:"
-            components.append(String(format: "%02d", minutes))
-        }
-        
-        if remainingSeconds > 0 && hours == 0 && minutes == 0 {
-            
-            formatString += "ss"
-            components.append(String(format: "%02d", remainingSeconds))
-            
-        } else {
-            formatString += "ss"
-            components.append(String(format: "%02d", remainingSeconds))
-        }
-        
-        formatter.dateFormat = formatString
-        let dateString = components.joined(separator: ":")
-        let formattedDuration = formatter.string(from: formatter.date(from: dateString)!) // Force unwrapping is safe here
-        
-        if isForMusic {
-            if remainingSeconds > 0 && hours == 0 && minutes == 0 {
-                return "00:\(formattedDuration)"
-                
-            } else {
-                return "\(formattedDuration)"
-            }
-            
-        } else {
-            var durationText = ""
-            
-            if Double(self) > 86400 {
-                durationText = "hours"
-                
-            } else if Double(self) < 3600 && Double(self) > 60 {
-                durationText = "mins"
-                
-            } else if Double(self) < 60 {
-                durationText = "seconds"
-            }
-            
-            return "\(formattedDuration) \(durationText.trimmingCharacters(in: .whitespacesAndNewlines))"
-        }
-    }
-}
-
-extension Sequence where Element: Hashable {
-    func uniqued() -> [Element] {
-        var set = Set<Element>()
-        return filter { set.insert($0).inserted }
-    }
-}
 
 extension NewMusicVC: AudioPlayerDelegate {
     
