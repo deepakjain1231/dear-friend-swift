@@ -294,17 +294,19 @@ class ServiceManager: NSObject {
                 
 
                 // ⚡️ Check for cached response
-                if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
-                    print("✅ Returned from cache \(cachedResponse.data)")
-                    self.handleSucess(json: cachedResponse.data, statusCode: 200, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-//                    return
-                }
-                else {
-                    if isShowLoader {
-                        DispatchQueue.main.async {
-                            SHOW_CUSTOM_LOADER()
+                if ApiURL == .dynamicList || ApiURL == .homeData || ApiURL == .onboarding_about_creator{
+                    if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
+                        self.handleSucess(json: cachedResponse.data, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+    //                    return
+                    }
+                    else {
+                        if isShowLoader {
+                            DispatchQueue.main.async {
+                                SHOW_CUSTOM_LOADER()
+                            }
                         }
                     }
+
                 }
 
                 
@@ -322,8 +324,8 @@ class ServiceManager: NSObject {
                         }
                     }
                     
-                    self.printSucess(json: resObj)
-                    
+                    self.printSucess(strUrl: "\(url)", json: resObj)
+
                     let statusCode = resObj.response?.statusCode ?? 0
                     
                     switch resObj.result {
@@ -334,14 +336,15 @@ class ServiceManager: NSObject {
                         }
                        
                         //SAVE CATCH DATA
-                        if let data = resObj.data, let response = resObj.response {
-                            let cachedURLResponse = CachedURLResponse(response: response, data: data)
-                            URLCache.shared.storeCachedResponse(cachedURLResponse, for: urlRequest)
-
+                        if ApiURL == .dynamicList || ApiURL == .homeData || ApiURL == .onboarding_about_creator{
+                            if let data = resObj.data, let response = resObj.response {
+                                let cachedURLResponse = CachedURLResponse(response: response, data: data)
+                                URLCache.shared.storeCachedResponse(cachedURLResponse, for: urlRequest)
+                            }
                         }
                         
                         
-                        self.handleSucess(json: json, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+                        self.handleSucess(json: json, statusCode: statusCode, strUrl: "\(url) | \(header) | \(parameters)", isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                         
                     case .failure(let err) :
                         print(err)
@@ -350,7 +353,7 @@ class ServiceManager: NSObject {
                             print("Server Error: " + str)
                         }
                         
-                        self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+                        self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, strUrl: "\(url)", Success: successBlock, Failure: failureBlock)
                     }
                     
                 })
@@ -400,16 +403,16 @@ class ServiceManager: NSObject {
 
                 
                 // ⚡️ Check for cached response
-                if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
-                    print("✅ Returned from cache \(cachedResponse.data)")
-                    self.handleSucess(json: cachedResponse.data, statusCode: 200, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-                    
-//                    return
-                }
-                else {
-                    if isShowLoader {
-                        DispatchQueue.main.async {
-                            SHOW_CUSTOM_LOADER()
+                if ApiURL == .getAudioList || ApiURL == .useraudiohistory{
+                    if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
+                        self.handleSucess(json: cachedResponse.data, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+                        
+                    }
+                    else {
+                        if isShowLoader {
+                            DispatchQueue.main.async {
+                                SHOW_CUSTOM_LOADER()
+                            }
                         }
                     }
                 }
@@ -428,8 +431,8 @@ class ServiceManager: NSObject {
                         }
                     }
                     
-                    self.printSucess(json: resObj)
-                    
+                    self.printSucess(strUrl: "\(url)", json: resObj)
+
                     let statusCode = resObj.response?.statusCode ?? 0
                     
                     switch resObj.result {
@@ -437,12 +440,14 @@ class ServiceManager: NSObject {
                         print("SuccessJSON \(json)")
                         
                         //SAVE CATCH DATA
-                        if let data = resObj.data, let response = resObj.response {
-                            let cachedURLResponse = CachedURLResponse(response: response, data: data)
-                            URLCache.shared.storeCachedResponse(cachedURLResponse, for: urlRequest)
-
+                        if ApiURL == .getAudioList || ApiURL == .useraudiohistory{
+                            if let data = resObj.data, let response = resObj.response {
+                                let cachedURLResponse = CachedURLResponse(response: response, data: data)
+                                URLCache.shared.storeCachedResponse(cachedURLResponse, for: urlRequest)
+                            }
                         }
-                        self.handleSucess(json: json, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+                        
+                        self.handleSucess(json: json, statusCode: statusCode, strUrl: "\(url) | \(header) | \(parameters)", isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                         
                     case .failure(let err) :
                         print(err)
@@ -451,7 +456,7 @@ class ServiceManager: NSObject {
                             print("Server Error: " + str)
                         }
                         
-                        self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+                        self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, strUrl: "\(url)", Success: successBlock, Failure: failureBlock)
                     }
                     
                 })
@@ -502,15 +507,15 @@ class ServiceManager: NSObject {
                         }
                     }
                     
-                    self.printSucess(json: resObj)
-                    
+                    self.printSucess(strUrl: "\(url)", json: resObj)
+
                     let statusCode = resObj.response?.statusCode ?? 0
                     
                     switch resObj.result {
                     case .success(let json) :
                         print("SuccessJSON \(json)")
                         
-                        self.handleSucess(json: json, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+                        self.handleSucess(json: json, statusCode: statusCode, strUrl: "\(url)", isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                         
                     case .failure(let err) :
                         print(err)
@@ -519,7 +524,7 @@ class ServiceManager: NSObject {
                             print("Server Error: " + str)
                         }
                         
-                        self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+                        self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, strUrl: "\(url)", Success: successBlock, Failure: failureBlock)
                     }
                 })
             }
@@ -623,7 +628,7 @@ class ServiceManager: NSObject {
                             }
                         }
                         
-                        self.printSucess(json: resObj)
+                        self.printSucess(strUrl: "\(url)", json: resObj)
                         
                         let statusCode = resObj.response?.statusCode ?? 0
                         
@@ -631,7 +636,7 @@ class ServiceManager: NSObject {
                         case .success(let json) :
                             print("SuccessJSON \(json)")
                             
-                            self.handleSucess(json: json, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+                            self.handleSucess(json: json, statusCode: statusCode, strUrl: "\(url)", isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                             
                         case .failure(let err) :
                             print(err)
@@ -640,7 +645,7 @@ class ServiceManager: NSObject {
                                 print("Server Error: " + str)
                             }
                             
-                            self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+                            self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, strUrl: "\(url)", Success: successBlock, Failure: failureBlock)
                         }
                         
                     })
@@ -696,7 +701,7 @@ extension ServiceManager {
 // MARK:- Handler functions
 extension ServiceManager {
     
-    func handleSucess(json : Any,isStringJSON : Bool = false, statusCode : Int, isShowErrorAlerts : Bool = true, Success successBlock:@escaping APIResponseBlock, Failure failureBlock:@escaping APIResponseBlock) {
+    func handleSucess(json : Any,isStringJSON : Bool = false, statusCode : Int, strUrl : String, isLoadData: Bool = false, isShowErrorAlerts : Bool = true, Success successBlock:@escaping APIResponseBlock, Failure failureBlock:@escaping APIResponseBlock) {
         
         var jsonResponse = JSON(json)
         if isStringJSON {
@@ -730,10 +735,10 @@ extension ServiceManager {
                 }
             }
         }
-        else if(statusCode == 401)
+        else if(statusCode == 401) && isLoadData == false
         {
             failureBlock(jsonResponse,false,"Something went wrong.", statusCode)
-            
+            print(strUrl)
             guard isShowErrorAlerts else { return }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 CurrentUser.shared.clear()
@@ -769,7 +774,7 @@ extension ServiceManager {
         }
     }
     
-    func handleFailure(json : Any, isStringJSON : Bool = false, error : AFError, statusCode : Int, isShowErrorAlerts : Bool = true, Success suceessBlock:@escaping APIResponseBlock, Failure failureBlock:@escaping APIResponseBlock) {
+    func handleFailure(json : Any, isStringJSON : Bool = false, error : AFError, statusCode : Int, isShowErrorAlerts : Bool = true, strUrl : String, Success suceessBlock:@escaping APIResponseBlock, Failure failureBlock:@escaping APIResponseBlock) {
         
         var jsonResponse = JSON(json)
         if isStringJSON {
@@ -782,6 +787,7 @@ extension ServiceManager {
         
         print(error.localizedDescription)
         print("\n\n===========Error===========")
+        print("URL: \(strUrl)")
         print("Error Code: \(error._code)")
         print("Error Messsage: \(error.localizedDescription)")
         
@@ -816,10 +822,12 @@ extension ServiceManager {
         print("**** API Parameter End ****")
     }
     
-    func printSucess(json: Any) {
+    func printSucess(strUrl : String, json: Any) {
         print("**** API CAll END ****")
         print("**** API Response Start ****")
         print("**** API Response End ****")
+        print(strUrl)
+
     }
     
     func jprint(items: Any...) {

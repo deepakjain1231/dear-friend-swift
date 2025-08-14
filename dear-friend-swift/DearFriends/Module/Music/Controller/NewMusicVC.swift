@@ -423,18 +423,18 @@ class NewMusicVC: UIViewController {
     }
     
     func setupWaveform() {
-        var indx = 0
-        var tempWave = [CGFloat]()
-        let currentWave = loadWaveformJSON()
-        for wavess in currentWave {
-            tempWave.append(wavess)
-            indx += 1
-            if indx == 50 {
-                break
-            }
-        }
+//        var indx = 0
+//        var tempWave = [CGFloat]()
+//        let currentWave = loadWaveformJSON()
+//        for wavess in currentWave {
+//            tempWave.append(wavess)
+//            indx += 1
+//            if indx == 50 {
+//                break
+//            }
+//        }
         
-        self.waveformView.amplitudes = tempWave// loadWaveformJSON()
+        self.waveformView.amplitudes =  loadWaveformJSON()
         self.waveformView.frame = CGRect(x: -8, y: 0, width: view.bounds.width - 32, height: 55)
         self.waveformView.backgroundColor = .clear
         self.viewMusicWaves.addSubview(waveformView)

@@ -41,6 +41,11 @@ class ExploreSubCategoryVC: BaseVC {
         //SET FONT
         self.lblTitle.configureLable(textColor: .background, fontName: GlobalConstants.PLAY_FONT_Bold, fontSize: 24, text: "")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //RELOAD TABLE
+//        self.colleView.reloadData()
+    }
 
     
     // MARK: - Other Functions
@@ -48,7 +53,7 @@ class ExploreSubCategoryVC: BaseVC {
     func setupUI() {
         self.colleView.setDefaultProperties(vc: self)
         self.colleView.registerCell(type: MusicCategoryCVC.self)
-        self.colleView.reloadData()
+        self.setTheSize()
         self.lblTitle.text = self.strTitle
         
         self.colleView.restore()
@@ -57,6 +62,21 @@ class ExploreSubCategoryVC: BaseVC {
         }
     }
         
+    func setTheSize(){
+//        fo self.homeVM.currentCategory?.subCategory?.count ?? 0
+        for subCategory in self.homeVM.currentCategory?.subCategory ?? [] {
+            if subCategory.size == nil { // First time
+                let size = self.getRandomValue(from: self.arrSize, excluding: previousSize) ?? 0
+                self.previousSize = size
+
+                subCategory.size = size
+            }
+        }
+        
+        //RELOAD TABLE
+        self.colleView.reloadData()
+
+    }
     func setCollectionViewLayout(){
         let layout = WaterfallLayout()
         layout.delegate = self
@@ -142,10 +162,14 @@ extension ExploreSubCategoryVC: UICollectionViewDelegate, UICollectionViewDataSo
 
     
     func collectionView(_ collectionView: UICollectionView, layout: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = self.getRandomValue(from: self.arrSize, excluding: previousSize) ?? 0
-        self.previousSize = size
-        print("ttt======> \(size)")
-        return CGSize(width: (collectionView.frame.size.width - 20) / 2, height: manageWidth(size:  Double(size)))
+//        let size = self.getRandomValue(from: self.arrSize, excluding: previousSize) ?? 0
+//        self.previousSize = size
+//        print("ttt======> \(size)")
+//        
+//        
+////        for subCategory in self.homeVM.currentCategory?.subCategory ?? [] {
+
+        return CGSize(width: (collectionView.frame.size.width - 20) / 2, height: manageWidth(size:  Double(self.homeVM.currentCategory?.subCategory?[indexPath.row].size ?? 0)))
     }
     
     func collectionViewLayout(for section: Int) -> WaterfallLayout.Layout {
@@ -173,11 +197,12 @@ extension ExploreSubCategoryVC: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let currentCell = collectionView.cellForItem(at: indexPath) as? MusicCategoryCVC {
             currentCell.vwMain.viewCorneRadius(radius: 40)
-            currentCell.vwMain.backgroundColor = hexStringToUIColor(hex: "#A8A8DF").withAlphaComponent(0.7)
-            
+            currentCell.vwMain.backgroundColor = UIColor.init(hexString: "A8A8DF").withAlphaComponent(0.7)
+
             Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timerrrs in
                 timerrrs.invalidate()
-                
+                currentCell.vwMain.backgroundColor = .primary?.withAlphaComponent(0.6)
+
                 let vc: ExploreDetailsVC = ExploreDetailsVC.instantiate(appStoryboard: .Explore)
                 vc.hidesBottomBarWhenPushed = true
                 self.homeVM.currentFilterType = .none
@@ -188,7 +213,7 @@ extension ExploreSubCategoryVC: UICollectionViewDelegate, UICollectionViewDataSo
                 
                 Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timerrrs in
                     timerrrs.invalidate()
-                    collectionView.reloadData()
+//                    collectionView.reloadData()
                 }
             }
         }

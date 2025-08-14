@@ -123,27 +123,6 @@ extension HomeViewModel {
             failure(response)
         }
     }
-    
-    func getHomeContentData(isShowLoader : Bool = false, success: @escaping (JSON) -> Void, failure: @escaping (_ errorResponse: JSON) -> Void) {
-        
-        ServiceManager.shared.getRequest(ApiURL: .home_content, parameters: [:], isShowLoader: isShowLoader) { response, isSuccess, error, statusCode in
-            
-            print("Success Response:", response)
-            if isSuccess == true {
-                self.arrOfHomeContentData.removeAll()
-                response["data"].arrayValue.forEach { model in
-                    self.arrOfHomeContentData.append(HomeContentList(json: model))
-                }
-                success(response)
-            } else {
-                failure(response)
-            }
-            
-        } Failure: { response, isSuccess, error, statusCode in
-            print("Failure Response:", response)
-            failure(response)
-        }
-    }
 }
 
 // MARK: - Get Audio List

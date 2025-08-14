@@ -71,7 +71,7 @@ class ExploreVC: BaseVC {
         let gradient = SkeletonGradient(baseColor: hexStringToUIColor(hex: "#212159"))
         self.colleView.isSkeletonable = true
         self.colleView.showAnimatedGradientSkeleton(usingGradient: gradient)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        //DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.homeVM.getHomeData { _ in
                 self.refreshControl.endRefreshing()
                 self.colleView.hideSkeleton()
@@ -87,7 +87,7 @@ class ExploreVC: BaseVC {
             } failure: { errorResponse in
                 
             }
-        }
+        //}
     }
     
     // MARK: - Button Actions

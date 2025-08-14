@@ -76,7 +76,7 @@ class MyPreferencesVC: BaseVC {
     
     func getHomeData() {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        //DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.homeVM.getHomeData { model in
                 self.profileVM.arrOfCategory.removeAll()
                 model["data"]["category"].arrayValue.forEach { model in
@@ -107,7 +107,7 @@ class MyPreferencesVC: BaseVC {
             } failure: { errorResponse in
                 
             }
-        }
+       // }
     }
 }
 

@@ -24,7 +24,8 @@ public class SubCategory {
     public var info: String?
     var isSelect = false
     var icon: String?
-    
+    var size: Float?
+
     // MARK: SwiftyJSON Initalizers
     /**
      Initates the instance based on the object
