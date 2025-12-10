@@ -29,6 +29,7 @@ public class CommonAudioList {
     private let kRecommendedSubCategoryKey: String = "sub_category"
     private let kRecommendedThemeCategoryKey: String = "theme_category"
     private let kRecommendedTitleKey: String = "title"
+    private let kRecommendedAudioWaveformKey: String = "audio_waveform"
     private let kRecommendedDurationKey: String = "duration"
     private let kRecommendedForBeginnerKey: String = "for_beginner"
     private let kRecommendedForKey: String = "for"
@@ -53,6 +54,7 @@ public class CommonAudioList {
     public var themeCategory: ThemeCategory?
     public var subCategory: SubCategory?
     public var title: String?
+    public var audioWaveform: String?
 //    public var duration: String?
     public var forBeginner: String?
     public var forSTr: String?
@@ -103,6 +105,7 @@ public class CommonAudioList {
         subCategory = SubCategory(json: json[kRecommendedSubCategoryKey])
         themeCategory = ThemeCategory(json: json[kRecommendedThemeCategoryKey])
         title = json[kRecommendedTitleKey].string
+        audioWaveform = json[kRecommendedAudioWaveformKey].string
 //        duration = json[kRecommendedDurationKey].string
         forBeginner = json[kRecommendedForBeginnerKey].string
         forSTr = json[kRecommendedForKey].string
@@ -148,6 +151,7 @@ public class CommonAudioList {
         if let value = subCategory { dictionary[kRecommendedSubCategoryKey] = value.dictionaryRepresentation() }
         if let value = themeCategory { dictionary[kRecommendedThemeCategoryKey] = value.dictionaryRepresentation() }
         if let value = title { dictionary[kRecommendedTitleKey] = value }
+        if let value = audioWaveform { dictionary[kRecommendedAudioWaveformKey] = value }
         if let value = forBeginner { dictionary[kRecommendedForBeginnerKey] = value }
         if let value = forSTr { dictionary[kRecommendedForKey] = value }
         if let value = id { dictionary[kRecommendedInternalIdentifierKey] = value }

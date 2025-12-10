@@ -393,8 +393,10 @@ class ServiceManager: NSObject {
                 
                 //CATCH DATA
                 var cache_url = try getFullUrl(relPath: ApiURL.strURL() + strURLAdd)
+                
                 if let jsonString = jsonStringSorted(from: parameters) {
                     cache_url = try getFullUrl(relPath: ApiURL.strURL() + strURLAdd + "/\(jsonString)")
+                    
                 }
 
                 var urlRequest = URLRequest(url: cache_url)
@@ -416,7 +418,6 @@ class ServiceManager: NSObject {
                         }
                     }
                 }
-
                 
                 let parameters = parameters
                 
