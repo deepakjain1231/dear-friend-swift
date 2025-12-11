@@ -8,6 +8,7 @@
 import Foundation
 import SwiftyJSON
 import SwiftDate
+import UIKit
 
 class CurrentUser {
     

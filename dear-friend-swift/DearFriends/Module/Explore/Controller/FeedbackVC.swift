@@ -122,7 +122,9 @@ class FeedbackVC: UIViewController {
     @IBAction func btnSubmitTapped(_ sender: UIButton) {
         if selectedRate != -1, let strExp = txtAboutExp.text, !strExp.isEmpty {
             self.audioVM.shareFeedback(id: meditationId, categoryId: catId, subCateId: subCatId, rate: Double(selectedRate), description: strExp) { response in
-                GeneralUtility().showSuccessMessage(message: response["message"].stringValue)
+                var strMsg = response["message"].stringValue
+                strMsg = "Thank you for your feedback"
+                GeneralUtility().showSuccessMessage(message: strMsg)
                 self.goBack(isGoingTab: false)
             } failure: { errorResponse in
                 GeneralUtility().showSuccessMessage(message: errorResponse["message"].stringValue)

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Az7-yu-xDk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Az7-yu-xDk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,7 +37,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-jd-CVZ">
-                                <rect key="frame" x="20" y="64" width="40" height="40"/>
+                                <rect key="frame" x="20" y="112" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Ny5-Tc-6Ve"/>
                                     <constraint firstAttribute="height" constant="40" id="tUg-JL-xNd"/>
@@ -49,13 +49,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reschedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff4-42-3fb">
-                                <rect key="frame" x="161" y="72.5" width="92" height="23"/>
+                                <rect key="frame" x="161" y="120.5" width="92" height="23"/>
                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="Ce6-BD-0ad">
-                                <rect key="frame" x="0.0" y="107.5" width="414" height="664.5"/>
+                                <rect key="frame" x="0.0" y="155.5" width="414" height="582.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wf-cE-m9j">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="622"/>
@@ -276,7 +276,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhd-IY-5yd" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                <rect key="frame" x="20" y="788" width="374" height="54"/>
+                                <rect key="frame" x="20" y="754" width="374" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="nht-tz-g1D"/>
                                 </constraints>
@@ -347,7 +347,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6e-zZ-A30">
-                                <rect key="frame" x="20" y="64" width="40" height="40"/>
+                                <rect key="frame" x="20" y="112" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2RD-v6-MQP"/>
                                     <constraint firstAttribute="width" constant="40" id="YLU-rf-430"/>
@@ -359,13 +359,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reschedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDl-43-cwh">
-                                <rect key="frame" x="161" y="72.5" width="92" height="23"/>
+                                <rect key="frame" x="161" y="120.5" width="92" height="23"/>
                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="NFZ-xP-pZF">
-                                <rect key="frame" x="0.0" y="107.5" width="414" height="664.5"/>
+                                <rect key="frame" x="0.0" y="155.5" width="414" height="582.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epg-nJ-PMd">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
@@ -493,7 +493,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-W2-5B2" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                <rect key="frame" x="20" y="788" width="374" height="54"/>
+                                <rect key="frame" x="20" y="754" width="374" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="eBk-yG-s2t"/>
                                 </constraints>
@@ -555,7 +555,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jx-RV-lNJ">
-                                <rect key="frame" x="20" y="64" width="40" height="40"/>
+                                <rect key="frame" x="20" y="112" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="KC2-Li-ZdH"/>
                                     <constraint firstAttribute="height" constant="40" id="eek-Yn-V62"/>
@@ -567,13 +567,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Bookings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0E-iO-iBp">
-                                <rect key="frame" x="156" y="72.5" width="102" height="23"/>
+                                <rect key="frame" x="156" y="120.5" width="102" height="23"/>
                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoD-PB-6Ua" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                <rect key="frame" x="20" y="115.5" width="374" height="48"/>
+                                <rect key="frame" x="20" y="163.5" width="374" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="L2G-b6-vkP"/>
@@ -591,7 +591,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Owc-Ri-4A6">
-                                <rect key="frame" x="0.0" y="175.5" width="414" height="720.5"/>
+                                <rect key="frame" x="0.0" y="223.5" width="414" height="672.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="WFw-NT-osd">
                                     <size key="itemSize" width="128" height="128"/>
@@ -747,7 +747,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-La-fbB">
-                                <rect key="frame" x="20" y="64" width="40" height="40"/>
+                                <rect key="frame" x="20" y="112" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Jci-Xl-jE5"/>
                                     <constraint firstAttribute="width" constant="40" id="RUc-f3-Idt"/>
@@ -759,28 +759,28 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owM-m7-kKk">
-                                <rect key="frame" x="143.5" y="72.5" width="127" height="23"/>
+                                <rect key="frame" x="143.5" y="120.5" width="127" height="23"/>
                                 <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BUJ-AT-Uu5">
-                                <rect key="frame" x="0.0" y="111.5" width="414" height="734.5"/>
+                                <rect key="frame" x="0.0" y="159.5" width="414" height="652.5"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="JeE-ev-Kqj">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="664.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="582.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5n-VD-seV">
-                                                <rect key="frame" x="0.0" y="0.0" width="454" height="471.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="471.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="snj-7m-Otf">
-                                                        <rect key="frame" x="20" y="12" width="414" height="447.5"/>
+                                                        <rect key="frame" x="20" y="12" width="374" height="447.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMs-be-AUs">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="215.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="215.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_top_details" translatesAutoresizingMaskIntoConstraints="NO" id="mhz-Ej-HlB">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="170"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="170" id="uvo-Bm-70C"/>
                                                                         </constraints>
@@ -788,7 +788,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOF-gi-OrS">
                                                                         <rect key="frame" x="32" y="8" width="96" height="96"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_user_3" translatesAutoresizingMaskIntoConstraints="NO" id="6vR-CX-Q83">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_on_logo" translatesAutoresizingMaskIntoConstraints="NO" id="6vR-CX-Q83">
                                                                                 <rect key="frame" x="14" y="14" width="68" height="68"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
@@ -815,7 +815,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Nhn-TL-TDc">
-                                                                        <rect key="frame" x="148" y="36" width="246" height="40"/>
+                                                                        <rect key="frame" x="148" y="36" width="206" height="40"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5s-aW-gR8">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
@@ -832,7 +832,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAb-xZ-ZoR" customClass="AppExpandableLabel" customModule="Dear_Friends" customModuleProvider="target">
-                                                                        <rect key="frame" x="16" y="152" width="382" height="47.5"/>
+                                                                        <rect key="frame" x="16" y="152" width="342" height="47.5"/>
                                                                         <string key="text">Hi, I’m Liana. 
 Yoga completely changed my life and now, as a teacher, I am deeply honored to support people as they dive into their own practice.... Read More</string>
                                                                         <fontDescription key="fontDescription" name="Outfit-Light" family="Outfit" pointSize="14"/>
@@ -867,34 +867,34 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="89o-Nn-xfW">
-                                                                <rect key="frame" x="0.0" y="247.5" width="414" height="200"/>
+                                                                <rect key="frame" x="0.0" y="247.5" width="374" height="200"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original booking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOy-I8-D4K">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="23"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
                                                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsT-E9-5PM">
-                                                                        <rect key="frame" x="0.0" y="35" width="414" height="165"/>
+                                                                        <rect key="frame" x="0.0" y="35" width="374" height="165"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3A4-im-yqp">
-                                                                                <rect key="frame" x="16" y="16" width="382" height="133"/>
+                                                                                <rect key="frame" x="16" y="16" width="342" height="133"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="9fH-Wn-c8U">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="66"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="66"/>
                                                                                         <subviews>
                                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ckx-4z-dVj">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="40"/>
                                                                                                 <subviews>
                                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="pfQ-iL-vx6">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="40"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="108.5" height="40"/>
                                                                                                         <subviews>
                                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_calendar" translatesAutoresizingMaskIntoConstraints="NO" id="kFV-L4-R4L">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="122" height="18"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="18"/>
                                                                                                             </imageView>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 Dec, 2022" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fey-cJ-eVc">
-                                                                                                                <rect key="frame" x="0.0" y="24" width="122" height="16"/>
+                                                                                                                <rect key="frame" x="0.0" y="24" width="108.5" height="16"/>
                                                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                                                                                                 <color key="textColor" red="0.89411764709999997" green="0.88235294119999996" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                                 <nil key="highlightedColor"/>
@@ -902,13 +902,13 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                                                         </subviews>
                                                                                                     </stackView>
                                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="p7p-t2-xzm">
-                                                                                                        <rect key="frame" x="130" y="0.0" width="122" height="40"/>
+                                                                                                        <rect key="frame" x="116.5" y="0.0" width="109" height="40"/>
                                                                                                         <subviews>
                                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_clock" translatesAutoresizingMaskIntoConstraints="NO" id="eQw-RZ-EN1">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="122" height="18"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="109" height="18"/>
                                                                                                             </imageView>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="8.30 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFf-sh-E3c">
-                                                                                                                <rect key="frame" x="0.0" y="24" width="122" height="16"/>
+                                                                                                                <rect key="frame" x="0.0" y="24" width="109" height="16"/>
                                                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                                                                                                 <color key="textColor" red="0.89411764709999997" green="0.88235294119999996" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                                 <nil key="highlightedColor"/>
@@ -916,13 +916,13 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                                                         </subviews>
                                                                                                     </stackView>
                                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Uy1-D8-JfF">
-                                                                                                        <rect key="frame" x="260" y="0.0" width="122" height="40"/>
+                                                                                                        <rect key="frame" x="233.5" y="0.0" width="108.5" height="40"/>
                                                                                                         <subviews>
                                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="ic_money" translatesAutoresizingMaskIntoConstraints="NO" id="CWf-Tu-7La">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="122" height="17.5"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="17.5"/>
                                                                                                             </imageView>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGk-Rm-ahE">
-                                                                                                                <rect key="frame" x="0.0" y="23.5" width="122" height="16.5"/>
+                                                                                                                <rect key="frame" x="0.0" y="23.5" width="108.5" height="16.5"/>
                                                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                                                                                                 <color key="textColor" red="0.89411764709999997" green="0.88235294119999996" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                                 <nil key="highlightedColor"/>
@@ -935,18 +935,18 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                                                 </constraints>
                                                                                             </stackView>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line2" translatesAutoresizingMaskIntoConstraints="NO" id="Wt0-ak-VtM">
-                                                                                                <rect key="frame" x="0.0" y="58" width="382" height="8"/>
+                                                                                                <rect key="frame" x="0.0" y="58" width="342" height="8"/>
                                                                                             </imageView>
                                                                                         </subviews>
                                                                                     </stackView>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="aZO-ys-7sg">
-                                                                                        <rect key="frame" x="0.0" y="82" width="382" height="51"/>
+                                                                                        <rect key="frame" x="0.0" y="82" width="342" height="51"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="035-eR-IMa">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="51"/>
                                                                                                 <subviews>
                                                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="5Wg-jf-ZSC">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="51"/>
                                                                                                         <subviews>
                                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iczoom" translatesAutoresizingMaskIntoConstraints="NO" id="p9p-1h-m81">
                                                                                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="51"/>
@@ -961,7 +961,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                                                                 </userDefinedRuntimeAttributes>
                                                                                                             </imageView>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://zoom.us/j/91842407284?pwd=OGU2YWFOUCthSXowcU5CZzNmLzhUUT09" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TG-t2-D46">
-                                                                                                                <rect key="frame" x="63" y="0.0" width="319" height="51"/>
+                                                                                                                <rect key="frame" x="63" y="0.0" width="279" height="51"/>
                                                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                                 <nil key="highlightedColor"/>
@@ -969,7 +969,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                                                         </subviews>
                                                                                                     </stackView>
                                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ja-pc-WMb">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="51"/>
                                                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                                         <connections>
                                                                                                             <action selector="btnURLTapped:" destination="OWG-pi-yPP" eventType="touchUpInside" id="1fb-QI-W7b"/>
@@ -1013,34 +1013,34 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dqn-f8-e0D">
-                                                                <rect key="frame" x="0.0" y="447.5" width="414" height="169"/>
+                                                                <rect key="frame" x="0.0" y="447.5" width="374" height="169"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reschedule booking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdc-kX-kX1">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
                                                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktd-Is-uHv">
-                                                                        <rect key="frame" x="0.0" y="12" width="414" height="157"/>
+                                                                        <rect key="frame" x="0.0" y="12" width="374" height="157"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bSD-yG-m0X">
-                                                                                <rect key="frame" x="16" y="16" width="382" height="125"/>
+                                                                                <rect key="frame" x="16" y="16" width="342" height="125"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ETD-NL-SqF">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="58"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="58"/>
                                                                                         <subviews>
                                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="R1J-uN-9Qs">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="40"/>
                                                                                                 <subviews>
                                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="h3l-AP-nJz">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="40"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="108.5" height="40"/>
                                                                                                         <subviews>
                                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_calendar" translatesAutoresizingMaskIntoConstraints="NO" id="44X-Re-2OX">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="122" height="18"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="18"/>
                                                                                                             </imageView>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 Dec, 2022" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boa-yV-Ti3">
-                                                                                                                <rect key="frame" x="0.0" y="24" width="122" height="16"/>
+                                                                                                                <rect key="frame" x="0.0" y="24" width="108.5" height="16"/>
                                                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                                                                                                 <color key="textColor" red="0.89411764709999997" green="0.88235294119999996" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                                 <nil key="highlightedColor"/>
@@ -1048,13 +1048,13 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                                                         </subviews>
                                                                                                     </stackView>
                                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="0LY-a1-cRX">
-                                                                                                        <rect key="frame" x="130" y="0.0" width="122" height="40"/>
+                                                                                                        <rect key="frame" x="116.5" y="0.0" width="109" height="40"/>
                                                                                                         <subviews>
                                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_clock" translatesAutoresizingMaskIntoConstraints="NO" id="bsz-m2-U86">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="122" height="18"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="109" height="18"/>
                                                                                                             </imageView>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="8.30 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEa-OJ-VOL">
-                                                                                                                <rect key="frame" x="0.0" y="24" width="122" height="16"/>
+                                                                                                                <rect key="frame" x="0.0" y="24" width="109" height="16"/>
                                                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                                                                                                 <color key="textColor" red="0.89411764709999997" green="0.88235294119999996" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                                 <nil key="highlightedColor"/>
@@ -1062,13 +1062,13 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                                                         </subviews>
                                                                                                     </stackView>
                                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="RgL-n8-9fu">
-                                                                                                        <rect key="frame" x="260" y="0.0" width="122" height="40"/>
+                                                                                                        <rect key="frame" x="233.5" y="0.0" width="108.5" height="40"/>
                                                                                                         <subviews>
                                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="ic_money" translatesAutoresizingMaskIntoConstraints="NO" id="fWv-xX-DK6">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="122" height="17.5"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="17.5"/>
                                                                                                             </imageView>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97O-92-4Za">
-                                                                                                                <rect key="frame" x="0.0" y="23.5" width="122" height="16.5"/>
+                                                                                                                <rect key="frame" x="0.0" y="23.5" width="108.5" height="16.5"/>
                                                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                                                                                                 <color key="textColor" red="0.89411764709999997" green="0.88235294119999996" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                                 <nil key="highlightedColor"/>
@@ -1081,18 +1081,18 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                                                 </constraints>
                                                                                             </stackView>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line2" translatesAutoresizingMaskIntoConstraints="NO" id="bIe-0p-BOW">
-                                                                                                <rect key="frame" x="0.0" y="58" width="382" height="0.0"/>
+                                                                                                <rect key="frame" x="0.0" y="58" width="342" height="0.0"/>
                                                                                             </imageView>
                                                                                         </subviews>
                                                                                     </stackView>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fgR-Aq-xgg">
-                                                                                        <rect key="frame" x="0.0" y="74" width="382" height="51"/>
+                                                                                        <rect key="frame" x="0.0" y="74" width="342" height="51"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNn-Fc-Bsh">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="51"/>
                                                                                                 <subviews>
                                                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="koi-Ih-8TT">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="51"/>
                                                                                                         <subviews>
                                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iczoom" translatesAutoresizingMaskIntoConstraints="NO" id="rbJ-Wg-OF2">
                                                                                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="51"/>
@@ -1107,7 +1107,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                                                                 </userDefinedRuntimeAttributes>
                                                                                                             </imageView>
                                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://zoom.us/j/91842407284?pwd=OGU2YWFOUCthSXowcU5CZzNmLzhUUT09" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPH-e2-PmA">
-                                                                                                                <rect key="frame" x="63" y="0.0" width="319" height="51"/>
+                                                                                                                <rect key="frame" x="63" y="0.0" width="279" height="51"/>
                                                                                                                 <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
                                                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                                 <nil key="highlightedColor"/>
@@ -1115,7 +1115,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                                                         </subviews>
                                                                                                     </stackView>
                                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOX-3a-UBD">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="51"/>
                                                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                                         <connections>
                                                                                                             <action selector="btnURLTapped:" destination="OWG-pi-yPP" eventType="touchUpInside" id="JiN-bg-yqM"/>
@@ -1179,7 +1179,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                         </constraints>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifH-eE-xNw">
-                                        <rect key="frame" x="0.0" y="680.5" width="414" height="54"/>
+                                        <rect key="frame" x="0.0" y="598.5" width="414" height="54"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEN-4M-nmW" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="0.0" width="374" height="54"/>
@@ -1284,20 +1284,6 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
             <point key="canvasLocation" x="-3625.1908396946565" y="667.6056338028169"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="fy8-W2-5B2">
-            <size key="intrinsicContentSize" width="73" height="34"/>
-        </designable>
-        <designable name="lhd-IY-5yd">
-            <size key="intrinsicContentSize" width="73" height="34"/>
-        </designable>
-        <designable name="rEN-4M-nmW">
-            <size key="intrinsicContentSize" width="164" height="34"/>
-        </designable>
-        <designable name="tWz-Fs-1wu">
-            <size key="intrinsicContentSize" width="123" height="34"/>
-        </designable>
-    </designables>
     <resources>
         <image name="ic_back2" width="40" height="40"/>
         <image name="ic_calendar" width="18" height="18"/>
@@ -1306,10 +1292,10 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
         <image name="ic_line2" width="302" height="1"/>
         <image name="ic_money" width="18" height="18"/>
         <image name="ic_next2" width="20" height="20"/>
+        <image name="ic_on_logo" width="70" height="70"/>
         <image name="ic_previous2" width="20" height="20"/>
         <image name="ic_top_details" width="335" height="159"/>
-        <image name="ic_uncheck" width="22" height="22"/>
-        <image name="ic_user_3" width="85" height="85"/>
+        <image name="ic_uncheck" width="20" height="20.5"/>
         <image name="iczoom" width="51" height="51"/>
         <namedColor name="#212159">
             <color red="0.12941176470588237" green="0.12941176470588237" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

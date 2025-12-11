@@ -1712,7 +1712,6 @@ class AppExpandableLabel: ExpandableLabel {
 
 
 
-
 import UIKit
 
 class RemoteImageCacheLoader {
@@ -1720,7 +1719,7 @@ class RemoteImageCacheLoader {
     
     private let imageCache = NSCache<NSString, UIImage>()
     
-    /// Loads image from memory cache → Documents folder → Downloads if needed, shows loader.
+    /// Loads image using only memory cache → downloads if not cached (NO FileManager saving)
     func loadImage(from urlString: String,
                    into imageView: UIImageView,
                    placeholder: UIImage? = nil) {
@@ -1730,26 +1729,22 @@ class RemoteImageCacheLoader {
             return
         }
         
-        let fileName = url.lastPathComponent
-        let localURL = getDocumentsDirectory().appendingPathComponent(fileName)
+        let fileKey = urlString as NSString
         
         // ✅ 1) Check memory cache
-        if let cached = imageCache.object(forKey: fileName as NSString) {
+        if let cached = imageCache.object(forKey: fileKey) {
             imageView.image = cached
             return
         }
-        
-        // ✅ 2) Check Documents folder
-        if FileManager.default.fileExists(atPath: localURL.path),
-           let localImage = UIImage(contentsOfFile: localURL.path) {
-            imageCache.setObject(localImage, forKey: fileName as NSString)
-            imageView.image = localImage
-            return
+
+        // Set placeholder if any
+        if let placeholder = placeholder {
+            imageView.image = placeholder
         }
         
-        // ✅ 3) Show loader while downloading
+        // ✅ 2) Show loader while downloading
         let loader = UIActivityIndicatorView(style: .medium)
-        loader.color = .white 
+        loader.color = .white
         loader.translatesAutoresizingMaskIntoConstraints = false
         loader.startAnimating()
         
@@ -1761,24 +1756,19 @@ class RemoteImageCacheLoader {
             ])
         }
         
-        // ✅ 4) Download
+        // ✅ 3) Download (NO file writing)
         URLSession.shared.dataTask(with: url) { data, response, error in
             defer {
-                DispatchQueue.main.async {
-                    loader.removeFromSuperview()
-                }
+                DispatchQueue.main.async { loader.removeFromSuperview() }
             }
             
             guard let data = data, let image = UIImage(data: data) else {
-                print("Image download failed for: \(urlString)")
+                print("Image download failed: \(urlString)")
                 return
             }
             
-            // Save to memory cache
-            self.imageCache.setObject(image, forKey: fileName as NSString)
-            
-            // Save to Documents folder
-            try? data.write(to: localURL)
+            // Save to memory cache only
+            self.imageCache.setObject(image, forKey: fileKey)
             
             DispatchQueue.main.async {
                 imageView.image = image
@@ -1786,8 +1776,84 @@ class RemoteImageCacheLoader {
             
         }.resume()
     }
-    
-    private func getDocumentsDirectory() -> URL {
-        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    }
 }
+
+
+//import UIKit
+//
+//class RemoteImageCacheLoader {
+//    static let shared = RemoteImageCacheLoader()
+//    
+//    private let imageCache = NSCache<NSString, UIImage>()
+//    
+//    /// Loads image from memory cache → Documents folder → Downloads if needed, shows loader.
+//    func loadImage(from urlString: String,
+//                   into imageView: UIImageView,
+//                   placeholder: UIImage? = nil) {
+//
+//        guard let url = URL(string: urlString) else {
+//            print("Invalid URL: \(urlString)")
+//            return
+//        }
+//        
+//        let fileName = url.lastPathComponent
+//        let localURL = getDocumentsDirectory().appendingPathComponent(fileName)
+//        
+//        // ✅ 1) Check memory cache
+//        if let cached = imageCache.object(forKey: fileName as NSString) {
+//            imageView.image = cached
+//            return
+//        }
+//        
+//        // ✅ 2) Check Documents folder
+//        if FileManager.default.fileExists(atPath: localURL.path),
+//           let localImage = UIImage(contentsOfFile: localURL.path) {
+//            imageCache.setObject(localImage, forKey: fileName as NSString)
+//            imageView.image = localImage
+//            return
+//        }
+//        
+//        // ✅ 3) Show loader while downloading
+//        let loader = UIActivityIndicatorView(style: .medium)
+//        loader.color = .white 
+//        loader.translatesAutoresizingMaskIntoConstraints = false
+//        loader.startAnimating()
+//        
+//        DispatchQueue.main.async {
+//            imageView.addSubview(loader)
+//            NSLayoutConstraint.activate([
+//                loader.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+//                loader.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
+//            ])
+//        }
+//        
+//        // ✅ 4) Download
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//            defer {
+//                DispatchQueue.main.async {
+//                    loader.removeFromSuperview()
+//                }
+//            }
+//            
+//            guard let data = data, let image = UIImage(data: data) else {
+//                print("Image download failed for: \(urlString)")
+//                return
+//            }
+//            
+//            // Save to memory cache
+//            self.imageCache.setObject(image, forKey: fileName as NSString)
+//            
+//            // Save to Documents folder
+//            try? data.write(to: localURL)
+//            
+//            DispatchQueue.main.async {
+//                imageView.image = image
+//            }
+//            
+//        }.resume()
+//    }
+//    
+//    private func getDocumentsDirectory() -> URL {
+//        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+//    }
+//}

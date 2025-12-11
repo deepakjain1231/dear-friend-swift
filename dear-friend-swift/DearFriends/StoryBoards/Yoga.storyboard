@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zxV-bi-NGD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zxV-bi-NGD">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -56,7 +56,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDX-Vt-sNv">
-                                <rect key="frame" x="0.0" y="63" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="122" width="393" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGp-OC-fww">
                                         <rect key="frame" x="20" y="0.0" width="40" height="40"/>
@@ -67,7 +67,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yoga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1d-iu-sUO">
-                                        <rect key="frame" x="176" y="8.6666666666666714" width="41" height="23"/>
+                                        <rect key="frame" x="176" y="8.6666666666666572" width="41" height="23"/>
                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lt-Ko-sYo">
-                                <rect key="frame" x="0.0" y="119" width="393" height="733"/>
+                                <rect key="frame" x="0.0" y="178" width="393" height="674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -130,7 +130,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="c6B-ZH-s5H">
-                                <rect key="frame" x="0.0" y="59" width="393" height="673"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="580"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-OP-1UY">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="535.33333333333337"/>
@@ -160,7 +160,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lP1-hS-87O">
-                                                                        <rect key="frame" x="136" y="8.6666666666666714" width="81" height="23"/>
+                                                                        <rect key="frame" x="136" y="8.6666666666666572" width="81" height="23"/>
                                                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -178,7 +178,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6XS-nI-eeP">
                                                                 <rect key="frame" x="32" y="60" width="96" height="96"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_user_3" translatesAutoresizingMaskIntoConstraints="NO" id="CmT-bn-VoT">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_on_logo" translatesAutoresizingMaskIntoConstraints="NO" id="CmT-bn-VoT">
                                                                         <rect key="frame" x="14" y="14" width="68" height="68"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="Round" value="YES"/>
@@ -267,7 +267,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G69-GW-rmo">
-                                                <rect key="frame" x="0.0" y="423.33333333333331" width="393" height="99.999999999999943"/>
+                                                <rect key="frame" x="0.0" y="423.33333333333337" width="393" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="45R-0O-ffh"/>
@@ -295,7 +295,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmB-rt-F2M" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                <rect key="frame" x="20" y="748" width="353" height="54"/>
+                                <rect key="frame" x="20" y="714" width="353" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Emq-Jv-yE1"/>
                                 </constraints>
@@ -362,7 +362,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8KV-y5-Bcr">
-                                <rect key="frame" x="0.0" y="63" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="122" width="393" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVG-m4-vs6">
                                         <rect key="frame" x="20" y="0.0" width="40" height="40"/>
@@ -373,7 +373,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2b-B7-wz9">
-                                        <rect key="frame" x="137.66666666666666" y="8.6666666666666714" width="118" height="23"/>
+                                        <rect key="frame" x="137.66666666666666" y="8.6666666666666572" width="118" height="23"/>
                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -389,7 +389,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="aKz-zR-3cU">
-                                <rect key="frame" x="0.0" y="115" width="393" height="621"/>
+                                <rect key="frame" x="0.0" y="174" width="393" height="528"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IyB-Bl-eNm">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="665"/>
@@ -416,7 +416,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfz-Zu-rKc">
-                                                                        <rect key="frame" x="0.0" y="80.666666666666657" width="163" height="31"/>
+                                                                        <rect key="frame" x="0.0" y="80.666666666666686" width="163" height="31"/>
                                                                         <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="15"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="View Payment Summary">
@@ -704,7 +704,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unT-xD-xrt" customClass="AppButton" customModule="Dear_Friends" customModuleProvider="target">
-                                <rect key="frame" x="20" y="748" width="353" height="54"/>
+                                <rect key="frame" x="20" y="714" width="353" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Fbo-tX-7YC"/>
                                 </constraints>
@@ -767,7 +767,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umc-e1-Dzf">
-                                <rect key="frame" x="0.0" y="67.000000000000014" width="393" height="187.33333333333337"/>
+                                <rect key="frame" x="0.0" y="126.00000000000001" width="393" height="187.33333333333337"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6m-no-xME">
                                         <rect key="frame" x="169" y="16" width="55" height="5"/>
@@ -838,7 +838,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kc4-cd-jvi">
-                                                <rect key="frame" x="0.0" y="53.333333333333343" width="353" height="23"/>
+                                                <rect key="frame" x="0.0" y="53.333333333333314" width="353" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZb-w4-xa0">
                                                         <rect key="frame" x="0.0" y="0.0" width="308" height="23"/>
@@ -910,7 +910,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9e-tZ-7PU">
-                                <rect key="frame" x="0.0" y="63" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="122" width="393" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwM-X4-fZt">
                                         <rect key="frame" x="20" y="0.0" width="40" height="40"/>
@@ -921,7 +921,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yoga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igq-HQ-c1s">
-                                        <rect key="frame" x="176" y="8.6666666666666714" width="41" height="23"/>
+                                        <rect key="frame" x="176" y="8.6666666666666572" width="41" height="23"/>
                                         <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -939,7 +939,7 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYR-U1-QSh" customClass="YoutubePlayerView" customModule="YoutubePlayerView">
-                                <rect key="frame" x="12" y="115" width="369" height="691"/>
+                                <rect key="frame" x="12" y="174" width="369" height="598"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -979,9 +979,9 @@ Yoga completely changed my life and now, as a teacher, I am deeply honored to su
         <image name="ic_dotted2" width="335" height="0.66666668653488159"/>
         <image name="ic_home_bg" width="375" height="812"/>
         <image name="ic_imp" width="80" height="80"/>
+        <image name="ic_on_logo" width="70" height="70"/>
         <image name="ic_top_details2" width="335" height="175.66667175292969"/>
         <image name="ic_uncheck" width="20" height="20.333333969116211"/>
-        <image name="ic_user_3" width="85" height="85"/>
         <image name="icon_back_dark" width="40" height="40"/>
         <namedColor name="#212159">
             <color red="0.12941176470588237" green="0.12941176470588237" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
