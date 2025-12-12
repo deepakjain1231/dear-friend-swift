@@ -310,7 +310,7 @@ extension MyHistoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
                         popupVC.dismissDuration = 0.5
                         popupVC.leftStr = "Not Yet"
                         popupVC.rightStr = "Proceed To Premium"
-                        popupVC.titleStr = "To download content for offline use,  please subcribe to our premium membership"
+                        popupVC.titleStr = "To download this content, subscribe today."// "To download content for offline use,  please subcribe to our premium membership"
                         popupVC.yesTapped = {
                             let vc: SubscriptionVC = SubscriptionVC.instantiate(appStoryboard: .Profile)
                             vc.hidesBottomBarWhenPushed = true
@@ -401,7 +401,7 @@ extension MyHistoryVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
                             popupVC.dismissDuration = 0.5
                             popupVC.leftStr = "Not Yet"
                             popupVC.rightStr = "Proceed To Premium"
-                            popupVC.titleStr = "To download content for offline use,  please subcribe to our premium membership"
+                            popupVC.titleStr = "To download this content, subscribe today."// "To download content for offline use,  please subcribe to our premium membership"
                             popupVC.yesTapped = {
                                 let vc: SubscriptionVC = SubscriptionVC.instantiate(appStoryboard: .Profile)
                                 vc.hidesBottomBarWhenPushed = true

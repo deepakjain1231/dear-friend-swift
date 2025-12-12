@@ -181,24 +181,12 @@ class NewMusicVC: UIViewController {
                             }
                         }
                     }
+                    else {
+                        self.playMusic()
+                    }
                 }
             } else {
-                self.isAddShowing = false
-                self.initPlayer()
-                let songURL = self.songs[self.currentSongIndex]
-                self.managePlayerBeforePlay(destinationUrl: songURL)
-                var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-                if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-                    currentTime = 0
-                }
-                
-                self.lblCurrentTime.text = formatTime(currentTime)
-                self.vwSlider.setValue(Float(currentTime), animated: false)
-                self.vwSlider.value = Float(currentTime)
-                self.waveformView.progress = CGFloat(currentTime)
-                
-                self.newplayer.seek(to: currentTime)
-                MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = NSNumber(value: currentTime)
+                self.playMusic()
             }
         }
         
@@ -229,6 +217,25 @@ class NewMusicVC: UIViewController {
         self.vwSlider.isContinuous = false
         
         self.updateThumb()
+    }
+    
+    func playMusic() {
+        self.isAddShowing = false
+        self.initPlayer()
+        let songURL = self.songs[self.currentSongIndex]
+        self.managePlayerBeforePlay(destinationUrl: songURL)
+        var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+            currentTime = 0
+        }
+        
+        self.lblCurrentTime.text = formatTime(currentTime)
+        self.vwSlider.setValue(Float(currentTime), animated: false)
+        self.vwSlider.value = Float(currentTime)
+        self.waveformView.progress = CGFloat(currentTime)
+        
+        self.newplayer.seek(to: currentTime)
+        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = NSNumber(value: currentTime)
     }
     
     func updateThumb() {
@@ -349,10 +356,29 @@ class NewMusicVC: UIViewController {
                 success(false)
                 return
             }
+            
+            let is_check = checkAndShowAd()
             self.interstitial = ad
-            success(true)
+            success(is_check)
         })
     }
+    
+    func checkAndShowAd() -> Bool {
+        var isShow = false
+        let key = "screenOpenCount"
+        var count = UserDefaults.standard.integer(forKey: key)
+        count += 1
+        UserDefaults.standard.set(count, forKey: key)
+
+        print("Screen opened:", count)
+
+        // Show on 1st, 4th, 7th, 10th...
+        if (count - 1) % 3 == 0 {
+            isShow = true
+        }
+        return isShow
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -718,7 +744,9 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
             popupVC.shouldBeganDismiss = false
             popupVC.leftStr = "Not Yet"
             popupVC.rightStr = "Proceed To Premium"
-            popupVC.titleStr = isBgPremium ? "Upgrade to premium to unlock this background sound and access a full library of immersive audio to enhance your practice." : "To play this meditation, subcribe today!"
+            //popupVC.titleStr = isBgPremium ? "Upgrade to premium to unlock this background sound and access a full library of immersive audio to enhance your practice." : "To play this meditation, subcribe today!"
+            popupVC.titleStr = isBgPremium ? "To unlock this premium background sound, subscribe today." : "To play this meditation, subscribe to our premium membership today."
+            
             popupVC.noTapped = {
                 if isBgPremium == false{
                     self.goBack(isGoingTab: true)
@@ -969,22 +997,27 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
                     }
                 } else {
                     self.HIDE_CUSTOM_LOADER()
+                    self.playNextSong()
                 }
             }
         } else {
-            self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
-            self.dataBind()
-            self.initPlayer()
-
-            let songURL = self.songs[self.currentSongIndex]
-            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-                currentTime = 0
-            }
-            self.newplayer.seek(to: currentTime)
-            self.lblCurrentTime.text = formatTime(currentTime)
-            self.managePlayerBeforePlay(destinationUrl: songURL)
+            self.playNextSong()
         }
+    }
+    
+    func playNextSong() {
+        self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
+        self.dataBind()
+        self.initPlayer()
+
+        let songURL = self.songs[self.currentSongIndex]
+        var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+            currentTime = 0
+        }
+        self.newplayer.seek(to: currentTime)
+        self.lblCurrentTime.text = formatTime(currentTime)
+        self.managePlayerBeforePlay(destinationUrl: songURL)
     }
     
 
@@ -1016,23 +1049,28 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
                     }
                 } else {
                     self.HIDE_CUSTOM_LOADER()
+                    self.playPreviousSong()
                 }
             }
         } else {
-            self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
-            self.dataBind()
-            self.initPlayer()
-
-            let songURL = self.songs[self.currentSongIndex]
-            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-                currentTime = 0
-            }
-            self.newplayer.seek(to: currentTime)
-            self.lblCurrentTime.text = formatTime(currentTime)
-            self.managePlayerBeforePlay(destinationUrl: songURL)
+            self.playPreviousSong()
         }
 
+    }
+    
+    func playPreviousSong() {
+        self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
+        self.dataBind()
+        self.initPlayer()
+
+        let songURL = self.songs[self.currentSongIndex]
+        var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+            currentTime = 0
+        }
+        self.newplayer.seek(to: currentTime)
+        self.lblCurrentTime.text = formatTime(currentTime)
+        self.managePlayerBeforePlay(destinationUrl: songURL)
     }
     
     

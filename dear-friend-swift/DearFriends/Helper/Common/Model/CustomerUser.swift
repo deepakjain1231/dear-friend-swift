@@ -37,6 +37,7 @@ class CurrentUser {
     func clear() {
         appDelegate.isPlanPurchased = false
         UserDefaults.standard.removeObject(forKey: "CurrentUser")
+        UserDefaults.standard.removeObject(forKey: "screenOpenCount")
         UserDefaults.standard.synchronize()
     }
     
