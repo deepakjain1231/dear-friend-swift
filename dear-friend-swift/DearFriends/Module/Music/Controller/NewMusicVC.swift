@@ -778,7 +778,7 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
     }
     
     func managePlayerBeforePlay(destinationUrl: URL) {
-        self.newplayer.pause()
+        //self.newplayer.pause()
         var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
         if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased{
             currentTime = 0
@@ -843,12 +843,13 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
             self.btnMore.alpha = 0.5
             self.btnMore.isUserInteractionEnabled = false
 
-            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-                currentTime = 0
-            }
-            self.newplayer.play(url: destinationUrl, seekingTIme: currentTime)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+//            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+//            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+//                currentTime = 0
+//            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                self.newplayer.play(url: destinationUrl, seekingTIme: currentTime)
                 self.newplayer.seek(to: currentTime)
             }
             
@@ -1638,9 +1639,9 @@ extension NewMusicVC {
         
         self.removeObserver()
         self.backGroundPlayer = nil
-        if self.isFromDownload == false{
-            self.newplayer.resume()
-        }
+//        if self.isFromDownload == false{
+//            self.newplayer.resume()
+//        }
 
         let playerItem2 = AVPlayerItem(url: finalURL)
         self.backGroundPlayer = AVPlayer(playerItem: playerItem2)
