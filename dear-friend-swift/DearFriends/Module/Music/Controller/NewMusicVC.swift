@@ -646,6 +646,7 @@ class NewMusicVC: UIViewController {
 extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
     
     func initPlayer() {
+
         if self.isFromDownload {
             self.songs = self.arrOfDownloads.compactMap({URL(string: $0.music_local_url)})
         } else {
@@ -653,6 +654,7 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         }
         self.loadSong(index: self.currentSongIndex)
         self.set_TrackEvent(true)
+        
     }
     
     func manageButtons() {
@@ -1038,6 +1040,7 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
         self.dataBind()
         self.initPlayer()
+        self.setupUI()
 
         let songURL = self.songs[self.currentSongIndex]
         var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
@@ -1059,6 +1062,7 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         self.newplayer.pause()
         self.currentSongIndex -= 1
         self.initPlayer()
+        
         var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
         if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
             currentTime = 0
@@ -1091,7 +1095,8 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
         self.dataBind()
         self.initPlayer()
-
+        self.setupUI()
+        
         let songURL = self.songs[self.currentSongIndex]
         var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
         if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
