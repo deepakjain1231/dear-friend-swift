@@ -364,7 +364,6 @@ class NewMusicVC: UIViewController {
     }
     
     func checkAndShowAd() -> Bool {
-        var isShow = false
         let key = "screenOpenCount"
         var count = UserDefaults.standard.integer(forKey: key)
         count += 1
@@ -372,12 +371,24 @@ class NewMusicVC: UIViewController {
 
         print("Screen opened:", count)
 
-        // Show on 1st, 4th, 7th, 10th...
-        if (count - 1) % 3 == 0 {
-            isShow = true
-        }
-        return isShow
+        return count == 1 || count == 20
     }
+    
+//    func checkAndShowAd() -> Bool {
+//        var isShow = false
+//        let key = "screenOpenCount"
+//        var count = UserDefaults.standard.integer(forKey: key)
+//        count += 1
+//        UserDefaults.standard.set(count, forKey: key)
+//
+//        print("Screen opened:", count)
+//
+//        // Show on 1st, 4th, 7th, 10th...
+//        if (count - 1) % 3 == 0 {
+//            isShow = true
+//        }
+//        return isShow
+//    }
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -848,10 +859,14 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
 //                currentTime = 0
 //            }
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            DispatchQueue.main.async {
                 self.newplayer.play(url: destinationUrl, seekingTIme: currentTime)
                 self.newplayer.seek(to: currentTime)
             }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+//                self.newplayer.play(url: destinationUrl, seekingTIme: currentTime)
+//                self.newplayer.seek(to: currentTime)
+//            }
             
 
             self.lblCurrentTime.text = formatTime(currentTime)
@@ -889,34 +904,45 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
     }
 
     func audioPlayed(toBack: Bool = false) {
-        let isPremium = (self.currentSong?.forSTr ?? "") == "premium"
-        if !self.isFromCustom && !self.isFromDownload {
-            if let objAudio = self.audioVM.arrOfAudioList[safe: currentSongIndex] {
-                print("\(Float(ceil((self.vwSlider.value + 1)))), ", currentSongIndex)
-                objAudio.audioProgress = "\(Float(ceil((self.vwSlider.value + 1))))"
-                self.currentSong = objAudio
-                self.audioVM.arrOfAudioList[currentSongIndex] = objAudio
-            }
-            if !isPremium || appDelegate.isPlanPurchased {
-                self.audioVM.playMusic(audio_id: "\(self.currentSong?.internalIdentifier ?? 0)", audioProgress: "\(Float(ceil((self.vwSlider.value + 1))))") { _ in
-                    if toBack {
-                        self.removeObserver()
-                        self.backGroundPlayer?.pause()
-                        self.goBack(isGoingTab: true)
-                    }
-                } failure: { error in
-                    if toBack {
-                        self.removeObserver()
-                        self.backGroundPlayer?.pause()
-                        self.goBack(isGoingTab: true)
+        if toBack {
+            self.removeObserver()
+            self.currentSong = nil
+            self.backGroundPlayer?.pause()
+            self.backGroundPlayer = nil
+            self.audioVM.arrOfAudioList.removeAll()
+            self.newplayer.stop()
+            self.goBack(isGoingTab: true)
+        }
+        else {
+            let isPremium = (self.currentSong?.forSTr ?? "") == "premium"
+            if !self.isFromCustom && !self.isFromDownload {
+                if let objAudio = self.audioVM.arrOfAudioList[safe: currentSongIndex] {
+                    print("\(Float(ceil((self.vwSlider.value + 1)))), ", currentSongIndex)
+                    objAudio.audioProgress = "\(Float(ceil((self.vwSlider.value + 1))))"
+                    self.currentSong = objAudio
+                    self.audioVM.arrOfAudioList[currentSongIndex] = objAudio
+                }
+                if !isPremium || appDelegate.isPlanPurchased {
+                    self.audioVM.playMusic(audio_id: "\(self.currentSong?.internalIdentifier ?? 0)", audioProgress: "\(Float(ceil((self.vwSlider.value + 1))))") { _ in
+                        if toBack {
+                            self.removeObserver()
+                            self.backGroundPlayer?.pause()
+                            self.goBack(isGoingTab: true)
+                        }
+                    } failure: { error in
+                        if toBack {
+                            self.removeObserver()
+                            self.backGroundPlayer?.pause()
+                            self.goBack(isGoingTab: true)
+                        }
                     }
                 }
-            }
-        } else {
-            if toBack {
-                self.removeObserver()
-                self.backGroundPlayer?.pause()
-                self.goBack(isGoingTab: true)
+            } else {
+                if toBack {
+                    self.removeObserver()
+                    self.backGroundPlayer?.pause()
+                    self.goBack(isGoingTab: true)
+                }
             }
         }
     }
@@ -950,13 +976,15 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
             }
             
         } else {
-            self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
-            var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-            if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-                currentTime = 0
+            if self.audioVM.arrOfAudioList.count != 0 {
+                self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
+                var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+                if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+                    currentTime = 0
+                }
+                self.newplayer.seek(to: currentTime)
+                self.dataBind()
             }
-            self.newplayer.seek(to: currentTime)
-            self.dataBind()
         }
     }
    
@@ -1316,7 +1344,9 @@ extension NewMusicVC: PopMenuViewControllerDelegate, PopUpProtocol , UIPopoverPr
                 self.backGroundPlayer = nil
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    self.manageBGPlayerBeforePlay(destinationUrl: self.songsForBG[Index])
+                    if self.songsForBG.count > Index {
+                        self.manageBGPlayerBeforePlay(destinationUrl: self.songsForBG[Index])
+                    }
                 }
             }
         }
