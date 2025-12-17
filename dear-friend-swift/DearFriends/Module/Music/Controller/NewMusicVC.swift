@@ -810,10 +810,15 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
                 }
             }
             
-            self.newplayer.play(url: finalURL, seekingTIme: currentTime)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+            DispatchQueue.main.async {
+                self.newplayer.play(url: finalURL, seekingTIme: currentTime)
                 self.newplayer.seek(to: currentTime)
             }
+            
+//            self.newplayer.play(url: finalURL, seekingTIme: currentTime)
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+//                self.newplayer.seek(to: currentTime)
+//            }
             
             self.timer.invalidate()
             self.updateCurrentTimeLabel()
@@ -1042,14 +1047,14 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         self.initPlayer()
         self.setupUI()
 
-        let songURL = self.songs[self.currentSongIndex]
-        var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-            currentTime = 0
-        }
-        self.newplayer.seek(to: currentTime)
-        self.lblCurrentTime.text = formatTime(currentTime)
-        self.managePlayerBeforePlay(destinationUrl: songURL)
+//        let songURL = self.songs[self.currentSongIndex]
+//        var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+//        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+//            currentTime = 0
+//        }
+//        self.newplayer.seek(to: currentTime)
+//        self.lblCurrentTime.text = formatTime(currentTime)
+//        self.managePlayerBeforePlay(destinationUrl: songURL)
     }
     
 
@@ -1097,14 +1102,14 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         self.initPlayer()
         self.setupUI()
         
-        let songURL = self.songs[self.currentSongIndex]
-        var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-            currentTime = 0
-        }
-        self.newplayer.seek(to: currentTime)
-        self.lblCurrentTime.text = formatTime(currentTime)
-        self.managePlayerBeforePlay(destinationUrl: songURL)
+//        let songURL = self.songs[self.currentSongIndex]
+//        var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+//        if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+//            currentTime = 0
+//        }
+//        self.newplayer.seek(to: currentTime)
+//        self.lblCurrentTime.text = formatTime(currentTime)
+//        self.managePlayerBeforePlay(destinationUrl: songURL)
     }
     
     

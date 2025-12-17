@@ -226,15 +226,22 @@ class LoginVC: BaseVC {
     
     @IBAction func btnSubmitTapped(_ sender: UIButton) {
         self.view.endEditing(true)
-        self.authVM.email = self.txtEmail.text ?? ""
-        self.authVM.password = self.txtPass.text ?? ""
         
-        self.authVM.loginAPI(success: { [weak self] _ in
-            guard let self = self else { return }
-            self.loadAudioListAndHandleBiometrics()
-        }, failure: { errorResponse in
-            // Handle login failure if needed
-        })
+        DispatchQueue.main.async {
+            self.SHOW_CUSTOM_LOADER()
+            
+            self.authVM.email = self.txtEmail.text ?? ""
+            self.authVM.password = self.txtPass.text ?? ""
+            
+            self.authVM.loginAPI(success: { [weak self] _ in
+                guard let self = self else { return }
+                self.loadAudioListAndHandleBiometrics()
+                
+            }, failure: { errorResponse in
+                // Handle login failure if needed
+            })
+            
+        }
     }
 
     private func loadAudioListAndHandleBiometrics() {
@@ -246,8 +253,10 @@ class LoginVC: BaseVC {
             
             let biometricsEnabled = UserDefaults.standard.bool(forKey: biometricsEnable)
             if biometricsEnabled {
+                self.HIDE_CUSTOM_LOADER()
                 self.handleBiometricAuthForExistingAccount()
             } else {
+                self.HIDE_CUSTOM_LOADER()
                 self.promptToEnableBiometrics()
             }
         }, failure: { error in
