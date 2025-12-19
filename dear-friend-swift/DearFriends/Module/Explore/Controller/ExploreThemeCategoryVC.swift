@@ -50,6 +50,8 @@ class ExploreThemeCategoryVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         self.colleView.reloadData()
+        
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
     }
         
     // MARK: - Button Actions

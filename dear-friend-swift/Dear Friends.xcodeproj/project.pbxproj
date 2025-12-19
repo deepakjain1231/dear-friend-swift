@@ -12,6 +12,7 @@
 		00099AA32E3CD20F00F63195 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00099AA22E3CD20B00F63195 /* WaveformView.swift */; };
 		0012B2AE2D184A06000B7AB9 /* MusicCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0012B2AD2D184A06000B7AB9 /* MusicCategoryCVC.swift */; };
 		0012B2B02D184A4E000B7AB9 /* MusicCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0012B2AF2D184A4E000B7AB9 /* MusicCategoryCVC.xib */; };
+		002813802EF5730A000180F9 /* APICallHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028137F2EF57304000180F9 /* APICallHelper.swift */; };
 		002F773C2D2126AF004431BD /* ShowCaseDialouge1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002F773B2D2126AF004431BD /* ShowCaseDialouge1.xib */; };
 		002F773D2D2126AF004431BD /* ShowCaseDialouge1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002F773A2D2126AF004431BD /* ShowCaseDialouge1.swift */; };
 		002F77422D2127B9004431BD /* ShowCaseCollectionCell_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002F77412D2127B9004431BD /* ShowCaseCollectionCell_1.xib */; };
@@ -401,6 +402,7 @@
 		00099AA22E3CD20B00F63195 /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		0012B2AD2D184A06000B7AB9 /* MusicCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCategoryCVC.swift; sourceTree = "<group>"; };
 		0012B2AF2D184A4E000B7AB9 /* MusicCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCategoryCVC.xib; sourceTree = "<group>"; };
+		0028137F2EF57304000180F9 /* APICallHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallHelper.swift; sourceTree = "<group>"; };
 		002F773A2D2126AF004431BD /* ShowCaseDialouge1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseDialouge1.swift; sourceTree = "<group>"; };
 		002F773B2D2126AF004431BD /* ShowCaseDialouge1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowCaseDialouge1.xib; sourceTree = "<group>"; };
 		002F77402D2127B9004431BD /* ShowCaseCollectionCell_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseCollectionCell_1.swift; sourceTree = "<group>"; };
@@ -1588,6 +1590,7 @@
 		4337BA1A294D812D0090E0A5 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				0028137F2EF57304000180F9 /* APICallHelper.swift */,
 				00099AA22E3CD20B00F63195 /* WaveformView.swift */,
 				C58B068D2D06C2C100382EC4 /* Core */,
 				BD91BB9A2CCA8ABC006B00E6 /* AudioPlayer */,
@@ -2656,6 +2659,7 @@
 				2993E2DF2B63DF460064EE74 /* HomeContentList.swift in Sources */,
 				29660EDC2B14B07C00E27E67 /* ChatMessageListingModel.swift in Sources */,
 				4337BAA3294D812D0090E0A5 /* StringExtension.swift in Sources */,
+				002813802EF5730A000180F9 /* APICallHelper.swift in Sources */,
 				C564CF492D007D8A00ECBDCE /* LinkUnlinkVC.swift in Sources */,
 				290326362B27143B00E5D289 /* BGAudioListModel.swift in Sources */,
 				BD91BC042CCA8ACE006B00E6 /* NetStatusService.swift in Sources */,

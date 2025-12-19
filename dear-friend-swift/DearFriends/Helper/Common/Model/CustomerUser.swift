@@ -164,6 +164,31 @@ class CurrentUser {
             failure(response)
         }
     }
+    
+    
+    func checkAnotherDeviceLoginService(success: @escaping (JSON) -> Void, failure: @escaping (_ errorResponse: JSON) -> Void) {
+        let params: [String: Any] = [:]
+
+        ServiceManager.shared.postRequest(ApiURL: .anotherDeviceLogin, parameters: params, isShowLoader: false) { response, isSuccess, error, statusCode in
+            
+            print("Success Response:", response)
+            if isSuccess == true {
+                success(response)
+            } else {
+                failure(response)
+            }
+            
+        } Failure: { response, isSuccess, error, statusCode in
+            print("Failure Response:", response)
+            failure(response)
+            if (response["status"].int ?? 0) == 401 {
+                NotificationCenter.default.post(name: Notification.Name("STOPMUSICPLAYER"), object: nil)
+                CurrentUser.shared.clear()
+                appDelegate.setLoginRoot()
+            }
+        }
+    }
+    
 }
 
 public class CurrentUserModel {

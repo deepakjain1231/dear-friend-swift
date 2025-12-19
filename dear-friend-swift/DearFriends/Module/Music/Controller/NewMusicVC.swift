@@ -115,6 +115,7 @@ class NewMusicVC: UIViewController {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.stopMusic), name: Notification.Name("MusicClose"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.btnBackTapped(_:)), name: Notification.Name("STOPMUSICPLAYER"), object: nil)
     }
     
     @objc func stopMusic() {
@@ -147,6 +148,15 @@ class NewMusicVC: UIViewController {
             self.newplayer.resume()
             self.backGroundPlayer?.play()
         }
+        
+        //TIMER START FOR API CALL
+        LogoutService.shared.start()
+    }
+        
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        LogoutService.shared.stop()
     }
     
     // MARK: - Other Functions
@@ -363,7 +373,9 @@ class NewMusicVC: UIViewController {
         })
     }
     
+
     func checkAndShowAd() -> Bool {
+        var isShow = false
         let key = "screenOpenCount"
         var count = UserDefaults.standard.integer(forKey: key)
         count += 1
@@ -371,24 +383,12 @@ class NewMusicVC: UIViewController {
 
         print("Screen opened:", count)
 
-        return count == 1 || count == 20
+        // Show on 1st, 4th, 7th, 10th...
+        if (count - 1) % 3 == 0 {
+            isShow = true
+        }
+        return isShow
     }
-    
-//    func checkAndShowAd() -> Bool {
-//        var isShow = false
-//        let key = "screenOpenCount"
-//        var count = UserDefaults.standard.integer(forKey: key)
-//        count += 1
-//        UserDefaults.standard.set(count, forKey: key)
-//
-//        print("Screen opened:", count)
-//
-//        // Show on 1st, 4th, 7th, 10th...
-//        if (count - 1) % 3 == 0 {
-//            isShow = true
-//        }
-//        return isShow
-//    }
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -502,14 +502,6 @@ class NewMusicVC: UIViewController {
             return []
         }
         return raw.map { CGFloat($0) }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        print("viewDidDisappear")
     }
     
     func showAD(success: @escaping (Bool) -> Void) {

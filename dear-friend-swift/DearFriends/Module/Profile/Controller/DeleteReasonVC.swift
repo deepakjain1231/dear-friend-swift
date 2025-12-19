@@ -48,6 +48,11 @@ class DeleteReasonVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
+    }
+    
     //SET THE VIEW
     func setTheView() {
         buttonImageColor(btnImage: self.btnClose, imageName: "ic_close2", colorHex: .background)

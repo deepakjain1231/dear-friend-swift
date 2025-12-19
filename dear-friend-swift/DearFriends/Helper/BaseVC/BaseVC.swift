@@ -25,6 +25,8 @@ class BaseVC: UIViewController {
         } else {
             NotificationCenter.default.post(name: Notification.Name("BottomView"), object: nil, userInfo: ["hide": "1"])
         }
+        
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
     }
     
     func changeStyle() {

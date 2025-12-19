@@ -35,6 +35,11 @@ class ChangePasswordVC: UIViewController {
         self.setTheView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
+    }
+    
     //SET THE VIEW
     func setTheView() {
         

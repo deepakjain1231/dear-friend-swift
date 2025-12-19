@@ -47,6 +47,11 @@ class EditProfileVC: BaseVC {
         self.setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
+    }
+    
     //SET THE VIEW
     func setTheView() {
         

@@ -47,6 +47,8 @@ class ExploreVC: BaseVC {
         if (self.homeVM.homedataModel?.category?.count ?? 0) == 0 {
             self.setupUI()
         }
+        
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
     }
     
     func setupUI() {

@@ -108,6 +108,7 @@ class ExploreDetailsVC: UIViewController {
         
         NotificationCenter.default.post(name: Notification.Name("MusicClose"), object: nil)
 
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
     }
     
     func fetchDownloadedData() {

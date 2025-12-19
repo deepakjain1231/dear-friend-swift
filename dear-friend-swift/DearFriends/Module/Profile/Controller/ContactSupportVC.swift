@@ -58,6 +58,11 @@ class ContactSupportVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
+    }
+    
     //SET THE VIEW
     func setTheView() {
 //        self.txtMessage.iq_addDone(target: self, action: #selector(self.btn_done_action), title: "Type message...")

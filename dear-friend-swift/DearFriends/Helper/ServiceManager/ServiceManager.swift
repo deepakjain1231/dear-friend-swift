@@ -79,6 +79,7 @@ enum ApiURL {
     case feedback
     case authContent
     case dynamicList
+    case anotherDeviceLogin
     
     func strURL() -> String {
         var str: String  = ""
@@ -210,6 +211,8 @@ enum ApiURL {
             str = "user/social/unlink"
         case .socialLinks:
             str = "user/social"
+        case .anotherDeviceLogin:
+            str = "token-check"
 
         }
             
@@ -743,11 +746,11 @@ extension ServiceManager {
             guard isShowErrorAlerts else { return }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 CurrentUser.shared.clear()
-                showAlertWithTitleFromVC(vc: UIApplication.topViewController2()!, title: Bundle.main.appName, andMessage: errorMessage, buttons: ["OKAY"]) { index in
-                    if index == 0 {
+                //showAlertWithTitleFromVC(vc: UIApplication.topViewController2()!, title: Bundle.main.appName, andMessage: errorMessage, buttons: ["OKAY"]) { index in
+                    //if index == 0 {
                         appDelegate.setLoginRoot()
-                    }
-                }
+                    //}
+                //}
             }
             return
         }

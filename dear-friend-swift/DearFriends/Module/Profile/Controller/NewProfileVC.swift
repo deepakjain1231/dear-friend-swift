@@ -99,6 +99,7 @@ class NewProfileVC: UIViewController {
         }
         
         self.getAboutCreatot()
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
     }
     
     func getAboutCreatot(){

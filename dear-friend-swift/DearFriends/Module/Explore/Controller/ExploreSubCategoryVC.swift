@@ -43,6 +43,9 @@ class ExploreSubCategoryVC: BaseVC {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
+        
         //RELOAD TABLE
 //        self.colleView.reloadData()
     }

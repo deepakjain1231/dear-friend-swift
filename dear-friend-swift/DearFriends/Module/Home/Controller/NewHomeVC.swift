@@ -166,6 +166,8 @@ class NewHomeVC: UIViewController {
         self.colleBeginner.reloadData()
         self.colleTopPicks.reloadData()
         self.tblView.reloadData()
+        
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
     }
     
     // MARK: - Button Actions

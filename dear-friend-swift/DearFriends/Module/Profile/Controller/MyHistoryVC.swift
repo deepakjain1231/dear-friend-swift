@@ -146,6 +146,8 @@ class MyHistoryVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.post(name: Notification.Name("MusicClose"), object: nil)
+        
+        LogoutService.shared.callAPIforCheckAnotherDeviceLogin()
     }
     
     func fetchDownloadedData() {
