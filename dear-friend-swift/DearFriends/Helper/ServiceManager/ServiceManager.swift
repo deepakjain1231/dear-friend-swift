@@ -294,7 +294,8 @@ class ServiceManager: NSObject {
                 var urlRequest = URLRequest(url: finalURL)
                 urlRequest.httpMethod = "GET"
                 urlRequest.cachePolicy = .reloadIgnoringLocalCacheData
-                
+
+                print("API URL: \(url)")
 
                 // ⚡️ Check for cached response
                 if ApiURL == .dynamicList || ApiURL == .homeData || ApiURL == .onboarding_about_creator{
