@@ -7,145 +7,113 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B717F9AD-528F-4F26-8CDF-357BB7BC15E9"
+            uuid = "83607C43-B131-442E-ACEC-70772414A95D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DearFriends/Module/Home/ViewModel/HomeViewModel.swift"
+            filePath = "DearFriends/Module/Music/Controller/NewMusicVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "getAudioList(isShowLoader:success:failure:)"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1CDD9937-F1B3-45A4-9FCE-7FD353831D6F"
+            uuid = "4D050935-822E-4712-A540-576BDE7DD519"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DearFriends/Module/Home/ViewModel/HomeViewModel.swift"
+            filePath = "DearFriends/Module/Music/Controller/NewMusicVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "getAudioList(isShowLoader:success:failure:)"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D3997764-8E5C-4806-A788-958787F47D0E"
+            uuid = "18E1C712-D0D5-44EE-A56D-AED6EB43646B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DearFriends/Helper/ServiceManager/ServiceManager.swift"
+            filePath = "DearFriends/Module/Music/Controller/NewMusicVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "396"
-            endingLineNumber = "396"
-            landmarkName = "postRequest(ApiURL:strURLAdd:parameters:isShowLoader:isPassHeader:additionalHeader:isShowErrorAlerts:Success:Failure:)"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9EC7C98B-E798-4C0C-88CC-2DD54FEE91CB"
+            uuid = "36207A75-128D-4701-85E7-5B9F6A08E0E9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DearFriends/Helper/ServiceManager/ServiceManager.swift"
+            filePath = "DearFriends/Module/Music/Controller/NewMusicVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "392"
-            endingLineNumber = "392"
-            landmarkName = "postRequest(ApiURL:strURLAdd:parameters:isShowLoader:isPassHeader:additionalHeader:isShowErrorAlerts:Success:Failure:)"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "NewMusicVC"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B606D73-6E54-4B59-9FC3-7897CCB4D0E7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DearFriends/Module/Music/Controller/NewMusicVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "924"
+            endingLineNumber = "924"
+            landmarkName = "audioPlayed(toBack:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0A2DE7DB-DB3C-441B-B221-7F06F8C20CCC"
+            uuid = "F2B0933C-F05B-4234-9F55-A3FD7E428735"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DearFriends/Module/Home/ViewModel/HomeViewModel.swift"
+            filePath = "DearFriends/Module/Music/Controller/NewMusicVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "getAudioList(isShowLoader:success:failure:)"
+            startingLineNumber = "982"
+            endingLineNumber = "982"
+            landmarkName = "managePlayer()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "840D5FA6-C97F-4C74-8597-58EF1E9009FF"
+            uuid = "9807CCF3-FCCE-46EB-8C7C-AAC0ACCD8A4B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DearFriends/Helper/ServiceManager/ServiceManager.swift"
+            filePath = "DearFriends/Module/Music/Controller/NewMusicVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "441"
-            endingLineNumber = "441"
-            landmarkName = "postRequest(ApiURL:strURLAdd:parameters:isShowLoader:isPassHeader:additionalHeader:isShowErrorAlerts:Success:Failure:)"
+            startingLineNumber = "649"
+            endingLineNumber = "649"
+            landmarkName = "initPlayer()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "47211D75-7D04-438F-8975-1F5685911D13"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DearFriends/Helper/ServiceManager/ServiceManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "444"
-            endingLineNumber = "444"
-            landmarkName = "postRequest(ApiURL:strURLAdd:parameters:isShowLoader:isPassHeader:additionalHeader:isShowErrorAlerts:Success:Failure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "933CD019-4E75-4669-9012-87BC6CD95EF0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DearFriends/Helper/ServiceManager/ServiceManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "446"
-            endingLineNumber = "446"
-            landmarkName = "postRequest(ApiURL:strURLAdd:parameters:isShowLoader:isPassHeader:additionalHeader:isShowErrorAlerts:Success:Failure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "91A3C91C-4673-478E-9839-8AB7A0FDEC1B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DearFriends/Helper/ServiceManager/ServiceManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
-            landmarkName = "headers"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
