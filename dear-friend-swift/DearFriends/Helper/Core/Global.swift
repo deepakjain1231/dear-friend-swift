@@ -72,6 +72,8 @@ struct GlobalConstants
     static let OUTFIT_FONT_SemiBold = "Outfit-SemiBold"
     static let OUTFIT_FONT_Bold = "Outfit-Bold"
 
+    
+    static var appsFlyerKey = "QHT6h7kMN4NKScrsgkgvuC"
     static let appStoreId = "6477375969"
 
 }

@@ -24,6 +24,7 @@ import AVKit
 import Alamofire
 import Mixpanel
 import FirebaseMessaging
+import AppsFlyerLib
 
 enum InAppPlanID: String, CaseIterable {
     case monthly = "com.dearfriends.monthly"
@@ -36,7 +37,9 @@ var isHomeScreen : Bool = false
 
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerLibDelegate {
+  
+    
     
     var window: UIWindow?
     var deviceToken = ""
@@ -121,6 +124,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "f1ef24afc9e90cc069b8b165f1bd90d7" ]
         
         
+        //APPS FLUER
+        AppsFlyerLib.shared().appsFlyerDevKey = GlobalConstants.appsFlyerKey
+        AppsFlyerLib.shared().appleAppID = GlobalConstants.appStoreId
+
+        
         // MIXPANEL INITIALIZE
         Mixpanel.initialize(token: MIXPANEL_TOKEN, trackAutomaticEvents: false)
         
@@ -130,6 +138,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        AppsFlyerLib.shared().start(completionHandler: { (dictionary, error) in
+            if (error != nil){
+                print(error ?? "")
+                return
+            } else {
+                print(dictionary ?? "")
+                return
+            }
+        })
+    }
+    
+    func onConversionDataSuccess(_ installData: [AnyHashable: Any]) {
+        if let status = installData["af_status"] as? String {
+            if (status == "Non-organic") {
+                // Business logic for Non-organic install scenario is invoked
+                if let sourceID = installData["media_source"] as? String, let campaign = installData["campaign"] as? String, let adSet = installData["af_adset"] as? String, let ad = installData["af_ad"] as? String {
+                    print("This is a Non-organic install. Media source: \(sourceID)  Campaign: \(campaign)")
+                    
+                    
+
+                    let params: [String: String] = [
+                        "af_media_source": sourceID,
+                        "af_campaign no": campaign,
+                        "af_adset no": adSet,
+                        "af_ad no": ad
+                    ]
+                    
+                    Mixpanel.mainInstance().track(event: Mixpanel_Event.appInstal.rawValue, properties: params)
+                    Mixpanel.mainInstance().flush()
+
+                    
+                }
+            }
+            else {
+                // Business logic for organic install scenario is invoked
+            }
+        }
+    }
+    
+    func onConversionDataFail(_ error: any Error) {
+        print(error)
+
+    }
+
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         

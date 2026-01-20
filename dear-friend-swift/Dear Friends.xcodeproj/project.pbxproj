@@ -349,6 +349,7 @@
 		C58B06932D06C30500382EC4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B06922D06C30500382EC4 /* Global.swift */; };
 		C58B06952D06C5C400382EC4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B06942D06C5C400382EC4 /* UIColor+Extension.swift */; };
 		C58B06972D06C64100382EC4 /* Rambla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C58B06962D06C64100382EC4 /* Rambla-Regular.ttf */; };
+		C594A5FA2F1F895200C344E3 /* AppsFlyerLib-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = C594A5F92F1F895200C344E3 /* AppsFlyerLib-Dynamic */; };
 		C5A2E16E2D8194C400366769 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C5A2E16D2D8194C400366769 /* FirebaseCrashlytics */; };
 		C5A2E1702D8194C400366769 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = C5A2E16F2D8194C400366769 /* FirebaseMessaging */; };
 		C5B28A362D0AC54C004F2D45 /* PreferencePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B28A352D0AC54C004F2D45 /* PreferencePopupVC.swift */; };
@@ -792,6 +793,7 @@
 				291E26F42C4A70A3006114E9 /* AudioToolbox.framework in Frameworks */,
 				291E26F22C4A7085006114E9 /* AdSupport.framework in Frameworks */,
 				291E26EF2C4A7052006114E9 /* EventKit.framework in Frameworks */,
+				C594A5FA2F1F895200C344E3 /* AppsFlyerLib-Dynamic in Frameworks */,
 				291E26F02C4A7052006114E9 /* EventKitUI.framework in Frameworks */,
 				291E26FA2C4A71A6006114E9 /* CoreTelephony.framework in Frameworks */,
 				C5A2E16E2D8194C400366769 /* FirebaseCrashlytics in Frameworks */,
@@ -2364,6 +2366,7 @@
 				2961CD1129FFB4A300732EDA /* SwiftDate */,
 				C5A2E16D2D8194C400366769 /* FirebaseCrashlytics */,
 				C5A2E16F2D8194C400366769 /* FirebaseMessaging */,
+				C594A5F92F1F895200C344E3 /* AppsFlyerLib-Dynamic */,
 			);
 			productName = TheOry;
 			productReference = 4337BA03294D80B30090E0A5 /* Dear Friends.app */;
@@ -2446,6 +2449,7 @@
 			packageReferences = (
 				2961CD1029FFB4A300732EDA /* XCRemoteSwiftPackageReference "SwiftDate" */,
 				C5A2E16C2D8194C400366769 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C594A5F82F1F895200C344E3 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */,
 			);
 			productRefGroup = 4337BA04294D80B30090E0A5 /* Products */;
 			projectDirPath = "";
@@ -3658,6 +3662,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		C594A5F82F1F895200C344E3 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework-Dynamic";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.17.8;
+			};
+		};
 		C5A2E16C2D8194C400366769 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -3673,6 +3685,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2961CD1029FFB4A300732EDA /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
+		};
+		C594A5F92F1F895200C344E3 /* AppsFlyerLib-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C594A5F82F1F895200C344E3 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */;
+			productName = "AppsFlyerLib-Dynamic";
 		};
 		C5A2E16D2D8194C400366769 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;

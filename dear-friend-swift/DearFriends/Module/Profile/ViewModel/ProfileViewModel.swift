@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import Network
 
 class ProfileViewModel {
     
@@ -228,43 +229,82 @@ extension ProfileViewModel {
 //MARK: - Contact support
 
 extension ProfileViewModel {
-    
-    func contactSupport(type: String, title: String, photos: [UIImage?]? ,video: URL?, message: String, isShowLoader : Bool = true, success: @escaping (JSON) -> Void, failure: @escaping (_ errorResponse: JSON) -> Void) {
-        
-        var params : [String:Any] = [:]
-        params["type"] = type
-        params["title"] = title
-        params["message"] = message
-        
-        var imgVideoParam: [ServiceManager.MultiPartDataType] = []
-        // Handle photos
-        if let photos = photos {
-            for photo in photos {
-                if let profileImgData = photo?.jpegData(compressionQuality: 0.8) {
-                    // Use the same key "photo[]" for each image
-                    imgVideoParam.append(ServiceManager.MultiPartDataType(fileData: profileImgData, keyName: "photo[]"))
+  
+
+    func getNetworkType(completion: @escaping (String) -> Void) {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "NetworkMonitor")
+
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                if path.usesInterfaceType(.wifi) {
+                    completion("WiFi")
+                } else if path.usesInterfaceType(.cellular) {
+                    completion("Cellular")
+                } else if path.usesInterfaceType(.wiredEthernet) {
+                    completion("Ethernet")
+                } else {
+                    completion("Unknown")
                 }
+            } else {
+                completion("No Connection")
             }
-        }
-        
-        // Handle video
-        if let videourl = video, let videoData = NSData(contentsOf: videourl) {
-            imgVideoParam.append(ServiceManager.MultiPartDataType(fileData: videoData as Data, keyName: "video"))
+            monitor.cancel()
         }
 
-        ServiceManager.shared.postMultipartRequest(ApiURL: .contact, imageVideoParameters: imgVideoParam, parameters: params) { response, isSuccess, error, statusCode in
+        monitor.start(queue: queue)
+    }
+    
+    
+    func contactSupport(type: String, title: String, photos: [UIImage?]? ,video: URL?, message: String, isShowLoader : Bool = true, success: @escaping (JSON) -> Void, failure: @escaping (_ errorResponse: JSON) -> Void) {
+        var getNetwork : String = ""
+        getNetworkType { network in
+            getNetwork = network
             
-            print("Success Response:", response)
-            if isSuccess == true {
-                GeneralUtility().showSuccessMessage(message: response["message"].stringValue)
-                success(response)
-            } else {
-                failure(response)
+            
+            var params : [String:Any] = [:]
+            var deviceInfo : [String:Any] = [:]
+
+            params["type"] = type
+            params["title"] = title
+            params["message"] = message
+            params["model"] = UIDevice.current.name
+            params["os_version"] = "iOS \(UIDevice.current.systemVersion)"
+            params["app_version"] = "\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""))"
+            params["network_type"] = getNetwork
+
+            var imgVideoParam: [ServiceManager.MultiPartDataType] = []
+            // Handle photos
+            if let photos = photos {
+                for photo in photos {
+                    if let profileImgData = photo?.jpegData(compressionQuality: 0.8) {
+                        // Use the same key "photo[]" for each image
+                        imgVideoParam.append(ServiceManager.MultiPartDataType(fileData: profileImgData, keyName: "photo[]"))
+                    }
+                }
             }
             
-        } Failure: { response, isSuccess, error, statusCode in
-            print("Failure Response:", response)
-            failure(response)
+            // Handle video
+            if let videourl = video, let videoData = NSData(contentsOf: videourl) {
+                imgVideoParam.append(ServiceManager.MultiPartDataType(fileData: videoData as Data, keyName: "video"))
+            }
+
+            ServiceManager.shared.postMultipartRequest(ApiURL: .contact, imageVideoParameters: imgVideoParam, parameters: params) { response, isSuccess, error, statusCode in
+                
+                print("Success Response:", response)
+                if isSuccess == true {
+                    GeneralUtility().showSuccessMessage(message: response["message"].stringValue)
+                    success(response)
+                } else {
+                    failure(response)
+                }
+                
+            } Failure: { response, isSuccess, error, statusCode in
+                print("Failure Response:", response)
+                failure(response)
+            }
+
         }
+        
     }
 }

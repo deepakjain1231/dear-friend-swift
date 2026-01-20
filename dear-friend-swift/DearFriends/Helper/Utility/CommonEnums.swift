@@ -34,6 +34,7 @@ enum GradientDirection {
 
 
 enum Mixpanel_Event: String {
+    case appInstal = "App Install Attributed"
     case MeditationStart = "meditation_start"
     case MeditationEnd = "meditation_end"
     case AppOpen = "app_open"
