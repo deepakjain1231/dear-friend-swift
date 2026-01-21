@@ -1,5 +1,5 @@
 {
-  "originHash" : "ba49aa5b0e1113becb81063716b56766a359e91b9c2bb5da3f9f55786ebef31a",
+  "originHash" : "1365e57d4f5cc8cc572e79b741b8d52725209ff8486a1b223074553df93aa127",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -101,12 +101,30 @@
       }
     },
     {
+      "identity" : "mmkv",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/parmar-mehul/MMKV",
+      "state" : {
+        "revision" : "f183f563a1be1809f6b6954d183f36415785bad8",
+        "version" : "2.3.0"
+      }
+    },
+    {
       "identity" : "nanopb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/nanopb.git",
       "state" : {
         "revision" : "b7e1104502eca3a213b46303391ca4d3bc8ddec1",
         "version" : "2.30910.0"
+      }
+    },
+    {
+      "identity" : "objectmapper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tristanhimmelman/ObjectMapper.git",
+      "state" : {
+        "revision" : "6021c6035e83a306047348666f6400dc61445d3b",
+        "version" : "4.4.3"
       }
     },
     {

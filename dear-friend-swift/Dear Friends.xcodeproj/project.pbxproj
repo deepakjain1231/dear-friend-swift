@@ -18,7 +18,11 @@
 		002F77422D2127B9004431BD /* ShowCaseCollectionCell_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002F77412D2127B9004431BD /* ShowCaseCollectionCell_1.xib */; };
 		002F77432D2127B9004431BD /* ShowCaseCollectionCell_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002F77402D2127B9004431BD /* ShowCaseCollectionCell_1.swift */; };
 		00ABC9BD2D1E50E20031B3D9 /* AboutCreatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ABC9BC2D1E50E20031B3D9 /* AboutCreatorVC.swift */; };
+		00C253902F1FAFFC00E6C698 /* SDKUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2538F2F1FAFFC00E6C698 /* SDKUserDefault.swift */; };
+		00C2565B2F1FB11200E6C698 /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 00C2565A2F1FB11200E6C698 /* ObjectMapper */; };
 		00EF7E472E4088F900D132EC /* sample_wave.json in Resources */ = {isa = PBXBuildFile; fileRef = 00EF7E462E4088F900D132EC /* sample_wave.json */; };
+		00FA64F62F20C0F000854010 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA64F52F20C0E700854010 /* ImageCache.swift */; };
+		00FA651A2F20F68200854010 /* MMKV in Frameworks */ = {isa = PBXBuildFile; productRef = 00FA65192F20F68200854010 /* MMKV */; };
 		29028C7F2A02776000D0A747 /* HomeCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29028C7D2A02776000D0A747 /* HomeCategoryCVC.swift */; };
 		29028C802A02776000D0A747 /* HomeCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29028C7E2A02776000D0A747 /* HomeCategoryCVC.xib */; };
 		290326362B27143B00E5D289 /* BGAudioListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290326352B27143B00E5D289 /* BGAudioListModel.swift */; };
@@ -409,7 +413,9 @@
 		002F77402D2127B9004431BD /* ShowCaseCollectionCell_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseCollectionCell_1.swift; sourceTree = "<group>"; };
 		002F77412D2127B9004431BD /* ShowCaseCollectionCell_1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowCaseCollectionCell_1.xib; sourceTree = "<group>"; };
 		00ABC9BC2D1E50E20031B3D9 /* AboutCreatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCreatorVC.swift; sourceTree = "<group>"; };
+		00C2538F2F1FAFFC00E6C698 /* SDKUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUserDefault.swift; sourceTree = "<group>"; };
 		00EF7E462E4088F900D132EC /* sample_wave.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample_wave.json; sourceTree = "<group>"; };
+		00FA64F52F20C0E700854010 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		11CD7D134A180267A2A4AEDA /* Pods-Dear Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear Friends.debug.xcconfig"; path = "Target Support Files/Pods-Dear Friends/Pods-Dear Friends.debug.xcconfig"; sourceTree = "<group>"; };
 		29028C7D2A02776000D0A747 /* HomeCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryCVC.swift; sourceTree = "<group>"; };
 		29028C7E2A02776000D0A747 /* HomeCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoryCVC.xib; sourceTree = "<group>"; };
@@ -791,10 +797,12 @@
 				29AD52822A2F05E500512272 /* StoreKit.framework in Frameworks */,
 				291E26F62C4A70AB006114E9 /* MessageUI.framework in Frameworks */,
 				291E26F42C4A70A3006114E9 /* AudioToolbox.framework in Frameworks */,
+				00C2565B2F1FB11200E6C698 /* ObjectMapper in Frameworks */,
 				291E26F22C4A7085006114E9 /* AdSupport.framework in Frameworks */,
 				291E26EF2C4A7052006114E9 /* EventKit.framework in Frameworks */,
 				C594A5FA2F1F895200C344E3 /* AppsFlyerLib-Dynamic in Frameworks */,
 				291E26F02C4A7052006114E9 /* EventKitUI.framework in Frameworks */,
+				00FA651A2F20F68200854010 /* MMKV in Frameworks */,
 				291E26FA2C4A71A6006114E9 /* CoreTelephony.framework in Frameworks */,
 				C5A2E16E2D8194C400366769 /* FirebaseCrashlytics in Frameworks */,
 				2961CD1229FFB4A300732EDA /* SwiftDate in Frameworks */,
@@ -1592,6 +1600,7 @@
 		4337BA1A294D812D0090E0A5 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				00C2538F2F1FAFFC00E6C698 /* SDKUserDefault.swift */,
 				0028137F2EF57304000180F9 /* APICallHelper.swift */,
 				00099AA22E3CD20B00F63195 /* WaveformView.swift */,
 				C58B068D2D06C2C100382EC4 /* Core */,
@@ -1769,6 +1778,7 @@
 				4337BA68294D812D0090E0A5 /* AlertString.swift */,
 				4337BA69294D812D0090E0A5 /* ColorHelper.swift */,
 				4337BA6A294D812D0090E0A5 /* GeneralUtility.swift */,
+				00FA64F52F20C0E700854010 /* ImageCache.swift */,
 				4337BA6B294D812D0090E0A5 /* Extension.swift */,
 				4337BA6C294D812D0090E0A5 /* UtilFunctions.swift */,
 			);
@@ -2367,6 +2377,8 @@
 				C5A2E16D2D8194C400366769 /* FirebaseCrashlytics */,
 				C5A2E16F2D8194C400366769 /* FirebaseMessaging */,
 				C594A5F92F1F895200C344E3 /* AppsFlyerLib-Dynamic */,
+				00C2565A2F1FB11200E6C698 /* ObjectMapper */,
+				00FA65192F20F68200854010 /* MMKV */,
 			);
 			productName = TheOry;
 			productReference = 4337BA03294D80B30090E0A5 /* Dear Friends.app */;
@@ -2450,6 +2462,8 @@
 				2961CD1029FFB4A300732EDA /* XCRemoteSwiftPackageReference "SwiftDate" */,
 				C5A2E16C2D8194C400366769 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				C594A5F82F1F895200C344E3 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Dynamic" */,
+				00C256592F1FB11200E6C698 /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+				00FA65182F20F68200854010 /* XCRemoteSwiftPackageReference "MMKV" */,
 			);
 			productRefGroup = 4337BA04294D80B30090E0A5 /* Products */;
 			projectDirPath = "";
@@ -2823,6 +2837,7 @@
 				BD91BBE72CCA8ACE006B00E6 /* FrameFilterProcessor.swift in Sources */,
 				4337BAA7294D812D0090E0A5 /* GeneralUtility.swift in Sources */,
 				BD91BBEC2CCA8ACE006B00E6 /* AudioPlayerContext.swift in Sources */,
+				00C253902F1FAFFC00E6C698 /* SDKUserDefault.swift in Sources */,
 				BD91BBFC2CCA8ACE006B00E6 /* DispatchQueue+Helpers.swift in Sources */,
 				4337BA72294D812D0090E0A5 /* Toast.swift in Sources */,
 				C564CF4B2D007DA900ECBDCE /* NewPasswordVC.swift in Sources */,
@@ -2833,6 +2848,7 @@
 				29D86E7A2A00E50400751453 /* TabbarVC.swift in Sources */,
 				BD38DE472CC6209500CD41A4 /* ContactSupportVC.swift in Sources */,
 				BD3162EA2CCFA6B00058D019 /* CustomLaunchVC.swift in Sources */,
+				00FA64F62F20C0F000854010 /* ImageCache.swift in Sources */,
 				4337BAA9294D812D0090E0A5 /* UtilFunctions.swift in Sources */,
 				43F176852A0FAF8F00BD8426 /* EditProfileVC.swift in Sources */,
 				BD91BBED2CCA8ACE006B00E6 /* AudioPlayerDelegate.swift in Sources */,
@@ -3654,6 +3670,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		00C256592F1FB11200E6C698 /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
+		00FA65182F20F68200854010 /* XCRemoteSwiftPackageReference "MMKV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/parmar-mehul/MMKV";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
 		2961CD1029FFB4A300732EDA /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftDate";
@@ -3681,6 +3713,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		00C2565A2F1FB11200E6C698 /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C256592F1FB11200E6C698 /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
+		};
+		00FA65192F20F68200854010 /* MMKV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00FA65182F20F68200854010 /* XCRemoteSwiftPackageReference "MMKV" */;
+			productName = MMKV;
+		};
 		2961CD1129FFB4A300732EDA /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2961CD1029FFB4A300732EDA /* XCRemoteSwiftPackageReference "SwiftDate" */;

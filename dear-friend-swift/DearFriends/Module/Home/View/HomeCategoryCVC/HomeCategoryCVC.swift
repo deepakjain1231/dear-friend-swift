@@ -53,4 +53,9 @@ class HomeCategoryCVC: UICollectionViewCell {
 //        
 //        self.imgMain.layer.addSublayer(gradient)
 //    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imgMain.image = nil
+    }
 }

@@ -369,6 +369,7 @@ extension NewHomeVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
             cell.backgroundColor = .clear
             let current = self.homeVM.homedataModel?.category?[indexPath.row]
             cell.lblTitle.text = current?.title ?? ""
+            cell.imgMain.image = nil
             GeneralUtility().setImage(imgView: cell.imgMain, imgPath: current?.image ?? "")
             cell.viewImgBG.backgroundColor = .clear
             

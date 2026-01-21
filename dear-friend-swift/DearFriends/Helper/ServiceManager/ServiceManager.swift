@@ -298,7 +298,18 @@ class ServiceManager: NSObject {
                 print("API URL: \(url)")
 
                 // ⚡️ Check for cached response
-                if ApiURL == .dynamicList || ApiURL == .homeData || ApiURL == .onboarding_about_creator{
+                if ApiURL == .dynamicList || ApiURL == .homeData || ApiURL == .onboarding_about_creator {
+//                    if let getData = SDKUserDefault.getJSONData(for: ApiURL.strURL()) {
+//                        self.handleSucess(json: getData, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+//                    }
+//                    else {
+//                        if isShowLoader {
+//                            DispatchQueue.main.async {
+//                                SHOW_CUSTOM_LOADER()
+//                            }
+//                        }
+//                    }
+                    
                     if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
                         self.handleSucess(json: cachedResponse.data, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
     //                    return
@@ -342,6 +353,7 @@ class ServiceManager: NSObject {
                         //SAVE CATCH DATA
                         if ApiURL == .dynamicList || ApiURL == .homeData || ApiURL == .onboarding_about_creator{
                             if let data = resObj.data, let response = resObj.response {
+                                //SDKUserDefault.saveJSONData(data, for: ApiURL.strURL())
                                 let cachedURLResponse = CachedURLResponse(response: response, data: data)
                                 URLCache.shared.storeCachedResponse(cachedURLResponse, for: urlRequest)
                             }
@@ -409,7 +421,19 @@ class ServiceManager: NSObject {
 
                 
                 // ⚡️ Check for cached response
-                if ApiURL == .getAudioList || ApiURL == .useraudiohistory{
+                if ApiURL == .getAudioList || ApiURL == .useraudiohistory {
+//                    if let getData = SDKUserDefault.getJSONData(for: ApiURL.strURL()) {
+//                        self.handleSucess(json: getData, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
+//                    }
+//                    else {
+//                        if isShowLoader {
+//                            DispatchQueue.main.async {
+//                                SHOW_CUSTOM_LOADER()
+//                            }
+//                        }
+//                    }
+                    
+
                     if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
                         self.handleSucess(json: cachedResponse.data, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                         
@@ -447,6 +471,7 @@ class ServiceManager: NSObject {
                         //SAVE CATCH DATA
                         if ApiURL == .getAudioList || ApiURL == .useraudiohistory{
                             if let data = resObj.data, let response = resObj.response {
+                                //SDKUserDefault.saveJSONData(data, for: ApiURL.strURL())
                                 let cachedURLResponse = CachedURLResponse(response: response, data: data)
                                 URLCache.shared.storeCachedResponse(cachedURLResponse, for: urlRequest)
                             }
