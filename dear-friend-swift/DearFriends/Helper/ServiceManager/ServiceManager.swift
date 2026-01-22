@@ -291,28 +291,12 @@ class ServiceManager: NSObject {
 
                 guard let finalURL = components.url else { return }
                 
-                var urlRequest = URLRequest(url: finalURL)
-                urlRequest.httpMethod = "GET"
-                urlRequest.cachePolicy = .reloadIgnoringLocalCacheData
-
                 print("API URL: \(url)")
 
                 // ⚡️ Check for cached response
                 if ApiURL == .dynamicList || ApiURL == .homeData || ApiURL == .onboarding_about_creator {
-//                    if let getData = SDKUserDefault.getJSONData(for: ApiURL.strURL()) {
-//                        self.handleSucess(json: getData, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-//                    }
-//                    else {
-//                        if isShowLoader {
-//                            DispatchQueue.main.async {
-//                                SHOW_CUSTOM_LOADER()
-//                            }
-//                        }
-//                    }
-                    
-                    if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
-                        self.handleSucess(json: cachedResponse.data, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-    //                    return
+                    if let getData = SDKUserDefault.getJSONData(for: finalURL.absoluteString) {
+                        self.handleSucess(json: getData, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                     }
                     else {
                         if isShowLoader {
@@ -321,7 +305,6 @@ class ServiceManager: NSObject {
                             }
                         }
                     }
-
                 }
 
                 
@@ -352,14 +335,11 @@ class ServiceManager: NSObject {
                        
                         //SAVE CATCH DATA
                         if ApiURL == .dynamicList || ApiURL == .homeData || ApiURL == .onboarding_about_creator{
-                            if let data = resObj.data, let response = resObj.response {
-                                //SDKUserDefault.saveJSONData(data, for: ApiURL.strURL())
-                                let cachedURLResponse = CachedURLResponse(response: response, data: data)
-                                URLCache.shared.storeCachedResponse(cachedURLResponse, for: urlRequest)
+                            if let data = resObj.data {
+                                SDKUserDefault.saveJSONData(data, for: finalURL.absoluteString)
                             }
                         }
-                        
-                        
+
                         self.handleSucess(json: json, statusCode: statusCode, strUrl: "\(url) | \(header) | \(parameters)", isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                         
                     case .failure(let err) :
@@ -412,31 +392,12 @@ class ServiceManager: NSObject {
                 
                 if let jsonString = jsonStringSorted(from: parameters) {
                     cache_url = try getFullUrl(relPath: ApiURL.strURL() + strURLAdd + "/\(jsonString)")
-                    
                 }
 
-                var urlRequest = URLRequest(url: cache_url)
-                urlRequest.httpMethod = "POST"
-                urlRequest.cachePolicy = .reloadIgnoringLocalCacheData
-
-                
                 // ⚡️ Check for cached response
                 if ApiURL == .getAudioList || ApiURL == .useraudiohistory {
-//                    if let getData = SDKUserDefault.getJSONData(for: ApiURL.strURL()) {
-//                        self.handleSucess(json: getData, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-//                    }
-//                    else {
-//                        if isShowLoader {
-//                            DispatchQueue.main.async {
-//                                SHOW_CUSTOM_LOADER()
-//                            }
-//                        }
-//                    }
-                    
-
-                    if let cachedResponse = URLCache.shared.cachedResponse(for: urlRequest) {
-                        self.handleSucess(json: cachedResponse.data, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
-                        
+                    if let getData = SDKUserDefault.getJSONData(for: cache_url.absoluteString) {
+                        self.handleSucess(json: getData, statusCode: 200, strUrl: "\(url)", isLoadData: true, isShowErrorAlerts: isShowErrorAlerts, Success: successBlock, Failure: failureBlock)
                     }
                     else {
                         if isShowLoader {
@@ -470,10 +431,8 @@ class ServiceManager: NSObject {
                         
                         //SAVE CATCH DATA
                         if ApiURL == .getAudioList || ApiURL == .useraudiohistory{
-                            if let data = resObj.data, let response = resObj.response {
-                                //SDKUserDefault.saveJSONData(data, for: ApiURL.strURL())
-                                let cachedURLResponse = CachedURLResponse(response: response, data: data)
-                                URLCache.shared.storeCachedResponse(cachedURLResponse, for: urlRequest)
+                            if let data = resObj.data {
+                                SDKUserDefault.saveJSONData(data, for: cache_url.absoluteString)
                             }
                         }
                         

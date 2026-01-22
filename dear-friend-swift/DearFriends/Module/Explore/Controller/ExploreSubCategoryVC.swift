@@ -208,6 +208,7 @@ extension ExploreSubCategoryVC: UICollectionViewDelegate, UICollectionViewDataSo
 
                 let vc: ExploreDetailsVC = ExploreDetailsVC.instantiate(appStoryboard: .Explore)
                 vc.hidesBottomBarWhenPushed = true
+                vc.strTitle = self.strTitle
                 self.homeVM.currentFilterType = .none
                 self.homeVM.currentAudioType = .normal
                 self.homeVM.currentSubCategory = self.homeVM.currentCategory?.subCategory?[indexPath.row]

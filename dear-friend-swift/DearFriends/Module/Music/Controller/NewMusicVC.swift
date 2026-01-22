@@ -192,10 +192,12 @@ class NewMusicVC: UIViewController {
                         }
                     }
                     else {
+                        self.initPlayer()
                         self.playMusic()
                     }
                 }
             } else {
+                self.initPlayer()
                 self.playMusic()
             }
         }
@@ -230,6 +232,7 @@ class NewMusicVC: UIViewController {
     }
     
     func playMusic() {
+        if songs.count == 0 { return }
         self.isAddShowing = false
         self.initPlayer()
         let songURL = self.songs[self.currentSongIndex]

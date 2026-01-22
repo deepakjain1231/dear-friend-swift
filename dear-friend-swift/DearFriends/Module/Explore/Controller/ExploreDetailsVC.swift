@@ -38,6 +38,7 @@ class ExploreDetailsVC: UIViewController {
     var isDownloadProgress = false
     var currentSongIndex = 0
     
+    var strTitle = ""
     var is_showcaseOpen = false
     var isExpanded = false
     var isFromViewAll = false
@@ -75,7 +76,7 @@ class ExploreDetailsVC: UIViewController {
     
     func dataBind() {
         if !self.isFromViewAll {
-            self.lblTitle.text = self.homeVM.currentSubCategory?.title ?? ""
+            self.lblTitle.text = self.strTitle == "" ? (self.homeVM.currentSubCategory?.title ?? "") : self.strTitle
             self.lblTitle2.text = self.homeVM.currentSubCategory?.title ?? ""
             self.lblDecs.setupLabel()
             self.lblDecs.collapsed = !self.isExpanded

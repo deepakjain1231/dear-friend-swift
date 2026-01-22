@@ -18,7 +18,13 @@ public class SDKUserDefault {
 
 	private init() {
 			// Initialize MMKV in default directory: documentDirectory/mmkv to store MMKV files
-		MMKV.initialize(rootDir: nil, logLevel: .warning, handler: MyMMKVHandler.init())
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)
+        let libraryPath = paths.first ?? ""
+        let rootDir = (libraryPath as NSString).appendingPathComponent("mmkv")
+        MMKV.initialize(rootDir: rootDir, logLevel: .warning, handler: MyMMKVHandler.init())
+        
+		//MMKV.initialize(rootDir: nil, logLevel: .warning, handler: MyMMKVHandler.init())
 
 			// Now you can use MMKV normally
 		self.mmkv = MMKV.default()
@@ -428,3 +434,5 @@ extension SDKUserDefault {
     }    
     
 }
+
+
