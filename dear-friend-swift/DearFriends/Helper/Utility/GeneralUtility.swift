@@ -378,28 +378,18 @@ class GeneralUtility: NSObject {
     //MARK:- ERROR MESSAGE
     
     func showErrorMessage(message: String) {
-        
-        self.addErrorHaptic()
-        let toast = Toast.text(message, isForError: true)
-        toast.show()
-//
-//        var viewcontroller = UIApplication.topViewController()
-//        if ((viewcontroller as? LoadingDailog) != nil) {
-//            viewcontroller = UIApplication.topViewController()?.presentingViewController
-//        }
-//        showAlertWithTitleFromVC(vc: viewcontroller!, andMessage: message.localized)
+        if message.lowercased() == "something went wrong." {
+            return
+        }
+        else {
+            self.addErrorHaptic()
+            let toast = Toast.text(message, isForError: true)
+            toast.show()
+        }
     }
     
     func showSuccessMessage(message: String) {
-        
         self.addSuccessHaptic()
-        
-//        var viewcontroller = UIApplication.topViewController()
-//        if ((viewcontroller as? LoadingDailog) != nil) {
-//            viewcontroller = UIApplication.topViewController()?.presentingViewController
-//        }
-//        showAlertWithTitleFromVC(vc: viewcontroller!, andMessage: message.localized)
-        
         let toast = Toast.text(message, isForError: false)
         toast.show()
     }
@@ -1706,163 +1696,5 @@ class AppExpandableLabel: ExpandableLabel {
         self.shouldCollapse = true
         self.textReplacementType = .word
         self.numberOfLines = 2
-//        self.collapsed = true
     }
 }
-
-
-
-import UIKit
-
-//class RemoteImageCacheLoader {
-//    static let shared = RemoteImageCacheLoader()
-//    
-//    private let imageCache = NSCache<NSString, UIImage>()
-//    
-//    /// Loads image using only memory cache → downloads if not cached (NO FileManager saving)
-//    func loadImage(from urlString: String,
-//                   into imageView: UIImageView,
-//                   placeholder: UIImage? = nil) {
-//
-//        guard let url = URL(string: urlString) else {
-//            print("Invalid URL: \(urlString)")
-//            return
-//        }
-//        
-//        var cacheKey = urlString as NSString
-//        let arrURLS = urlString.components(separatedBy: "?")
-//        if arrURLS.count != 0 {
-//            cacheKey = (arrURLS.first ?? "") as NSString
-//        }
-//                
-//        //let fileKey = urlString as NSString
-//        
-//        print(cacheKey)
-//        // ✅ 1) Check memory cache
-//        if let cached = imageCache.object(forKey: cacheKey) {
-//            imageView.image = cached
-//            return
-//        }
-//
-//        // Set placeholder if any
-//        if let placeholder = placeholder {
-//            imageView.image = placeholder
-//        }
-//        
-//        // ✅ 2) Show loader while downloading
-//        let loader = UIActivityIndicatorView(style: .medium)
-//        loader.color = .white
-//        loader.translatesAutoresizingMaskIntoConstraints = false
-//        loader.startAnimating()
-//        
-//        DispatchQueue.main.async {
-//            imageView.addSubview(loader)
-//            NSLayoutConstraint.activate([
-//                loader.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
-//                loader.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
-//            ])
-//        }
-//        
-//        // ✅ 3) Download (NO file writing)
-//        URLSession.shared.dataTask(with: url) { data, response, error in
-//            defer {
-//                DispatchQueue.main.async { loader.removeFromSuperview() }
-//            }
-//            
-//            guard let data = data, let image = UIImage(data: data) else {
-//                print("Image download failed: \(urlString)")
-//                return
-//            }
-//            
-//            print(cacheKey)
-//            
-//            // Save to memory cache only
-//            self.imageCache.setObject(image, forKey: cacheKey)
-//            
-//            DispatchQueue.main.async {
-//                imageView.image = image
-//            }
-//            
-//        }.resume()
-//    }
-//}
-
-
-//import UIKit
-//
-//class RemoteImageCacheLoader {
-//    static let shared = RemoteImageCacheLoader()
-//    
-//    private let imageCache = NSCache<NSString, UIImage>()
-//    
-//    /// Loads image from memory cache → Documents folder → Downloads if needed, shows loader.
-//    func loadImage(from urlString: String,
-//                   into imageView: UIImageView,
-//                   placeholder: UIImage? = nil) {
-//
-//        guard let url = URL(string: urlString) else {
-//            print("Invalid URL: \(urlString)")
-//            return
-//        }
-//        
-//        let fileName = url.lastPathComponent
-//        let localURL = getDocumentsDirectory().appendingPathComponent(fileName)
-//        
-//        // ✅ 1) Check memory cache
-//        if let cached = imageCache.object(forKey: fileName as NSString) {
-//            imageView.image = cached
-//            return
-//        }
-//        
-//        // ✅ 2) Check Documents folder
-//        if FileManager.default.fileExists(atPath: localURL.path),
-//           let localImage = UIImage(contentsOfFile: localURL.path) {
-//            imageCache.setObject(localImage, forKey: fileName as NSString)
-//            imageView.image = localImage
-//            return
-//        }
-//        
-//        // ✅ 3) Show loader while downloading
-//        let loader = UIActivityIndicatorView(style: .medium)
-//        loader.color = .white 
-//        loader.translatesAutoresizingMaskIntoConstraints = false
-//        loader.startAnimating()
-//        
-//        DispatchQueue.main.async {
-//            imageView.addSubview(loader)
-//            NSLayoutConstraint.activate([
-//                loader.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
-//                loader.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
-//            ])
-//        }
-//        
-//        // ✅ 4) Download
-//        URLSession.shared.dataTask(with: url) { data, response, error in
-//            defer {
-//                DispatchQueue.main.async {
-//                    loader.removeFromSuperview()
-//                }
-//            }
-//            
-//            guard let data = data, let image = UIImage(data: data) else {
-//                print("Image download failed for: \(urlString)")
-//                return
-//            }
-//            
-//            // Save to memory cache
-//            self.imageCache.setObject(image, forKey: fileName as NSString)
-//            
-//            // Save to Documents folder
-//            try? data.write(to: localURL)
-//            
-//            DispatchQueue.main.async {
-//                imageView.image = image
-//            }
-//            
-//        }.resume()
-//    }
-//    
-//    private func getDocumentsDirectory() -> URL {
-//        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-//    }
-//}

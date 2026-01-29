@@ -40,11 +40,14 @@ final class LogoutService {
         if (CurrentUser.shared.user?.internalIdentifier) == nil || (CurrentUser.shared.user?.internalIdentifier) == 0 {
         }
         else {
-            CurrentUser.shared.checkAnotherDeviceLoginService(success: { json_response in
-                print(json_response)
-            }, failure: { errorr in
-                print(errorr)
-            })
+            DispatchQueue.main.asyncDeduped(target: self, after: 0.75) { [weak self] in
+                guard let self = self else { return }
+                CurrentUser.shared.checkAnotherDeviceLoginService(success: { json_response in
+                    print(json_response)
+                }, failure: { errorr in
+                    print(errorr)
+                })
+            }
         }
     }
 }

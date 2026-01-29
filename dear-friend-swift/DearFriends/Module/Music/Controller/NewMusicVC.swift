@@ -106,6 +106,8 @@ class NewMusicVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.vwSlider.isHidden = true
+        UserDefaults.standard.removeObject(forKey: lastProgressKey)
+        
         self.setTheView()
         definesPresentationContext = true
         self.setupUI()
@@ -481,8 +483,12 @@ class NewMusicVC: UIViewController {
         
         self.waveformView.onProgressChanged = { [weak self] newProgress in
             guard let self = self else { return }
-            let duration = Double(self.vwSlider.maximumValue)
-            let newTime = Double(newProgress) * duration
+
+            let duration = self.newplayer.duration   // actual audio duration
+            guard duration > 0 else { return }
+            
+            let clampedProgress = min(max(newProgress, 0), 1)
+            let newTime = clampedProgress * duration
             
             // ✅ Seek audio
             self.newplayer.seek(to: newTime)
@@ -583,6 +589,7 @@ class NewMusicVC: UIViewController {
     }
     
     @IBAction func btnNextTapped(_ sender: UIButton) {
+        UserDefaults.standard.removeObject(forKey: lastProgressKey)
         if self.currentSongIndex <= (self.songs.count - 1) {
             self.currentSongIndex = self.currentSongIndex + 1
         }
@@ -590,6 +597,7 @@ class NewMusicVC: UIViewController {
     }
     
     @IBAction func btnPreviousTapped(_ sender: UIButton) {
+        UserDefaults.standard.removeObject(forKey: lastProgressKey)
         self.previousSong()
     }
     
@@ -753,7 +761,29 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
             popupVC.leftStr = "Not Yet"
             popupVC.rightStr = "Proceed To Premium"
             //popupVC.titleStr = isBgPremium ? "Upgrade to premium to unlock this background sound and access a full library of immersive audio to enhance your practice." : "To play this meditation, subcribe today!"
-            popupVC.titleStr = isBgPremium ? "To unlock this premium background sound, subscribe today." : "To play this meditation, subscribe to our premium membership today."
+            
+            var strText = ""
+            if isBgPremium {
+                strText = "To unlock this premium background sound, subscribe today."
+            }
+            else {
+                if (self.currentSong?.category?.title ?? "").lowercased() == "nature sounds" ||
+                    (self.currentSong?.category?.title ?? "").lowercased() == "nature sound" {
+                    strText = "To hear this premium nature sound, subscribe today."
+                }
+                else if (self.currentSong?.category?.title ?? "").lowercased() == "sleep" {
+                    strText = "To listen to this premium sleep content, subscribe today."
+                }
+                else if (self.currentSong?.category?.title ?? "").lowercased() == "music" {
+                    strText = "To listen to this premium track, subscribe today."
+                }
+                else {
+                    strText = "To play this meditation, subscribe to our premium membership today."
+                }
+                
+            }
+            
+            popupVC.titleStr = strText
             
             popupVC.noTapped = {
                 if isBgPremium == false{
@@ -914,6 +944,7 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
             self.audioVM.arrOfAudioList.removeAll()
             self.newplayer.stop()
             self.goBack(isGoingTab: true)
+            UserDefaults.standard.removeObject(forKey: lastProgressKey)
         }
         else {
             let isPremium = (self.currentSong?.forSTr ?? "") == "premium"
@@ -1028,7 +1059,18 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
                     }
                 } else {
                     self.HIDE_CUSTOM_LOADER()
-                    self.playNextSong()
+                    self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
+                    self.initPlayer()
+                    var isPremim = (self.currentSong?.forSTr ?? "") == "premium"
+                    if self.isFromDownload {
+                        isPremim = (self.currentDownload?.forStr ?? "") == "premium"
+                    }
+                    if isPremim && !appDelegate.isPlanPurchased {
+                        self.managePremium()
+                    }
+                    else {
+                        self.playNextSong()
+                    }
                 }
             }
         } else {
@@ -1082,7 +1124,18 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
                     }
                 } else {
                     self.HIDE_CUSTOM_LOADER()
-                    self.playPreviousSong()
+                    self.currentSong = self.audioVM.arrOfAudioList[self.currentSongIndex]
+                    self.initPlayer()
+                    var isPremim = (self.currentSong?.forSTr ?? "") == "premium"
+                    if self.isFromDownload {
+                        isPremim = (self.currentDownload?.forStr ?? "") == "premium"
+                    }
+                    if isPremim && !appDelegate.isPlanPurchased {
+                        self.managePremium()
+                    }
+                    else {
+                        self.playPreviousSong()
+                    }
                 }
             }
         } else {
@@ -1144,34 +1197,37 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         }
 
         
-        
         let currentTime = self.newplayer.progress
         print("currentTime", currentTime)
-        UserDefaults.standard.set("\(currentTime)", forKey: lastProgressKey)
-        UserDefaults.standard.set("\(self.currentSong?.internalIdentifier ?? 0)", forKey: lastAudioIdKey)
-        if Float(ceil((currentTime.rounded(toPlaces: 1)))) < self.vwSlider.maximumValue {
-            self.lblCurrentTime.text = formatTime(currentTime)
-            if currentTime == 0.0 {
-                waveformView.progress = 0
-            }
-            else {
-                waveformView.progress = CGFloat(currentTime / self.newplayer.duration)
-            }
-        }
-
-        else {
+        
+        let lastTime = UserDefaults.standard.double(forKey: lastProgressKey)
+        let duration = Double(self.vwSlider.maximumValue)
+        
+        // Save progress
+        UserDefaults.standard.set(currentTime, forKey: lastProgressKey)
+        UserDefaults.standard.set(self.currentSong?.internalIdentifier ?? 0, forKey: lastAudioIdKey)
+        
+        // ✅ Detect completion correctly
+        let isAudioFinished = lastTime > 0 && currentTime == 0 && lastTime >= (duration - 1.0)
+        if isAudioFinished {
             if self.currentRepeatMode == .None {
-                self.audioPlayed(toBack: true)
-                self.isPreviousTapped = false
-                self.clearLockScreenInfo()
-                self.timer.invalidate()
-                var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
-                if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
-                    currentTime = 0
+                if self.currentSongIndex == (self.songs.count - 1) {
+                    self.audioPlayed(toBack: true)
+                    self.isPreviousTapped = false
+                    self.clearLockScreenInfo()
+                    self.timer.invalidate()
+                    var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+                    if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+                        currentTime = 0
+                    }
+                    self.lblCurrentTime.text = formatTime(currentTime)
+                    self.newplayer.seek(to: currentTime)
+                    self.newplayer.pause()
                 }
-                self.lblCurrentTime.text = formatTime(currentTime)
-                self.newplayer.seek(to: currentTime)
-                self.newplayer.pause()
+                else if self.currentSongIndex <= (self.songs.count - 1) {
+                    self.currentSongIndex = self.currentSongIndex + 1
+                    self.nextSong()
+                }
             }
             else{
                 if self.isFromDownload {
@@ -1186,7 +1242,58 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
                 }
                 
             }
+            return
         }
+        
+        // ✅ Normal playback UI update
+        self.lblCurrentTime.text = formatTime(currentTime)
+        if currentTime == 0 {
+            self.waveformView.progress = 0
+        } else if self.newplayer.duration > 0 {
+            self.waveformView.progress = CGFloat(currentTime / self.newplayer.duration)
+        }
+        self.vwSlider.value = Float(currentTime)
+        
+        //UserDefaults.standard.set("\(currentTime)", forKey: lastProgressKey)
+        //UserDefaults.standard.set("\(self.currentSong?.internalIdentifier ?? 0)", forKey: lastAudioIdKey)
+//        if Float(ceil((currentTime.rounded(toPlaces: 1)))) < self.vwSlider.maximumValue {
+//            self.lblCurrentTime.text = formatTime(currentTime)
+//            if currentTime == 0.0 {
+//                waveformView.progress = 0
+//            }
+//            else {
+//                waveformView.progress = CGFloat(currentTime / self.newplayer.duration)
+//            }
+//        }
+
+//        else {
+//            if self.currentRepeatMode == .None {
+//                self.audioPlayed(toBack: true)
+//                self.isPreviousTapped = false
+//                self.clearLockScreenInfo()
+//                self.timer.invalidate()
+//                var currentTime =  Double(self.currentSong?.audioProgress ?? "0") ?? 0
+//                if currentTime >= (Double(self.currentSong?.audioDuration ?? "0") ?? 0) || !appDelegate.isPlanPurchased {
+//                    currentTime = 0
+//                }
+//                self.lblCurrentTime.text = formatTime(currentTime)
+//                self.newplayer.seek(to: currentTime)
+//                self.newplayer.pause()
+//            }
+//            else{
+//                if self.isFromDownload {
+//                    self.setupUI()
+//                }
+//                else{
+//                    let obj = self.audioVM.arrOfAudioList[self.currentSongIndex]
+//                    obj.audioProgress = "0"
+//                    self.audioVM.arrOfAudioList.remove(at: self.currentSongIndex)
+//                    self.audioVM.arrOfAudioList.insert(obj, at: self.currentSongIndex)
+//                    self.nextSong()
+//                }
+//                
+//            }
+//        }
         
         MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = NSNumber(value: Double(currentTime))
                 
@@ -1208,11 +1315,25 @@ extension NewMusicVC: AVAudioPlayerDelegate , SubscriptionProtocol{
         self.vwSlider.value = Float(ceil((currentTime.rounded(toPlaces: 1))))
     }
     
-    func formatTime(_ time: TimeInterval) -> String {
-        let minutes = Int(time / 60)
-        let seconds = Int(ceil((time.truncatingRemainder(dividingBy: 60)).roundedValues(toPlaces: 1)))
-        return String(format: "%02d:%02d", minutes, seconds)
+    func formatTime(_ time: Double) -> String {
+        let totalSeconds = Int(time)
+
+        let hours = totalSeconds / 3600
+        let minutes = (totalSeconds % 3600) / 60
+        let seconds = totalSeconds % 60
+
+        if hours > 0 {
+            return String(format: "%d:%02d:%02d", hours, minutes, seconds)
+        } else {
+            return String(format: "%02d:%02d", minutes, seconds)
+        }
     }
+    
+//    func formatTime(_ time: TimeInterval) -> String {
+//        let minutes = Int(time / 60)
+//        let seconds = Int(ceil((time.truncatingRemainder(dividingBy: 60)).roundedValues(toPlaces: 1)))
+//        return String(format: "%02d:%02d", minutes, seconds)
+//    }
 }
 
 // MARK: - AD Methods

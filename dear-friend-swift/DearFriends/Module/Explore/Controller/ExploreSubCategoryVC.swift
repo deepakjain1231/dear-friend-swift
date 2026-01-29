@@ -176,7 +176,7 @@ extension ExploreSubCategoryVC: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionViewLayout(for section: Int) -> WaterfallLayout.Layout {
-        .waterfall(column: 2, distributionMethod: .balanced)
+        .waterfall(column: 2, distributionMethod: .equal)
     }
     
     

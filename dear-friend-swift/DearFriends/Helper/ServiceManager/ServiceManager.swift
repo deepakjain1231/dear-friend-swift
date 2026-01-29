@@ -445,7 +445,12 @@ class ServiceManager: NSObject {
                             print("Server Error: " + str)
                         }
                         
-                        self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, strUrl: "\(url)", Success: successBlock, Failure: failureBlock)
+                        if ApiURL != .anotherDeviceLogin {
+                            
+                            self.handleFailure(json: "", error: err, statusCode: statusCode, isShowErrorAlerts: isShowErrorAlerts, strUrl: "\(url)", Success: successBlock, Failure: failureBlock)
+                            
+                        }
+                        
                     }
                     
                 })

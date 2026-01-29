@@ -164,7 +164,7 @@ extension HomeViewModel {
         
         ServiceManager.shared.postRequest(ApiURL: .getAudioList, parameters: self.getAudioParams(), isShowLoader: isShowLoader) { response, isSuccess, error, statusCode in
             
-            print("Success Response:", response)
+            print("API END POINT: \(ApiURL.getAudioList)\n\nParams: \(self.getAudioParams())\n\nSuccess Response:", response)
             if isSuccess == true {
                 self.arrOfAudioList.removeAll()
                 let arr = response["data"].arrayValue

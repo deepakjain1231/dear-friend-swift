@@ -23,7 +23,6 @@ final class RemoteImageCacheLoader {
 
         let cacheKey = (urlString.components(separatedBy: "?").first ?? "") as NSString
 
-        print(cacheKey)
         // 1️⃣ Memory cache
         if let image = memoryCache.object(forKey: cacheKey) {
             imageView.image = image
@@ -45,7 +44,6 @@ final class RemoteImageCacheLoader {
                   let data = data,
                   let image = UIImage(data: data) else { return }
 
-            print(cacheKey)
             self.memoryCache.setObject(image, forKey: cacheKey)
             self.saveToDisk(image, key: cacheKey as String)
 

@@ -589,6 +589,7 @@ extension NewHomeVC: UICollectionViewDelegate, SkeletonCollectionViewDataSource,
             else {
                 let vc: ExploreSubCategoryVC = ExploreSubCategoryVC.instantiate(appStoryboard: .Explore)
                 vc.hidesBottomBarWhenPushed = true
+                self.homeVM.currentThemeCategory = nil
                 vc.strTitle = self.homeVM.homedataModel?.category?[indx].title ?? ""
                 self.homeVM.currentCategory = self.homeVM.homedataModel?.category?[indx]
                 vc.homeVM = self.homeVM
